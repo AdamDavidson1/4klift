@@ -12,8 +12,10 @@ $provision_script = <<SCRIPT
     rpm -Uvh https://rpms.remirepo.net/enterprise/remi-release-6.rpm
     ln -sf /home/vagrant/project/dev/vm/datastax.repo /etc/yum.repos.d/datastax.repo
 
-    yum install -y figlet python27 java-1.8.0-openjdk datastax-ddc nginx
-    yum install -y php-fpm php php-devel php-mysql --enablerepo=remi-php56
+    yum install -y figlet python27 java-1.8.0-openjdk datastax-ddc nginx gcc g++ make automake autoconf
+    yum install -y curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel sqlite-devel
+    yum install -y ruby-rdoc ruby-devel rubygems
+    yum install -y php-fpm php php-devel php-mysql git --enablerepo=remi-php56
 
     rm -f /home/vagrant/.bashrc
     ln -sf /home/vagrant/project/dev/vm/bashrc /home/vagrant/.bashrc
@@ -33,8 +35,17 @@ $provision_script = <<SCRIPT
     service nginx start
 
     curl -sS https://getcomposer.org/installer | php
-    mv composer.phar /usr/local/bin/compose
+    mv composer.phar /usr/local/bin/composer
 
+    wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+    curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+    yum install -y nodejs yarn
+    npm install -g bower
+    npm install -g webpack
+    gem install sass
+
+    wget https://phar.phpunit.de/phpunit-5.7.phar -O /usr/local/bin/phpunit
+    chmod 775 /usr/local/bin/phpunit
 SCRIPT
 
 
