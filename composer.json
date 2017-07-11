@@ -1,0 +1,21 @@
+{
+    "name": "deasilworks/4klift",
+    "description": "Big Data Framework",
+    "type": "project",
+    "license": "MIT",
+    "keywords": ["framework","cassandra","php"],
+    "authors": [
+        {
+            "name": "Deasil Works, Inc.",
+            "email": "code@deasil.works"
+        },
+        {
+            "name": "Craig Johnston",
+            "email": "craig@deasil.works"
+        }
+    ],
+    "require": {
+        "php": "^5.6.0",
+        "monolog/monolog": "~1.11"
+    }
+}
