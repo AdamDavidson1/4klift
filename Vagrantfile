@@ -37,14 +37,14 @@ $provision_script = <<SCRIPT
     curl -sS https://getcomposer.org/installer | php
     mv composer.phar /usr/local/bin/composer
 
-    wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+    wget -q https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
     yum install -y nodejs yarn
     npm install -g bower
     npm install -g webpack
     gem install sass
 
-    wget https://phar.phpunit.de/phpunit-5.7.phar -O /usr/local/bin/phpunit
+    wget -q https://phar.phpunit.de/phpunit-5.7.phar -O /usr/local/bin/phpunit
     chmod 775 /usr/local/bin/phpunit
 SCRIPT
 
@@ -58,6 +58,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.synced_folder ".", "/home/vagrant/project", disabled: false, type: "virtualbox"
 
     config.vm.network "private_network", ip: "192.168.222.11"
+    config.vm.network "forwarded_port", guest: 80, host: 8080
     config.ssh.forward_agent = true
 
     config.vm.hostname = hostname
