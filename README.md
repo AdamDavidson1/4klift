@@ -1,14 +1,28 @@
 4klift (Forklift) Framework
----------------------------
+===========================
 
-4klift is a set of PHP components for developing highly available,
-redundant and scalable web sites or services on top of Apache Cassandra.
+TBD
 
-4klift is well suited for server side applications requiring greater than
-99.99% service availability while also being able to withstand up to millions
-of read and write operations per second thanks to Apache Cassandra.
 
-This framework of components can be used together or individually. Many
-components may be used individually in a variety of other frameworks, including
-Symfony, Silex, Laraval and Drupal.
+## Development Environment
 
+Requires Virtualbox, Vagrant and the vagrant-vbgust plugin. This development
+virtual machine works on Mac, Windows or most Linux variants. 
+
+### Mac Install:
+
+Install Homebrew if you don't have it;
+
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Install Virtualbox and Vagrant with `brew`:
+
+    brew cask install virtualbox
+    brew cask install vagrant
+
+Install the `vagrant-vbguest` Bagrant plugin:
+
+    vagrant plugin install vagrant-vbguest
+
+
+    
