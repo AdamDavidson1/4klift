@@ -1,6 +1,13 @@
 4klift (Forklift) Framework
 ===========================
 
+[![Latest Stable Version](https://poser.pugx.org/deasilworks/4klift/v/stable)](https://packagist.org/packages/deasilworks/4klift)
+[![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
+[![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
+[![License](https://poser.pugx.org/deasilworks/4klift/license)](https://packagist.org/packages/deasilworks/4klift)
+[![Monthly Downloads](https://poser.pugx.org/deasilworks/4klift/d/monthly)](https://packagist.org/packages/deasilworks/4klift)
+[![composer.lock](https://poser.pugx.org/deasilworks/4klift/composerlock)](https://packagist.org/packages/deasilworks/4klift)
+
 TBD
 
 **No code yet**. We are still in the process of preparing some of our libraries for open source. This development vm is also a work-in-progress and may result in additional packages installed on provision and eventually a new base box with many of the provisioned requirements pre-installed. However this is a useful vm for high performance web development.
@@ -27,9 +34,10 @@ The 4klift development vm currently consists of the following packages:
 
 ## Installing 4klift Base Project
 
+
 Get and run:
 
-    composer create-project -s dev deasilworks/4klift
+    composer create-project -s dev deasilworks/4klift dev-dev
     cd 4klift
     vagrant up
     vagrant ssh
