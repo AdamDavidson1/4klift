@@ -1,6 +1,7 @@
 4klift (Forklift) Framework
 ===========================
 
+[![Build Status](https://travis-ci.org/deasilworks/4klift.svg?branch=master)](https://travis-ci.org/deasilworks/4klift)
 [![Latest Stable Version](https://poser.pugx.org/deasilworks/4klift/v/stable)](https://packagist.org/packages/deasilworks/4klift)
 [![Latest Unstable Version](https://poser.pugx.org/deasilworks/4klift/v/unstable)](https://packagist.org/packages/deasilworks/4klift)
 [![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
