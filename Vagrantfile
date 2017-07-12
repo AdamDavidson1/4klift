@@ -15,7 +15,7 @@ $provision_script = <<SCRIPT
     yum install -y figlet python27 java-1.8.0-openjdk datastax-ddc nginx gcc g++ make automake autoconf
     yum install -y curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel sqlite-devel
     yum install -y ruby-rdoc ruby-devel rubygems
-    yum install -y php-fpm php php-devel php-mysql php-mbstring git --enablerepo=remi-php56
+    yum install -y php-fpm php php-devel php-mysql php-mbstring php-xml git --enablerepo=remi-php56
 
     rm -f /home/vagrant/.bashrc
     ln -sf /home/vagrant/project/dev/vm/bashrc /home/vagrant/.bashrc
