@@ -4,10 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/deasilworks/4klift/v/stable)](https://packagist.org/packages/deasilworks/4klift)
 [![Latest Unstable Version](https://poser.pugx.org/deasilworks/4klift/v/unstable)](https://packagist.org/packages/deasilworks/4klift)
 [![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
-[![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
 [![License](https://poser.pugx.org/deasilworks/4klift/license)](https://packagist.org/packages/deasilworks/4klift)
-[![Monthly Downloads](https://poser.pugx.org/deasilworks/4klift/d/monthly)](https://packagist.org/packages/deasilworks/4klift)
-[![composer.lock](https://poser.pugx.org/deasilworks/4klift/composerlock)](https://packagist.org/packages/deasilworks/4klift)
 
 TBD
 
