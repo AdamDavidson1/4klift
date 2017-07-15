@@ -1,7 +1,7 @@
 4klift (Forklift) Framework
 ===========================
 
-[![Build Status](https://travis-ci.org/deasilworks/4klift.svg?branch=master)](https://travis-ci.org/deasilworks/4klift)
+[![Build Status](https://travis-ci.org/deasilworks/4klift.svg?branch=dev)](https://travis-ci.org/deasilworks/4klift)
 [![Latest Stable Version](https://poser.pugx.org/deasilworks/4klift/v/stable)](https://packagist.org/packages/deasilworks/4klift)
 [![Latest Unstable Version](https://poser.pugx.org/deasilworks/4klift/v/unstable)](https://packagist.org/packages/deasilworks/4klift)
 [![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
@@ -15,20 +15,20 @@ We target software that can run on CentOS 6.6. 4klift is required to run on a wi
 
 The 4klift development vm currently consists of the following packages:
 
-  - CentOS 6.6
-  - java-1.8.0-openjdk
-  - Apache Cassandra 3.9.0 (CQL spec 3.4.2)
-  - cqlsh 5.0.1
-  - nginx 1.10.2
-  - PHP/php-fpm 5.6.31
-  - composer >=1.4.2
-  - PHPUnit 5.7.21
-  - NodeJS 6.11.1
-  - npm 3.10.10
-  - Sass 3.4.25
-  - bower 1.8.0
-  - yarn 0.27.5
-  - git 1.7.1
+  - [CentOS 6.6](https://www.centos.org/)
+  - [java-1.8.0-openjdk](http://openjdk.java.net/)
+  - [Apache Cassandra 3.9.0 (CQL spec 3.4.2) (datastax-ddc)](https://academy.datastax.com/planet-cassandra/cassandra)
+  - [cqlsh 5.0.1](http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlsh.html)
+  - [nginx 1.10.2](https://nginx.org/en/)
+  - [PHP 5.6.31](http://php.net/) / [php-fpm](https://php-fpm.org/)
+  - [composer >=1.4.2](https://getcomposer.org/)
+  - [PHPUnit 5.7.21](https://phpunit.de/)
+  - [NodeJS 6.11.1](https://nodejs.org/en/)
+  - [npm 3.10.10](https://www.npmjs.com/)
+  - [Sass 3.4.25](http://sass-lang.com/)
+  - [bower 1.8.0](https://bower.io/)
+  - [yarn 0.27.5](https://yarnpkg.com/en/)
+  - [git 1.7.1](https://git-scm.com/)
 
 
 ## Installing 4klift Base Project
