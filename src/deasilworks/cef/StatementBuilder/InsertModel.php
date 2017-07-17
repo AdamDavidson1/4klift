@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,65 +24,27 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF\StatementBuilder;
+namespace deasilworks\cef\StatementBuilder;
 
-use DeasilWorks\CEF\StatementBuilder;
+use deasilworks\cef\EntityModel;
 
 /**
- * Class InsertJson
- * @package DeasilWorks\CEF\StatementBuilder
+ * Class InsertModel
+ * @package deasilworks\cef\StatementBuilder
  */
-class InsertJson extends StatementBuilder
+class InsertModel extends InsertJson
 {
     /**
-     * @var string
+     * Set Model
+     *
+     * @param $serialize_null boolean
+     * @param EntityModel $model
+     * @return InsertModel
      */
-    protected $type = 'INSERT JSON';
-
-    /**
-     * @var string
-     */
-    protected $json;
-
-    /**
-     * To String
-     */
-    public function __toString()
+    public function setModel($model, $serialize_null = true)
     {
-        return $this->getStatement();
-    }
-
-    /**
-     * @return string
-     */
-    public function getStatement()
-    {
-        // cassandra string support
-        $json = str_replace("'", "''", $this->getJson());
-
-        $cql = 'INSERT INTO ' . $this->getFrom() . " JSON '" . $json . "'";
-
-
-        return $cql;
-    }
-
-    /**
-     * @return string
-     */
-    public function getJson()
-    {
-        return $this->json;
-    }
-
-    /**
-     * @param string $json
-     * @return InsertJson
-     */
-    public function setJson($json)
-    {
-        $this->json = $json;
+        $this->setJson($model->toJson($serialize_null));
         return $this;
     }
-
 
 }

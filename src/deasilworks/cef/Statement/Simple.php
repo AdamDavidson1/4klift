@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,50 +24,28 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF\StatementComponent;
+namespace deasilworks\cef\Statement;
 
+use deasilworks\cef\StatementBuilder;
+use deasilworks\cef\StatementManager;
 
 /**
- * Class Exp
- * @package DeasilWorks\CEF\StatementComponent
+ * Class Simple
+ * @package deasilworks\cef\Statement
  */
-class Exp
+class Simple extends StatementManager
 {
 
     /**
-     * @var string
+     * @param string|StatementBuilder $simple_statement
+     * @return $this
      */
-    protected $expression;
-
-    function __toString()
+    public function setStatement($simple_statement)
     {
-        return (string)$this->expression;
-    }
-
-    /**
-     * Exp constructor.
-     * @param string $exp_string | null
-     */
-    public function __construct($exp_string=null)
-    {
-        $this->setExpression($exp_string);
-    }
-
-    /**
-     * @return string
-     */
-    public function getExpression()
-    {
-        return $this->expression;
-    }
-
-    /**
-     * @param string $expression
-     * @return Exp
-     */
-    public function setExpression($expression)
-    {
-        $this->expression = $expression;
+        if (is_object($simple_statement) && $simple_statement instanceof StatementBuilder) {
+            $this->setSb($simple_statement);
+        }
+        $this->statement = new \Cassandra\SimpleStatement((string) $simple_statement);
         return $this;
     }
 

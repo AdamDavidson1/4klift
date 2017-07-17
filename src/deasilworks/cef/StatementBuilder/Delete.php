@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,30 +24,30 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF\StatementBuilder;
+namespace deasilworks\cef\StatementBuilder;
 
-use DeasilWorks\CEF\StatementBuilder;
+use deasilworks\cef\StatementBuilder;
 
 /**
- * Class Update
- * @package DeasilWorks\CEF\StatementBuilder
+ * Class Delete
+ * @package deasilworks\cef\StatementBuilder
  */
-class Update extends StatementBuilder
+class Delete extends StatementBuilder
 {
     /**
      * @var string
      */
-    protected $type = 'UPDATE';
-
-    /**
-     * @var array
-     */
-    protected $col_val_map = array();
+    protected $type = 'DELETE';
 
     /**
      * @var array
      */
     protected $where = array();
+
+    /**
+     * @var array
+     */
+    protected $columns = array();
 
     /**
      * @var bool
@@ -64,53 +64,24 @@ class Update extends StatementBuilder
 
     /**
      * @return string
+     * @throws \Exception
      */
     public function getStatement()
     {
         $cql = '';
 
-        $cql .= $this->getType() . ' ' . $this->getFrom() . ' SET ' . $this->getColValMap();
-
-        if ($where = $this->getWhere()) {
-            $cql .= ' WHERE ' . $where;
+        if ($this->getFrom() && $this->getWhere()) {
+            $cql .= $this->getType() . $this->getColumns() . ' FROM ' . $this->getFrom() . ' WHERE ' . $this->getWhere();
 
             if ($this->isIfExists()) {
                 $cql .= ' IF EXISTS';
             }
+
+        } else {
+            throw new \Exception('Delete statement must contain from and where values');
         }
 
         return $cql;
-    }
-
-    /**
-     * @return string | null
-     */
-    public function getColValMap()
-    {
-        $set_string = null;
-
-        foreach ($this->col_val_map as $col => $val) {
-            $set_string ? $set_string .= ', ' : false;
-
-            if (is_string($val)) {
-                $val = '\'' . str_replace("'","''", $val) . '\'';
-            }
-
-
-            $set_string .= $col . ' = ' . $val;
-        }
-
-        return $set_string;
-    }
-
-    /**
-     * @param array $col_val_map
-     * @return Update
-     */
-    public function setColValMap($col_val_map)
-    {
-        $this->col_val_map = $col_val_map;
-        return $this;
     }
 
     /**
@@ -123,7 +94,7 @@ class Update extends StatementBuilder
 
     /**
      * @param string $type
-     * @return Update
+     * @return Delete
      */
     public function setType($type)
     {
@@ -143,11 +114,35 @@ class Update extends StatementBuilder
 
     /**
      * @param array $where
-     * @return Update
+     * @return Delete
      */
     public function setWhere($where)
     {
         $this->where = $where;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getColumns()
+    {
+        $columns_string = ' ' . implode(', ', $this->columns);
+
+        if (!$columns_string) {
+            $columns_string = '';
+        }
+
+        return $columns_string;
+    }
+
+    /**
+     * @param array $columns
+     * @return Delete
+     */
+    public function setColumns($columns)
+    {
+        $this->columns = $columns;
         return $this;
     }
 
@@ -161,12 +156,11 @@ class Update extends StatementBuilder
 
     /**
      * @param bool $if_exists
-     * @return Update
+     * @return Delete
      */
     public function setIfExists($if_exists)
     {
         $this->if_exists = $if_exists;
         return $this;
     }
-
 }

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,30 +24,35 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF\StatementBuilder;
+namespace deasilworks\cef\StatementBuilder;
 
-use DeasilWorks\CEF\StatementBuilder;
+use deasilworks\cef\StatementBuilder;
 
 /**
- * Class Select
- * @package DeasilWorks\CEF\StatementBuilder
+ * Class Update
+ * @package deasilworks\cef\StatementBuilder
  */
-class Select extends StatementBuilder
+class Update extends StatementBuilder
 {
     /**
      * @var string
      */
-    protected $type = 'SELECT JSON';
+    protected $type = 'UPDATE';
 
     /**
      * @var array
      */
-    protected $columns = array();
+    protected $col_val_map = array();
 
     /**
      * @var array
      */
     protected $where = array();
+
+    /**
+     * @var bool
+     */
+    protected $if_exists = false;
 
     /**
      * To String
@@ -64,16 +69,48 @@ class Select extends StatementBuilder
     {
         $cql = '';
 
-        if ($this->getType() == 'SELECT' || $this->getType() == 'SELECT JSON') {
-            $cql = $this->getType() . ' ' . $this->getColumns();
-        }
-        $cql .= ' FROM ' . $this->getFrom();
+        $cql .= $this->getType() . ' ' . $this->getFrom() . ' SET ' . $this->getColValMap();
 
         if ($where = $this->getWhere()) {
             $cql .= ' WHERE ' . $where;
+
+            if ($this->isIfExists()) {
+                $cql .= ' IF EXISTS';
+            }
         }
 
         return $cql;
+    }
+
+    /**
+     * @return string | null
+     */
+    public function getColValMap()
+    {
+        $set_string = null;
+
+        foreach ($this->col_val_map as $col => $val) {
+            $set_string ? $set_string .= ', ' : false;
+
+            if (is_string($val)) {
+                $val = '\'' . str_replace("'","''", $val) . '\'';
+            }
+
+
+            $set_string .= $col . ' = ' . $val;
+        }
+
+        return $set_string;
+    }
+
+    /**
+     * @param array $col_val_map
+     * @return Update
+     */
+    public function setColValMap($col_val_map)
+    {
+        $this->col_val_map = $col_val_map;
+        return $this;
     }
 
     /**
@@ -86,35 +123,11 @@ class Select extends StatementBuilder
 
     /**
      * @param string $type
-     * @return Select
+     * @return Update
      */
     public function setType($type)
     {
         $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getColumns()
-    {
-        $columns_string = implode(', ', $this->columns);
-
-        if (!$columns_string) {
-            $columns_string = '*';
-        }
-
-        return $columns_string;
-    }
-
-    /**
-     * @param array $columns
-     * @return Select
-     */
-    public function setColumns($columns)
-    {
-        $this->columns = $columns;
         return $this;
     }
 
@@ -130,11 +143,29 @@ class Select extends StatementBuilder
 
     /**
      * @param array $where
-     * @return Select
+     * @return Update
      */
     public function setWhere($where)
     {
         $this->where = $where;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isIfExists()
+    {
+        return $this->if_exists;
+    }
+
+    /**
+     * @param bool $if_exists
+     * @return Update
+     */
+    public function setIfExists($if_exists)
+    {
+        $this->if_exists = $if_exists;
         return $this;
     }
 

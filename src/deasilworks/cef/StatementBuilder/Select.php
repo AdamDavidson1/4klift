@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,25 +24,20 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF\StatementBuilder;
+namespace deasilworks\cef\StatementBuilder;
 
-use DeasilWorks\CEF\StatementBuilder;
+use deasilworks\cef\StatementBuilder;
 
 /**
- * Class Delete
- * @package DeasilWorks\CEF\StatementBuilder
+ * Class Select
+ * @package deasilworks\cef\StatementBuilder
  */
-class Delete extends StatementBuilder
+class Select extends StatementBuilder
 {
     /**
      * @var string
      */
-    protected $type = 'DELETE';
-
-    /**
-     * @var array
-     */
-    protected $where = array();
+    protected $type = 'SELECT JSON';
 
     /**
      * @var array
@@ -50,9 +45,9 @@ class Delete extends StatementBuilder
     protected $columns = array();
 
     /**
-     * @var bool
+     * @var array
      */
-    protected $if_exists = false;
+    protected $where = array();
 
     /**
      * To String
@@ -64,21 +59,18 @@ class Delete extends StatementBuilder
 
     /**
      * @return string
-     * @throws \Exception
      */
     public function getStatement()
     {
         $cql = '';
 
-        if ($this->getFrom() && $this->getWhere()) {
-            $cql .= $this->getType() . $this->getColumns() . ' FROM ' . $this->getFrom() . ' WHERE ' . $this->getWhere();
+        if ($this->getType() == 'SELECT' || $this->getType() == 'SELECT JSON') {
+            $cql = $this->getType() . ' ' . $this->getColumns();
+        }
+        $cql .= ' FROM ' . $this->getFrom();
 
-            if ($this->isIfExists()) {
-                $cql .= ' IF EXISTS';
-            }
-
-        } else {
-            throw new \Exception('Delete statement must contain from and where values');
+        if ($where = $this->getWhere()) {
+            $cql .= ' WHERE ' . $where;
         }
 
         return $cql;
@@ -94,11 +86,35 @@ class Delete extends StatementBuilder
 
     /**
      * @param string $type
-     * @return Delete
+     * @return Select
      */
     public function setType($type)
     {
         $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getColumns()
+    {
+        $columns_string = implode(', ', $this->columns);
+
+        if (!$columns_string) {
+            $columns_string = '*';
+        }
+
+        return $columns_string;
+    }
+
+    /**
+     * @param array $columns
+     * @return Select
+     */
+    public function setColumns($columns)
+    {
+        $this->columns = $columns;
         return $this;
     }
 
@@ -114,7 +130,7 @@ class Delete extends StatementBuilder
 
     /**
      * @param array $where
-     * @return Delete
+     * @return Select
      */
     public function setWhere($where)
     {
@@ -122,45 +138,4 @@ class Delete extends StatementBuilder
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getColumns()
-    {
-        $columns_string = ' ' . implode(', ', $this->columns);
-
-        if (!$columns_string) {
-            $columns_string = '';
-        }
-
-        return $columns_string;
-    }
-
-    /**
-     * @param array $columns
-     * @return Delete
-     */
-    public function setColumns($columns)
-    {
-        $this->columns = $columns;
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isIfExists()
-    {
-        return $this->if_exists;
-    }
-
-    /**
-     * @param bool $if_exists
-     * @return Delete
-     */
-    public function setIfExists($if_exists)
-    {
-        $this->if_exists = $if_exists;
-        return $this;
-    }
 }

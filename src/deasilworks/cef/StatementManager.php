@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,17 +24,17 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF;
+namespace deasilworks\cef;
 
-use DeasilWorks\CEF\StatementBuilder\InsertJson;
-use DeasilWorks\CEF\StatementBuilder\InsertModel;
-use DeasilWorks\CEF\StatementBuilder\Select;
+use deasilworks\cef\StatementBuilder\InsertJson;
+use deasilworks\cef\StatementBuilder\InsertModel;
+use deasilworks\cef\StatementBuilder\Select;
 use Pimple\Container;
 use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
  * Class StatementManager
- * @package DeasilWorks\CEF
+ * @package deasilworks\cef
  */
 abstract class StatementManager
 {

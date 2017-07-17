@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,15 +24,15 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF;
+namespace deasilworks\cef;
 
-use DeasilWorks\CEF\Statement\Simple;
+use deasilworks\cef\Statement\Simple;
 use Pimple\Container;
 
 
 /**
  * Class EntityManager
- * @package DeasilWorks\CEF
+ * @package deasilworks\cef
  */
 abstract class EntityManager
 {
@@ -125,7 +125,7 @@ abstract class EntityManager
         if ($collection instanceof ResultContainer) {
             return $collection;
         } else {
-            throw new \Exception('E5000', $collection_class . ' is not an instance of DeasilWorks\CEF\StatementManager.');
+            throw new \Exception('E5000', $collection_class . ' is not an instance of deasilworks\CEF\StatementManager.');
         }
     }
 
@@ -179,7 +179,7 @@ abstract class EntityManager
             $statement_manager->setResultContainerClass($collection_class);
             $statement_manager->setEntityManager($this);
         } else {
-            throw new \Exception($statement_class . ' is not an instance of DeasilWorks\CEF\StatementManager.');
+            throw new \Exception($statement_class . ' is not an instance of deasilworks\CEF\StatementManager.');
         }
 
         return $statement_manager;

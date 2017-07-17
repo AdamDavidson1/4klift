@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF;
+namespace deasilworks\cef;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Context;

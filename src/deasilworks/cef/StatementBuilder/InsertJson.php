@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,28 +24,63 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF\Statement;
+namespace deasilworks\cef\StatementBuilder;
 
-use DeasilWorks\CEF\StatementBuilder;
-use DeasilWorks\CEF\StatementManager;
+use deasilworks\cef\StatementBuilder;
 
 /**
- * Class Simple
- * @package DeasilWorks\CEF\Statement
+ * Class InsertJson
+ * @package deasilworks\cef\StatementBuilder
  */
-class Simple extends StatementManager
+class InsertJson extends StatementBuilder
 {
+    /**
+     * @var string
+     */
+    protected $type = 'INSERT JSON';
 
     /**
-     * @param string|StatementBuilder $simple_statement
-     * @return $this
+     * @var string
      */
-    public function setStatement($simple_statement)
+    protected $json;
+
+    /**
+     * To String
+     */
+    public function __toString()
     {
-        if (is_object($simple_statement) && $simple_statement instanceof StatementBuilder) {
-            $this->setSb($simple_statement);
-        }
-        $this->statement = new \Cassandra\SimpleStatement((string) $simple_statement);
+        return $this->getStatement();
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatement()
+    {
+        // cassandra string support
+        $json = str_replace("'", "''", $this->getJson());
+
+        $cql = 'INSERT INTO ' . $this->getFrom() . " JSON '" . $json . "'";
+
+
+        return $cql;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJson()
+    {
+        return $this->json;
+    }
+
+    /**
+     * @param string $json
+     * @return InsertJson
+     */
+    public function setJson($json)
+    {
+        $this->json = $json;
         return $this;
     }
 

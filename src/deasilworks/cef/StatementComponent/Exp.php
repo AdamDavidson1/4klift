@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,34 +24,52 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF;
+namespace deasilworks\cef\StatementComponent;
+
 
 /**
- * Class StatementBuilder
- * @package DeasilWorks\CEF
+ * Class Exp
+ * @package deasilworks\cef\StatementComponent
  */
-class StatementBuilder
+class Exp
 {
+
     /**
      * @var string
      */
-    protected $from;
+    protected $expression;
+
+    function __toString()
+    {
+        return (string)$this->expression;
+    }
+
+    /**
+     * Exp constructor.
+     * @param string $exp_string | null
+     */
+    public function __construct($exp_string=null)
+    {
+        $this->setExpression($exp_string);
+    }
 
     /**
      * @return string
      */
-    public function getFrom()
+    public function getExpression()
     {
-        return $this->from;
+        return $this->expression;
     }
 
     /**
-     * @param string $from
-     * @return $this
+     * @param string $expression
+     * @return Exp
      */
-    public function setFrom($from)
+    public function setExpression($expression)
     {
-        $this->from = $from;
+        $this->expression = $expression;
         return $this;
     }
+
+
 }

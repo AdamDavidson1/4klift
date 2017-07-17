@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF;
+namespace deasilworks\cef;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -33,8 +33,8 @@ use Doctrine\Common\Annotations\AnnotationRegistry as AR;
 AR::registerLoader('class_exists');
 
 /**
- * Class CEF
- * @package DeasilWorks\CEF
+ * Class cef
+ * @package deasilworks\cef
  */
 class CEF implements ServiceProviderInterface
 {
@@ -70,7 +70,7 @@ class CEF implements ServiceProviderInterface
         if ($this->$name instanceof EntityManager) {
             $this->$name->setApp($this->getApp());
         } else {
-            throw new \Exception($name . ' is not an instance of DeasilWorks\CEF\EntityManager.');
+            throw new \Exception($name . ' is not an instance of deasilworks\CEF\EntityManager.');
         }
 
         return $this->$name;
@@ -88,14 +88,14 @@ class CEF implements ServiceProviderInterface
         if ($manager instanceof EntityManager) {
             $manager->setApp($this->getApp());
         } else {
-            throw new \Exception($manager_class . ' is not an instance of DeasilWorks\CEF\EntityManager.');
+            throw new \Exception($manager_class . ' is not an instance of deasilworks\CEF\EntityManager.');
         }
 
         return $manager;
     }
 
     /**
-     * Handel setting properties on the CEF service
+     * Handel setting properties on the cef service
      *
      * @param $name
      * @param $value

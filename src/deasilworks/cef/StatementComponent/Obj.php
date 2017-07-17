@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,26 +24,61 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF\StatementBuilder;
+namespace deasilworks\cef\StatementComponent;
 
-use DeasilWorks\CEF\EntityModel;
+use deasilworks\cef\CEFData;
 
 /**
- * Class InsertModel
- * @package DeasilWorks\CEF\StatementBuilder
+ * Class Obj
+ *
+ * Takes a CEFData and allows it to be stringified with fromJSON
+ * for CQL statements
+ *
+ * @package deasilworks\cef\StatementComponent
  */
-class InsertModel extends InsertJson
+class Obj
 {
     /**
-     * Set Model
-     *
-     * @param $serialize_null boolean
-     * @param EntityModel $model
-     * @return InsertModel
+     * @var CEFData
      */
-    public function setModel($model, $serialize_null = true)
+    protected $cef_data;
+
+    function __toString()
     {
-        $this->setJson($model->toJson($serialize_null));
+        if ($this->getCefData()) {
+            // cassandra string support
+            $json = str_replace("'", "''", $this->getCefData()->toJson());
+
+            return 'fromJSON(\'' . $json . '\')';
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * Obj constructor.
+     * @param CEFData $cef_data
+     */
+    public function __construct(CEFData $cef_data)
+    {
+        $this->setCefData($cef_data);
+    }
+
+    /**
+     * @return CEFData
+     */
+    public function getCefData()
+    {
+        return $this->cef_data;
+    }
+
+    /**
+     * @param CEFData $cef_data
+     * @return Obj
+     */
+    public function setCefData($cef_data)
+    {
+        $this->cef_data = $cef_data;
         return $this;
     }
 

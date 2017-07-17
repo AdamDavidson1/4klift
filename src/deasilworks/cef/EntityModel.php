@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of CEF (a 4klift component).
+ * This file is part of cef (a 4klift component).
  *
  * Copyright (c) 2017 Deasil Works Inc.
  *
@@ -24,18 +24,18 @@
  * THE SOFTWARE.
  */
 
-namespace DeasilWorks\CEF;
+namespace deasilworks\cef;
 
 use JMS\Serializer\Annotation\Exclude;
-use DeasilWorks\CEF\StatementBuilder\InsertModel;
-use DeasilWorks\CEF\Statement\Simple;
+use deasilworks\cef\StatementBuilder\InsertModel;
+use deasilworks\cef\Statement\Simple;
 
 /**
  * Class EntityModel
  *
  * This is the generic entity model and allows the setting of arbitrary properties.
  *
- * @package DeasilWorks\CEF
+ * @package deasilworks\cef
  */
 class EntityModel extends CEFData
 {
