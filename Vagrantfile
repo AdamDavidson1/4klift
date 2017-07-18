@@ -52,7 +52,6 @@ SCRIPT
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.box = "bento/centos-6.7"
-    config.vbguest.auto_update = false
 
     config.vm.provision "shell", inline: $provision_script
     config.vm.synced_folder ".", "/home/vagrant/project", disabled: false, type: "virtualbox"
