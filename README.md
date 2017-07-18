@@ -7,52 +7,38 @@
 [![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
 [![License](https://poser.pugx.org/deasilworks/4klift/license)](https://packagist.org/packages/deasilworks/4klift)
 
-TBD
+## Introduction
 
-**No code yet**. We are still in the process of preparing some of our libraries for open source. This development vm is also a work-in-progress and may result in additional packages installed on provision and eventually a new base box with many of the provisioned requirements pre-installed. However this is a useful vm for high performance web development.
+**4klift** is a set of PHP components for developing highly available, redundant and scalable web sites or services on top of Apache Cassandra.
 
-We target software that can run on CentOS 6.6. 4klift is required to run on a wide range of enterprise systems that may be quite old (in internet years) but very stable. However this is simply the minimal requirements and every effort is taken to ensure the ability to run on modern distributions and old alike.
+Cassandra makes **4klift** well suited for server side applications requiring greater than 99.99% service availability while also being able to withstand up to millions of read and write operations per second.
 
-The 4klift development vm currently consists of the following packages:
+This framework of components can be used together or individually. Many components may be used individually in a variety of other frameworks, including Symfony, Silex, Laraval and Drupal.
 
-  - [CentOS 6.6](https://www.centos.org/)
-  - [java-1.8.0-openjdk](http://openjdk.java.net/)
-  - [Apache Cassandra 3.9.0 (CQL spec 3.4.2) (datastax-ddc)](https://academy.datastax.com/planet-cassandra/cassandra)
-  - [cqlsh 5.0.1](http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlsh.html)
-  - [nginx 1.10.2](https://nginx.org/en/)
-  - [PHP 5.6.31](http://php.net/) / [php-fpm](https://php-fpm.org/)
-  - [composer >=1.4.2](https://getcomposer.org/)
-  - [PHPUnit 5.7.21](https://phpunit.de/)
-  - [NodeJS 6.11.1](https://nodejs.org/en/)
-  - [npm 3.10.10](https://www.npmjs.com/)
-  - [Sass 3.4.25](http://sass-lang.com/)
-  - [bower 1.8.0](https://bower.io/)
-  - [yarn 0.27.5](https://yarnpkg.com/en/)
-  - [git 1.7.1](https://git-scm.com/)
+#### No Code Yet.
 
+We are in the process of preparing some of our libraries for open source. This development VM is also a work-in-progress and may result in additional packages installed on provision and eventually a new base box with many of the provisioned requirements pre-installed. However, this remains a useful VM for high performance web development.
 
-## Installing 4klift Base Project
+We target software that can run on CentOS 6.7. **4klift** is required to run on a wide range of enterprise systems that may be venerable in internet years, but very stable. However, these are simply minimal requirements; every effort is taken to ensure **4klift's** ability to run on modern distributions.
 
+To use the latest dev version, use the *dev-master* branch.
 
-Get and run:
+## 4klift Requires:
 
-    composer create-project -s dev deasilworks/4klift dev-dev
-    cd 4klift
-    vagrant up
-    vagrant ssh
-    
-Browse to `http://localhost:8080` or add `192.168.222.11 4klift.vm.deasil.works` to your workstation's host file.
+  - [Composer](https://getcomposer.org/)
+  - [Vagrant](https://www.vagrantup.com/)
+  - [VirtualBox](https://www.virtualbox.org/)
 
-## Development Environment - Vagrant & Virtualbox
+## The Development Environment
 
-Use for developing 4klift based projects and 4klift framework development.
+**4klift** requires Vagrant and VirtualBox. This development virtual machine works on Mac, Windows and most Linux variants. Install for the appropriate platform:
 
-Requires Virtualbox, Vagrant and the vagrant-vbgust plugin. This development
-virtual machine works on Mac, Windows or most Linux variants. 
+  - [Vagrant](https://www.vagrantup.com/downloads.html)
+  - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-### Mac Install Requirements:
+If you have a Mac, you can use Homebrew to install.
 
-Install Homebrew if you don't have it;
+If you do not have Homebrew:
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -61,12 +47,50 @@ Install Virtualbox and Vagrant with `brew`:
     brew cask install virtualbox
     brew cask install vagrant
 
+## Installing the 4klift Base Project
+
+Navigate to or create a project directory. Run:
+    
+    composer create-project -s dev deasilworks/4klift 4klift dev-master
+
+This will clone the project and create a 4klift directory pointing to the *dev-master* branch. CD into the directory and fire up vagrant:
+
+    cd 4klift
+    vagrant up
+    vagrant ssh
+
+This will load all composer dependencies. Answer yes to the "Do you want to remove the existing VCS (.git, .svn..) history?" prompt.
+
+When running, browse to `http://localhost:8080`.
+Or, add the following line to your workstation's *hosts* file:
+
+    192.168.222.11 4klift.vm.deasil.works
+
+... and browse to `http://4klift.vm.deasil.works`.
+
+## What's on the Virtual Machine?
+
+The 4klift development VM currently consists of the following packages:
+
+  - [CentOS 6.7](https://www.centos.org/)
+  - [java-1.8.0-openjdk](http://openjdk.java.net/)
+  - [Apache Cassandra 3.9.0 (CQL spec 3.4.2) (datastax-ddc)](https://academy.datastax.com/planet-cassandra/cassandra)
+  - [cqlsh 5.0.1](http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlsh.html)
+  - [NGINX 1.10.2](https://nginx.org/en/)
+  - [PHP 5.6.31](http://php.net/) / [php-fpm](https://php-fpm.org/)
+  - [Composer >=1.4.2](https://getcomposer.org/)
+  - [PHPUnit 5.7.21](https://phpunit.de/)
+  - [NodeJS 6.11.1](https://nodejs.org/en/)
+  - [npm 3.10.10](https://www.npmjs.com/)
+  - [Sass 3.4.25](http://sass-lang.com/)
+  - [Bower 1.8.0](https://bower.io/)
+  - [Yarn 0.27.5](https://yarnpkg.com/en/)
+  - [git 1.7.1](https://git-scm.com/)
+
 ## Contributing to 4klift
 
-`git clone https://github.com/deasilworks/4klift.git` and fork.
-
-TBD - Development process
+If you'd like to contribute to the **4klift** project, create component libraries, etc., you can fork and clone the project per the [Contributing](CONTRIBUTING.md) documentation.
     
-
+##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
     
