@@ -36,7 +36,7 @@ The 4klift development vm currently consists of the following packages:
 
 Get and run:
 
-    composer create-project -s dev deasilworks/4klift dev-dev
+    composer create-project -s dev deasilworks/4klift 4klift dev-master
     cd 4klift
     vagrant up
     vagrant ssh
