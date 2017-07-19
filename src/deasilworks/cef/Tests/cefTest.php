@@ -11,27 +11,35 @@ require_once (__DIR__ . '/src/TestEntityManager.php');
  */
 class cefTest extends \PHPUnit_Framework_TestCase
 {
+    private $em;
+
+    private function getTestEntityManager()
+    {
+        if (!$this->em || !$this->em instanceof TestEntityManager) {
+            $this->em = new TestEntityManager();
+            $this->em->setConfig(array('keyspace' => 'system', 'contact_points' => array('127.0.0.1')));
+        }
+
+        return $this->em;
+    }
+
     /**
      * CEF Test
      */
     public function testCEF()
     {
-        $app = new \Silex\Application();
-        $app->register(new CEF());
+        /** @var TestEntityManager $em */
+        $em = $this->getTestEntityManager();
 
-        $em = new TestEntityManager();
-        $em->setConfig(array('keyspace' => 'system', 'contact_points' => array('127.0.0.1')));
-
+        /** @var Simple $sm */
         $sm = $em
             ->getStatementManager(Simple::class);
 
-        /** @var \deasilworks\cef\StatementBuilder\Select $sb */
+        /** @var Select $sb */
         $sb = $sm->getStatementBuilder(Select::class);
 
         // the default SELECT_JSON_TYPE is not available in cassandra 2.x
         $sm->setStatement($sb->setType(Select::SELECT_TYPE)->setFrom('local'));
-
-        echo $sb->getStatement();
 
         /** @var \deasilworks\cef\ResultContainer $ec */
         $rc = $sm->execute();
@@ -42,9 +50,8 @@ class cefTest extends \PHPUnit_Framework_TestCase
         // does it exist?
         $this->assertTrue(property_exists($em, 'cluster_name'));
 
-        // is is not null?
+        // is not null?
         $this->assertTrue(isset($em->cluster_name));
-
     }
 
 }
