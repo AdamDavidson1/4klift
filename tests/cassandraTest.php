@@ -17,10 +17,13 @@ class cassandraTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Cassandra Connect Test
-     * @depends testHasCassandraDriver
+     * @_depends testHasCassandraDriver
      */
     public function testCassandraConnect()
     {
+        echo "CASSANDRA EXTENSION VERSION: " . \Cassandra::VERSION . "\n";
+        echo "CASSANDRA DRIVER VERSION: " . \Cassandra::CPP_DRIVER_VERSION . "\n";
+
         /** @var \Cassandra\Cluster $cluster */
         $cluster = \Cassandra::cluster()->build();
 
@@ -30,7 +33,7 @@ class cassandraTest extends \PHPUnit_Framework_TestCase
         $statement = new \Cassandra\SimpleStatement('SELECT cluster_name, release_version, cql_version from local');
 
         /** @var \Cassandra\Future $future */
-        $future    = $session->executeAsync($statement, new \Cassandra\ExecutionOptions(array()));
+        $future    = $session->executeAsync($statement);
 
         /** @var \Cassandra\Rows $result */
         $result = $future->get(5);
@@ -41,6 +44,8 @@ class cassandraTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('cluster_name', $row);
         $this->assertTrue($row['cluster_name'] == 'Test Cluster');
         $this->assertTrue(true);
+
+
     }
 
 }

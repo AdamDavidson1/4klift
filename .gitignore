@@ -2,5 +2,6 @@
 .DS_Store
 .idea
 .vagrant
+.subsplit
 *.log
 vendor
