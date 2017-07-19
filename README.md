@@ -7,6 +7,8 @@
 [![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
 [![License](https://poser.pugx.org/deasilworks/4klift/license)](https://packagist.org/packages/deasilworks/4klift)
 
+![4klift](assets/4KLIFT_Logo.png "4klift")
+
 ## Introduction
 
 **4klift** is a set of PHP components for developing highly available, redundant and scalable web sites or services on top of Apache Cassandra.
