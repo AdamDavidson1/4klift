@@ -24,7 +24,6 @@ class cassandraTest extends \PHPUnit_Framework_TestCase
         /** @var \Cassandra\Cluster $cluster */
         $cluster = \Cassandra::cluster()
             ->withContactPoints('127.0.0.1')
-//            ->withHostnameResolution(false)
             ->build();
 
         /** @var \Cassandra\Session $session */
