@@ -23,6 +23,16 @@ $provision_script = <<SCRIPT
     yum install -y php-fpm php php-devel php-mysql php-mbstring php-xml pcre-devel
     yum install -y cassandra-cpp-driver cassandra-cpp-driver-devel libuv libuv-devel
 
+
+
+    cd /usr/src/
+    wget https://pecl.php.net/get/cassandra-1.3.0.tgz
+    tar -xzvf cassandra-1.3.0.tgz
+    cd /usr/src/cassandra-1.3.0
+    phpize
+    /usr/src/cassandra-1.3.0/configure
+    make
+
     cd /usr/src/
     wget https://pecl.php.net/get/cassandra-1.2.2.tgz
     tar -xzvf cassandra-1.2.2.tgz
@@ -30,8 +40,9 @@ $provision_script = <<SCRIPT
     phpize
     /usr/src/cassandra-1.2.2/configure
     make
-    ln -sf /home/vagrant/project/dev/vm/40-cassandra.ini /etc/php.d/40-cassandra.ini
 
+    # switch drivers when needed
+    ln -sf /home/vagrant/project/dev/vm/40-cassandra-v1.2.2.ini /etc/php.d/40-cassandra.ini
 
     rm -f /home/vagrant/.bashrc
     ln -sf /home/vagrant/project/dev/vm/bashrc /home/vagrant/.bashrc
