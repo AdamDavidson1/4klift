@@ -192,12 +192,18 @@ abstract class StatementManager
             /** @var \Cassandra\Cluster\Builder $cluster */
             $cluster = \Cassandra::cluster();
             $cluster
-                ->withCredentials($config['username'], $config['password'])
                 ->withDefaultConsistency(\Cassandra::CONSISTENCY_LOCAL_QUORUM)
                 ->withRetryPolicy($logged_retry)
                 ->withTokenAwareRouting(true);
 
-            call_user_func_array(array($cluster, "withContactPoints"), $config['contact_points']);
+            if (array_key_exists('username', $config) && array_key_exists('password', $config)) {
+                $cluster->withCredentials($config['username'], $config['password']);
+            }
+
+            if (array_key_exists('withContactPoints', $config)) {
+                call_user_func_array(array($cluster, "withContactPoints"), $config['contact_points']);
+            }
+
             $this->cluster = $cluster->build();
         }
 

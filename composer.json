@@ -45,7 +45,7 @@
     },
     "autoload": {
         "psr-0" : {
-            "Deasil\\CEF" : "src"
+            "deasilworks" : "src"
         }
     }
 }

@@ -14,8 +14,8 @@
         bootstrap                   = "vendor/autoload.php">
 
     <testsuites>
-        <testsuite name="Test Suite">
-            <directory>src/</directory>
+        <testsuite name="4klift Test Suite">
+            <directory>./src/deasilworks/*/Tests/</directory>
             <directory>tests/</directory>
         </testsuite>
     </testsuites>
