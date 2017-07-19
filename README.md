@@ -25,16 +25,16 @@ To use the latest dev version, use the *dev-master* branch.
 
 ## 4klift Requires:
 
-  - [Composer](https://getcomposer.org/)
-  - [Vagrant](https://www.vagrantup.com/)
-  - [VirtualBox](https://www.virtualbox.org/)
+  - [Composer](https://getcomposer.org/ "Composer")
+  - [Vagrant](https://www.vagrantup.com/ "Vagrant")
+  - [VirtualBox](https://www.virtualbox.org/ "VirtualBox")
 
 ## The Development Environment
 
 **4klift** requires Vagrant and VirtualBox. This development virtual machine works on Mac, Windows and most Linux variants. Install for the appropriate platform:
 
-  - [Vagrant](https://www.vagrantup.com/downloads.html)
-  - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+  - [Vagrant](https://www.vagrantup.com/downloads.html "Download Vagrant")
+  - [VirtualBox](https://www.virtualbox.org/wiki/Downloads "Download VirtualBox")
 
 If you have a Mac, you can use Homebrew to install.
 
@@ -89,8 +89,11 @@ The 4klift development VM currently consists of the following packages:
 
 ## Contributing to 4klift
 
-If you'd like to contribute to the **4klift** project, create component libraries, etc., you can fork and clone the project per the [Contributing](CONTRIBUTING.md) documentation.
-    
+If you'd like to contribute to the **4klift** project, create component libraries, etc., you can fork and clone the project.
+
+- **[How to Contribute to 4klift](docs/CONTRIBUTING.md "Contributing to 4klift")**
+- **[4klift Logos and Assets](assets/README.md "4klift Logos and Assets")**
+
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
     
