@@ -43,29 +43,29 @@ class EntityModel extends CEFData
      * @Exclude()
      * @var string
      */
-    protected $table_name;
+    protected $tableName;
 
     /**
      * @Exclude()
      * @var EntityManager
      */
-    protected $entity_manager;
+    protected $entityManager;
 
     /**
      * @return string
      */
     public function getTableName()
     {
-        return $this->table_name;
+        return $this->tableName;
     }
 
     /**
-     * @param string $table_name
+     * @param string $tableName
      * @return EntityModel
      */
-    public function setTableName($table_name)
+    public function setTableName($tableName)
     {
-        $this->table_name = $table_name;
+        $this->tableName = $tableName;
         return $this;
     }
 
@@ -74,16 +74,16 @@ class EntityModel extends CEFData
      */
     public function getEntityManager()
     {
-        return $this->entity_manager;
+        return $this->entityManager;
     }
 
     /**
-     * @param EntityManager $entity_manager
+     * @param EntityManager $entityManager
      * @return EntityModel
      */
-    public function setEntityManager(EntityManager $entity_manager)
+    public function setEntityManager(EntityManager $entityManager)
     {
-        $this->entity_manager = $entity_manager;
+        $this->entityManager = $entityManager;
         return $this;
     }
 
@@ -95,7 +95,7 @@ class EntityModel extends CEFData
      */
     public function save()
     {
-        if (!$em = $this->getEntityManager()) {
+        if (!$entityMgr = $this->getEntityManager()) {
             throw new \Exception('Model can not be inserted without an Entity Manager (setEntityManager).');
         }
 
@@ -103,13 +103,13 @@ class EntityModel extends CEFData
             throw new \Exception('Model can not be inserted without a defined table name.');
         }
 
-        $sm = $em->getStatementManager(Simple::class);
+        $stmtManager = $entityMgr->getStatementManager(Simple::class);
 
-        /** @var InsertModel $sb */
-        $sb = $sm->getStatementBuilder(InsertModel::class);
+        /** @var InsertModel $stmtBuilder */
+        $stmtBuilder = $stmtManager->getStatementBuilder(InsertModel::class);
 
-        return $sm
-            ->setStatement($sb->setModel($this))
+        return $stmtManager
+            ->setStatement($stmtBuilder->setModel($this))
             ->setConsistency(\Cassandra::CONSISTENCY_LOCAL_ONE)
             ->execute();
     }

@@ -110,13 +110,13 @@ abstract class StatementManager
      * ResultContainer class
      * @var string
      */
-    protected $result_container_class = ResultContainer::class;
+    protected $resultClass = ResultContainer::class;
 
     /**
      * EntityModel class
      * @var string
      */
-    protected $result_model_class = EntityModel::class;
+    protected $resultModelClass = EntityModel::class;
 
     /**
      * @return Container
@@ -428,19 +428,19 @@ abstract class StatementManager
      */
     public function getResultContainerClass()
     {
-        return $this->result_container_class;
+        return $this->resultClass;
     }
 
     /**
-     * @param string $result_container_class
+     * @param string $resultClass
      * @return $this
      */
-    public function setResultContainerClass($result_container_class)
+    public function setResultContainerClass($resultClass)
     {
-        $this->result_container_class = $result_container_class;
+        $this->resultClass = $resultClass;
 
         /** @var ResultContainer $rc */
-        $rc = new $result_container_class();
+        $rc = new $resultClass();
 
         // set the model class
         $this->setResultModelClass($rc->getModelClass());
@@ -470,16 +470,16 @@ abstract class StatementManager
      */
     public function getResultModelClass()
     {
-        return $this->result_model_class;
+        return $this->resultModelClass;
     }
 
     /**
      * @param string $result_model_class
      * @return $this
      */
-    protected function setResultModelClass($result_model_class)
+    protected function setResultModelClass($resultModelClass)
     {
-        $this->result_model_class = $result_model_class;
+        $this->resultModelClass = $resultModelClass;
         return $this;
     }
 
