@@ -101,11 +101,10 @@ class EntityCollection extends CEFData implements \Iterator
      */
     public function getModel()
     {
-        $name_path = $this->getModelClass();
-        $model = new $name_path();
+        $namePath = $this->getModelClass();
+        $model = new $namePath();
 
-        if ($model instanceof EntityModel) {
-        } else {
+        if (!($model instanceof EntityModel)) {
             throw new \Exception($this->valueClass . ' is not an instance of EntityModel.');
         }
 

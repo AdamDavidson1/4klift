@@ -67,7 +67,7 @@ class CEF implements ServiceProviderInterface
     {
         $this->$name = new $name();
 
-        if (!$this->$name instanceof EntityManager) {
+        if (!($this->$name instanceof EntityManager)) {
             throw new \Exception($name . ' is not an instance of deasilworks\cef\EntityManager.');
         }
 

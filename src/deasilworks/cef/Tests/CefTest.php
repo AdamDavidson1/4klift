@@ -13,9 +13,14 @@ class CefTest extends \PHPUnit_Framework_TestCase
 {
     private $entityMgr;
 
+    /**
+     * Get Test Entity Manager
+     *
+     * @return TestEntityManager
+     */
     private function getTestEntityManager()
     {
-        if (!$this->entityMgr || !$this->entityMgr instanceof TestEntityManager) {
+        if (!$this->entityMgr || !($this->entityMgr instanceof TestEntityManager)) {
             $this->entityMgr = new TestEntityManager();
             $this->entityMgr->setConfig(array('keyspace' => 'system', 'contact_points' => array('127.0.0.1')));
         }

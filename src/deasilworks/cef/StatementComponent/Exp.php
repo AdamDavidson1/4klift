@@ -46,11 +46,11 @@ class Exp
 
     /**
      * Exp constructor.
-     * @param string $exp_string | null
+     * @param string $expString | null
      */
-    public function __construct($exp_string=null)
+    public function __construct($expString=null)
     {
-        $this->setExpression($exp_string);
+        $this->setExpression($expString);
     }
 
     /**

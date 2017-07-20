@@ -124,7 +124,7 @@ abstract class EntityManager
         $collectionClass = $this->getCollectionClass();
         $collection = new $collectionClass();
 
-        if (!$collection instanceof ResultContainer) {
+        if (!($collection instanceof ResultContainer)) {
             throw new \Exception('E5000', $collectionClass . ' is not an instance of deasilworks\CEF\StatementManager.');
         }
 
@@ -175,7 +175,7 @@ abstract class EntityManager
 
         $collectionClass = $this->getCollectionClass();
 
-        if (!$statementManager instanceof StatementManager) {
+        if (!($statementManager instanceof StatementManager)) {
             throw new \Exception($statementClass . ' is not an instance of deasilworks\CEF\StatementManager.');
         }
         
