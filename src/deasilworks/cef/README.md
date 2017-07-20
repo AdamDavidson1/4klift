@@ -3,7 +3,7 @@ CEF - 4klift Component
 
 
 <p align="center"><a href="https://symfony.com" target="_blank">
-    <img src="https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Logo.png">
+    <img src="https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4fklift-component.png">
 </a></p>
 
 
