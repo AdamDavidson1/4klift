@@ -184,13 +184,13 @@ abstract class StatementManager
 
         if (!$this->cluster) {
             $retryPolicy = new \Cassandra\RetryPolicy\DowngradingConsistency();
-            $logged_retry = new \Cassandra\RetryPolicy\Logging($retryPolicy);
+            $loggedRetry = new \Cassandra\RetryPolicy\Logging($retryPolicy);
 
             /** @var \Cassandra\Cluster\Builder $cluster */
             $cluster = \Cassandra::cluster();
             $cluster
                 ->withDefaultConsistency(\Cassandra::CONSISTENCY_LOCAL_QUORUM)
-                ->withRetryPolicy($logged_retry)
+                ->withRetryPolicy($loggedRetry)
                 ->withTokenAwareRouting(true);
 
             if (array_key_exists('username', $config) && array_key_exists('password', $config)) {
@@ -296,16 +296,16 @@ abstract class StatementManager
     }
 
     /**
-     * @param string|StatementBuilder $simple_statement
+     * @param string|StatementBuilder $simpleStatement
      * @return $this
      */
-    public function setStatement($simple_statement)
+    public function setStatement($simpleStatement)
     {
-        if (is_object($simple_statement) && $simple_statement instanceof StatementBuilder) {
-            $this->setSb($simple_statement);
+        if (is_object($simpleStatement) && $simpleStatement instanceof StatementBuilder) {
+            $this->setSb($simpleStatement);
         }
 
-        $this->statement = $simple_statement;
+        $this->statement = $simpleStatement;
         return $this;
     }
 
@@ -471,7 +471,7 @@ abstract class StatementManager
     }
 
     /**
-     * @param string $result_model_class
+     * @param string $resultModelClass
      * @return $this
      */
     protected function setResultModelClass($resultModelClass)
@@ -485,25 +485,14 @@ abstract class StatementManager
      */
     public function getResultModel()
     {
-        $rm_class = $this->getResultModelClass();
+        $rmClass = $this->getResultModelClass();
 
         // @TODO: thow exception if this fails / check for EntityModel
 
         /** @var EntityModel $rc */
-        $rm = new $rm_class();
+        $resultModel = new $rmClass();
 
-        return $rm;
-    }
-
-    /**
-     * @deprecated
-     * @param ResultContainer | string $hydrate
-     * @return StatementManager
-     * @throws /Exception
-     */
-    public function setHydrate($hydrate)
-    {
-        throw new \Exception('Method setHydrate is deprecated on StatementManager. Use setResultContainerClass.');
+        return $resultModel;
     }
 
     /**
@@ -631,10 +620,10 @@ abstract class StatementManager
     }
 
     /**
-     * @param array $a
+     * @param array $previousArgs
      */
-    private function previousArgs(array $a) {
-        $this->previousArguments = $a;
+    private function previousArgs(array $previousArgs) {
+        $this->previousArguments = $previousArgs;
     }
 
 }

@@ -47,7 +47,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         /** @var \deasilworks\cef\ResultContainer $resultContainer */
         $resultContainer = $statementMgr->execute();
-        
+
         /** @var \deasilworks\cef\EntityModel $entityMgr */
         $entityMgr = $resultContainer->current();
 
