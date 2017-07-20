@@ -357,12 +357,12 @@ abstract class StatementManager
             $options['arguments'] = $this->getArguments();
         }
 
-        $cas_options = new \Cassandra\ExecutionOptions($options);
+        $casOptions = new \Cassandra\ExecutionOptions($options);
         $session = $this->getSession();
 
         // execute
         /** @var \Cassandra\Rows $result */
-        $result = $session->$type($this->getStatement(), $cas_options);
+        $result = $session->$type($this->getStatement(), $casOptions);
 
         // deal with args
         if (array_key_exists('arguments', $options)) {
@@ -453,7 +453,7 @@ abstract class StatementManager
     {
         $rcClass = $this->getResultContainerClass();
 
-        // @TODO: throw exception if this fails / check for ResultContainer
+        // @SOMEDAY: throw exception if this fails / check for ResultContainer
 
         /** @var ResultContainer $resultContainer */
         $resultContainer = new $rcClass();
@@ -487,7 +487,7 @@ abstract class StatementManager
     {
         $rmClass = $this->getResultModelClass();
 
-        // @TODO: thow exception if this fails / check for EntityModel
+        // @SOMEDAY: thow exception if this fails / check for EntityModel
 
         /** @var EntityModel $rc */
         $resultModel = new $rmClass();
@@ -541,7 +541,7 @@ abstract class StatementManager
      */
     public function getStatementBuilder($builderClass = Select::class)
     {
-        // @todo check for instance of StatementBuilder
+        // @SOMEDAY check for instance of StatementBuilder
 
         /** @var StatementBuilder $statementBuilder */
         $statementBuilder = new $builderClass();
