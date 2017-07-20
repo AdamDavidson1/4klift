@@ -1,5 +1,11 @@
+
 4klift (Forklift) Framework
 ===========================
+
+<p align="center"><a href="https://symfony.com" target="_blank">
+    <img src="https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Logo.png">
+</a></p>
+
 
 [![Code Climate](http://img.shields.io/codeclimate/github/deasilworks/4klift.svg)](https://codeclimate.com/github/deasilworks/4klift)
 [![Build Status](https://travis-ci.org/deasilworks/4klift.svg?branch=dev)](https://travis-ci.org/deasilworks/4klift)
@@ -8,9 +14,6 @@
 [![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
 [![License](https://poser.pugx.org/deasilworks/4klift/license)](https://packagist.org/packages/deasilworks/4klift)
 
-![4klift](assets/4KLIFT_Logo.png "4klift")
-
-## Introduction
 
 **4klift** is a set of PHP components for developing highly available, redundant and scalable web sites or services on top of Apache Cassandra.
 
