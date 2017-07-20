@@ -67,29 +67,29 @@ class CEF implements ServiceProviderInterface
     {
         $this->$name = new $name();
 
-        if ($this->$name instanceof EntityManager) {
-            $this->$name->setApp($this->getApp());
-        } else {
+        if (!$this->$name instanceof EntityManager) {
             throw new \Exception($name . ' is not an instance of deasilworks\cef\EntityManager.');
         }
+
+        $this->$name->setApp($this->getApp());
 
         return $this->$name;
     }
 
     /**
-     * @param string $manager_class
+     * @param string $managerClass
      * @return EntityManager
      * @throws \Exception
      */
-    function getEntityManager($manager_class)
+    function getEntityManager($managerClass)
     {
-        $manager = new $manager_class();
+        $manager = new $managerClass();
 
         if ($manager instanceof EntityManager) {
-            $manager->setApp($this->getApp());
-        } else {
-            throw new \Exception($manager_class . ' is not an instance of deasilworks\CEF\EntityManager.');
+            throw new \Exception($managerClass . ' is not an instance of deasilworks\CEF\EntityManager.');
         }
+
+        $manager->setApp($this->getApp());
 
         return $manager;
     }

@@ -109,13 +109,13 @@ class Select extends StatementBuilder
      */
     public function getColumns()
     {
-        $columns_string = implode(', ', $this->columns);
+        $columnsString = implode(', ', $this->columns);
 
-        if (!$columns_string) {
-            $columns_string = '*';
+        if (!$columnsString) {
+            $columnsString = '*';
         }
 
-        return $columns_string;
+        return $columnsString;
     }
 
     /**
@@ -133,9 +133,9 @@ class Select extends StatementBuilder
      */
     public function getWhere()
     {
-        $where_string = implode(' and ', $this->where);
+        $whereString = implode(' and ', $this->where);
 
-        return $where_string;
+        return $whereString;
     }
 
     /**

@@ -3,7 +3,7 @@
 /**
  * Class cassandraTest
  */
-class cassandraTest extends \PHPUnit_Framework_TestCase
+class CassandraTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Cassandra Driver Test

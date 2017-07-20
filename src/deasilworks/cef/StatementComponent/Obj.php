@@ -41,27 +41,27 @@ class Obj
     /**
      * @var CEFData
      */
-    protected $cef_data;
+    protected $cefData;
 
     function __toString()
     {
-        if ($this->getCefData()) {
-            // cassandra string support
-            $json = str_replace("'", "''", $this->getCefData()->toJson());
-
-            return 'fromJSON(\'' . $json . '\')';
-        } else {
+        if (!$this->getCefData()) {
             return '';
         }
+        
+        // cassandra string support
+        $json = str_replace("'", "''", $this->getCefData()->toJson());
+
+        return 'fromJSON(\'' . $json . '\')';
     }
 
     /**
      * Obj constructor.
-     * @param CEFData $cef_data
+     * @param CEFData $cefData
      */
-    public function __construct(CEFData $cef_data)
+    public function __construct(CEFData $cefData)
     {
-        $this->setCefData($cef_data);
+        $this->setCefData($cefData);
     }
 
     /**
@@ -69,16 +69,16 @@ class Obj
      */
     public function getCefData()
     {
-        return $this->cef_data;
+        return $this->cefData;
     }
 
     /**
-     * @param CEFData $cef_data
+     * @param CEFData $cefData
      * @return Obj
      */
-    public function setCefData($cef_data)
+    public function setCefData($cefData)
     {
-        $this->cef_data = $cef_data;
+        $this->cefData = $cefData;
         return $this;
     }
 

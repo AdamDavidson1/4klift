@@ -52,7 +52,7 @@ class Delete extends StatementBuilder
     /**
      * @var bool
      */
-    protected $if_exists = false;
+    protected $ifExists = false;
 
     /**
      * To String
@@ -70,15 +70,14 @@ class Delete extends StatementBuilder
     {
         $cql = '';
 
-        if ($this->getFrom() && $this->getWhere()) {
-            $cql .= $this->getType() . $this->getColumns() . ' FROM ' . $this->getFrom() . ' WHERE ' . $this->getWhere();
-
-            if ($this->isIfExists()) {
-                $cql .= ' IF EXISTS';
-            }
-
-        } else {
+        if (!$this->getFrom() || !$this->getWhere()) {
             throw new \Exception('Delete statement must contain from and where values');
+        }
+
+        $cql .= $this->getType() . $this->getColumns() . ' FROM ' . $this->getFrom() . ' WHERE ' . $this->getWhere();
+
+        if ($this->isIfExists()) {
+            $cql .= ' IF EXISTS';
         }
 
         return $cql;
@@ -107,9 +106,9 @@ class Delete extends StatementBuilder
      */
     public function getWhere()
     {
-        $where_string = implode(' and ', $this->where);
+        $whereString = implode(' and ', $this->where);
 
-        return $where_string;
+        return $whereString;
     }
 
     /**
@@ -127,13 +126,13 @@ class Delete extends StatementBuilder
      */
     public function getColumns()
     {
-        $columns_string = ' ' . implode(', ', $this->columns);
+        $columnsString = ' ' . implode(', ', $this->columns);
 
-        if (!$columns_string) {
-            $columns_string = '';
+        if (!$columnsString) {
+            $columnsString = '';
         }
 
-        return $columns_string;
+        return $columnsString;
     }
 
     /**
@@ -151,16 +150,16 @@ class Delete extends StatementBuilder
      */
     public function isIfExists()
     {
-        return $this->if_exists;
+        return $this->ifExists;
     }
 
     /**
-     * @param bool $if_exists
+     * @param bool $ifExists
      * @return Delete
      */
-    public function setIfExists($if_exists)
+    public function setIfExists($ifExists)
     {
-        $this->if_exists = $if_exists;
+        $this->ifExists = $ifExists;
         return $this;
     }
 }

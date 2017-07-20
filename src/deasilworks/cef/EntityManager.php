@@ -100,15 +100,17 @@ abstract class EntityManager
      */
     public function getModel()
     {
-        if ($this->collectionClass) {
-            $collection = $this->getCollection();
-            /** @var EntityModel $model */
-            $model = $collection->getModel();
-            $model->setEntityManager($this);
-            return $model;
-        } else {
+        if (!$this->collectionClass) {
             return new EntityModel();
         }
+
+        $collection = $this->getCollection();
+
+        /** @var EntityModel $model */
+        $model = $collection->getModel();
+        $model->setEntityManager($this);
+
+        return $model;
     }
 
     /**
@@ -122,11 +124,11 @@ abstract class EntityManager
         $collectionClass = $this->getCollectionClass();
         $collection = new $collectionClass();
 
-        if ($collection instanceof ResultContainer) {
-            return $collection;
-        } else {
+        if (!$collection instanceof ResultContainer) {
             throw new \Exception('E5000', $collectionClass . ' is not an instance of deasilworks\CEF\StatementManager.');
         }
+
+        return $collection;
     }
 
     /**
@@ -157,7 +159,7 @@ abstract class EntityManager
      */
     function load($statementType = 'Simple')
     {
-        throw new \Exception('Method load is deprecated on EntityManager. Use getStatementManager.');
+        throw new \Exception('Method load for ' . $statementType .' is deprecated on EntityManager. Use getStatementManager.');
     }
 
     /**
@@ -169,20 +171,20 @@ abstract class EntityManager
      */
     function getStatementManager($statementClass = Simple::class)
     {
-        $statement_manager = new $statementClass();
+        $statementManager = new $statementClass();
 
         $collectionClass = $this->getCollectionClass();
 
-        if ($statement_manager instanceof StatementManager) {
-            $statement_manager->setApp($this->getApp());
-            $statement_manager->setConfig($this->getConfig());
-            $statement_manager->setResultContainerClass($collectionClass);
-            $statement_manager->setEntityManager($this);
-        } else {
+        if (!$statementManager instanceof StatementManager) {
             throw new \Exception($statementClass . ' is not an instance of deasilworks\CEF\StatementManager.');
         }
+        
+        $statementManager->setApp($this->getApp());
+        $statementManager->setConfig($this->getConfig());
+        $statementManager->setResultContainerClass($collectionClass);
+        $statementManager->setEntityManager($this);
 
-        return $statement_manager;
+        return $statementManager;
     }
 
 }

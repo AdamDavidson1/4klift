@@ -42,7 +42,7 @@ class Update extends StatementBuilder
     /**
      * @var array
      */
-    protected $col_val_map = array();
+    protected $columValueMap = array();
 
     /**
      * @var array
@@ -52,7 +52,7 @@ class Update extends StatementBuilder
     /**
      * @var bool
      */
-    protected $if_exists = false;
+    protected $ifExists = false;
 
     /**
      * To String
@@ -87,29 +87,29 @@ class Update extends StatementBuilder
      */
     public function getColValMap()
     {
-        $set_string = null;
+        $setString = null;
 
-        foreach ($this->col_val_map as $col => $val) {
-            $set_string ? $set_string .= ', ' : false;
+        foreach ($this->columValueMap as $col => $val) {
+            $setString ? $setString .= ', ' : false;
 
             if (is_string($val)) {
                 $val = '\'' . str_replace("'","''", $val) . '\'';
             }
 
 
-            $set_string .= $col . ' = ' . $val;
+            $setString .= $col . ' = ' . $val;
         }
 
-        return $set_string;
+        return $setString;
     }
 
     /**
-     * @param array $col_val_map
+     * @param array $columValueMap
      * @return Update
      */
-    public function setColValMap($col_val_map)
+    public function setColValMap($columValueMap)
     {
-        $this->col_val_map = $col_val_map;
+        $this->columValueMap = $columValueMap;
         return $this;
     }
 
@@ -136,9 +136,9 @@ class Update extends StatementBuilder
      */
     public function getWhere()
     {
-        $where_string = implode(' and ', $this->where);
+        $whereString = implode(' and ', $this->where);
 
-        return $where_string;
+        return $whereString;
     }
 
     /**
@@ -156,16 +156,16 @@ class Update extends StatementBuilder
      */
     public function isIfExists()
     {
-        return $this->if_exists;
+        return $this->ifExists;
     }
 
     /**
-     * @param bool $if_exists
+     * @param bool $ifExists
      * @return Update
      */
-    public function setIfExists($if_exists)
+    public function setIfExists($ifExists)
     {
-        $this->if_exists = $if_exists;
+        $this->ifExists = $ifExists;
         return $this;
     }
 

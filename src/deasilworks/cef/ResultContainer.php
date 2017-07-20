@@ -39,7 +39,7 @@ class ResultContainer extends EntityCollection
      * @JMS\Exclude()
      * @var string
      */
-    protected $value_class = EntityModel::class;
+    protected $valueClass = EntityModel::class;
 
     /**
      * @JMS\Exclude
@@ -56,23 +56,23 @@ class ResultContainer extends EntityCollection
     /**
      * @var EntityManager
      */
-    protected $entity_manager;
+    protected $entityManager;
 
     /**
      * @return EntityManager
      */
     public function getEntityManager()
     {
-        return $this->entity_manager;
+        return $this->entityManager;
     }
 
     /**
-     * @param EntityManager $entity_manager
+     * @param EntityManager $entityManager
      * @return ResultContainer
      */
-    public function setEntityManager($entity_manager)
+    public function setEntityManager($entityManager)
     {
-        $this->entity_manager = $entity_manager;
+        $this->entityManager = $entityManager;
         return $this;
     }
 
@@ -129,10 +129,10 @@ class ResultContainer extends EntityCollection
 
             // check for json
             if (array_key_exists('[json]', $entry)) {
-                $model = $this->populate(json_decode($entry['[json]']), $model);
-            } else {
-                $model = $this->populate($entry, $model);
+                $entry = $entry['[json]'];
             }
+
+            $model = $this->populate($entry, $model);
 
             $this->collection[] = $model;
         }
@@ -155,11 +155,8 @@ class ResultContainer extends EntityCollection
             foreach ($entity as $name => $value) {
                 $model->$name = $value;
             }
-        } else {
-            // @todo: log a warning?
         }
-
-
+        
         return $model;
     }
 

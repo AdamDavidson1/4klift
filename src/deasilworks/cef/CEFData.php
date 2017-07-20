@@ -122,10 +122,10 @@ class CEFData
         if (!$this->hydrate($this, $name, $value)) {
 
             if (is_object($value) && $value instanceof \stdClass) {
-                $this->$name = (array) $value;
-            } else {
-                $this->$name = $value;
+                $value = (array) $value;
             }
+
+            $this->$name = $value;
         }
     }
 
