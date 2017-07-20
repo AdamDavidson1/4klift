@@ -16,7 +16,7 @@
     <testsuites>
         <testsuite name="4klift Test Suite">
             <directory>./src/deasilworks/*/Tests/</directory>
-            <directory>tests/</directory>
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
 

@@ -1,8 +1,7 @@
 <?php
 
-use deasilworks\cef\CEF;
-use \deasilworks\cef\StatementBuilder\Select;
-use \deasilworks\cef\Statement\Simple;
+use deasilworks\cef\Statement\Simple;
+use deasilworks\cef\StatementBuilder\Select;
 
 require_once (__DIR__ . '/src/TestEntityManager.php');
 
@@ -46,9 +45,9 @@ class CefTest extends \PHPUnit_Framework_TestCase
         // the default SELECT_JSON_TYPE is not available in cassandra 2.x
         $statementMgr->setStatement($stmtBuilder->setType(Select::SELECT_TYPE)->setFrom('local'));
 
-        /** @var \deasilworks\cef\ResultContainer $ec */
+        /** @var \deasilworks\cef\ResultContainer $resultContainer */
         $resultContainer = $statementMgr->execute();
-
+        
         /** @var \deasilworks\cef\EntityModel $entityMgr */
         $entityMgr = $resultContainer->current();
 

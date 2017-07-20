@@ -26,11 +26,8 @@
 
 namespace deasilworks\cef;
 
-use deasilworks\cef\StatementBuilder\InsertJson;
-use deasilworks\cef\StatementBuilder\InsertModel;
 use deasilworks\cef\StatementBuilder\Select;
 use Pimple\Container;
-use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
  * Class StatementManager
@@ -41,7 +38,7 @@ abstract class StatementManager
     /**
      * @var array
      */
-    private $json_keys = array(
+    private $jsonKeys = array(
         'comm_rx',
         'comm_tx'
     );
@@ -69,7 +66,7 @@ abstract class StatementManager
     /**
      * @var StatementBuilder
      */
-    protected $sb;
+    protected $statementBuilder;
 
     /**
      * @var array
@@ -89,7 +86,7 @@ abstract class StatementManager
     /**
      * @var mixed
      */
-    protected $retry_policy;
+    protected $retryPolicy;
 
     /**
      * @var array
@@ -99,12 +96,12 @@ abstract class StatementManager
     /**
      * @var array
      */
-    protected $previous_arguments;
+    protected $previousArguments;
 
     /**
      * @var EntityManager;
      */
-    protected $entity_manager;
+    protected $entityManager;
 
     /**
      * ResultContainer class
@@ -164,16 +161,16 @@ abstract class StatementManager
      */
     public function getEntityManager()
     {
-        return $this->entity_manager;
+        return $this->entityManager;
     }
 
     /**
-     * @param EntityManager $entity_manager
+     * @param EntityManager $entityManager
      * @return StatementManager
      */
-    public function setEntityManager($entity_manager)
+    public function setEntityManager($entityManager)
     {
-        $this->entity_manager = $entity_manager;
+        $this->entityManager = $entityManager;
         return $this;
     }
 
@@ -186,8 +183,8 @@ abstract class StatementManager
         $config = $this->getConfig();
 
         if (!$this->cluster) {
-            $retry_policy = new \Cassandra\RetryPolicy\DowngradingConsistency();
-            $logged_retry = new \Cassandra\RetryPolicy\Logging($retry_policy);
+            $retryPolicy = new \Cassandra\RetryPolicy\DowngradingConsistency();
+            $logged_retry = new \Cassandra\RetryPolicy\Logging($retryPolicy);
 
             /** @var \Cassandra\Cluster\Builder $cluster */
             $cluster = \Cassandra::cluster();
@@ -248,16 +245,16 @@ abstract class StatementManager
      */
     public function getRetryPolicy()
     {
-        return $this->retry_policy;
+        return $this->retryPolicy;
     }
 
     /**
-     * @param mixed|null $retry_policy
+     * @param mixed|null $retryPolicy
      * @return $this
      */
-    public function setRetryPolicy($retry_policy=null)
+    public function setRetryPolicy($retryPolicy=null)
     {
-        $this->retry_policy = $retry_policy;
+        $this->retryPolicy = $retryPolicy;
         return $this;
     }
 
@@ -285,16 +282,16 @@ abstract class StatementManager
      */
     public function getSb()
     {
-        return $this->sb;
+        return $this->statementBuilder;
     }
 
     /**
-     * @param \DeasilWorks\CEF\StatementBuilder $sb
+     * @param \DeasilWorks\CEF\StatementBuilder $statementBuilder
      * @return $this
      */
-    public function setSb($sb)
+    public function setSb($statementBuilder)
     {
-        $this->sb = $sb;
+        $this->statementBuilder = $statementBuilder;
         return $this;
     }
 
@@ -353,7 +350,7 @@ abstract class StatementManager
         }
 
         if ($this->getRetryPolicy()) {
-            $options['retry_policy'] = $this->getRetryPolicy();
+            $options['retryPolicy'] = $this->getRetryPolicy();
         }
 
         if (is_array($this->getArguments())) {
@@ -386,15 +383,15 @@ abstract class StatementManager
     {
         $result = $this->executeStatement();
 
-        $ec = null;
+        $resultContainer = null;
 
         // convert result to entity collection
         if ($result && $result instanceof \Cassandra\Rows) {
-            /** @var ResultContainer $ec */
-            $ec = $this->rowsToEntityCollection($result);
+            /** @var ResultContainer $resultContainer */
+            $resultContainer = $this->rowsToEntityCollection($result);
         }
 
-        return $ec;
+        return $resultContainer;
     }
 
     /**
@@ -410,16 +407,16 @@ abstract class StatementManager
      */
     public function getJsonKeys()
     {
-        return $this->json_keys;
+        return $this->jsonKeys;
     }
 
     /**
-     * @param array $json_keys
+     * @param array $jsonKeys
      * @return $this
      */
-    public function setJsonKeys($json_keys)
+    public function setJsonKeys($jsonKeys)
     {
-        $this->json_keys = $json_keys;
+        $this->jsonKeys = $jsonKeys;
         return $this;
     }
 
@@ -439,11 +436,11 @@ abstract class StatementManager
     {
         $this->resultClass = $resultClass;
 
-        /** @var ResultContainer $rc */
-        $rc = new $resultClass();
+        /** @var ResultContainer $resultContainer */
+        $resultContainer = new $resultClass();
 
         // set the model class
-        $this->setResultModelClass($rc->getModelClass());
+        $this->setResultModelClass($resultContainer->getModelClass());
 
 
         return $this;
@@ -454,15 +451,15 @@ abstract class StatementManager
      */
     public function getResultContainer()
     {
-        $rc_class = $this->getResultContainerClass();
+        $rcClass = $this->getResultContainerClass();
 
         // @TODO: throw exception if this fails / check for ResultContainer
 
-        /** @var ResultContainer $rc */
-        $rc = new $rc_class();
-        $rc->setEntityManager($this->getEntityManager());
+        /** @var ResultContainer $resultContainer */
+        $resultContainer = new $rcClass();
+        $resultContainer->setEntityManager($this->getEntityManager());
 
-        return $rc;
+        return $resultContainer;
     }
 
     /**
@@ -518,7 +515,7 @@ abstract class StatementManager
         /** @var ResultContainer $resultContainer */
         $resultContainer = $this->getResultContainer();
 
-        $resultContainer->setArguments($this->previous_arguments);
+        $resultContainer->setArguments($this->previousArguments);
         $resultContainer->setStatement((string)$this->getSb());
 
         $entries = array();
@@ -532,9 +529,8 @@ abstract class StatementManager
 
                 if ($entry) {
                     array_push($entries, $entry);
-                } else {
-                    // @todo: log a warning?
                 }
+
                 $rows->next();
             }
 
@@ -551,58 +547,20 @@ abstract class StatementManager
     }
 
     /**
-     * @param $builder_class
+     * @param $builderClass
      * @return \DeasilWorks\CEF\StatementBuilder
      */
-    public function getStatementBuilder($builder_class = Select::class)
+    public function getStatementBuilder($builderClass = Select::class)
     {
         // @todo check for instance of StatementBuilder
 
-        /** @var StatementBuilder $sb */
-        $sb = new $builder_class();
+        /** @var StatementBuilder $statementBuilder */
+        $statementBuilder = new $builderClass();
         $table = $this->getResultModel()->getTableName();
-        $sb->setFrom($table);
 
-        return $sb;
-    }
+        $statementBuilder->setFrom($table);
 
-    /**
-     * @deprecated use getStatementBuilder(Select::class)
-     * @return \DeasilWorks\CEF\StatementBuilder\Select
-     */
-    public function getSelectStatementBuilder()
-    {
-        $sb = new Select();
-        $table = $this->getResultModel()->getTableName();
-        $sb->setFrom($table);
-
-        return $sb;
-    }
-
-    /**
-     * @deprecated use getStatementBuilder(InsertJson::class)
-     * @return \DeasilWorks\CEF\StatementBuilder\InsertJson
-     */
-    public function getInsertJsonStatementBuilder()
-    {
-        $sb = new InsertJson();
-        $table = $this->getResultModel()->getTableName();
-        $sb->setFrom($table);
-
-        return $sb;
-    }
-
-    /**
-     * @deprecated use getStatementBuilder(InsertModel::class)
-     * @return \DeasilWorks\CEF\StatementBuilder\InsertModel
-     */
-    public function getInsertModelStatementBuilder()
-    {
-        $sb = new InsertModel();
-        $table = $this->getResultModel()->getTableName();
-        $sb->setFrom($table);
-
-        return $sb;
+        return $statementBuilder;
     }
 
     /**
@@ -660,12 +618,11 @@ abstract class StatementManager
 
                 // check for json keys
                 //
-                if (in_array($k, $this->json_keys)) {
-                    $entry[$k] = json_decode($v, true);
-                } else {
-                    $entry[$k] = $v;
+                if (in_array($k, $this->jsonKeys)) {
+                    $v = json_decode($v, true);
                 }
 
+                $entry[$k] = $v;
             }
 
         }
@@ -677,7 +634,7 @@ abstract class StatementManager
      * @param array $a
      */
     private function previousArgs(array $a) {
-        $this->previous_arguments = $a;
+        $this->previousArguments = $a;
     }
 
 }

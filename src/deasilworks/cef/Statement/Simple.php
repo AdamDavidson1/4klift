@@ -37,15 +37,15 @@ class Simple extends StatementManager
 {
 
     /**
-     * @param string|StatementBuilder $simple_statement
+     * @param string|StatementBuilder $simpleStatement
      * @return $this
      */
-    public function setStatement($simple_statement)
+    public function setStatement($simpleStatement)
     {
-        if (is_object($simple_statement) && $simple_statement instanceof StatementBuilder) {
-            $this->setSb($simple_statement);
+        if (is_object($simpleStatement) && $simpleStatement instanceof StatementBuilder) {
+            $this->setSb($simpleStatement);
         }
-        $this->statement = new \Cassandra\SimpleStatement((string) $simple_statement);
+        $this->statement = new \Cassandra\SimpleStatement((string) $simpleStatement);
         return $this;
     }
 
