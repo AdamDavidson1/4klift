@@ -35,6 +35,16 @@ use deasilworks\cef\StatementBuilder;
 class Select extends StatementBuilder
 {
     /**
+     * Select Type
+     */
+    const SELECT_TYPE = 'SELECT';
+
+    /**
+     * Select JSON type
+     */
+    const SELECT_JSON_TYPE = 'SELECT JSON';
+
+    /**
      * @var string
      */
     protected $type = 'SELECT JSON';
@@ -64,7 +74,7 @@ class Select extends StatementBuilder
     {
         $cql = '';
 
-        if ($this->getType() == 'SELECT' || $this->getType() == 'SELECT JSON') {
+        if ($this->getType() == self::SELECT_TYPE || $this->getType() == self::SELECT_JSON_TYPE) {
             $cql = $this->getType() . ' ' . $this->getColumns();
         }
         $cql .= ' FROM ' . $this->getFrom();

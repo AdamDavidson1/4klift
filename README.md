@@ -38,6 +38,10 @@ To use the latest dev version, use the *dev-master* branch.
   - [Vagrant](https://www.vagrantup.com/downloads.html "Download Vagrant")
   - [VirtualBox](https://www.virtualbox.org/wiki/Downloads "Download VirtualBox")
 
+Provisioning the VM will require the vagrant-vbguest plugin.
+   
+    vagrant plugin install vagrant-vbguest
+
 If you have a Mac, you can use Homebrew to install.
 
 If you do not have Homebrew:

@@ -39,7 +39,7 @@ class EntityCollection extends CEFData implements \Iterator
      * @JMS\Exclude()
      * @var string
      */
-    protected $value_class = EntityModel::class;
+    protected $valueClass = EntityModel::class;
 
     /**
      * @var array
@@ -67,12 +67,12 @@ class EntityCollection extends CEFData implements \Iterator
     /**
      * To JSON
      *
-     * @param $serialize_null boolean serialize null values?
+     * @param $serializeNull boolean serialize null values?
      * @return string
      */
-    public function toJson($serialize_null = true)
+    public function toJson($serializeNull = true)
     {
-        return $this->serialize($this->collection, 'json', $serialize_null);
+        return $this->serialize($this->collection, 'json', $serializeNull);
     }
 
     /**
@@ -106,7 +106,7 @@ class EntityCollection extends CEFData implements \Iterator
 
         if ($model instanceof EntityModel) {
         } else {
-            throw new \Exception($this->value_class . ' is not an instance of EntityModel.');
+            throw new \Exception($this->valueClass . ' is not an instance of EntityModel.');
         }
 
         return $model;
@@ -117,7 +117,7 @@ class EntityCollection extends CEFData implements \Iterator
      */
     public function getModelClass()
     {
-        return $this->value_class;
+        return $this->valueClass;
     }
 
     /**
@@ -125,16 +125,16 @@ class EntityCollection extends CEFData implements \Iterator
      */
     public function getValueClass()
     {
-        return $this->value_class;
+        return $this->valueClass;
     }
 
     /**
-     * @param string $value_class
+     * @param string $valueClass
      * @return EntityCollection
      */
-    public function setModelClass($value_class)
+    public function setModelClass($valueClass)
     {
-        $this->value_class = $value_class;
+        $this->valueClass = $valueClass;
         return $this;
     }
 

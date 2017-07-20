@@ -58,12 +58,12 @@ class CEFData
     /**
      * To JSON
      *
-     * @param $serialize_null boolean serialize null values?
+     * @param $serializeNull boolean serialize null values?
      * @return string
      */
-    public function toJson($serialize_null = false)
+    public function toJson($serializeNull = false)
     {
-        return $this->serialize($this, 'json', $serialize_null);
+        return $this->serialize($this, 'json', $serializeNull);
     }
 
     /**
@@ -162,13 +162,13 @@ class CEFData
                     // if type of EntityCollection loop and recurse
                     if ($obj instanceof EntityCollection) {
 
-                        $m = null;
+                        $model = null;
                         $entities = array();
 
                         foreach($value as $k => $v) {
                             $valueClass = $obj->getValueClass();
-                            $m = new $valueClass();
-                            $entities[$k] = $this->hydrateClassObject($m, $v);
+                            $model = new $valueClass();
+                            $entities[$k] = $this->hydrateClassObject($model, $v);
                         }
 
                         $obj->setCollection($entities);
