@@ -13,6 +13,9 @@ before_script:
   - wget http://getcomposer.org/composer.phar
   - composer install -n
 
+after_script:
+  - php vendor/bin/codacycoverage clover build/logs/clover.xml
+
 before_install:
   # disable xdebug
   - phpenv config-rm xdebug.ini
@@ -24,3 +27,4 @@ before_install:
   - cd /tmp && git clone https://github.com/datastax/php-driver.git && cd php-driver && git checkout v1.2.2 && git submodule update --init
   - cd ext && ./install.sh && cd "$TRAVIS_BUILD_DIR"
   - echo "extension=cassandra.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+
