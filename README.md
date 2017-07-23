@@ -6,7 +6,7 @@
     <img src="https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Logo.png">
 </a></p>
 
-
+[![Style CI](https://styleci.io/repos/96856089/shield?branch=master)](https://styleci.io/repos/96856089)
 [![Code Climate](http://img.shields.io/codeclimate/github/deasilworks/4klift.svg)](https://codeclimate.com/github/deasilworks/4klift)
 [![Build Status](https://travis-ci.org/deasilworks/4klift.svg?branch=dev)](https://travis-ci.org/deasilworks/4klift)
 [![Latest Stable Version](https://poser.pugx.org/deasilworks/4klift/v/stable)](https://packagist.org/packages/deasilworks/4klift)
