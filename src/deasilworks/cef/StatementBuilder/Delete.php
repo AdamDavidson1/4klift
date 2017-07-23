@@ -29,8 +29,7 @@ namespace deasilworks\cef\StatementBuilder;
 use deasilworks\cef\StatementBuilder;
 
 /**
- * Class Delete
- * @package deasilworks\cef\StatementBuilder
+ * Class Delete.
  */
 class Delete extends StatementBuilder
 {
@@ -42,12 +41,12 @@ class Delete extends StatementBuilder
     /**
      * @var array
      */
-    protected $where = array();
+    protected $where = [];
 
     /**
      * @var array
      */
-    protected $columns = array();
+    protected $columns = [];
 
     /**
      * @var bool
@@ -55,7 +54,7 @@ class Delete extends StatementBuilder
     protected $ifExists = false;
 
     /**
-     * To String
+     * To String.
      */
     public function __toString()
     {
@@ -63,8 +62,9 @@ class Delete extends StatementBuilder
     }
 
     /**
-     * @return string
      * @throws \Exception
+     *
+     * @return string
      */
     public function getStatement()
     {
@@ -74,7 +74,7 @@ class Delete extends StatementBuilder
             throw new \Exception('Delete statement must contain from and where values');
         }
 
-        $cql .= $this->getType() . $this->getColumns() . ' FROM ' . $this->getFrom() . ' WHERE ' . $this->getWhere();
+        $cql .= $this->getType().$this->getColumns().' FROM '.$this->getFrom().' WHERE '.$this->getWhere();
 
         if ($this->isIfExists()) {
             $cql .= ' IF EXISTS';
@@ -93,11 +93,13 @@ class Delete extends StatementBuilder
 
     /**
      * @param string $type
+     *
      * @return Delete
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -113,11 +115,13 @@ class Delete extends StatementBuilder
 
     /**
      * @param array $where
+     *
      * @return Delete
      */
     public function setWhere($where)
     {
         $this->where = $where;
+
         return $this;
     }
 
@@ -126,7 +130,7 @@ class Delete extends StatementBuilder
      */
     public function getColumns()
     {
-        $columnsString = ' ' . implode(', ', $this->columns);
+        $columnsString = ' '.implode(', ', $this->columns);
 
         if (!$columnsString) {
             $columnsString = '';
@@ -137,11 +141,13 @@ class Delete extends StatementBuilder
 
     /**
      * @param array $columns
+     *
      * @return Delete
      */
     public function setColumns($columns)
     {
         $this->columns = $columns;
+
         return $this;
     }
 
@@ -155,11 +161,13 @@ class Delete extends StatementBuilder
 
     /**
      * @param bool $ifExists
+     *
      * @return Delete
      */
     public function setIfExists($ifExists)
     {
         $this->ifExists = $ifExists;
+
         return $this;
     }
 }

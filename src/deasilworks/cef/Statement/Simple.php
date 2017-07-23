@@ -30,14 +30,13 @@ use deasilworks\cef\StatementBuilder;
 use deasilworks\cef\StatementManager;
 
 /**
- * Class Simple
- * @package deasilworks\cef\Statement
+ * Class Simple.
  */
 class Simple extends StatementManager
 {
-
     /**
      * @param string|StatementBuilder $simpleStatement
+     *
      * @return $this
      */
     public function setStatement($simpleStatement)
@@ -46,8 +45,7 @@ class Simple extends StatementManager
             $this->setSb($simpleStatement);
         }
         $this->statement = new \Cassandra\SimpleStatement((string) $simpleStatement);
+
         return $this;
     }
-
-
 }

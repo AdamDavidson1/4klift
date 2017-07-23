@@ -30,21 +30,20 @@ use deasilworks\cef\StatementBuilder\Select;
 use Pimple\Container;
 
 /**
- * Class StatementManager
- * @package deasilworks\cef
+ * Class StatementManager.
  */
 abstract class StatementManager
 {
     /**
      * @var array
      */
-    private $jsonKeys = array(
+    private $jsonKeys = [
         'comm_rx',
-        'comm_tx'
-    );
+        'comm_tx',
+    ];
 
     /**
-     * A day in seconds
+     * A day in seconds.
      */
     const DAY = 86400;
 
@@ -104,13 +103,15 @@ abstract class StatementManager
     protected $entityManager;
 
     /**
-     * ResultContainer class
+     * ResultContainer class.
+     *
      * @var string
      */
     protected $resultClass = ResultContainer::class;
 
     /**
-     * EntityModel class
+     * EntityModel class.
+     *
      * @var string
      */
     protected $resultModelClass = EntityModel::class;
@@ -125,16 +126,19 @@ abstract class StatementManager
 
     /**
      * @param Container $app
+     *
      * @return StatementManager
      */
     public function setApp($app)
     {
         $this->app = $app;
+
         return $this;
     }
 
     /**
      * @param array $config
+     *
      * @return StatementManager
      */
     public function setConfig($config)
@@ -166,14 +170,15 @@ abstract class StatementManager
 
     /**
      * @param EntityManager $entityManager
+     *
      * @return StatementManager
      */
     public function setEntityManager($entityManager)
     {
         $this->entityManager = $entityManager;
+
         return $this;
     }
-
 
     /**
      * @return mixed
@@ -198,7 +203,7 @@ abstract class StatementManager
             }
 
             if (array_key_exists('withContactPoints', $config)) {
-                call_user_func_array(array($cluster, "withContactPoints"), $config['contact_points']);
+                call_user_func_array([$cluster, 'withContactPoints'], $config['contact_points']);
             }
 
             $this->cluster = $cluster->build();
@@ -232,11 +237,13 @@ abstract class StatementManager
 
     /**
      * @param mixed|null $consistency
+     *
      * @return $this
      */
-    public function setConsistency($consistency=null)
+    public function setConsistency($consistency = null)
     {
         $this->consistency = $consistency;
+
         return $this;
     }
 
@@ -250,22 +257,25 @@ abstract class StatementManager
 
     /**
      * @param mixed|null $retryPolicy
+     *
      * @return $this
      */
-    public function setRetryPolicy($retryPolicy=null)
+    public function setRetryPolicy($retryPolicy = null)
     {
         $this->retryPolicy = $retryPolicy;
+
         return $this;
     }
 
-
     /**
      * @param null|array $arguments
+     *
      * @return $this
      */
-    public function setArguments($arguments=null)
+    public function setArguments($arguments = null)
     {
         $this->arguments = $arguments;
+
         return $this;
     }
 
@@ -287,16 +297,19 @@ abstract class StatementManager
 
     /**
      * @param \DeasilWorks\CEF\StatementBuilder $statementBuilder
+     *
      * @return $this
      */
     public function setSb($statementBuilder)
     {
         $this->statementBuilder = $statementBuilder;
+
         return $this;
     }
 
     /**
      * @param string|StatementBuilder $simpleStatement
+     *
      * @return $this
      */
     public function setStatement($simpleStatement)
@@ -306,6 +319,7 @@ abstract class StatementManager
         }
 
         $this->statement = $simpleStatement;
+
         return $this;
     }
 
@@ -331,19 +345,21 @@ abstract class StatementManager
         $this->setRetryPolicy();
 
         $this->getSession();
+
         return $this;
     }
 
     /**
      * @param string $type
-     * @param bool $reset
+     * @param bool   $reset
+     *
      * @return mixed
      */
-    private function executeStatement($type='execute', $reset=true)
+    private function executeStatement($type = 'execute', $reset = true)
     {
-        $options = array(
+        $options = [
             'consistency' => \Cassandra::CONSISTENCY_LOCAL_QUORUM,
-        );
+        ];
 
         if ($this->getConsistency()) {
             $options['consistency'] = $this->getConsistency();
@@ -412,11 +428,13 @@ abstract class StatementManager
 
     /**
      * @param array $jsonKeys
+     *
      * @return $this
      */
     public function setJsonKeys($jsonKeys)
     {
         $this->jsonKeys = $jsonKeys;
+
         return $this;
     }
 
@@ -430,6 +448,7 @@ abstract class StatementManager
 
     /**
      * @param string $resultClass
+     *
      * @return $this
      */
     public function setResultContainerClass($resultClass)
@@ -441,7 +460,6 @@ abstract class StatementManager
 
         // set the model class
         $this->setResultModelClass($resultContainer->getModelClass());
-
 
         return $this;
     }
@@ -472,11 +490,13 @@ abstract class StatementManager
 
     /**
      * @param string $resultModelClass
+     *
      * @return $this
      */
     protected function setResultModelClass($resultModelClass)
     {
         $this->resultModelClass = $resultModelClass;
+
         return $this;
     }
 
@@ -497,6 +517,7 @@ abstract class StatementManager
 
     /**
      * @param \Cassandra\Rows $rows
+     *
      * @return EntityCollection
      */
     protected function rowsToEntityCollection($rows)
@@ -505,9 +526,9 @@ abstract class StatementManager
         $resultContainer = $this->getResultContainer();
 
         $resultContainer->setArguments($this->previousArguments);
-        $resultContainer->setStatement((string)$this->getSb());
+        $resultContainer->setStatement((string) $this->getSb());
 
-        $entries = array();
+        $entries = [];
 
         // page through all results
         while (true) {
@@ -537,6 +558,7 @@ abstract class StatementManager
 
     /**
      * @param $builderClass
+     *
      * @return \DeasilWorks\CEF\StatementBuilder
      */
     public function getStatementBuilder($builderClass = Select::class)
@@ -554,17 +576,18 @@ abstract class StatementManager
 
     /**
      * @param $row
+     *
      * @return mixed
      */
     protected function normalize($row)
     {
         // loop through the object keys and normalize
-        $entry = array();
+        $entry = [];
 
         if (is_object($row) && get_class($row) == 'Cassandra\\Map') {
             /** @var \Cassandra\Map $row */
             $keys = $row->keys();
-            $data = array();
+            $data = [];
             foreach ($keys as $key) {
                 $data[(string) $key] = $row->offsetGet($key);
             }
@@ -572,9 +595,7 @@ abstract class StatementManager
         }
 
         foreach ($row as $k => $v) {
-
             if (is_object($v)) {
-
                 $class = get_class($v);
                 switch ($class) {
 
@@ -602,7 +623,6 @@ abstract class StatementManager
                         $entry[$k] = (string) $v;
 
                 }
-
             } else {
 
                 // check for json keys
@@ -613,7 +633,6 @@ abstract class StatementManager
 
                 $entry[$k] = $v;
             }
-
         }
 
         return $entry;
@@ -622,8 +641,8 @@ abstract class StatementManager
     /**
      * @param array $previousArgs
      */
-    private function previousArgs(array $previousArgs) {
+    private function previousArgs(array $previousArgs)
+    {
         $this->previousArguments = $previousArgs;
     }
-
 }

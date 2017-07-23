@@ -34,13 +34,12 @@ use JMS\Serializer\SerializerBuilder;
 use ReflectionClass;
 
 /**
- * Class CEFData
+ * Class CEFData.
  *
  * @ExclusionPolicy("none")
  */
 class CEFData
 {
-
     /**
      * @return string
      */
@@ -56,9 +55,10 @@ class CEFData
     }
 
     /**
-     * To JSON
+     * To JSON.
      *
      * @param $serializeNull boolean serialize null values?
+     *
      * @return string
      */
     public function toJson($serializeNull = false)
@@ -67,11 +67,12 @@ class CEFData
     }
 
     /**
-     * Serialize
+     * Serialize.
      *
      * @param $obj
      * @param string $type
-     * @param bool $snull
+     * @param bool   $snull
+     *
      * @return mixed|string
      */
     protected function serialize($obj, $type = 'json', $snull = true)
@@ -81,23 +82,24 @@ class CEFData
 
         $builder = SerializerBuilder::create();
         $builder
-            ->configureHandlers(function(HandlerRegistry $registry) {
+            ->configureHandlers(function (HandlerRegistry $registry) {
 
                 // Entity Array Handler
                 $registry->registerHandler('serialization', 'EntityCollection', 'json',
-                    function($visitor, EntityCollection $obj, array $type, Context $context) {
+                    function ($visitor, EntityCollection $obj, array $type, Context $context) {
                         $nav = $visitor->getNavigator();
                         if (count($obj->getCollection()) < 1) {
-                            return null;
+                            return;
                         }
-                        return $nav->accept($obj->getCollection(), array('name' => 'array'), $context);
+
+                        return $nav->accept($obj->getCollection(), ['name' => 'array'], $context);
                     }
                 );
 
                 // DateTime Handler "Y-m-d H:i:s"
                 $registry->registerHandler('serialization', 'DateTime', 'json',
-                    function($visitor, \DateTime $obj, array $type, Context $context) {
-                        return date("Y-m-d H:i:s", $obj->getTimestamp());
+                    function ($visitor, \DateTime $obj, array $type, Context $context) {
+                        return date('Y-m-d H:i:s', $obj->getTimestamp());
                     }
                 );
             });
@@ -108,7 +110,7 @@ class CEFData
     }
 
     /**
-     * Handle attribute sets
+     * Handle attribute sets.
      *
      * Setting properties on the generic EntityModel
      * used for collections without defined models and
@@ -117,10 +119,9 @@ class CEFData
      * @param $name
      * @param $value
      */
-    function __set($name, $value)
+    public function __set($name, $value)
     {
         if (!$this->hydrate($this, $name, $value)) {
-
             if (is_object($value) && $value instanceof \stdClass) {
                 $value = (array) $value;
             }
@@ -130,27 +131,26 @@ class CEFData
     }
 
     /**
-     * Hydrate
+     * Hydrate.
      *
      * @param $context
      * @param $name
      * @param $value
+     *
      * @return bool
      */
     private function hydrate($context, $name, $value)
     {
         if (is_array($value) || (is_object($value) && $value instanceof \stdClass)) {
-
             $words = ucwords(str_replace('_', ' ', $name));
-            $setter = 'set' . str_replace(' ', '', $words);
+            $setter = 'set'.str_replace(' ', '', $words);
 
             if (method_exists($context, $setter)) {
-
                 $reflection = new ReflectionClass($context);
                 $par = $reflection->getMethod($setter)->getParameters();
 
                 $class = $par[0]->getClass();
-                if(!$class) {
+                if (!$class) {
                     return false;
                 }
 
@@ -161,11 +161,10 @@ class CEFData
 
                     // if type of EntityCollection loop and recurse
                     if ($obj instanceof EntityCollection) {
-
                         $model = null;
-                        $entities = array();
+                        $entities = [];
 
-                        foreach($value as $k => $v) {
+                        foreach ($value as $k => $v) {
                             $valueClass = $obj->getValueClass();
                             $model = new $valueClass();
                             $entities[$k] = $this->hydrateClassObject($model, $v);
@@ -177,6 +176,7 @@ class CEFData
                     }
 
                     $context->$name = $obj;
+
                     return true;
                 }
             }
@@ -184,17 +184,18 @@ class CEFData
     }
 
     /**
-     * Hydrate class object
+     * Hydrate class object.
      *
      * @param $obj
      * @param $data
+     *
      * @return mixed
      */
     private function hydrateClassObject($obj, $data)
     {
         foreach ($data as $k => $v) {
             // recursion
-            if(!$this->hydrate($obj, $k, $v)) {
+            if (!$this->hydrate($obj, $k, $v)) {
                 $obj->$k = $v;
             }
         }

@@ -26,19 +26,17 @@
 
 namespace deasilworks\cef;
 
+use Doctrine\Common\Annotations\AnnotationRegistry as AR;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Doctrine\Common\Annotations\AnnotationRegistry as AR;
 
 AR::registerLoader('class_exists');
 
 /**
- * Class cef
- * @package deasilworks\cef
+ * Class cef.
  */
 class CEF implements ServiceProviderInterface
 {
-
     /**
      * @var Container
      */
@@ -56,19 +54,22 @@ class CEF implements ServiceProviderInterface
     }
 
     /**
-     * Load a Cassandra Entity Manager
+     * Load a Cassandra Entity Manager.
      *
      * @deprecated use getEntityManager
+     *
      * @param $name
-     * @return mixed
+     *
      * @throws \Exception
+     *
+     * @return mixed
      */
-    function load($name)
+    public function load($name)
     {
         $this->$name = new $name();
 
         if (!($this->$name instanceof EntityManager)) {
-            throw new \Exception($name . ' is not an instance of deasilworks\cef\EntityManager.');
+            throw new \Exception($name.' is not an instance of deasilworks\cef\EntityManager.');
         }
 
         $this->$name->setApp($this->getApp());
@@ -78,15 +79,17 @@ class CEF implements ServiceProviderInterface
 
     /**
      * @param string $managerClass
-     * @return EntityManager
+     *
      * @throws \Exception
+     *
+     * @return EntityManager
      */
-    function getEntityManager($managerClass)
+    public function getEntityManager($managerClass)
     {
         $manager = new $managerClass();
 
         if ($manager instanceof EntityManager) {
-            throw new \Exception($managerClass . ' is not an instance of deasilworks\CEF\EntityManager.');
+            throw new \Exception($managerClass.' is not an instance of deasilworks\CEF\EntityManager.');
         }
 
         $manager->setApp($this->getApp());
@@ -95,12 +98,12 @@ class CEF implements ServiceProviderInterface
     }
 
     /**
-     * Handel setting properties on the cef service
+     * Handel setting properties on the cef service.
      *
      * @param $name
      * @param $value
      */
-    function __set($name, $value)
+    public function __set($name, $value)
     {
         $this->$name = $value;
     }
@@ -115,11 +118,13 @@ class CEF implements ServiceProviderInterface
 
     /**
      * @param Container $app
+     *
      * @return CEF
      */
     public function setApp($app)
     {
         $this->app = $app;
+
         return $this;
     }
 }
