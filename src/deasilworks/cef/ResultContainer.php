@@ -29,26 +29,29 @@ namespace deasilworks\cef;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ResultContainer
- * @package deasilworks\cef
+ * Class ResultContainer.
  */
 class ResultContainer extends EntityCollection
 {
     /**
-     * Class name of values
+     * Class name of values.
+     *
      * @JMS\Exclude()
+     *
      * @var string
      */
     protected $valueClass = EntityModel::class;
 
     /**
      * @JMS\Exclude
+     *
      * @var string
      */
     private $statement;
 
     /**
      * @JMS\Exclude
+     *
      * @var array
      */
     private $arguments;
@@ -68,11 +71,13 @@ class ResultContainer extends EntityCollection
 
     /**
      * @param EntityManager $entityManager
+     *
      * @return ResultContainer
      */
     public function setEntityManager($entityManager)
     {
         $this->entityManager = $entityManager;
+
         return $this;
     }
 
@@ -86,11 +91,13 @@ class ResultContainer extends EntityCollection
 
     /**
      * @param array $arguments
+     *
      * @return ResultContainer
      */
     public function setArguments($arguments)
     {
         $this->arguments = $arguments;
+
         return $this;
     }
 
@@ -104,11 +111,13 @@ class ResultContainer extends EntityCollection
 
     /**
      * @param string $statement
+     *
      * @return ResultContainer
      */
     public function setStatement($statement)
     {
         $this->statement = $statement;
+
         return $this;
     }
 
@@ -117,6 +126,7 @@ class ResultContainer extends EntityCollection
      * These are an array of entries that need to be converted to models.
      *
      * @param array $results
+     *
      * @return ResultContainer
      */
     public function setResults($results)
@@ -148,16 +158,17 @@ class ResultContainer extends EntityCollection
      *
      * @param $entity
      * @param $model
+     *
      * @return mixed
      */
-    private function populate($entity, $model) {
+    private function populate($entity, $model)
+    {
         if ($entity && (is_array($entity) || is_object($entity))) {
             foreach ($entity as $name => $value) {
                 $model->$name = $value;
             }
         }
-        
+
         return $model;
     }
-
 }

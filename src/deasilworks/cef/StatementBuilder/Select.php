@@ -29,18 +29,17 @@ namespace deasilworks\cef\StatementBuilder;
 use deasilworks\cef\StatementBuilder;
 
 /**
- * Class Select
- * @package deasilworks\cef\StatementBuilder
+ * Class Select.
  */
 class Select extends StatementBuilder
 {
     /**
-     * Select Type
+     * Select Type.
      */
     const SELECT_TYPE = 'SELECT';
 
     /**
-     * Select JSON type
+     * Select JSON type.
      */
     const SELECT_JSON_TYPE = 'SELECT JSON';
 
@@ -52,15 +51,15 @@ class Select extends StatementBuilder
     /**
      * @var array
      */
-    protected $columns = array();
+    protected $columns = [];
 
     /**
      * @var array
      */
-    protected $where = array();
+    protected $where = [];
 
     /**
-     * To String
+     * To String.
      */
     public function __toString()
     {
@@ -75,12 +74,12 @@ class Select extends StatementBuilder
         $cql = '';
 
         if ($this->getType() == self::SELECT_TYPE || $this->getType() == self::SELECT_JSON_TYPE) {
-            $cql = $this->getType() . ' ' . $this->getColumns();
+            $cql = $this->getType().' '.$this->getColumns();
         }
-        $cql .= ' FROM ' . $this->getFrom();
+        $cql .= ' FROM '.$this->getFrom();
 
         if ($where = $this->getWhere()) {
-            $cql .= ' WHERE ' . $where;
+            $cql .= ' WHERE '.$where;
         }
 
         return $cql;
@@ -96,11 +95,13 @@ class Select extends StatementBuilder
 
     /**
      * @param string $type
+     *
      * @return Select
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -120,11 +121,13 @@ class Select extends StatementBuilder
 
     /**
      * @param array $columns
+     *
      * @return Select
      */
     public function setColumns($columns)
     {
         $this->columns = $columns;
+
         return $this;
     }
 
@@ -140,12 +143,13 @@ class Select extends StatementBuilder
 
     /**
      * @param array $where
+     *
      * @return Select
      */
     public function setWhere($where)
     {
         $this->where = $where;
+
         return $this;
     }
-
 }

@@ -3,17 +3,17 @@
 use deasilworks\cef\Statement\Simple;
 use deasilworks\cef\StatementBuilder\Select;
 
-require_once (__DIR__ . '/src/TestEntityManager.php');
+require_once __DIR__.'/src/TestEntityManager.php';
 
 /**
- * Class cassandraTest
+ * Class cassandraTest.
  */
 class CefTest extends \PHPUnit_Framework_TestCase
 {
     private $entityMgr;
 
     /**
-     * Get Test Entity Manager
+     * Get Test Entity Manager.
      *
      * @return TestEntityManager
      */
@@ -21,14 +21,14 @@ class CefTest extends \PHPUnit_Framework_TestCase
     {
         if (!$this->entityMgr || !($this->entityMgr instanceof TestEntityManager)) {
             $this->entityMgr = new TestEntityManager();
-            $this->entityMgr->setConfig(array('keyspace' => 'system', 'contact_points' => array('127.0.0.1')));
+            $this->entityMgr->setConfig(['keyspace' => 'system', 'contact_points' => ['127.0.0.1']]);
         }
 
         return $this->entityMgr;
     }
 
     /**
-     * CEF Test
+     * CEF Test.
      */
     public function testCEF()
     {
@@ -57,5 +57,4 @@ class CefTest extends \PHPUnit_Framework_TestCase
         // is not null?
         $this->assertTrue(isset($entityMgr->cluster_name));
     }
-
 }

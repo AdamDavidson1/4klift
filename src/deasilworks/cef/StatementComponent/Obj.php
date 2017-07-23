@@ -29,12 +29,10 @@ namespace deasilworks\cef\StatementComponent;
 use deasilworks\cef\CEFData;
 
 /**
- * Class Obj
+ * Class Obj.
  *
  * Takes a CEFData and allows it to be stringified with fromJSON
  * for CQL statements
- *
- * @package deasilworks\cef\StatementComponent
  */
 class Obj
 {
@@ -43,20 +41,21 @@ class Obj
      */
     protected $cefData;
 
-    function __toString()
+    public function __toString()
     {
         if (!$this->getCefData()) {
             return '';
         }
-        
+
         // cassandra string support
         $json = str_replace("'", "''", $this->getCefData()->toJson());
 
-        return 'fromJSON(\'' . $json . '\')';
+        return 'fromJSON(\''.$json.'\')';
     }
 
     /**
      * Obj constructor.
+     *
      * @param CEFData $cefData
      */
     public function __construct(CEFData $cefData)
@@ -74,12 +73,13 @@ class Obj
 
     /**
      * @param CEFData $cefData
+     *
      * @return Obj
      */
     public function setCefData($cefData)
     {
         $this->cefData = $cefData;
+
         return $this;
     }
-
 }

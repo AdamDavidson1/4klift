@@ -29,10 +29,8 @@ namespace deasilworks\cef;
 use deasilworks\cef\Statement\Simple;
 use Pimple\Container;
 
-
 /**
- * Class EntityManager
- * @package deasilworks\cef
+ * Class EntityManager.
  */
 abstract class EntityManager
 {
@@ -63,11 +61,13 @@ abstract class EntityManager
 
     /**
      * @param Container $app
+     *
      * @return EntityManager
      */
     public function setApp($app)
     {
         $this->app = $app;
+
         return $this;
     }
 
@@ -85,16 +85,18 @@ abstract class EntityManager
 
     /**
      * @param array $config
+     *
      * @return EntityManager
      */
     public function setConfig($config)
     {
         $this->config = $config;
+
         return $this;
     }
 
     /**
-     * Get's the model associated witht the collection
+     * Get's the model associated witht the collection.
      *
      * @return EntityModel
      */
@@ -114,10 +116,11 @@ abstract class EntityManager
     }
 
     /**
-     * Collection Factory
+     * Collection Factory.
+     *
+     * @throws \Exception
      *
      * @return \DeasilWorks\CEF\ResultContainer
-     * @throws \Exception
      */
     public function getCollection()
     {
@@ -125,7 +128,7 @@ abstract class EntityManager
         $collection = new $collectionClass();
 
         if (!($collection instanceof ResultContainer)) {
-            throw new \Exception('E5000', $collectionClass . ' is not an instance of deasilworks\CEF\StatementManager.');
+            throw new \Exception('E5000', $collectionClass.' is not an instance of deasilworks\CEF\StatementManager.');
         }
 
         return $collection;
@@ -133,11 +136,13 @@ abstract class EntityManager
 
     /**
      * @param string $collectionClass
+     *
      * @return EntityManager
      */
     public function setCollectionClass($collectionClass)
     {
         $this->collectionClass = $collectionClass;
+
         return $this;
     }
 
@@ -149,36 +154,39 @@ abstract class EntityManager
         return $this->collectionClass;
     }
 
-
     /**
-     * Statement Manager Factory
+     * Statement Manager Factory.
+     *
      * @deprecated use getStatementManager
      *
      * @param string $statementType
+     *
      * @throws \Exception
      */
-    function load($statementType = 'Simple')
+    public function load($statementType = 'Simple')
     {
-        throw new \Exception('Method load for ' . $statementType .' is deprecated on EntityManager. Use getStatementManager.');
+        throw new \Exception('Method load for '.$statementType.' is deprecated on EntityManager. Use getStatementManager.');
     }
 
     /**
-     * Statement Manager Factory
+     * Statement Manager Factory.
      *
      * @param string $statementClass
-     * @return StatementManager
+     *
      * @throws \Exception
+     *
+     * @return StatementManager
      */
-    function getStatementManager($statementClass = Simple::class)
+    public function getStatementManager($statementClass = Simple::class)
     {
         $statementManager = new $statementClass();
 
         $collectionClass = $this->getCollectionClass();
 
         if (!($statementManager instanceof StatementManager)) {
-            throw new \Exception($statementClass . ' is not an instance of deasilworks\CEF\StatementManager.');
+            throw new \Exception($statementClass.' is not an instance of deasilworks\CEF\StatementManager.');
         }
-        
+
         $statementManager->setApp($this->getApp());
         $statementManager->setConfig($this->getConfig());
         $statementManager->setResultContainerClass($collectionClass);
@@ -186,5 +194,4 @@ abstract class EntityManager
 
         return $statementManager;
     }
-
 }

@@ -1,13 +1,14 @@
 <?php
+
 use Silex\WebTestCase;
 
 /**
- * Class controllersTest
+ * Class controllersTest.
  */
 class controllersTest extends WebTestCase
 {
     /**
-     * Homepage test
+     * Homepage test.
      */
     public function testGetHomepage()
     {
@@ -19,7 +20,7 @@ class controllersTest extends WebTestCase
     }
 
     /**
-     * Create Application
+     * Create Application.
      *
      * @return mixed
      */
@@ -29,6 +30,7 @@ class controllersTest extends WebTestCase
         require __DIR__.'/../cfg/dev.php';
         require __DIR__.'/../src/controllers.php';
         $app['session.test'] = true;
+
         return $this->app = $app;
     }
 }

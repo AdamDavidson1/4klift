@@ -29,8 +29,7 @@ namespace deasilworks\cef\StatementBuilder;
 use deasilworks\cef\StatementBuilder;
 
 /**
- * Class Update
- * @package deasilworks\cef\StatementBuilder
+ * Class Update.
  */
 class Update extends StatementBuilder
 {
@@ -42,12 +41,12 @@ class Update extends StatementBuilder
     /**
      * @var array
      */
-    protected $columValueMap = array();
+    protected $columValueMap = [];
 
     /**
      * @var array
      */
-    protected $where = array();
+    protected $where = [];
 
     /**
      * @var bool
@@ -55,7 +54,7 @@ class Update extends StatementBuilder
     protected $ifExists = false;
 
     /**
-     * To String
+     * To String.
      */
     public function __toString()
     {
@@ -69,10 +68,10 @@ class Update extends StatementBuilder
     {
         $cql = '';
 
-        $cql .= $this->getType() . ' ' . $this->getFrom() . ' SET ' . $this->getColValMap();
+        $cql .= $this->getType().' '.$this->getFrom().' SET '.$this->getColValMap();
 
         if ($where = $this->getWhere()) {
-            $cql .= ' WHERE ' . $where;
+            $cql .= ' WHERE '.$where;
 
             if ($this->isIfExists()) {
                 $cql .= ' IF EXISTS';
@@ -93,11 +92,10 @@ class Update extends StatementBuilder
             $setString ? $setString .= ', ' : false;
 
             if (is_string($val)) {
-                $val = '\'' . str_replace("'","''", $val) . '\'';
+                $val = '\''.str_replace("'", "''", $val).'\'';
             }
 
-
-            $setString .= $col . ' = ' . $val;
+            $setString .= $col.' = '.$val;
         }
 
         return $setString;
@@ -105,11 +103,13 @@ class Update extends StatementBuilder
 
     /**
      * @param array $columValueMap
+     *
      * @return Update
      */
     public function setColValMap($columValueMap)
     {
         $this->columValueMap = $columValueMap;
+
         return $this;
     }
 
@@ -123,11 +123,13 @@ class Update extends StatementBuilder
 
     /**
      * @param string $type
+     *
      * @return Update
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -143,11 +145,13 @@ class Update extends StatementBuilder
 
     /**
      * @param array $where
+     *
      * @return Update
      */
     public function setWhere($where)
     {
         $this->where = $where;
+
         return $this;
     }
 
@@ -161,12 +165,13 @@ class Update extends StatementBuilder
 
     /**
      * @param bool $ifExists
+     *
      * @return Update
      */
     public function setIfExists($ifExists)
     {
         $this->ifExists = $ifExists;
+
         return $this;
     }
-
 }

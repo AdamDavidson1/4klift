@@ -29,14 +29,15 @@ namespace deasilworks\cef;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class EntityCollection
- * @package deasilworks\cef
+ * Class EntityCollection.
  */
 class EntityCollection extends CEFData implements \Iterator
 {
     /**
-     * Class name of values
+     * Class name of values.
+     *
      * @JMS\Exclude()
+     *
      * @var string
      */
     protected $valueClass = EntityModel::class;
@@ -44,7 +45,7 @@ class EntityCollection extends CEFData implements \Iterator
     /**
      * @var array
      */
-    protected $collection = array();
+    protected $collection = [];
 
     /**
      * @var int
@@ -65,9 +66,10 @@ class EntityCollection extends CEFData implements \Iterator
     }
 
     /**
-     * To JSON
+     * To JSON.
      *
      * @param $serializeNull boolean serialize null values?
+     *
      * @return string
      */
     public function toJson($serializeNull = true)
@@ -85,19 +87,22 @@ class EntityCollection extends CEFData implements \Iterator
 
     /**
      * @param int $count
+     *
      * @return EntityCollection
      */
     public function setCount($count)
     {
         $this->count = $count;
+
         return $this;
     }
 
     /**
-     * Model Factory
+     * Model Factory.
+     *
+     * @throws \Exception
      *
      * @return mixed
-     * @throws \Exception
      */
     public function getModel()
     {
@@ -105,7 +110,7 @@ class EntityCollection extends CEFData implements \Iterator
         $model = new $namePath();
 
         if (!($model instanceof EntityModel)) {
-            throw new \Exception($this->valueClass . ' is not an instance of EntityModel.');
+            throw new \Exception($this->valueClass.' is not an instance of EntityModel.');
         }
 
         return $model;
@@ -129,11 +134,13 @@ class EntityCollection extends CEFData implements \Iterator
 
     /**
      * @param string $valueClass
+     *
      * @return EntityCollection
      */
     public function setModelClass($valueClass)
     {
         $this->valueClass = $valueClass;
+
         return $this;
     }
 
@@ -150,6 +157,7 @@ class EntityCollection extends CEFData implements \Iterator
      * These are an array of entries that need to be converted to models.
      *
      * @param array $collection
+     *
      * @return EntityCollection
      */
     public function setCollection($collection)
@@ -161,53 +169,63 @@ class EntityCollection extends CEFData implements \Iterator
     }
 
     /**
-     * Adds a single entity
+     * Adds a single entity.
      *
      * @param array $entity
+     *
      * @return EntityCollection
      */
     public function addEntity($entity)
     {
         $this->collection[] = $entity;
         $this->setCount(count($this->collection));
+
         return $this;
     }
 
     /**
-     * Iterator rewind
+     * Iterator rewind.
      */
-    public function rewind() {
+    public function rewind()
+    {
         $this->position = 0;
     }
 
     /**
-     * Iterator current
+     * Iterator current.
+     *
      * @return mixed
      */
-    public function current() {
+    public function current()
+    {
         return $this->collection[$this->position];
     }
 
     /**
-     * Iterator key
+     * Iterator key.
+     *
      * @return int
      */
-    public function key() {
+    public function key()
+    {
         return $this->position;
     }
 
     /**
-     *  Iterator next
+     *  Iterator next.
      */
-    public function next() {
+    public function next()
+    {
         ++$this->position;
     }
 
     /**
-     * Iterator valid
+     * Iterator valid.
+     *
      * @return bool
      */
-    public function valid() {
+    public function valid()
+    {
         return isset($this->collection[$this->position]);
     }
 }

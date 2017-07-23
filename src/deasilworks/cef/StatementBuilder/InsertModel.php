@@ -29,22 +29,22 @@ namespace deasilworks\cef\StatementBuilder;
 use deasilworks\cef\EntityModel;
 
 /**
- * Class InsertModel
- * @package deasilworks\cef\StatementBuilder
+ * Class InsertModel.
  */
 class InsertModel extends InsertJson
 {
     /**
-     * Set Model
+     * Set Model.
      *
      * @param $serializeNull boolean
      * @param EntityModel $model
+     *
      * @return InsertModel
      */
     public function setModel($model, $serializeNull = true)
     {
         $this->setJson($model->toJson($serializeNull));
+
         return $this;
     }
-
 }

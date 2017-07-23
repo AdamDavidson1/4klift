@@ -27,8 +27,7 @@
 namespace deasilworks\cef;
 
 /**
- * Class StatementBuilder
- * @package deasilworks\cef
+ * Class StatementBuilder.
  */
 class StatementBuilder
 {
@@ -47,11 +46,13 @@ class StatementBuilder
 
     /**
      * @param string $from
+     *
      * @return $this
      */
     public function setFrom($from)
     {
         $this->from = $from;
+
         return $this;
     }
 }

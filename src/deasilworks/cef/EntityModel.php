@@ -26,27 +26,27 @@
 
 namespace deasilworks\cef;
 
-use JMS\Serializer\Annotation\Exclude;
-use deasilworks\cef\StatementBuilder\InsertModel;
 use deasilworks\cef\Statement\Simple;
+use deasilworks\cef\StatementBuilder\InsertModel;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
- * Class EntityModel
+ * Class EntityModel.
  *
  * This is the generic entity model and allows the setting of arbitrary properties.
- *
- * @package deasilworks\cef
  */
 class EntityModel extends CEFData
 {
     /**
      * @Exclude()
+     *
      * @var string
      */
     protected $tableName;
 
     /**
      * @Exclude()
+     *
      * @var EntityManager
      */
     protected $entityManager;
@@ -61,11 +61,13 @@ class EntityModel extends CEFData
 
     /**
      * @param string $tableName
+     *
      * @return EntityModel
      */
     public function setTableName($tableName)
     {
         $this->tableName = $tableName;
+
         return $this;
     }
 
@@ -79,19 +81,22 @@ class EntityModel extends CEFData
 
     /**
      * @param EntityManager $entityManager
+     *
      * @return EntityModel
      */
     public function setEntityManager(EntityManager $entityManager)
     {
         $this->entityManager = $entityManager;
+
         return $this;
     }
 
     /**
-     * Saves a model to the database
+     * Saves a model to the database.
+     *
+     * @throws \Exception
      *
      * @return EntityCollection
-     * @throws \Exception
      */
     public function save()
     {

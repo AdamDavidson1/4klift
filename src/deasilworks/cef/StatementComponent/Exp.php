@@ -26,29 +26,27 @@
 
 namespace deasilworks\cef\StatementComponent;
 
-
 /**
- * Class Exp
- * @package deasilworks\cef\StatementComponent
+ * Class Exp.
  */
 class Exp
 {
-
     /**
      * @var string
      */
     protected $expression;
 
-    function __toString()
+    public function __toString()
     {
-        return (string)$this->expression;
+        return (string) $this->expression;
     }
 
     /**
      * Exp constructor.
+     *
      * @param string $expString | null
      */
-    public function __construct($expString=null)
+    public function __construct($expString = null)
     {
         $this->setExpression($expString);
     }
@@ -63,13 +61,13 @@ class Exp
 
     /**
      * @param string $expression
+     *
      * @return Exp
      */
     public function setExpression($expression)
     {
         $this->expression = $expression;
+
         return $this;
     }
-
-
 }

@@ -29,8 +29,7 @@ namespace deasilworks\cef\StatementBuilder;
 use deasilworks\cef\StatementBuilder;
 
 /**
- * Class InsertJson
- * @package deasilworks\cef\StatementBuilder
+ * Class InsertJson.
  */
 class InsertJson extends StatementBuilder
 {
@@ -45,7 +44,7 @@ class InsertJson extends StatementBuilder
     protected $json;
 
     /**
-     * To String
+     * To String.
      */
     public function __toString()
     {
@@ -60,8 +59,7 @@ class InsertJson extends StatementBuilder
         // cassandra string support
         $json = str_replace("'", "''", $this->getJson());
 
-        $cql = 'INSERT INTO ' . $this->getFrom() . " JSON '" . $json . "'";
-
+        $cql = 'INSERT INTO '.$this->getFrom()." JSON '".$json."'";
 
         return $cql;
     }
@@ -76,13 +74,13 @@ class InsertJson extends StatementBuilder
 
     /**
      * @param string $json
+     *
      * @return InsertJson
      */
     public function setJson($json)
     {
         $this->json = $json;
+
         return $this;
     }
-
-
 }
