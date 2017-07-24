@@ -603,17 +603,17 @@ abstract class StatementManager
         }
 
         $handlerMap = [
-            'Cassandra\\Timestamp' => function ($v) {
-                return $this->handleTimestamp($v);
+            'Cassandra\\Timestamp' => function ($value) {
+                return $this->handleTimestamp($value);
             },
-            'Cassandra\\UserTypeValue' => function ($v) {
-                return $this->normalize($v);
+            'Cassandra\\UserTypeValue' => function ($value) {
+                return $this->normalize($value);
             },
-            'Cassandra\\Map' => function ($v) {
-                return $this->normalize($v);
+            'Cassandra\\Map' => function ($value) {
+                return $this->normalize($value);
             },
-            'Cassandra\\Set' => function ($v) {
-                return $this->normalize($v);
+            'Cassandra\\Set' => function ($value) {
+                return $this->normalize($value);
             },
         ];
 
