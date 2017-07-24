@@ -181,6 +181,14 @@ abstract class StatementManager
     }
 
     /**
+     * @return \Cluster\Builder
+     */
+    public function getCassandraCluster()
+    {
+        return \Cassandra::cluster();
+    }
+
+    /**
      * @return mixed
      */
     public function getCluster()
@@ -192,7 +200,7 @@ abstract class StatementManager
             $loggedRetry = new \Cassandra\RetryPolicy\Logging($retryPolicy);
 
             /** @var \Cassandra\Cluster\Builder $cluster */
-            $cluster = \Cassandra::cluster();
+            $cluster = $this->getCassandraCluster();
             $cluster
                 ->withDefaultConsistency(\Cassandra::CONSISTENCY_LOCAL_QUORUM)
                 ->withRetryPolicy($loggedRetry)
