@@ -155,30 +155,28 @@ class CEFData
                 }
 
                 $class = $class->name;
+                $obj = new $class();
 
-                if ($class) {
-                    $obj = new $class();
-
-                    // if type of EntityCollection loop and recurse
-                    if ($obj instanceof EntityCollection) {
-                        $model = null;
-                        $entities = [];
-
-                        foreach ($value as $k => $v) {
-                            $valueClass = $obj->getValueClass();
-                            $model = new $valueClass();
-                            $entities[$k] = $this->hydrateClassObject($model, $v);
-                        }
-
-                        $obj->setCollection($entities);
-                    } else {
-                        $obj = $this->hydrateClassObject($obj, $value);
-                    }
-
+                // if NOT type of EntityCollection we are done
+                if (!$obj instanceof EntityCollection) {
+                    $obj = $this->hydrateClassObject($obj, $value);
                     $context->$name = $obj;
-
                     return true;
                 }
+
+                $model = null;
+                $entities = [];
+
+                foreach ($value as $k => $v) {
+                    $valueClass = $obj->getValueClass();
+                    $model = new $valueClass();
+                    $entities[$k] = $this->hydrateClassObject($model, $v);
+                }
+
+                $obj->setCollection($entities);
+
+                $context->$name = $obj;
+                return true;
             }
         }
     }
