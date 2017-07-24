@@ -181,7 +181,7 @@ abstract class StatementManager
     }
 
     /**
-     * @return \Cluster\Builder
+     * @return \Cassandra\Cluster\Builder
      */
     public function getCassandraCluster()
     {
@@ -616,34 +616,37 @@ abstract class StatementManager
             }
 
             $class = get_class($v);
-            switch ($class) {
 
-                case 'Cassandra\\Timestamp':
-                    /** @var \Cassandra\Timestamp $timestamp */
-                    $timestamp = $v;
-                    $entry[$k] = $timestamp->time();
-                    break;
+            $handlerMap = [
+                'Cassandra\\Timestamp' => function($v) { return $this->handleTimestamp($v); },
+                'Cassandra\\UserTypeValue' =>  function($v) { return $this->normalize($v); },
+                'Cassandra\\Map' => function($v) { return $this->normalize($v); },
+                'Cassandra\\Set' => function($v) { return $this->normalize($v); },
+            ];
 
-                case 'Cassandra\\UserTypeValue':
-                    // recursion
-                    $entry[$k] = $this->normalize($v);
-                    break;
+            if (array_key_exists($class, $handlerMap)) {
+                $entry[$k] = $handlerMap[$class];
 
-                case 'Cassandra\\Map':
-                    $entry[$k] = $this->normalize($v);
-                    break;
-
-                case 'Cassandra\\Set':
-                    $entry[$k] = $this->normalize($v);
-                    break;
-
-                default:
-
-                    $entry[$k] = (string) $v;
+                continue;
             }
+
+            $entry[$k] = (string) $v;
+
         }
 
         return $entry;
+    }
+
+    /**
+     * @param $v
+     *
+     * @return mixed
+     */
+    private function handleTimestamp($v)
+    {
+        /** @var \Cassandra\Timestamp $timestamp */
+        $timestamp = $v;
+        return $timestamp->time();
     }
 
     /**

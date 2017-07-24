@@ -28,10 +28,7 @@
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src/deasilworks/</directory>
-            <exclude>
-                <directory suffix=".php">src/deasilworks/*/tests</directory>
-            </exclude>
+            <directory suffix=".php">src/deasilworks/*/src/</directory>
         </whitelist>
     </filter>
 </phpunit>
