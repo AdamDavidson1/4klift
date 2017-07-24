@@ -603,10 +603,18 @@ abstract class StatementManager
         }
 
         $handlerMap = [
-            'Cassandra\\Timestamp' => function($v) { return $this->handleTimestamp($v); },
-            'Cassandra\\UserTypeValue' =>  function($v) { return $this->normalize($v); },
-            'Cassandra\\Map' => function($v) { return $this->normalize($v); },
-            'Cassandra\\Set' => function($v) { return $this->normalize($v); },
+            'Cassandra\\Timestamp' => function ($v) {
+                return $this->handleTimestamp($v);
+            },
+            'Cassandra\\UserTypeValue' => function ($v) {
+                return $this->normalize($v);
+            },
+            'Cassandra\\Map' => function ($v) {
+                return $this->normalize($v);
+            },
+            'Cassandra\\Set' => function ($v) {
+                return $this->normalize($v);
+            },
         ];
 
         foreach ($row as $key => $value) {
@@ -631,7 +639,6 @@ abstract class StatementManager
             }
 
             $entry[$key] = (string) $value;
-
         }
 
         return $entry;
@@ -646,6 +653,7 @@ abstract class StatementManager
     {
         /** @var \Cassandra\Timestamp $timestamp */
         $timestamp = $class;
+
         return $timestamp->time();
     }
 
