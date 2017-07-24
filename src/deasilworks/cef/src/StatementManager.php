@@ -595,36 +595,7 @@ abstract class StatementManager
         }
 
         foreach ($row as $k => $v) {
-            if (is_object($v)) {
-                $class = get_class($v);
-                switch ($class) {
-
-                    case 'Cassandra\\Timestamp':
-                        /** @var \Cassandra\Timestamp $timestamp */
-                        $timestamp = $v;
-                        $entry[$k] = $timestamp->time();
-                        break;
-
-                    case 'Cassandra\\UserTypeValue':
-                        // recursion
-                        $entry[$k] = $this->normalize($v);
-                        break;
-
-                    case 'Cassandra\\Map':
-                        $entry[$k] = $this->normalize($v);
-                        break;
-
-                    case 'Cassandra\\Set':
-                        $entry[$k] = $this->normalize($v);
-                        break;
-
-                    default:
-
-                        $entry[$k] = (string) $v;
-
-                }
-            } else {
-
+            if (!is_object($v)) {
                 // check for json keys
                 //
                 if (in_array($k, $this->jsonKeys)) {
@@ -632,7 +603,35 @@ abstract class StatementManager
                 }
 
                 $entry[$k] = $v;
+
+                continue;
             }
+
+            $class = get_class($v);
+            switch ($class) {
+
+                case 'Cassandra\\Timestamp':
+                    /** @var \Cassandra\Timestamp $timestamp */
+                    $timestamp = $v;
+                    $entry[$k] = $timestamp->time();
+                    break;
+
+                case 'Cassandra\\UserTypeValue':
+                    // recursion
+                    $entry[$k] = $this->normalize($v);
+                    break;
+
+                case 'Cassandra\\Map':
+                    $entry[$k] = $this->normalize($v);
+                    break;
+
+                case 'Cassandra\\Set':
+                    $entry[$k] = $this->normalize($v);
+                    break;
+
+                default:
+
+                    $entry[$k] = (string) $v;
         }
 
         return $entry;
