@@ -69,11 +69,13 @@ class CEFData
 
     /**
      * @param bool $serializeNull
+     *
      * @return CEFData
      */
     public function setSerializeNull($serializeNull)
     {
         $this->serializeNull = $serializeNull;
+
         return $this;
     }
 
@@ -181,6 +183,7 @@ class CEFData
                 if (!$obj instanceof EntityCollection) {
                     $obj = $this->hydrateClassObject($obj, $value);
                     $context->$name = $obj;
+
                     return true;
                 }
 
@@ -196,6 +199,7 @@ class CEFData
                 $obj->setCollection($entities);
 
                 $context->$name = $obj;
+
                 return true;
             }
         }

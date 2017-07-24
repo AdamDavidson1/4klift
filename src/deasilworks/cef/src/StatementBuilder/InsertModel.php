@@ -48,11 +48,13 @@ class InsertModel extends InsertJson
 
     /**
      * @param bool $serializeNull
+     *
      * @return InsertModel
      */
     public function setSerializeNull($serializeNull)
     {
         $this->serializeNull = $serializeNull;
+
         return $this;
     }
 
