@@ -3,7 +3,7 @@
 use deasilworks\cef\Statement\Simple;
 use deasilworks\cef\StatementBuilder\Select;
 
-require_once __DIR__.'/src/TestEntityManager.php';
+use deasilworks\cef\test\Manager\LocalEntityManager;
 
 /**
  * Class cassandraTest.
@@ -13,14 +13,14 @@ class CefTest extends \PHPUnit_Framework_TestCase
     private $entityMgr;
 
     /**
-     * Get Test Entity Manager.
+     * Get Local Entity Manager.
      *
-     * @return TestEntityManager
+     * @return LocalEntityManager
      */
-    private function getTestEntityManager()
+    private function getLocalEntityManager()
     {
-        if (!$this->entityMgr || !($this->entityMgr instanceof TestEntityManager)) {
-            $this->entityMgr = new TestEntityManager();
+        if (!$this->entityMgr || !($this->entityMgr instanceof LocalEntityManager)) {
+            $this->entityMgr = new LocalEntityManager();
             $this->entityMgr->setConfig(['keyspace' => 'system', 'contact_points' => ['127.0.0.1']]);
         }
 
@@ -32,8 +32,8 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testCEF()
     {
-        /** @var TestEntityManager $entityMgr */
-        $entityMgr = $this->getTestEntityManager();
+        /** @var LocalEntityManager $entityMgr */
+        $entityMgr = $this->getLocalEntityManager();
 
         /** @var Simple $statementMgr */
         $statementMgr = $entityMgr
@@ -56,5 +56,44 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         // is not null?
         $this->assertTrue(isset($entityMgr->cluster_name));
+    }
+
+    /**
+     * Test table create
+     */
+    public function testTableCreate()
+    {
+        /** @var LocalEntityManager $entityMgr */
+        $entityMgr = $this->getLocalEntityManager();
+
+        /** @var Simple $statementMgr */
+        $statementMgr = $entityMgr
+            ->getStatementManager(Simple::class);
+
+        $keyspaceCreateString = "CREATE KEYSPACE IF NOT EXISTS test_4klift WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1}";
+
+        $statementMgr->setStatement($keyspaceCreateString)->execute();
+
+        $tableDropString = 'DROP TABLE IF EXISTS test_4klift.user';
+
+        $statementMgr->setStatement($tableDropString)->execute();
+
+        $tableCreateString = '
+            CREATE TABLE IF NOT EXISTS test_4klift.user (
+              username text,
+              email text,
+              PRIMARY KEY (username)
+            );
+        ';
+
+        $statementMgr->setStatement($tableCreateString)->execute();
+    }
+
+    /**
+     * @depends testTableCreate
+     */
+    public function testInsertUpdate()
+    {
+        $this->assertTrue(true);
     }
 }

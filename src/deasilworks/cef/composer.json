@@ -26,5 +26,10 @@
       "/Tests/"
     ]
   },
+  "autoload-dev": {
+    "psr-4": {
+      "deasilworks\\cef\\test\\": "tests/src/deasilworks/cef/test"
+    }
+  },
   "minimum-stability": "dev"
 }

@@ -49,5 +49,10 @@
         "psr-4": {
             "deasilworks\\cef\\": "src/deasilworks/cef/src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "deasilworks\\cef\\test\\": "src/deasilworks/cef/tests/src/deasilworks/cef/test"
+        }
     }
 }

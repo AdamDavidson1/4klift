@@ -111,7 +111,7 @@ class CEFData
                     function ($visitor, EntityCollection $obj, array $type, Context $context) {
                         $nav = $visitor->getNavigator();
                         if (count($obj->getCollection()) < 1) {
-                            return;
+                            return true;
                         }
 
                         return $nav->accept($obj->getCollection(), ['name' => 'array'], $context);
