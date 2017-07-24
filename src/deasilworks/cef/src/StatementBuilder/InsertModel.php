@@ -34,16 +34,39 @@ use deasilworks\cef\EntityModel;
 class InsertModel extends InsertJson
 {
     /**
+     * @var bool
+     */
+    private $serializeNull = true;
+
+    /**
+     * @return bool
+     */
+    public function isSerializeNull()
+    {
+        return $this->serializeNull;
+    }
+
+    /**
+     * @param bool $serializeNull
+     * @return InsertModel
+     */
+    public function setSerializeNull($serializeNull)
+    {
+        $this->serializeNull = $serializeNull;
+        return $this;
+    }
+
+    /**
      * Set Model.
      *
-     * @param $serializeNull boolean
      * @param EntityModel $model
      *
      * @return InsertModel
      */
-    public function setModel($model, $serializeNull = true)
+    public function setModel($model)
     {
-        $this->setJson($model->toJson($serializeNull));
+        $model->setSerializeNull($this->isSerializeNull());
+        $this->setJson($model->toJson());
 
         return $this;
     }

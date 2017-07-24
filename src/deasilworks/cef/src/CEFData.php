@@ -41,6 +41,11 @@ use ReflectionClass;
 class CEFData
 {
     /**
+     * @var bool
+     */
+    private $serializeNull = false;
+
+    /**
      * @return string
      */
     public function __toString()
@@ -55,15 +60,31 @@ class CEFData
     }
 
     /**
+     * @return bool
+     */
+    public function isSerializeNull()
+    {
+        return $this->serializeNull;
+    }
+
+    /**
+     * @param bool $serializeNull
+     * @return CEFData
+     */
+    public function setSerializeNull($serializeNull)
+    {
+        $this->serializeNull = $serializeNull;
+        return $this;
+    }
+
+    /**
      * To JSON.
-     *
-     * @param $serializeNull boolean serialize null values?
      *
      * @return string
      */
-    public function toJson($serializeNull = false)
+    public function toJson()
     {
-        return $this->serialize($this, 'json', $serializeNull);
+        return $this->serialize($this, 'json');
     }
 
     /**
@@ -71,14 +92,13 @@ class CEFData
      *
      * @param $obj
      * @param string $type
-     * @param bool   $snull
      *
      * @return mixed|string
      */
-    protected function serialize($obj, $type = 'json', $snull = true)
+    protected function serialize($obj, $type = 'json')
     {
         $context = new SerializationContext();
-        $context->setSerializeNull($snull);
+        $context->setSerializeNull($this->isSerializeNull());
 
         $builder = SerializerBuilder::create();
         $builder
