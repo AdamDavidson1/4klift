@@ -631,7 +631,8 @@ abstract class StatementManager
 
                 default:
 
-                    $entry[$k] = (string) $v;
+                    $entry[$k] = (string)$v;
+            }
         }
 
         return $entry;
