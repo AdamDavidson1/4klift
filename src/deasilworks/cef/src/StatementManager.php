@@ -602,35 +602,35 @@ abstract class StatementManager
             $row = $data;
         }
 
-        foreach ($row as $k => $v) {
-            if (!is_object($v)) {
+        $handlerMap = [
+            'Cassandra\\Timestamp' => function($v) { return $this->handleTimestamp($v); },
+            'Cassandra\\UserTypeValue' =>  function($v) { return $this->normalize($v); },
+            'Cassandra\\Map' => function($v) { return $this->normalize($v); },
+            'Cassandra\\Set' => function($v) { return $this->normalize($v); },
+        ];
+
+        foreach ($row as $key => $value) {
+            if (!is_object($value)) {
                 // check for json keys
                 //
-                if (in_array($k, $this->jsonKeys)) {
-                    $v = json_decode($v, true);
+                if (in_array($key, $this->jsonKeys)) {
+                    $value = json_decode($value, true);
                 }
 
-                $entry[$k] = $v;
+                $entry[$key] = $value;
 
                 continue;
             }
 
-            $class = get_class($v);
-
-            $handlerMap = [
-                'Cassandra\\Timestamp' => function($v) { return $this->handleTimestamp($v); },
-                'Cassandra\\UserTypeValue' =>  function($v) { return $this->normalize($v); },
-                'Cassandra\\Map' => function($v) { return $this->normalize($v); },
-                'Cassandra\\Set' => function($v) { return $this->normalize($v); },
-            ];
+            $class = get_class($value);
 
             if (array_key_exists($class, $handlerMap)) {
-                $entry[$k] = $handlerMap[$class];
+                $entry[$key] = $handlerMap[$class];
 
                 continue;
             }
 
-            $entry[$k] = (string) $v;
+            $entry[$key] = (string) $value;
 
         }
 
@@ -642,10 +642,10 @@ abstract class StatementManager
      *
      * @return mixed
      */
-    private function handleTimestamp($v)
+    private function handleTimestamp($class)
     {
         /** @var \Cassandra\Timestamp $timestamp */
-        $timestamp = $v;
+        $timestamp = $class;
         return $timestamp->time();
     }
 
