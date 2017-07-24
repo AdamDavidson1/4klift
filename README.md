@@ -7,6 +7,7 @@
 </a></p>
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/682ff1742473405d88d14aa949debdc0)](https://www.codacy.com/app/cjimti/4klift?utm_source=github.com&utm_medium=referral&utm_content=deasilworks/4klift&utm_campaign=badger)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/682ff1742473405d88d14aa949debdc0)](https://www.codacy.com/app/cjimti/4klift?utm_source=github.com&utm_medium=referral&utm_content=deasilworks/4klift&utm_campaign=Badge_Coverage)
 [![Style CI](https://styleci.io/repos/96856089/shield?branch=master)](https://styleci.io/repos/96856089)
 [![Code Climate](http://img.shields.io/codeclimate/github/deasilworks/4klift.svg)](https://codeclimate.com/github/deasilworks/4klift)
 [![Build Status](https://travis-ci.org/deasilworks/4klift.svg?branch=dev)](https://travis-ci.org/deasilworks/4klift)

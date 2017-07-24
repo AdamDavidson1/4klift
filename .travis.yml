@@ -1,11 +1,16 @@
 language: php
+
 services:
-- cassandra
+  - cassandra
+
 php:
-- 5.6
+  - 5.6
+
 env:
   matrix:
   - APP_ENV=dev
+  global:
+    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
 
 addons:
   code_climate:
@@ -13,19 +18,27 @@ addons:
       secure: f0x0N+H6qIwxt6wHfii73FHKzmOKSQETj873MHGdke1qXO5GXqm0+3Zjpkn/HeQ9t00gvlJVaRhvHnrS4+hbLRO5n6w9JZv/VLG58sPb1pNUR8bDz1LH2k2VK12ve0LAMXTjez3R5zv+lmrG7K2Kg/W/qg9FEh5C+QFNJMzeZodtaf1cw6tXv+Q6qfbgS6v6zbgaRLKCFh9WmyiDDRfXzBogW+rFjEAo/j2lN/MyBtQu8Zk7Qdy1SabJUVDMtVZ9GKJmoRGMumJJXrfQkvhTqBmOaD2ZRMg2soAcUX4HGbR5Fxsxd3zhq8NnYsQiY8NeP7YuP7v99aBXmxUVMfCqH8wiAP6EK9WpccFtpKEWt1uc1F5Rn2agocD+Q55bVzd3qxxygxpZNC6TGQbOtTDwWB8ZoNNuP0hynRVMBptTRJoX/FCdnq3D87VAXV/FqNDuIJzkdt2IajmpOD1gcpcSnzgy9mQMHpuEAX/SOuq/ftLKgPJApFExzLwKouVnN0OiaA+ELCWhKO8LeTLNdccopbP0aEkSB0h83wNppQmWYpLQzAGRREapeDKQN4g+gAQS1koQckyC3Zdb75Z0+UnoHC2Epn74S63jv5DMH8u8N6heOb1Nbq3HPg9+ukquL3rLDfObgCLdy1szdUhPmQEI4mbfWEefGstLBvzZwLsqOQI=
 
 before_script:
-- wget http://getcomposer.org/composer.phar
-- composer install -n
+  - wget http://getcomposer.org/composer.phar
+  - composer install -n
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
+script:
+  - bundle exec rspec
+
 after_script:
-- php vendor/bin/codacycoverage clover build/logs/clover.xml
+  - php vendor/bin/codacycoverage clover build/logs/clover.xml
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+
 before_install:
-- sudo apt-add-repository ppa:linuxjedi/ppa -y
-- sudo apt-get update
-- sudo apt-get install -y libssl-dev
-- cd /tmp && wget https://github.com/libuv/libuv/archive/v1.11.0.tar.gz && tar -xvzf
-  v1.11.0.tar.gz && cd libuv-1.11.0 && sh autogen.sh && ./configure && sudo make &&
-  sudo make install && sudo ldconfig
-- cd /tmp && git clone https://github.com/datastax/php-driver.git && cd php-driver
-  && git checkout v1.2.2 && git submodule update --init
-- cd ext && ./install.sh && cd "$TRAVIS_BUILD_DIR"
-- echo "extension=cassandra.so" >> `php --ini | grep "Loaded Configuration" | sed
-  -e "s|.*:\s*||"`
+  - sudo apt-add-repository ppa:linuxjedi/ppa -y
+  - sudo apt-get update
+  - sudo apt-get install -y libssl-dev
+  - cd /tmp && wget https://github.com/libuv/libuv/archive/v1.11.0.tar.gz && tar -xvzf
+    v1.11.0.tar.gz && cd libuv-1.11.0 && sh autogen.sh && ./configure && sudo make &&
+    sudo make install && sudo ldconfig
+  - cd /tmp && git clone https://github.com/datastax/php-driver.git && cd php-driver
+    && git checkout v1.2.2 && git submodule update --init
+  - cd ext && ./install.sh && cd "$TRAVIS_BUILD_DIR"
+  - echo "extension=cassandra.so" >> `php --ini | grep "Loaded Configuration" | sed
+    -e "s|.*:\s*||"`
