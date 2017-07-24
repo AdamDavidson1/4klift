@@ -2,7 +2,6 @@
 
 use deasilworks\cef\Statement\Simple;
 use deasilworks\cef\StatementBuilder\Select;
-
 use deasilworks\cef\test\Manager\LocalEntityManager;
 
 /**
@@ -59,7 +58,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test table create
+     * Test table create.
      */
     public function testTableCreate()
     {
