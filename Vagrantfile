@@ -20,7 +20,7 @@ $provision_script = <<SCRIPT
     yum install -y curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel sqlite-devel
     yum install -y gmp gmp-devel boost cmake libtool openssl-devel pcre-devel automake openssl-devel
     yum install -y ruby-rdoc ruby-devel rubygems
-    yum install -y php-fpm php php-devel php-mysql php-mbstring php-xml pcre-devel
+    yum install -y php-fpm php php-devel php-mysql php-mbstring php-xml pcre-devel php-pecl-xdebug
     yum install -y cassandra-cpp-driver cassandra-cpp-driver-devel libuv libuv-devel
 
 

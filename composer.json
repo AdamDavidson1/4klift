@@ -45,8 +45,8 @@
         "codacy/coverage": "dev-master"
     },
     "autoload": {
-        "psr-0" : {
-            "deasilworks" : "src"
+        "psr-4": {
+            "deasilworks\\cef\\": "src/deasilworks/cef/src"
         }
     }
 }
