@@ -645,7 +645,7 @@ abstract class StatementManager
     }
 
     /**
-     * @param $v
+     * @param $class
      *
      * @return mixed
      */
