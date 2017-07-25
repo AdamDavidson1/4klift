@@ -129,6 +129,9 @@ class CefTest extends \PHPUnit_Framework_TestCase
             ->setUsername('4klift')
             ->setEmail('code@deasil.works')
             ->save();
-        
+
+        $userModel = $userMgr->getUserByUsername('4klift');
+
+        $this->assertTrue($userModel->getEmail() == 'code@deasil.works');
     }
 }
