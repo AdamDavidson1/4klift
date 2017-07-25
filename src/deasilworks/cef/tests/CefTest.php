@@ -1,14 +1,14 @@
 <?php
 
+use deasilworks\cef\EntityModel;
+use deasilworks\cef\ResultContainer;
 use deasilworks\cef\Statement\Simple;
 use deasilworks\cef\StatementBuilder\Select;
+use deasilworks\cef\test\Collection\LocalCollection;
+use deasilworks\cef\test\Collection\UserCollection;
 use deasilworks\cef\test\Manager\LocalManager;
 use deasilworks\cef\test\Manager\UserManager;
 use deasilworks\cef\test\Model\UserModel;
-use deasilworks\cef\EntityModel;
-use deasilworks\cef\test\Collection\UserCollection;
-use deasilworks\cef\ResultContainer;
-use deasilworks\cef\test\Collection\LocalCollection;
 
 /**
  * Class cassandraTest.
@@ -128,7 +128,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $resCollection = $userMgr->getCollectionClass();
         $this->assertEquals(UserCollection::class, $resCollection);
 
-        $usrCollection = new $resCollection;
+        $usrCollection = new $resCollection();
         $this->assertInstanceOf(ResultContainer::class, $usrCollection);
         $this->assertInstanceOf(UserCollection::class, $usrCollection);
 
@@ -146,11 +146,9 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $resCollection = $userMgr->getCollectionClass();
         $this->assertEquals(LocalCollection::class, $resCollection);
 
-        $localCollection = new $resCollection;
+        $localCollection = new $resCollection();
         $this->assertInstanceOf(ResultContainer::class, $localCollection);
         $this->assertInstanceOf(LocalCollection::class, $localCollection);
-
-
     }
 
     /**
@@ -162,9 +160,6 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $userMgr = $this->getUserManager();
 
         $stmtBuilder = $userMgr->getStatementManager(Simple::class);
-
-
-
     }
 
     /**
