@@ -32,6 +32,7 @@ use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
 use ReflectionClass;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Class CEFData.
@@ -41,6 +42,7 @@ use ReflectionClass;
 class CEFData
 {
     /**
+     * @Exclude()
      * @var bool
      */
     private $serializeNull = false;

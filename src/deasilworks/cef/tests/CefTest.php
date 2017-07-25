@@ -3,28 +3,52 @@
 use deasilworks\cef\Statement\Simple;
 use deasilworks\cef\StatementBuilder\Select;
 
-use deasilworks\cef\test\Manager\LocalEntityManager;
+use deasilworks\cef\test\Manager\LocalManager;
+use deasilworks\cef\test\Manager\UserManager;
 
 /**
  * Class cassandraTest.
  */
 class CefTest extends \PHPUnit_Framework_TestCase
 {
-    private $entityMgr;
+    /**
+     * @var LocalManager
+     */
+    private $localMgr;
+
+    /**
+     * @var UserManager
+     */
+    private $userMgr;
 
     /**
      * Get Local Entity Manager.
      *
-     * @return LocalEntityManager
+     * @return LocalManager
      */
-    private function getLocalEntityManager()
+    private function getLocalManager()
     {
-        if (!$this->entityMgr || !($this->entityMgr instanceof LocalEntityManager)) {
-            $this->entityMgr = new LocalEntityManager();
-            $this->entityMgr->setConfig(['keyspace' => 'system', 'contact_points' => ['127.0.0.1']]);
+        if (!$this->localMgr || !($this->localMgr instanceof LocalManager)) {
+            $this->localMgr = new LocalManager();
+            $this->localMgr->setConfig(['keyspace' => 'system', 'contact_points' => ['127.0.0.1']]);
         }
 
-        return $this->entityMgr;
+        return $this->localMgr;
+    }
+
+    /**
+     * Get User Entity Manager.
+     *
+     * @return UserManager
+     */
+    private function getUserManager()
+    {
+        if (!$this->userMgr || !($this->userMgr instanceof UserManager)) {
+            $this->userMgr = new UserManager();
+            $this->userMgr->setConfig(['keyspace' => 'test_4klift', 'contact_points' => ['127.0.0.1']]);
+        }
+
+        return $this->userMgr;
     }
 
     /**
@@ -32,8 +56,8 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testCEF()
     {
-        /** @var LocalEntityManager $entityMgr */
-        $entityMgr = $this->getLocalEntityManager();
+        /** @var LocalManager $entityMgr */
+        $entityMgr = $this->getLocalManager();
 
         /** @var Simple $statementMgr */
         $statementMgr = $entityMgr
@@ -43,19 +67,20 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $stmtBuilder = $statementMgr->getStatementBuilder(Select::class);
 
         // the default SELECT_JSON_TYPE is not available in cassandra 2.x
-        $statementMgr->setStatement($stmtBuilder->setType(Select::SELECT_TYPE)->setFrom('local'));
+        $statementMgr->setStatement(
+            $stmtBuilder->setType(Select::SELECT_TYPE)
+        );
 
-        /** @var \deasilworks\cef\ResultContainer $resultContainer */
-        $resultContainer = $statementMgr->execute();
+        $localCollection = $statementMgr->execute();
 
-        /** @var \deasilworks\cef\EntityModel $entityMgr */
-        $entityMgr = $resultContainer->current();
+        $this->assertGreaterThan(0, $localCollection->getCount());
+
+        /** @var \deasilworks\cef\test\Model\LocalModel $localModel */
+        $localModel = $localCollection->current();
 
         // does it exist?
-        $this->assertTrue(property_exists($entityMgr, 'cluster_name'));
+        $this->assertTrue($localModel->getKey() == 'local');
 
-        // is not null?
-        $this->assertTrue(isset($entityMgr->cluster_name));
     }
 
     /**
@@ -63,8 +88,8 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testTableCreate()
     {
-        /** @var LocalEntityManager $entityMgr */
-        $entityMgr = $this->getLocalEntityManager();
+        /** @var UserManager $entityMgr */
+        $entityMgr = $this->getUserManager();
 
         /** @var Simple $statementMgr */
         $statementMgr = $entityMgr
@@ -94,6 +119,16 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testInsertUpdate()
     {
-        $this->assertTrue(true);
+        /** @var UserManager $userMgr */
+        $userMgr = $this->getUserManager();
+
+        /** @var \deasilworks\cef\test\Model\UserModel $userModel */
+        $userModel = $userMgr->getModel();
+
+        $userModel
+            ->setUsername('4klift')
+            ->setEmail('code@deasil.works')
+            ->save();
+        
     }
 }
