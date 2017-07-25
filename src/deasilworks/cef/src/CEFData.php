@@ -26,13 +26,13 @@
 
 namespace deasilworks\cef;
 
+use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Context;
 use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
 use ReflectionClass;
-use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Class CEFData.
@@ -43,6 +43,7 @@ class CEFData
 {
     /**
      * @Exclude()
+     *
      * @var bool
      */
     private $serializeNull = false;

@@ -8,10 +8,9 @@ use deasilworks\cef\test\Collection\UserCollection;
 class UserManager extends EntityManager
 {
     /**
-     * A ResultContainer class
+     * A ResultContainer class.
      *
-     * @var string $collectionClass
+     * @var string
      */
     protected $collectionClass = UserCollection::class;
-
 }

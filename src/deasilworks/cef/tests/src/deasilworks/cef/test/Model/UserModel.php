@@ -6,15 +6,15 @@ use deasilworks\cef\EntityModel;
 use JMS\Serializer\Annotation\Exclude;
 
 /**
- * Class UserModel
- *
- * @package Fuse\CEF\Model
+ * Class UserModel.
  */
 class UserModel extends EntityModel
 {
     /**
-     * Overridden to supply Table Name
+     * Overridden to supply Table Name.
+     *
      * @Exclude()
+     *
      * @var string
      */
     protected $tableName = 'user';
@@ -39,11 +39,13 @@ class UserModel extends EntityModel
 
     /**
      * @param string $username
+     *
      * @return UserModel
      */
     public function setUsername($username)
     {
         $this->username = $username;
+
         return $this;
     }
 
@@ -57,12 +59,13 @@ class UserModel extends EntityModel
 
     /**
      * @param string $email
+     *
      * @return UserModel
      */
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
-
 }
