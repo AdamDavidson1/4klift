@@ -88,11 +88,11 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testTableCreate()
     {
-        /** @var UserManager $entityMgr */
-        $entityMgr = $this->getUserManager();
+        $userMgr = new UserManager();
+        $userMgr->setConfig(['keyspace' => 'system', 'contact_points' => ['127.0.0.1']]);
 
         /** @var Simple $statementMgr */
-        $statementMgr = $entityMgr
+        $statementMgr = $userMgr
             ->getStatementManager(Simple::class);
 
         $keyspaceCreateString = "CREATE KEYSPACE IF NOT EXISTS test_4klift WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1}";
