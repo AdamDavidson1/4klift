@@ -39,7 +39,7 @@ use ReflectionClass;
  *
  * @ExclusionPolicy("none")
  */
-class CEFData
+abstract class CEFData
 {
     /**
      * @Exclude()

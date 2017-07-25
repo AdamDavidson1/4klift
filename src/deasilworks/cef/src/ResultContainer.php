@@ -139,7 +139,7 @@ class ResultContainer extends EntityCollection
 
             // check for json
             if (array_key_exists('[json]', $entry)) {
-                $entry = $entry['[json]'];
+                $entry = json_decode($entry['[json]']);
             }
 
             $model = $this->populate($entry, $model);

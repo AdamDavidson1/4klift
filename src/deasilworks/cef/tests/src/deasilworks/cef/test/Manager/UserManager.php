@@ -52,7 +52,7 @@ class UserManager extends EntityManager
         $stmtBuilder = $ssm->getStatementBuilder(Select::class);
 
         $ssm->setStatement(
-            $stmtBuilder->setWhere(['username = :username'])->setType(Select::SELECT_TYPE)
+            $stmtBuilder->setWhere(['username = :username'])
         )
             ->setArguments(['username' => (string) $username]);
 

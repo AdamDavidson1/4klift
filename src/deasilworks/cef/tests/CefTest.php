@@ -4,6 +4,11 @@ use deasilworks\cef\Statement\Simple;
 use deasilworks\cef\StatementBuilder\Select;
 use deasilworks\cef\test\Manager\LocalManager;
 use deasilworks\cef\test\Manager\UserManager;
+use deasilworks\cef\test\Model\UserModel;
+use deasilworks\cef\EntityModel;
+use deasilworks\cef\test\Collection\UserCollection;
+use deasilworks\cef\ResultContainer;
+use deasilworks\cef\test\Collection\LocalCollection;
 
 /**
  * Class cassandraTest.
@@ -110,6 +115,56 @@ class CefTest extends \PHPUnit_Framework_TestCase
         ';
 
         $statementMgr->setStatement($tableCreateString)->execute();
+    }
+
+    /**
+     * @depends testTableCreate
+     */
+    public function testEntityManager()
+    {
+        /** @var UserManager $userMgr */
+        $userMgr = $this->getUserManager();
+
+        $resCollection = $userMgr->getCollectionClass();
+        $this->assertEquals(UserCollection::class, $resCollection);
+
+        $usrCollection = new $resCollection;
+        $this->assertInstanceOf(ResultContainer::class, $usrCollection);
+        $this->assertInstanceOf(UserCollection::class, $usrCollection);
+
+        /** @var UserModel $userModel */
+        $userModel = $userMgr->getModel();
+
+        $this->assertInstanceOf(UserModel::class, $userModel, 'StatementManager model factory test.');
+        $this->assertInstanceOf(EntityModel::class, $userModel, 'StatementManager model factory test.');
+
+        // test setCollectionClass this is just to test the setter since
+        // local collection can not hold user models...
+
+        $userMgr->setCollectionClass(LocalCollection::class);
+
+        $resCollection = $userMgr->getCollectionClass();
+        $this->assertEquals(LocalCollection::class, $resCollection);
+
+        $localCollection = new $resCollection;
+        $this->assertInstanceOf(ResultContainer::class, $localCollection);
+        $this->assertInstanceOf(LocalCollection::class, $localCollection);
+
+
+    }
+
+    /**
+     * @depends testTableCreate
+     */
+    public function testStatementBuilder()
+    {
+        /** @var UserManager $userMgr */
+        $userMgr = $this->getUserManager();
+
+        $stmtBuilder = $userMgr->getStatementManager(Simple::class);
+
+
+
     }
 
     /**

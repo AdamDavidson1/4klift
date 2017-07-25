@@ -157,20 +157,6 @@ abstract class EntityManager
     /**
      * Statement Manager Factory.
      *
-     * @deprecated use getStatementManager
-     *
-     * @param string $statementType
-     *
-     * @throws \Exception
-     */
-    public function load($statementType = 'Simple')
-    {
-        throw new \Exception('Method load for '.$statementType.' is deprecated on EntityManager. Use getStatementManager.');
-    }
-
-    /**
-     * Statement Manager Factory.
-     *
      * @param string $statementClass
      *
      * @throws \Exception
