@@ -99,6 +99,10 @@ The 4klift development VM currently consists of the following packages:
   - [Yarn 0.27.5](https://yarnpkg.com/en/)
   - [git 1.7.1](https://git-scm.com/)
 
+## Changelog and Features
+
+All updates for each release may be reviewed in the [changelog](CHANGELOG.md "4klift Changelog").
+
 ## Contributing to 4klift
 
 If you'd like to contribute to the **4klift** project, create component libraries, etc., you can fork and clone the project.
