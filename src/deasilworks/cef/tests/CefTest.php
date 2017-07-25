@@ -2,7 +2,6 @@
 
 use deasilworks\cef\Statement\Simple;
 use deasilworks\cef\StatementBuilder\Select;
-
 use deasilworks\cef\test\Manager\LocalManager;
 use deasilworks\cef\test\Manager\UserManager;
 
@@ -80,11 +79,10 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         // does it exist?
         $this->assertTrue($localModel->getKey() == 'local');
-
     }
 
     /**
-     * Test table create
+     * Test table create.
      */
     public function testTableCreate()
     {

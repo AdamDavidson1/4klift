@@ -2,19 +2,18 @@
 
 namespace deasilworks\cef\test\Manager;
 
-use Cassandra\SimpleStatement;
 use deasilworks\cef\EntityManager;
 use deasilworks\cef\Statement\Simple;
-use deasilworks\cef\test\Collection\UserCollection;
 use deasilworks\cef\StatementBuilder\Select;
+use deasilworks\cef\test\Collection\UserCollection;
 use deasilworks\cef\test\Model\LocalModel;
 
 class UserManager extends EntityManager
 {
     /**
-     * A ResultContainer class
+     * A ResultContainer class.
      *
-     * @var string $collectionClass
+     * @var string
      */
     protected $collectionClass = UserCollection::class;
 
@@ -29,7 +28,7 @@ class UserManager extends EntityManager
     public function getSimpleStatementManager()
     {
         if (!$this->ssm) {
-            /** @var Simple $simple */
+            /* @var Simple $simple */
             $this->ssm = $this
                 ->getStatementManager(Simple::class)
                 ->setConfig($this->getConfig());
@@ -39,7 +38,7 @@ class UserManager extends EntityManager
     }
 
     /**
-     * Get user by username
+     * Get user by username.
      *
      * @param $username
      *
@@ -60,7 +59,7 @@ class UserManager extends EntityManager
         /** @var \deasilworks\cef\test\Collection\UserCollection $userCollection */
         $userCollection = $ssm->execute();
 
-        /** @var \deasilworks\cef\test\Model\LocalModel $localModel */
+        /* @var \deasilworks\cef\test\Model\LocalModel $localModel */
         return $userCollection->current();
     }
 }
