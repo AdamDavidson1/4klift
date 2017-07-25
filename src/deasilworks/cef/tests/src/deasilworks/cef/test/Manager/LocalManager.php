@@ -8,10 +8,9 @@ use deasilworks\cef\test\Collection\LocalCollection;
 class LocalManager extends EntityManager
 {
     /**
-     * A ResultContainer class
+     * A ResultContainer class.
      *
-     * @var string $collectionClass
+     * @var string
      */
     protected $collectionClass = LocalCollection::class;
-
 }
