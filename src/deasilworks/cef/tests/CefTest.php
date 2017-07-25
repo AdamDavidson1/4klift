@@ -104,7 +104,13 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         $tableDropString = 'DROP TABLE IF EXISTS test_4klift.user';
 
-        $statementMgr->setStatement($tableDropString)->execute();
+        $statementMgr->setStatement($tableDropString);
+
+        /** @var \Cassandra\Statement $statement */
+        $statement = $statementMgr->getStatement();
+        $this->assertInstanceOf(\Cassandra\SimpleStatement::class, $statement);
+
+        $statementMgr->execute();
 
         $tableCreateString = '
             CREATE TABLE IF NOT EXISTS test_4klift.user (
@@ -162,9 +168,6 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $userMgr = $this->getUserManager();
 
         $stmtBuilder = $userMgr->getStatementManager(Simple::class);
-
-
-
     }
 
     /**

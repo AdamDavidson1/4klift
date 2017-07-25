@@ -28,6 +28,7 @@ namespace deasilworks\cef;
 
 use deasilworks\cef\StatementBuilder\Select;
 use Pimple\Container;
+use Cassandra\Cluster\Builder;
 
 /**
  * Class StatementManager.
@@ -181,7 +182,7 @@ abstract class StatementManager
     }
 
     /**
-     * @return \Cassandra\Cluster\Builder
+     * @return Builder
      */
     public function getCassandraCluster()
     {
