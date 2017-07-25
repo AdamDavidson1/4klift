@@ -6,15 +6,15 @@ use deasilworks\cef\EntityModel;
 use JMS\Serializer\Annotation\Exclude;
 
 /**
- * Class LocalModel
- *
- * @package Fuse\CEF\Model
+ * Class LocalModel.
  */
 class LocalModel extends EntityModel
 {
     /**
-     * Overridden to supply Table Name
+     * Overridden to supply Table Name.
+     *
      * @Exclude()
+     *
      * @var string
      */
     protected $tableName = 'local';
@@ -109,11 +109,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $key
+     *
      * @return LocalModel
      */
     public function setKey($key)
     {
         $this->key = $key;
+
         return $this;
     }
 
@@ -127,11 +129,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $bootstrapped
+     *
      * @return LocalModel
      */
     public function setBootstrapped($bootstrapped)
     {
         $this->bootstrapped = $bootstrapped;
+
         return $this;
     }
 
@@ -145,11 +149,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $broadcast_address
+     *
      * @return LocalModel
      */
     public function setBroadcastAddress($broadcast_address)
     {
         $this->broadcast_address = $broadcast_address;
+
         return $this;
     }
 
@@ -163,11 +169,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $cluster_name
+     *
      * @return LocalModel
      */
     public function setClusterName($cluster_name)
     {
         $this->cluster_name = $cluster_name;
+
         return $this;
     }
 
@@ -181,11 +189,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $cql_version
+     *
      * @return LocalModel
      */
     public function setCqlVersion($cql_version)
     {
         $this->cql_version = $cql_version;
+
         return $this;
     }
 
@@ -199,11 +209,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $data_center
+     *
      * @return LocalModel
      */
     public function setDataCenter($data_center)
     {
         $this->data_center = $data_center;
+
         return $this;
     }
 
@@ -217,11 +229,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param int $gossip_generation
+     *
      * @return LocalModel
      */
     public function setGossipGeneration($gossip_generation)
     {
         $this->gossip_generation = $gossip_generation;
+
         return $this;
     }
 
@@ -235,11 +249,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $host_id
+     *
      * @return LocalModel
      */
     public function setHostId($host_id)
     {
         $this->host_id = $host_id;
+
         return $this;
     }
 
@@ -253,11 +269,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $listen_address
+     *
      * @return LocalModel
      */
     public function setListenAddress($listen_address)
     {
         $this->listen_address = $listen_address;
+
         return $this;
     }
 
@@ -271,11 +289,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $native_protocol_version
+     *
      * @return LocalModel
      */
     public function setNativeProtocolVersion($native_protocol_version)
     {
         $this->native_protocol_version = $native_protocol_version;
+
         return $this;
     }
 
@@ -289,11 +309,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $partitioner
+     *
      * @return LocalModel
      */
     public function setPartitioner($partitioner)
     {
         $this->partitioner = $partitioner;
+
         return $this;
     }
 
@@ -307,11 +329,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $rack
+     *
      * @return LocalModel
      */
     public function setRack($rack)
     {
         $this->rack = $rack;
+
         return $this;
     }
 
@@ -325,11 +349,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $release_version
+     *
      * @return LocalModel
      */
     public function setReleaseVersion($release_version)
     {
         $this->release_version = $release_version;
+
         return $this;
     }
 
@@ -343,11 +369,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $rpc_address
+     *
      * @return LocalModel
      */
     public function setRpcAddress($rpc_address)
     {
         $this->rpc_address = $rpc_address;
+
         return $this;
     }
 
@@ -361,11 +389,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $schema_version
+     *
      * @return LocalModel
      */
     public function setSchemaVersion($schema_version)
     {
         $this->schema_version = $schema_version;
+
         return $this;
     }
 
@@ -379,12 +409,13 @@ class LocalModel extends EntityModel
 
     /**
      * @param string $thrift_version
+     *
      * @return LocalModel
      */
     public function setThriftVersion($thrift_version)
     {
         $this->thrift_version = $thrift_version;
+
         return $this;
     }
-
 }
