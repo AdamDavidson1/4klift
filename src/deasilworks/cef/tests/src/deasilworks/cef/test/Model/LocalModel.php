@@ -226,7 +226,7 @@ class LocalModel extends EntityModel
      */
     public function getDataCenter()
     {
-        return $this->data_center;
+        return $this->dataCenter;
     }
 
     /**
@@ -234,9 +234,9 @@ class LocalModel extends EntityModel
      *
      * @return LocalModel
      */
-    public function setDataCenter($data_center)
+    public function setDataCenter($dataCenter)
     {
-        $this->data_center = $data_center;
+        $this->dataCenter = $dataCenter;
 
         return $this;
     }
@@ -293,8 +293,6 @@ class LocalModel extends EntityModel
      * @param $listenAddress
      *
      * @return LocalModel
-     *
-     * @internal param string $listen_address
      */
     public function setListenAddress($listenAddress)
     {
@@ -315,8 +313,6 @@ class LocalModel extends EntityModel
      * @param $nativeProtocolVersion
      *
      * @return LocalModel
-     *
-     * @internal param string $native_protocol_version
      */
     public function setNativeProtocolVersion($nativeProtocolVersion)
     {
