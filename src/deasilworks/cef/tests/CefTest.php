@@ -8,8 +8,8 @@ use deasilworks\cef\test\Collection\LocalCollection;
 use deasilworks\cef\test\Collection\UserCollection;
 use deasilworks\cef\test\Manager\LocalManager;
 use deasilworks\cef\test\Manager\UserManager;
-use deasilworks\cef\test\Model\UserModel;
 use deasilworks\cef\test\Model\UdtAddressModel;
+use deasilworks\cef\test\Model\UserModel;
 
 /**
  * Class cassandraTest.
@@ -53,6 +53,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
         }
 
         $this->userMgr->setConfig(['keyspace' => 'test_4klift', 'contact_points' => ['127.0.0.1']]);
+
         return $this->userMgr;
     }
 
@@ -234,7 +235,6 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(UdtAddressModel::class, $userModel->getAddress());
 
-
         // testing generic select (non JSON)
         $userModel = $userMgr->getUserByUsername('4klift', Select::SELECT_TYPE);
 
@@ -245,6 +245,5 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($userModel->getEmail() == 'code@deasil.works');
         $this->assertInstanceOf(UdtAddressModel::class, $userModel->getAddress());
-
     }
 }

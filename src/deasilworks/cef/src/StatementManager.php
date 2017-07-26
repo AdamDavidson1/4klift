@@ -26,9 +26,9 @@
 
 namespace deasilworks\cef;
 
+use Cassandra\Cluster\Builder;
 use deasilworks\cef\StatementBuilder\Select;
 use Pimple\Container;
-use Cassandra\Cluster\Builder;
 
 /**
  * Class StatementManager.
@@ -622,7 +622,6 @@ abstract class StatementManager
 
             // if it's not an object just assign it
             if (!is_object($value)) {
-
                 $entry[$key] = $value;
 
                 continue;

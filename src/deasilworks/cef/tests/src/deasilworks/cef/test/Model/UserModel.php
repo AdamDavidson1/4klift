@@ -4,7 +4,6 @@ namespace deasilworks\cef\test\Model;
 
 use deasilworks\cef\EntityModel;
 use JMS\Serializer\Annotation\Exclude;
-use deasilworks\cef\test\Model\UdtAddressModel;
 
 /**
  * Class UserModel.
@@ -140,11 +139,13 @@ class UserModel extends EntityModel
 
     /**
      * @param string $message
+     *
      * @return UserModel
      */
     public function setMessage($message)
     {
         $this->message = $message;
+
         return $this;
     }
 
@@ -158,11 +159,13 @@ class UserModel extends EntityModel
 
     /**
      * @param \deasilworks\cef\test\Model\UdtAddressModel $address
+     *
      * @return UserModel
      */
     public function setAddress(UdtAddressModel $address)
     {
         $this->address = $address;
+
         return $this;
     }
 }
