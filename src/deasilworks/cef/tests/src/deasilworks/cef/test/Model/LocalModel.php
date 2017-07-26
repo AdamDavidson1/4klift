@@ -230,7 +230,7 @@ class LocalModel extends EntityModel
     }
 
     /**
-     * @param string $data_center
+     * @param string $dataCenter
      *
      * @return LocalModel
      */
