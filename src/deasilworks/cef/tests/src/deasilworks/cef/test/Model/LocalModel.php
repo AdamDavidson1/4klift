@@ -144,17 +144,17 @@ class LocalModel extends EntityModel
      */
     public function getBroadcastAddress()
     {
-        return $this->broadcast_address;
+        return $this->broadcastAddress;
     }
 
     /**
-     * @param string $broadcast_address
+     * @param string $broadcastAddress
      *
      * @return LocalModel
      */
-    public function setBroadcastAddress($broadcast_address)
+    public function setBroadcastAddress($broadcastAddress)
     {
-        $this->broadcast_address = $broadcast_address;
+        $this->broadcastAddress = $broadcastAddress;
 
         return $this;
     }
@@ -164,17 +164,17 @@ class LocalModel extends EntityModel
      */
     public function getClusterName()
     {
-        return $this->cluster_name;
+        return $this->clusterName;
     }
 
     /**
-     * @param string $cluster_name
+     * @param string $clusterName
      *
      * @return LocalModel
      */
-    public function setClusterName($cluster_name)
+    public function setClusterName($clusterName)
     {
-        $this->cluster_name = $cluster_name;
+        $this->clusterName = $clusterName;
 
         return $this;
     }
@@ -184,17 +184,17 @@ class LocalModel extends EntityModel
      */
     public function getCqlVersion()
     {
-        return $this->cql_version;
+        return $this->cqlVersion;
     }
 
     /**
-     * @param string $cql_version
+     * @param string $cqlVersion
      *
      * @return LocalModel
      */
-    public function setCqlVersion($cql_version)
+    public function setCqlVersion($cqlVersion)
     {
-        $this->cql_version = $cql_version;
+        $this->cqlVersion = $cqlVersion;
 
         return $this;
     }
@@ -224,17 +224,17 @@ class LocalModel extends EntityModel
      */
     public function getGossipGeneration()
     {
-        return $this->gossip_generation;
+        return $this->gossipGeneration;
     }
 
     /**
-     * @param int $gossip_generation
+     * @param int $gossipGeneration
      *
      * @return LocalModel
      */
-    public function setGossipGeneration($gossip_generation)
+    public function setGossipGeneration($gossipGeneration)
     {
-        $this->gossip_generation = $gossip_generation;
+        $this->gossipGeneration = $gossipGeneration;
 
         return $this;
     }
@@ -244,17 +244,16 @@ class LocalModel extends EntityModel
      */
     public function getHostId()
     {
-        return $this->host_id;
+        return $this->hostId;
     }
 
     /**
-     * @param string $host_id
-     *
+     * @param $hostId
      * @return LocalModel
      */
-    public function setHostId($host_id)
+    public function setHostId($hostId)
     {
-        $this->host_id = $host_id;
+        $this->hostId = $hostId;
 
         return $this;
     }
@@ -264,17 +263,18 @@ class LocalModel extends EntityModel
      */
     public function getListenAddress()
     {
-        return $this->listen_address;
+        return $this->listenAddress;
     }
 
     /**
-     * @param string $listen_address
-     *
+     * @param $listenAddress
      * @return LocalModel
+     * @internal param string $listen_address
+     *
      */
-    public function setListenAddress($listen_address)
+    public function setListenAddress($listenAddress)
     {
-        $this->listen_address = $listen_address;
+        $this->listenAddress = $listenAddress;
 
         return $this;
     }
@@ -284,17 +284,18 @@ class LocalModel extends EntityModel
      */
     public function getNativeProtocolVersion()
     {
-        return $this->native_protocol_version;
+        return $this->nativeProtocolVersion;
     }
 
     /**
-     * @param string $native_protocol_version
-     *
+     * @param $nativeProtocolVersion
      * @return LocalModel
+     * @internal param string $native_protocol_version
+     *
      */
-    public function setNativeProtocolVersion($native_protocol_version)
+    public function setNativeProtocolVersion($nativeProtocolVersion)
     {
-        $this->native_protocol_version = $native_protocol_version;
+        $this->nativeProtocolVersion = $nativeProtocolVersion;
 
         return $this;
     }
@@ -344,17 +345,16 @@ class LocalModel extends EntityModel
      */
     public function getReleaseVersion()
     {
-        return $this->release_version;
+        return $this->releaseVersion;
     }
 
     /**
-     * @param string $release_version
-     *
+     * @param $releaseVersion
      * @return LocalModel
      */
-    public function setReleaseVersion($release_version)
+    public function setReleaseVersion($releaseVersion)
     {
-        $this->release_version = $release_version;
+        $this->releaseVersion = $releaseVersion;
 
         return $this;
     }
@@ -364,17 +364,17 @@ class LocalModel extends EntityModel
      */
     public function getRpcAddress()
     {
-        return $this->rpc_address;
+        return $this->rpcAddress;
     }
 
     /**
-     * @param string $rpc_address
+     * @param string $rpcAddress
      *
      * @return LocalModel
      */
-    public function setRpcAddress($rpc_address)
+    public function setRpcAddress($rpcAddress)
     {
-        $this->rpc_address = $rpc_address;
+        $this->rpcAddress = $rpcAddress;
 
         return $this;
     }
@@ -384,17 +384,17 @@ class LocalModel extends EntityModel
      */
     public function getSchemaVersion()
     {
-        return $this->schema_version;
+        return $this->schemaVersion;
     }
 
     /**
-     * @param string $schema_version
+     * @param string $schemaVersion
      *
      * @return LocalModel
      */
-    public function setSchemaVersion($schema_version)
+    public function setSchemaVersion($schemaVersion)
     {
-        $this->schema_version = $schema_version;
+        $this->schemaVersion = $schemaVersion;
 
         return $this;
     }
@@ -404,17 +404,17 @@ class LocalModel extends EntityModel
      */
     public function getThriftVersion()
     {
-        return $this->thrift_version;
+        return $this->thriftVersion;
     }
 
     /**
-     * @param string $thrift_version
+     * @param string $thriftVersion
      *
      * @return LocalModel
      */
-    public function setThriftVersion($thrift_version)
+    public function setThriftVersion($thriftVersion)
     {
-        $this->thrift_version = $thrift_version;
+        $this->thriftVersion = $thriftVersion;
 
         return $this;
     }
