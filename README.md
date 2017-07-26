@@ -15,7 +15,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/deasilworks/4klift/v/unstable)](https://packagist.org/packages/deasilworks/4klift)
 [![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
 [![License](https://poser.pugx.org/deasilworks/4klift/license)](https://packagist.org/packages/deasilworks/4klift)
-
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 **4klift** is a set of PHP components for developing highly available, redundant and scalable web sites or services on top of Apache Cassandra.
 
@@ -109,6 +109,11 @@ If you'd like to contribute to the **4klift** project, create component librarie
 
 - **[How to Contribute to 4klift](docs/CONTRIBUTING.md "Contributing to 4klift")**
 - **[4klift Logos and Assets](assets/README.md "4klift Logos and Assets")**
+
+
+## LICENSE
+
+MIT
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
