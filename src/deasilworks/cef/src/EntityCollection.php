@@ -41,6 +41,13 @@ class EntityCollection extends CEFData implements \Iterator
     protected $valueClass = EntityModel::class;
 
     /**
+     * @Exclude()
+     *
+     * @var bool
+     */
+    private $serializeNull = false;
+
+    /**
      * @var array
      */
     protected $collection = [];
@@ -64,15 +71,33 @@ class EntityCollection extends CEFData implements \Iterator
     }
 
     /**
-     * To JSON.
+     * @return bool
+     */
+    public function isSerializeNull()
+    {
+        return $this->serializeNull;
+    }
+
+    /**
+     * @param bool $serializeNull
      *
-     * @param $serializeNull boolean serialize null values?
+     * @return CEFData
+     */
+    public function setSerializeNull($serializeNull)
+    {
+        $this->serializeNull = $serializeNull;
+
+        return $this;
+    }
+
+    /**
+     * To JSON.
      *
      * @return string
      */
-    public function toJson($serializeNull = true)
+    public function toJson()
     {
-        return $this->serialize($this->collection, 'json', $serializeNull);
+        return $this->serialize($this->collection, 'json');
     }
 
     /**

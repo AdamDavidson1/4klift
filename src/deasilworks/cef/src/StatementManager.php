@@ -34,14 +34,6 @@ use Pimple\Container;
 abstract class StatementManager
 {
     /**
-     * @var array
-     */
-    private $jsonKeys = [
-        'comm_rx',
-        'comm_tx',
-    ];
-
-    /**
      * A day in seconds.
      */
     const DAY = 86400;
@@ -423,26 +415,6 @@ abstract class StatementManager
     public function executeAsync()
     {
         return $this->executeStatement('executeAsync');
-    }
-
-    /**
-     * @return array
-     */
-    public function getJsonKeys()
-    {
-        return $this->jsonKeys;
-    }
-
-    /**
-     * @param array $jsonKeys
-     *
-     * @return $this
-     */
-    public function setJsonKeys($jsonKeys)
-    {
-        $this->jsonKeys = $jsonKeys;
-
-        return $this;
     }
 
     /**
