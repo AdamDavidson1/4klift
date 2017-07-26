@@ -161,7 +161,7 @@ abstract class CEFData
     private function hydrate($context, $name, $value)
     {
         $words = ucwords(str_replace('_', ' ', $name));
-        $setter = 'set' . str_replace(' ', '', $words);
+        $setter = 'set'.str_replace(' ', '', $words);
 
         if (!method_exists($context, $setter)) {
             // we have no setter on this object
@@ -185,7 +185,7 @@ abstract class CEFData
             if (!$class && is_object($value)) {
                 // no class defined but is an object so
                 // cast to it an array and assign it so the
-                $context->$setter((array)$value);
+                $context->$setter((array) $value);
 
                 return true;
             }
@@ -247,5 +247,4 @@ abstract class CEFData
 
         return $obj;
     }
-
 }
