@@ -9,6 +9,7 @@ use deasilworks\cef\test\Collection\UserCollection;
 use deasilworks\cef\test\Manager\LocalManager;
 use deasilworks\cef\test\Manager\UserManager;
 use deasilworks\cef\test\Model\UserModel;
+use deasilworks\cef\test\Model\UdtAddressModel;
 
 /**
  * Class cassandraTest.
@@ -49,9 +50,9 @@ class CefTest extends \PHPUnit_Framework_TestCase
     {
         if (!$this->userMgr || !($this->userMgr instanceof UserManager)) {
             $this->userMgr = new UserManager();
-            $this->userMgr->setConfig(['keyspace' => 'test_4klift', 'contact_points' => ['127.0.0.1']]);
         }
 
+        $this->userMgr->setConfig(['keyspace' => 'test_4klift', 'contact_points' => ['127.0.0.1']]);
         return $this->userMgr;
     }
 
@@ -102,6 +103,10 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         $statementMgr->setStatement($keyspaceCreateString)->execute();
 
+        $typeDropString = 'DROP TYPE IF EXISTS test_4klift.udt_address';
+
+        $statementMgr->setStatement($typeDropString);
+
         $tableDropString = 'DROP TABLE IF EXISTS test_4klift.user';
 
         $statementMgr->setStatement($tableDropString);
@@ -112,10 +117,27 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         $statementMgr->execute();
 
+        $udtCreateString = '
+            CREATE TYPE IF NOT EXISTS test_4klift.udt_address (
+              street text,
+              street2 text,
+              city text,
+              state text,
+              zip text,
+              country text
+            );
+        ';
+
+        $statementMgr->setStatement($udtCreateString)->execute();
+
         $tableCreateString = '
             CREATE TABLE IF NOT EXISTS test_4klift.user (
               username text,
+              first_name text,
+              last_name text,
               email text,
+              message text,
+              address frozen<udt_address>,
               PRIMARY KEY (username)
             );
         ';
@@ -166,6 +188,8 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $userMgr = $this->getUserManager();
 
         $stmtBuilder = $userMgr->getStatementManager(Simple::class);
+
+        $this->assertInstanceOf(Simple::class, $stmtBuilder);
     }
 
     /**
@@ -179,13 +203,48 @@ class CefTest extends \PHPUnit_Framework_TestCase
         /** @var \deasilworks\cef\test\Model\UserModel $userModel */
         $userModel = $userMgr->getModel();
 
+        $addressModel = new UdtAddressModel();
+
         $userModel
             ->setUsername('4klift')
+            ->setFirstName('Deasil')
+            ->setLastName('Works')
             ->setEmail('code@deasil.works')
+            ->setMessage('Testing 4klift')
+            ->setAddress(
+                $addressModel
+                    ->setStreet('1812 W. Burbank Blvd., #674')
+                    ->setCity('Burbank')
+                    ->setState('CA')
+                    ->setZip('91506')
+                    ->setCountry('USA')
+            )
             ->save();
 
-        $userModel = $userMgr->getUserByUsername('4klift');
+        // testing default select (JSON)
+        // ----------------------------------------------
+        $userModel = $userMgr->getUserByUsername('4klift', Select::SELECT_JSON_TYPE);
+
+        $this->assertInternalType('string', $userModel->getUsername());
+        $this->assertInternalType('string', $userModel->getEmail());
+        $this->assertInternalType('string', $userModel->getMessage());
+
+        $this->assertTrue($userModel->getFirstName() == 'Deasil');
+        $this->assertTrue($userModel->getEmail() == 'code@deasil.works');
+
+        $this->assertInstanceOf(UdtAddressModel::class, $userModel->getAddress());
+
+
+        // testing generic select (non JSON)
+        $userModel = $userMgr->getUserByUsername('4klift', Select::SELECT_TYPE);
+
+        $this->assertTrue($userModel->getFirstName() == 'Deasil');
+        $this->assertInternalType('string', $userModel->getUsername());
+        $this->assertInternalType('string', $userModel->getEmail());
+        $this->assertInternalType('string', $userModel->getMessage());
 
         $this->assertTrue($userModel->getEmail() == 'code@deasil.works');
+        $this->assertInstanceOf(UdtAddressModel::class, $userModel->getAddress());
+
     }
 }

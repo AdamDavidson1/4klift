@@ -146,13 +146,7 @@ abstract class CEFData
      */
     public function __set($name, $value)
     {
-        if (!$this->hydrate($this, $name, $value)) {
-            if (is_object($value) && $value instanceof \stdClass) {
-                $value = (array) $value;
-            }
-
-            $this->$name = $value;
-        }
+        $this->hydrate($this, $name, $value);
     }
 
     /**
@@ -166,46 +160,74 @@ abstract class CEFData
      */
     private function hydrate($context, $name, $value)
     {
-        if (is_array($value) || (is_object($value) && $value instanceof \stdClass)) {
-            $words = ucwords(str_replace('_', ' ', $name));
-            $setter = 'set'.str_replace(' ', '', $words);
+        $words = ucwords(str_replace('_', ' ', $name));
+        $setter = 'set' . str_replace(' ', '', $words);
 
-            if (method_exists($context, $setter)) {
-                $reflection = new ReflectionClass($context);
-                $par = $reflection->getMethod($setter)->getParameters();
+        if (!method_exists($context, $setter)) {
+            // we have no setter on this object
+            // so just assume an attribute.
+            $context->$name = $value;
 
-                $class = $par[0]->getClass();
-                if (!$class) {
-                    return false;
-                }
+            return true;
+        }
 
-                $class = $class->name;
-                $obj = new $class();
+        if (is_array($value) || is_object($value)) {
 
-                // if NOT type of EntityCollection we are done
-                if (!$obj instanceof EntityCollection) {
-                    $obj = $this->hydrateClassObject($obj, $value);
-                    $context->$name = $obj;
+            // check to see if the setter has a defined type
+            // of model we can instantiate and hydrate.
+            $reflection = new ReflectionClass($context);
+            $param = $reflection->getMethod($setter)->getParameters();
 
-                    return true;
-                }
+            // CEF setters can only take one parameter so we
+            // only need look at the first one.
+            $class = $param[0]->getClass();
 
-                $model = null;
-                $entities = [];
-
-                foreach ($value as $k => $v) {
-                    $valueClass = $obj->getValueClass();
-                    $model = new $valueClass();
-                    $entities[$k] = $this->hydrateClassObject($model, $v);
-                }
-
-                $obj->setCollection($entities);
-
-                $context->$name = $obj;
+            if (!$class && is_object($value)) {
+                // no class defined but is an object so
+                // cast to it an array and assign it so the
+                $context->$setter((array)$value);
 
                 return true;
             }
+
+            $class = $class->name;
+            $obj = new $class();
+
+            // if NOT type of EntityCollection then
+            // hydrate class based object
+            if (!$obj instanceof EntityCollection) {
+                $obj = $this->hydrateClassObject($obj, $value);
+                $context->$setter($obj);
+
+                return true;
+            }
+
+            // if we got here it must be an EntityCollection
+            $context->$setter($this->hydrateEntityCollection($obj, $value));
+
+            return true;
         }
+
+        // fallback
+        $context->$setter($value);
+
+        return true;
+    }
+
+    private function hydrateEntityCollection(EntityCollection $obj, $value)
+    {
+        $model = null;
+        $entities = [];
+
+        foreach ($value as $entity => $entityVal) {
+            $valueClass = $obj->getValueClass();
+            $model = new $valueClass();
+            $entities[$entity] = $this->hydrateClassObject($model, $entityVal);
+        }
+
+        $obj->setCollection($entities);
+
+        return $obj;
     }
 
     /**
@@ -218,13 +240,12 @@ abstract class CEFData
      */
     private function hydrateClassObject($obj, $data)
     {
-        foreach ($data as $k => $v) {
-            // recursion
-            if (!$this->hydrate($obj, $k, $v)) {
-                $obj->$k = $v;
-            }
+        // loop through the class object and hydrate it
+        foreach ($data as $property => $value) {
+            $this->hydrate($obj, $property, $value);
         }
 
         return $obj;
     }
+
 }

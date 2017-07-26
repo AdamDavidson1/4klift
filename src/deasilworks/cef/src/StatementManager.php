@@ -543,7 +543,7 @@ abstract class StatementManager
         while (true) {
             while ($rows->valid()) {
 
-                // generic marshall
+                // marshall
                 $entry = $this->normalize($rows->current());
 
                 if ($entry) {
@@ -619,27 +619,29 @@ abstract class StatementManager
         ];
 
         foreach ($row as $key => $value) {
+
+            // if it's not an object just assign it
             if (!is_object($value)) {
-                // check for json keys
-                //
-                if (in_array($key, $this->jsonKeys)) {
-                    $value = json_decode($value, true);
-                }
 
                 $entry[$key] = $value;
 
                 continue;
             }
 
+            // it's an object so let's get the class
             $class = get_class($value);
 
+            // it this a Cassandra object?
             if (array_key_exists($class, $handlerMap)) {
                 $entry[$key] = $handlerMap[$class];
 
                 continue;
             }
 
-            $entry[$key] = (string) $value;
+            // it's an object but not a known cassandra object so let
+            // the hydrator deal with it.
+
+            $entry[$key] = $value;
         }
 
         return $entry;

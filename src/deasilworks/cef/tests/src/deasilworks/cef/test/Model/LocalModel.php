@@ -32,42 +32,42 @@ class LocalModel extends EntityModel
     /**
      * @var string
      */
-    protected $broadcast_address; // inet,
+    protected $broadcastAddress; // inet,
 
     /**
      * @var string
      */
-    protected $cluster_name; // text,
+    protected $clusterName; // text,
 
     /**
      * @var string
      */
-    protected $cql_version; // text,
+    protected $cqlVersion; // text,
 
     /**
      * @var string
      */
-    protected $data_center; // text,
+    protected $dataCenter; // text,
 
     /**
      * @var int
      */
-    protected $gossip_generation; // int,
+    protected $gossipGeneration; // int,
 
     /**
      * @var string
      */
-    protected $host_id; // uuid,
+    protected $hostId; // uuid,
 
     /**
      * @var string
      */
-    protected $listen_address; // inet,
+    protected $listenAddress; // inet,
 
     /**
      * @var string
      */
-    protected $native_protocol_version; // text,
+    protected $nativeProtocolVersion; // text,
 
     /**
      * @var string
@@ -82,22 +82,22 @@ class LocalModel extends EntityModel
     /**
      * @var string
      */
-    protected $release_version; // text,
+    protected $releaseVersion; // text,
 
     /**
      * @var string
      */
-    protected $rpc_address; // inet,
+    protected $rpcAddress; // inet,
 
     /**
      * @var string
      */
-    protected $schema_version; // uuid,
+    protected $schemaVersion; // uuid,
 
     /**
      * @var string
      */
-    protected $thrift_version;  // text,
+    protected $thriftVersion;  // text,
 
     /**
      * @return string

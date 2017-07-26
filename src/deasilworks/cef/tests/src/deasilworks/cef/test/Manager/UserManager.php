@@ -41,10 +41,11 @@ class UserManager extends EntityManager
      * Get user by username.
      *
      * @param $username
+     * @param $type
      *
      * @return LocalModel
      */
-    public function getUserByUsername($username)
+    public function getUserByUsername($username, $type = Select::SELECT_TYPE)
     {
         $ssm = $this->getSimpleStatementManager();
 
@@ -52,7 +53,7 @@ class UserManager extends EntityManager
         $stmtBuilder = $ssm->getStatementBuilder(Select::class);
 
         $ssm->setStatement(
-            $stmtBuilder->setWhere(['username = :username'])
+            $stmtBuilder->setWhere(['username = :username'])->setType($type)
         )
             ->setArguments(['username' => (string) $username]);
 
