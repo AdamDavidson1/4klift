@@ -24,7 +24,6 @@
 
 namespace deasilworks\cef;
 
-use Cassandra\Cluster\Builder;
 use deasilworks\cef\Cassandra\Transformer;
 use deasilworks\cef\StatementBuilder\Select;
 
