@@ -51,7 +51,6 @@ class CEF implements ServiceProviderInterface
         $app['cef'] = $this;
     }
 
-
     /**
      * @param string $managerClass
      *
