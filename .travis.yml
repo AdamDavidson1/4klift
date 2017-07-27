@@ -10,7 +10,7 @@ env:
   matrix:
   - APP_ENV=dev
   global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
+    - CC_TEST_REPORTER_ID=0df96b58ebc5224879ea50eef79d597efc851acb658e2cb65c3fbdf873a656f1
     - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
 
 addons:
@@ -40,4 +40,5 @@ before_install:
   - cd ext && ./install.sh && cd "$TRAVIS_BUILD_DIR"
   - echo "extension=cassandra.so" >> `php --ini | grep "Loaded Configuration" | sed
     -e "s|.*:\s*||"`
-  - bundle exec rspec
+  - bundle exec rake
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
