@@ -25,7 +25,6 @@
 namespace deasilworks\cef\Cassandra;
 
 use Cassandra\Timestamp;
-use deasilworks\cef\ResultContainer;
 
 /**
  * Class Transformer.
@@ -37,10 +36,10 @@ use deasilworks\cef\ResultContainer;
 class Transformer
 {
     /**
-     * Transform Cassandra Rows
+     * Transform Cassandra Rows.
      *
      * @param \Cassandra\Rows $rows
-
+     *
      * @return array
      */
     public function transformRows(\Cassandra\Rows $rows)

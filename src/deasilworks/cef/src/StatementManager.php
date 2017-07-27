@@ -33,7 +33,6 @@ use deasilworks\cef\StatementBuilder\Select;
  *
  * Responsible for executing CQL statements and providing a
  * StatementBuilder factory.
- *
  */
 abstract class StatementManager
 {
@@ -109,7 +108,7 @@ abstract class StatementManager
     /**
      * StatementManager constructor.
      *
-     * @param Config $config
+     * @param Config        $config
      * @param EntityManager $entityManager
      */
     public function __construct(Config $config, EntityManager $entityManager)
@@ -128,11 +127,13 @@ abstract class StatementManager
 
     /**
      * @param string $transformerClass
+     *
      * @return StatementManager
      */
     public function setTransformerClass($transformerClass)
     {
         $this->transformerClass = $transformerClass;
+
         return $this;
     }
 
@@ -390,7 +391,6 @@ abstract class StatementManager
 
         // convert result to entity collection
         if ($result && $result instanceof \Cassandra\Rows) {
-
             $transformer = $this->getTransformer();
             $resultContainer->setResults($transformer->transformRows($result));
 
@@ -427,7 +427,7 @@ abstract class StatementManager
     }
 
     /**
-     * Result Container Factory
+     * Result Container Factory.
      *
      * @return ResultContainer
      */

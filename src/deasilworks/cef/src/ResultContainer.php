@@ -73,7 +73,6 @@ class ResultContainer extends EntityCollection
         $this->entityManager = $entityManager;
     }
 
-
     /**
      * @return EntityManager
      */
