@@ -23,7 +23,7 @@
  */
 
 /**
- * Class CassandraTest
+ * Class CassandraTest.
  *
  * Suppress all warning.
  * We do bad things here and we know it.
@@ -34,7 +34,6 @@ class CassandraTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Cassandra Driver Test.
-     *
      */
     public function testHasCassandraDriver()
     {
