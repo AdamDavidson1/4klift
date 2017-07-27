@@ -62,7 +62,6 @@ class Config
      */
     protected $cluster;
 
-
     public function __construct(Cluster\Builder $clusterBuilder)
     {
         $this->clusterBuilder = $clusterBuilder;
@@ -174,7 +173,7 @@ class Config
 
             call_user_func_array([$builder, 'withContactPoints'], $this->getContactPoints());
 
-            /** @var Cluster $cluster */
+            /* @var Cluster $cluster */
             $this->cluster = $builder->build();
         }
 
