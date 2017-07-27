@@ -79,17 +79,7 @@ class LocalModel extends EntityModel
     /**
      * @var string
      */
-    protected $hostId; // uuid,
-
-    /**
-     * @var string
-     */
     protected $listenAddress; // inet,
-
-    /**
-     * @var string
-     */
-    protected $nativeProtocolVersion; // text,
 
     /**
      * @var string
@@ -110,11 +100,6 @@ class LocalModel extends EntityModel
      * @var string
      */
     protected $rpcAddress; // inet,
-
-    /**
-     * @var string
-     */
-    protected $schemaVersion; // uuid,
 
     /**
      * @var string
@@ -264,26 +249,6 @@ class LocalModel extends EntityModel
     /**
      * @return string
      */
-    public function getHostId()
-    {
-        return $this->hostId;
-    }
-
-    /**
-     * @param $hostId
-     *
-     * @return LocalModel
-     */
-    public function setHostId($hostId)
-    {
-        $this->hostId = $hostId;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getListenAddress()
     {
         return $this->listenAddress;
@@ -297,26 +262,6 @@ class LocalModel extends EntityModel
     public function setListenAddress($listenAddress)
     {
         $this->listenAddress = $listenAddress;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNativeProtocolVersion()
-    {
-        return $this->nativeProtocolVersion;
-    }
-
-    /**
-     * @param $nativeProtocolVersion
-     *
-     * @return LocalModel
-     */
-    public function setNativeProtocolVersion($nativeProtocolVersion)
-    {
-        $this->nativeProtocolVersion = $nativeProtocolVersion;
 
         return $this;
     }
@@ -397,26 +342,6 @@ class LocalModel extends EntityModel
     public function setRpcAddress($rpcAddress)
     {
         $this->rpcAddress = $rpcAddress;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSchemaVersion()
-    {
-        return $this->schemaVersion;
-    }
-
-    /**
-     * @param string $schemaVersion
-     *
-     * @return LocalModel
-     */
-    public function setSchemaVersion($schemaVersion)
-    {
-        $this->schemaVersion = $schemaVersion;
 
         return $this;
     }
