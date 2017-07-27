@@ -120,13 +120,13 @@ abstract class EntityManager
 
         $collectionClass = $this->getCollectionClass();
 
-        if ($statementManager instanceof StatementManager) {
-            $statementManager
-                ->setResultContainerClass($collectionClass)
-                ->setEntityManager($this);
-        } else {
+        if (!$statementManager instanceof StatementManager) {
             throw new \Exception($statementClass.' is not an instance of Deasil\CEF\StatementManager.');
         }
+
+        $statementManager
+            ->setResultContainerClass($collectionClass)
+            ->setEntityManager($this);
 
         return $statementManager;
     }
