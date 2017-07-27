@@ -25,10 +25,15 @@
 namespace deasilworks\cef;
 
 use Cassandra\Cluster\Builder;
+use deasilworks\cef\Cassandra\Transformer;
 use deasilworks\cef\StatementBuilder\Select;
 
 /**
  * Class StatementManager.
+ *
+ * Responsible for executing CQL statements and providing a
+ * StatementBuilder factory.
+ *
  */
 abstract class StatementManager
 {
@@ -83,6 +88,11 @@ abstract class StatementManager
     protected $entityManager;
 
     /**
+     * @var string
+     */
+    protected $transformerClass = Transformer::class;
+
+    /**
      * ResultContainer class.
      *
      * @var string
@@ -100,10 +110,38 @@ abstract class StatementManager
      * StatementManager constructor.
      *
      * @param Config $config
+     * @param EntityManager $entityManager
      */
-    public function __construct(Config $config)
+    public function __construct(Config $config, EntityManager $entityManager)
     {
         $this->config = $config;
+        $this->entityManager = $entityManager;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTransformerClass()
+    {
+        return $this->transformerClass;
+    }
+
+    /**
+     * @param string $transformerClass
+     * @return StatementManager
+     */
+    public function setTransformerClass($transformerClass)
+    {
+        $this->transformerClass = $transformerClass;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTransformer()
+    {
+        return new $this->transformerClass();
     }
 
     /**
@@ -348,23 +386,18 @@ abstract class StatementManager
     {
         $result = $this->executeStatement();
 
-        $resultContainer = null;
+        $resultContainer = $this->getResultContainer();
 
         // convert result to entity collection
         if ($result && $result instanceof \Cassandra\Rows) {
-            /** @var ResultContainer $resultContainer */
-            $resultContainer = $this->rowsToEntityCollection($result);
+
+            $transformer = $this->getTransformer();
+            $resultContainer->setResults($transformer->transformRows($result));
+
+            return $resultContainer;
         }
 
         return $resultContainer;
-    }
-
-    /**
-     * @return \Cassandra\Future
-     */
-    public function executeAsync()
-    {
-        return $this->executeStatement('executeAsync');
     }
 
     /**
@@ -385,7 +418,7 @@ abstract class StatementManager
         $this->resultClass = $resultClass;
 
         /** @var ResultContainer $resultContainer */
-        $resultContainer = new $resultClass();
+        $resultContainer = new $resultClass($this->entityManager);
 
         // set the model class
         $this->setResultModelClass($resultContainer->getModelClass());
@@ -394,17 +427,16 @@ abstract class StatementManager
     }
 
     /**
+     * Result Container Factory
+     *
      * @return ResultContainer
      */
-    public function getResultContainer()
+    private function getResultContainer()
     {
         $rcClass = $this->getResultContainerClass();
 
-        // @SOMEDAY: throw exception if this fails / check for ResultContainer
-
         /** @var ResultContainer $resultContainer */
-        $resultContainer = new $rcClass();
-        $resultContainer->setEntityManager($this->getEntityManager());
+        $resultContainer = new $rcClass($this->entityManager);
 
         return $resultContainer;
     }
@@ -445,47 +477,6 @@ abstract class StatementManager
     }
 
     /**
-     * @param \Cassandra\Rows $rows
-     *
-     * @return EntityCollection
-     */
-    protected function rowsToEntityCollection($rows)
-    {
-        /** @var ResultContainer $resultContainer */
-        $resultContainer = $this->getResultContainer();
-
-        $resultContainer->setArguments($this->previousArguments);
-        $resultContainer->setStatement((string) $this->getSb());
-
-        $entries = [];
-
-        // page through all results
-        while (true) {
-            while ($rows->valid()) {
-
-                // marshall
-                $entry = $this->normalize($rows->current());
-
-                if ($entry) {
-                    array_push($entries, $entry);
-                }
-
-                $rows->next();
-            }
-
-            if ($rows->isLastPage()) {
-                break;
-            }
-
-            $rows = $rows->nextPage();
-        }
-
-        $resultContainer->setResults($entries);
-
-        return $resultContainer;
-    }
-
-    /**
      * @param $builderClass
      *
      * @return \DeasilWorks\CEF\StatementBuilder
@@ -501,82 +492,6 @@ abstract class StatementManager
         $statementBuilder->setFrom($table);
 
         return $statementBuilder;
-    }
-
-    /**
-     * @param $row
-     *
-     * @return mixed
-     */
-    protected function normalize($row)
-    {
-        // loop through the object keys and normalize
-        $entry = [];
-
-        if (is_object($row) && get_class($row) == 'Cassandra\\Map') {
-            /** @var \Cassandra\Map $row */
-            $keys = $row->keys();
-            $data = [];
-            foreach ($keys as $key) {
-                $data[(string) $key] = $row->offsetGet($key);
-            }
-            $row = $data;
-        }
-
-        $handlerMap = [
-            'Cassandra\\Timestamp' => function ($value) {
-                return $this->handleTimestamp($value);
-            },
-            'Cassandra\\UserTypeValue' => function ($value) {
-                return $this->normalize($value);
-            },
-            'Cassandra\\Map' => function ($value) {
-                return $this->normalize($value);
-            },
-            'Cassandra\\Set' => function ($value) {
-                return $this->normalize($value);
-            },
-        ];
-
-        foreach ($row as $key => $value) {
-
-            // if it's not an object just assign it
-            if (!is_object($value)) {
-                $entry[$key] = $value;
-
-                continue;
-            }
-
-            // it's an object so let's get the class
-            $class = get_class($value);
-
-            // it this a Cassandra object?
-            if (array_key_exists($class, $handlerMap)) {
-                $entry[$key] = $handlerMap[$class];
-
-                continue;
-            }
-
-            // it's an object but not a known cassandra object so let
-            // the hydrator deal with it.
-
-            $entry[$key] = $value;
-        }
-
-        return $entry;
-    }
-
-    /**
-     * @param $class
-     *
-     * @return mixed
-     */
-    private function handleTimestamp($class)
-    {
-        /** @var \Cassandra\Timestamp $timestamp */
-        $timestamp = $class;
-
-        return $timestamp->time();
     }
 
     /**

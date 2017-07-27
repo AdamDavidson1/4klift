@@ -32,22 +32,22 @@ class Config
     /**
      * @var string
      */
-    private $username;
+    protected $username;
 
     /**
      * @var string
      */
-    private $password;
+    protected $password;
 
     /**
      * @var string
      */
-    private $keyspace;
+    protected $keyspace;
 
     /**
      * @var array
      */
-    private $contactPoints;
+    protected $contactPoints;
 
     /**
      * @return string

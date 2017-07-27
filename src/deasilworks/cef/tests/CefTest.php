@@ -196,7 +196,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $resCollection = $userMgr->getCollectionClass();
         $this->assertEquals(UserCollection::class, $resCollection);
 
-        $usrCollection = new $resCollection();
+        $usrCollection = new $resCollection($userMgr);
         $this->assertInstanceOf(ResultContainer::class, $usrCollection);
         $this->assertInstanceOf(UserCollection::class, $usrCollection);
 
@@ -214,7 +214,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $resCollection = $userMgr->getCollectionClass();
         $this->assertEquals(LocalCollection::class, $resCollection);
 
-        $localCollection = new $resCollection();
+        $localCollection = new $resCollection($userMgr);
         $this->assertInstanceOf(ResultContainer::class, $localCollection);
         $this->assertInstanceOf(LocalCollection::class, $localCollection);
     }

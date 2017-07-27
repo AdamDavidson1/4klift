@@ -60,23 +60,26 @@ class ResultContainer extends EntityCollection
     protected $entityManager;
 
     /**
+     * ResultContainer constructor.
+     *
+     * Result containers are used by Entity Managers.
+     *
+     * @param EntityManager $entityManager
+     */
+    public function __construct(EntityManager $entityManager)
+    {
+        parent::__construct();
+
+        $this->entityManager = $entityManager;
+    }
+
+
+    /**
      * @return EntityManager
      */
     public function getEntityManager()
     {
         return $this->entityManager;
-    }
-
-    /**
-     * @param EntityManager $entityManager
-     *
-     * @return ResultContainer
-     */
-    public function setEntityManager($entityManager)
-    {
-        $this->entityManager = $entityManager;
-
-        return $this;
     }
 
     /**

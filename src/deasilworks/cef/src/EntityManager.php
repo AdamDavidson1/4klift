@@ -50,6 +50,9 @@ abstract class EntityManager
     /**
      * EntityManager constructor.
      *
+     * Config is required for getStatementManager to
+     * produce Statement Managers.
+     *
      * @param Config $config
      */
     public function __construct(Config $config)
@@ -66,7 +69,7 @@ abstract class EntityManager
     {
         $collectionClass = $this->getCollectionClass();
 
-        return new $collectionClass();
+        return new $collectionClass($this);
     }
 
     /**
@@ -116,7 +119,8 @@ abstract class EntityManager
      */
     public function getStatementManager($statementClass = Simple::class)
     {
-        $statementManager = new $statementClass($this->config);
+        /** @var StatementManager $statementManager */
+        $statementManager = new $statementClass($this->config, $this);
 
         $collectionClass = $this->getCollectionClass();
 
@@ -124,9 +128,7 @@ abstract class EntityManager
             throw new \Exception($statementClass.' is not an instance of Deasil\CEF\StatementManager.');
         }
 
-        $statementManager
-            ->setResultContainerClass($collectionClass)
-            ->setEntityManager($this);
+        $statementManager->setResultContainerClass($collectionClass);
 
         return $statementManager;
     }
