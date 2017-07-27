@@ -25,9 +25,7 @@
 namespace deasilworks\cef;
 
 /**
- * Class Config
- *
- * @package Deasil\CEF
+ * Class Config.
  */
 class Config
 {
@@ -61,11 +59,13 @@ class Config
 
     /**
      * @param string $username
+     *
      * @return Config
      */
     public function setUsername($username)
     {
         $this->username = $username;
+
         return $this;
     }
 
@@ -79,11 +79,13 @@ class Config
 
     /**
      * @param string $password
+     *
      * @return Config
      */
     public function setPassword($password)
     {
         $this->password = $password;
+
         return $this;
     }
 
@@ -97,11 +99,13 @@ class Config
 
     /**
      * @param string $keyspace
+     *
      * @return Config
      */
     public function setKeyspace($keyspace)
     {
         $this->keyspace = $keyspace;
+
         return $this;
     }
 
@@ -119,12 +123,13 @@ class Config
 
     /**
      * @param array $contactPoints
+     *
      * @return Config
      */
     public function setContactPoints($contactPoints)
     {
         $this->contactPoints = $contactPoints;
+
         return $this;
     }
-
 }

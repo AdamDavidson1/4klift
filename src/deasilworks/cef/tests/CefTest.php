@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+use deasilworks\cef\CEF;
+use deasilworks\cef\Config;
 use deasilworks\cef\EntityModel;
 use deasilworks\cef\ResultContainer;
 use deasilworks\cef\Statement\Simple;
@@ -32,8 +34,6 @@ use deasilworks\cef\test\Manager\LocalManager;
 use deasilworks\cef\test\Manager\UserManager;
 use deasilworks\cef\test\Model\UdtAddressModel;
 use deasilworks\cef\test\Model\UserModel;
-use deasilworks\cef\Config;
-use deasilworks\cef\CEF;
 
 /**
  * Class cassandraTest.

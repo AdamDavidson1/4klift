@@ -29,12 +29,10 @@ use Doctrine\Common\Annotations\AnnotationRegistry as AR;
 AR::registerLoader('class_exists');
 
 /**
- * Class CEF
+ * Class CEF.
  *
  * Responsible for managing configuration and
  * providing an EntityManager factory.
- *
- * @package Deasil\CEF
  */
 class CEF
 {
@@ -45,6 +43,7 @@ class CEF
 
     /**
      * CEF constructor.
+     *
      * @param $config
      */
     public function __construct(Config $config)
@@ -54,12 +53,13 @@ class CEF
 
     /**
      * @param string $managerClass
-     * @return EntityManager
+     *
      * @throws \Exception
+     *
+     * @return EntityManager
      */
     public function getEntityManager($managerClass)
     {
         return new $managerClass($this->config);
     }
-
 }
