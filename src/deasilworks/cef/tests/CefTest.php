@@ -32,6 +32,8 @@ use deasilworks\cef\test\Manager\LocalManager;
 use deasilworks\cef\test\Manager\UserManager;
 use deasilworks\cef\test\Model\UdtAddressModel;
 use deasilworks\cef\test\Model\UserModel;
+use deasilworks\cef\Config;
+use deasilworks\cef\CEF;
 
 /**
  * Class cassandraTest.
@@ -49,6 +51,23 @@ class CefTest extends \PHPUnit_Framework_TestCase
     private $userMgr;
 
     /**
+     * @var Config
+     */
+    private $config;
+
+    /**
+     * @return Config
+     */
+    private function getConfig()
+    {
+        if (!$this->config) {
+            $this->config = new Config();
+        }
+
+        return $this->config;
+    }
+
+    /**
      * Get Local Entity Manager.
      *
      * @return LocalManager
@@ -56,8 +75,8 @@ class CefTest extends \PHPUnit_Framework_TestCase
     private function getLocalManager()
     {
         if (!$this->localMgr || !($this->localMgr instanceof LocalManager)) {
-            $this->localMgr = new LocalManager();
-            $this->localMgr->setConfig(['keyspace' => 'system', 'contact_points' => ['127.0.0.1']]);
+            $cef = new CEF($this->getConfig()->setKeyspace('system'));
+            $this->localMgr = $cef->getEntityManager(LocalManager::class);
         }
 
         return $this->localMgr;
@@ -71,10 +90,9 @@ class CefTest extends \PHPUnit_Framework_TestCase
     private function getUserManager()
     {
         if (!$this->userMgr || !($this->userMgr instanceof UserManager)) {
-            $this->userMgr = new UserManager();
+            $cef = new CEF($this->getConfig()->setKeyspace('test_4klift'));
+            $this->userMgr = $cef->getEntityManager(UserManager::class);
         }
-
-        $this->userMgr->setConfig(['keyspace' => 'test_4klift', 'contact_points' => ['127.0.0.1']]);
 
         return $this->userMgr;
     }
@@ -115,11 +133,10 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testTableCreate()
     {
-        $userMgr = new UserManager();
-        $userMgr->setConfig(['keyspace' => 'system', 'contact_points' => ['127.0.0.1']]);
+        $mgr = $this->getLocalManager();
 
         /** @var Simple $statementMgr */
-        $statementMgr = $userMgr
+        $statementMgr = $mgr
             ->getStatementManager(Simple::class);
 
         $keyspaceCreateString = "CREATE KEYSPACE IF NOT EXISTS test_4klift WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1}";

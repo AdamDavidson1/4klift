@@ -25,81 +25,41 @@
 namespace deasilworks\cef;
 
 use Doctrine\Common\Annotations\AnnotationRegistry as AR;
-use Pimple\Container;
-use Pimple\ServiceProviderInterface;
 
 AR::registerLoader('class_exists');
 
 /**
- * Class cef.
+ * Class CEF
+ *
+ * Responsible for managing configuration and
+ * providing an EntityManager factory.
+ *
+ * @package Deasil\CEF
  */
-class CEF implements ServiceProviderInterface
+class CEF
 {
     /**
-     * @var Container
+     * @var Config
      */
-    private $app;
+    private $config;
 
     /**
-     * Registers services on the given container.
-     *
-     * @param Container $app A container instance
+     * CEF constructor.
+     * @param $config
      */
-    public function register(Container $app)
+    public function __construct(Config $config)
     {
-        $this->setApp($app);
-        $app['cef'] = $this;
+        $this->config = $config;
     }
-
 
     /**
      * @param string $managerClass
-     *
-     * @throws \Exception
-     *
      * @return EntityManager
+     * @throws \Exception
      */
     public function getEntityManager($managerClass)
     {
-        $manager = new $managerClass();
-
-        if ($manager instanceof EntityManager) {
-            throw new \Exception($managerClass.' is not an instance of deasilworks\cef\EntityManager.');
-        }
-
-        $manager->setApp($this->getApp());
-
-        return $manager;
+        return new $managerClass($this->config);
     }
 
-    /**
-     * Handel setting properties on the cef service.
-     *
-     * @param $name
-     * @param $value
-     */
-    public function __set($name, $value)
-    {
-        $this->$name = $value;
-    }
-
-    /**
-     * @return Container
-     */
-    public function getApp()
-    {
-        return $this->app;
-    }
-
-    /**
-     * @param Container $app
-     *
-     * @return CEF
-     */
-    public function setApp($app)
-    {
-        $this->app = $app;
-
-        return $this;
-    }
 }

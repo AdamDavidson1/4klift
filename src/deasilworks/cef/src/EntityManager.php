@@ -25,19 +25,19 @@
 namespace deasilworks\cef;
 
 use deasilworks\cef\Statement\Simple;
-use Pimple\Container;
 
 /**
- * Class EntityManager.
+ * Class EntityManager
+ *
+ * Base class for entity managers.
+ * Responsible for implementing methods to retrieve entities and
+ * provides a Statement Manager factory to help accomplish that.
+ *
+ * @package Deasil\CEF
  */
 abstract class EntityManager
 {
     /**
-     * @var Container
-     */
-    protected $app;
-
-    /**f
      * A ResultContainer class
      *
      * @var string $collectionClass
@@ -45,65 +45,38 @@ abstract class EntityManager
     protected $collectionClass = ResultContainer::class;
 
     /**
-     * @var
+     * @var Config
      */
-    protected $config;
+    private $config;
 
     /**
-     * @return Container
+     * EntityManager constructor.
+     * @param Config $config
      */
-    public function getApp()
-    {
-        return $this->app;
-    }
-
-    /**
-     * @param Container $app
-     *
-     * @return EntityManager
-     */
-    public function setApp($app)
-    {
-        $this->app = $app;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getConfig()
-    {
-        if (!$this->config) {
-            $this->config = $this->getApp()['config']->get('cassandra');
-        }
-
-        return $this->config;
-    }
-
-    /**
-     * @param array $config
-     *
-     * @return EntityManager
-     */
-    public function setConfig($config)
+    public function __construct(Config $config)
     {
         $this->config = $config;
-
-        return $this;
     }
 
     /**
-     * Get's the model associated witht the collection.
+     * Collection Factory
+     *
+     * @return ResultContainer
+     */
+    public function getCollection()
+    {
+        $collectionClass = $this->getCollectionClass();
+
+        return new $collectionClass();
+    }
+
+    /**
+     * Get the model associated with the collection
      *
      * @return EntityModel
      */
     public function getModel()
     {
-        if (!$this->collectionClass) {
-            return new EntityModel();
-        }
-
         $collection = $this->getCollection();
 
         /** @var EntityModel $model */
@@ -114,33 +87,12 @@ abstract class EntityManager
     }
 
     /**
-     * Collection Factory.
-     *
-     * @throws \Exception
-     *
-     * @return \DeasilWorks\CEF\ResultContainer
-     */
-    public function getCollection()
-    {
-        $collectionClass = $this->getCollectionClass();
-        $collection = new $collectionClass();
-
-        if (!($collection instanceof ResultContainer)) {
-            throw new \Exception('E5000', $collectionClass.' is not an instance of deasilworks\CEF\StatementManager.');
-        }
-
-        return $collection;
-    }
-
-    /**
      * @param string $collectionClass
-     *
      * @return EntityManager
      */
     public function setCollectionClass($collectionClass)
     {
         $this->collectionClass = $collectionClass;
-
         return $this;
     }
 
@@ -153,29 +105,27 @@ abstract class EntityManager
     }
 
     /**
-     * Statement Manager Factory.
+     * Statement Manager Factory
      *
      * @param string $statementClass
-     *
-     * @throws \Exception
-     *
      * @return StatementManager
+     * @throws \Exception
      */
-    public function getStatementManager($statementClass = Simple::class)
+    function getStatementManager($statementClass = Simple::class)
     {
-        $statementManager = new $statementClass();
+        $statementManager = new $statementClass($this->config);
 
         $collectionClass = $this->getCollectionClass();
 
-        if (!($statementManager instanceof StatementManager)) {
-            throw new \Exception($statementClass.' is not an instance of deasilworks\CEF\StatementManager.');
+        if ($statementManager instanceof StatementManager) {
+            $statementManager
+                ->setResultContainerClass($collectionClass)
+                ->setEntityManager($this);
+        } else {
+            throw new \Exception($statementClass . ' is not an instance of Deasil\CEF\StatementManager.');
         }
-
-        $statementManager->setApp($this->getApp());
-        $statementManager->setConfig($this->getConfig());
-        $statementManager->setResultContainerClass($collectionClass);
-        $statementManager->setEntityManager($this);
 
         return $statementManager;
     }
+
 }

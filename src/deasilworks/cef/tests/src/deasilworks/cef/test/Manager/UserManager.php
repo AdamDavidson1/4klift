@@ -51,9 +51,7 @@ class UserManager extends EntityManager
     {
         if (!$this->ssm) {
             /* @var Simple $simple */
-            $this->ssm = $this
-                ->getStatementManager(Simple::class)
-                ->setConfig($this->getConfig());
+            $this->ssm = $this->getStatementManager(Simple::class);
         }
 
         return $this->ssm;

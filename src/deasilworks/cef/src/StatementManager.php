@@ -26,18 +26,12 @@ namespace deasilworks\cef;
 
 use Cassandra\Cluster\Builder;
 use deasilworks\cef\StatementBuilder\Select;
-use Pimple\Container;
 
 /**
  * Class StatementManager.
  */
 abstract class StatementManager
 {
-    /**
-     * A day in seconds.
-     */
-    const DAY = 86400;
-
     /**
      * @var \Cassandra\Session
      */
@@ -59,14 +53,9 @@ abstract class StatementManager
     protected $statementBuilder;
 
     /**
-     * @var array
+     * @var Config
      */
     protected $config;
-
-    /**
-     * @var Container
-     */
-    protected $app;
 
     /**
      * @var mixed
@@ -108,47 +97,12 @@ abstract class StatementManager
     protected $resultModelClass = EntityModel::class;
 
     /**
-     * @return Container
+     * StatementManager constructor.
+     * @param Config $config
      */
-    public function getApp()
-    {
-        return $this->app;
-    }
-
-    /**
-     * @param Container $app
-     *
-     * @return StatementManager
-     */
-    public function setApp($app)
-    {
-        $this->app = $app;
-
-        return $this;
-    }
-
-    /**
-     * @param array $config
-     *
-     * @return StatementManager
-     */
-    public function setConfig($config)
+    public function __construct(Config $config)
     {
         $this->config = $config;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getConfig()
-    {
-        if (!$this->config) {
-            $this->config = $this->getApp()['config']->get('cassandra');
-        }
-
-        return $this->config;
     }
 
     /**
@@ -184,8 +138,6 @@ abstract class StatementManager
      */
     public function getCluster()
     {
-        $config = $this->getConfig();
-
         if (!$this->cluster) {
             $retryPolicy = new \Cassandra\RetryPolicy\DowngradingConsistency();
             $loggedRetry = new \Cassandra\RetryPolicy\Logging($retryPolicy);
@@ -197,13 +149,11 @@ abstract class StatementManager
                 ->withRetryPolicy($loggedRetry)
                 ->withTokenAwareRouting(true);
 
-            if (array_key_exists('username', $config) && array_key_exists('password', $config)) {
-                $cluster->withCredentials($config['username'], $config['password']);
+            if ($this->config->getUsername() && $this->config->getPassword()) {
+                $cluster->withCredentials($this->config->getUsername(), $this->config->getPassword());
             }
 
-            if (array_key_exists('withContactPoints', $config)) {
-                call_user_func_array([$cluster, 'withContactPoints'], $config['contact_points']);
-            }
+            call_user_func_array([$cluster, 'withContactPoints'], $this->config->getContactPoints());
 
             $this->cluster = $cluster->build();
         }
@@ -216,11 +166,10 @@ abstract class StatementManager
      */
     public function getSession()
     {
-        $config = $this->getConfig();
         $cluster = $this->getCluster();
 
         if (!$this->session) {
-            $this->session = $cluster->connect($config['keyspace']);
+            $this->session = $cluster->connect($this->config->getKeyspace());
         }
 
         return $this->session;
