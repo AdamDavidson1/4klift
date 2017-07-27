@@ -22,6 +22,10 @@
  * SOFTWARE.
  */
 
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('UTC');
+}
+
 ini_set('display_errors', 0);
 
 require_once __DIR__.'/../vendor/autoload.php';

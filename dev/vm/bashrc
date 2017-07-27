@@ -148,7 +148,7 @@ git_prompt ()
   echo "[$git_color$git_branch${c_reset}] "
 }
 
-PATH="$HOME/.composer/vendor/bin:$HOME/wp-cli/bin:$PATH"
+PATH="$HOME/.composer/vendor/bin:$HOME/wp-cli/bin:$HOME/project/vendor/phpmd/phpmd/src/bin:$PATH"
 
 PROMPT_COMMAND='PS1="${c_red}${ME}${c_gray}@${c_reset}${c_path}${HOSTNAME}${c_reset} ${c_gray}(${ip_array[0]}.${ip_arr\
 ay[1]}.${ip_array[2]}.${undred}${ip_arr\

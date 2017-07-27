@@ -51,29 +51,6 @@ class CEF implements ServiceProviderInterface
         $app['cef'] = $this;
     }
 
-    /**
-     * Load a Cassandra Entity Manager.
-     *
-     * @deprecated use getEntityManager
-     *
-     * @param $name
-     *
-     * @throws \Exception
-     *
-     * @return mixed
-     */
-    public function load($name)
-    {
-        $this->$name = new $name();
-
-        if (!($this->$name instanceof EntityManager)) {
-            throw new \Exception($name.' is not an instance of deasilworks\cef\EntityManager.');
-        }
-
-        $this->$name->setApp($this->getApp());
-
-        return $this->$name;
-    }
 
     /**
      * @param string $managerClass
@@ -87,7 +64,7 @@ class CEF implements ServiceProviderInterface
         $manager = new $managerClass();
 
         if ($manager instanceof EntityManager) {
-            throw new \Exception($managerClass.' is not an instance of deasilworks\CEF\EntityManager.');
+            throw new \Exception($managerClass.' is not an instance of deasilworks\cef\EntityManager.');
         }
 
         $manager->setApp($this->getApp());
