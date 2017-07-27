@@ -24,6 +24,9 @@
 
 namespace deasilworks\cef;
 
+use Cassandra\Cluster;
+use Cassandra\RetryPolicy;
+
 /**
  * Class Config.
  */
@@ -48,6 +51,22 @@ class Config
      * @var array
      */
     protected $contactPoints;
+
+    /**
+     * @var Cluster\Builder
+     */
+    protected $clusterBuilder;
+
+    /**
+     * @var Cluster
+     */
+    protected $cluster;
+
+
+    public function __construct(Cluster\Builder $clusterBuilder)
+    {
+        $this->clusterBuilder = $clusterBuilder;
+    }
 
     /**
      * @return string
@@ -131,5 +150,34 @@ class Config
         $this->contactPoints = $contactPoints;
 
         return $this;
+    }
+
+    /**
+     * @return Cluster
+     */
+    public function getCluster()
+    {
+        if (!$this->cluster) {
+            $retryPolicy = new RetryPolicy\DowngradingConsistency();
+            $loggedRetry = new RetryPolicy\Logging($retryPolicy);
+
+            /** @var Cluster\Builder $builder */
+            $builder = $this->clusterBuilder;
+            $builder
+                ->withDefaultConsistency(\Cassandra::CONSISTENCY_LOCAL_QUORUM)
+                ->withRetryPolicy($loggedRetry)
+                ->withTokenAwareRouting(true);
+
+            if ($this->getUsername() && $this->getPassword()) {
+                $builder->withCredentials($this->getUsername(), $this->getPassword());
+            }
+
+            call_user_func_array([$builder, 'withContactPoints'], $this->getContactPoints());
+
+            /** @var Cluster $cluster */
+            $this->cluster = $builder->build();
+        }
+
+        return $this->cluster;
     }
 }

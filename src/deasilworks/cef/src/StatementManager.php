@@ -166,36 +166,12 @@ abstract class StatementManager
     }
 
     /**
-     * @return Builder
-     */
-    public function getCassandraCluster()
-    {
-        return \Cassandra::cluster();
-    }
-
-    /**
      * @return mixed
      */
     public function getCluster()
     {
         if (!$this->cluster) {
-            $retryPolicy = new \Cassandra\RetryPolicy\DowngradingConsistency();
-            $loggedRetry = new \Cassandra\RetryPolicy\Logging($retryPolicy);
-
-            /** @var \Cassandra\Cluster\Builder $cluster */
-            $cluster = $this->getCassandraCluster();
-            $cluster
-                ->withDefaultConsistency(\Cassandra::CONSISTENCY_LOCAL_QUORUM)
-                ->withRetryPolicy($loggedRetry)
-                ->withTokenAwareRouting(true);
-
-            if ($this->config->getUsername() && $this->config->getPassword()) {
-                $cluster->withCredentials($this->config->getUsername(), $this->config->getPassword());
-            }
-
-            call_user_func_array([$cluster, 'withContactPoints'], $this->config->getContactPoints());
-
-            $this->cluster = $cluster->build();
+            $this->cluster = $this->config->getCluster();
         }
 
         return $this->cluster;
@@ -339,11 +315,10 @@ abstract class StatementManager
 
     /**
      * @param string $type
-     * @param bool   $reset
      *
      * @return mixed
      */
-    private function executeStatement($type = 'execute', $reset = true)
+    private function executeStatement($type = 'execute')
     {
         $options = [
             'consistency' => \Cassandra::CONSISTENCY_LOCAL_QUORUM,
@@ -371,10 +346,6 @@ abstract class StatementManager
         // deal with args
         if (array_key_exists('arguments', $options)) {
             $this->previousArgs($options['arguments']);
-        }
-
-        if ($reset) {
-            $this->reset();
         }
 
         return $result;

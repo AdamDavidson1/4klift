@@ -61,7 +61,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
     private function getConfig()
     {
         if (!$this->config) {
-            $this->config = new Config();
+            $this->config = new Config(\Cassandra::cluster());
         }
 
         return $this->config;
