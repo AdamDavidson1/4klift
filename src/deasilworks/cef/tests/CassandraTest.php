@@ -22,10 +22,19 @@
  * SOFTWARE.
  */
 
+/**
+ * Class CassandraTest
+ *
+ * Suppress all warning.
+ * We do bad things here and we know it.
+ *
+ * @SuppressWarnings(PHPMD)
+ */
 class CassandraTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Cassandra Driver Test.
+     *
      */
     public function testHasCassandraDriver()
     {

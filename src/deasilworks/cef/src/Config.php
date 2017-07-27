@@ -62,9 +62,9 @@ class Config
      */
     protected $cluster;
 
-    public function __construct(Cluster\Builder $clusterBuilder)
+    public function __construct()
     {
-        $this->clusterBuilder = $clusterBuilder;
+        $this->clusterBuilder = \Cassandra::cluster();
     }
 
     /**

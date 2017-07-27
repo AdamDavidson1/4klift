@@ -37,6 +37,11 @@ use deasilworks\cef\test\Model\UserModel;
 
 /**
  * Class cassandraTest.
+ *
+ * Suppress all warning.
+ * We do bad things here and we know it.
+ *
+ * @SuppressWarnings(PHPMD)
  */
 class CefTest extends \PHPUnit_Framework_TestCase
 {
@@ -61,7 +66,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
     private function getConfig()
     {
         if (!$this->config) {
-            $this->config = new Config(\Cassandra::cluster());
+            $this->config = new Config();
         }
 
         return $this->config;
