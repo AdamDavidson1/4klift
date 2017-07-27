@@ -98,6 +98,7 @@ abstract class StatementManager
 
     /**
      * StatementManager constructor.
+     *
      * @param Config $config
      */
     public function __construct(Config $config)
