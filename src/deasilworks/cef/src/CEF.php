@@ -63,5 +63,4 @@ class CEF
     {
         return new $managerClass($this->config);
     }
-
 }

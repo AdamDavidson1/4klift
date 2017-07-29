@@ -28,14 +28,12 @@ namespace deasilworks\cms\CEF\Manager;
 use deasilworks\cef\EntityManager;
 
 /**
- * Class PageManager
- *
- * @package deasilworks\cms\CEF\Manager
+ * Class PageManager.
  */
 class PageManager extends EntityManager
 {
-
-    public function testMe() {
-        return "Test Manager...";
+    public function testMe()
+    {
+        return 'Test Manager...';
     }
 }
