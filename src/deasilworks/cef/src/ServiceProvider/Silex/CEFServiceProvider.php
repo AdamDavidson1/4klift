@@ -25,9 +25,9 @@
 
 namespace deasilworks\cef\ServiceProvider\Silex;
 
+use deasilworks\cef\CEF;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use deasilworks\cef\CEF;
 
 /**
  * Class CEFServiceProvider.
@@ -37,7 +37,6 @@ use deasilworks\cef\CEF;
  */
 class CEFServiceProvider implements ServiceProviderInterface
 {
-
     /**
      * @param Container $container
      */

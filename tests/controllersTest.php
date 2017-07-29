@@ -54,5 +54,4 @@ class controllersTest extends WebTestCase
 
         return $this->app = $app;
     }
-
 }

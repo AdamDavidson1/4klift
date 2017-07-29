@@ -22,18 +22,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Silex\Provider\MonologServiceProvider;
-use Silex\Provider\WebProfilerServiceProvider;
+
+use deasilworks\api\API;
+use deasilworks\cef\CEFConfig;
+use deasilworks\cef\ServiceProvider\Silex\CEFServiceProvider;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
+use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\TwigServiceProvider;
-use deasilworks\api\API;
-use deasilworks\cef\ServiceProvider\Silex\CEFServiceProvider;
-use deasilworks\cef\CEFConfig;
+use Silex\Provider\WebProfilerServiceProvider;
+use Symfony\Component\HttpFoundation\Request;
 
 if (!ini_get('date.timezone')) {
     date_default_timezone_set('UTC');
@@ -51,9 +51,8 @@ $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
 
 $app->register(new CEFServiceProvider(), [
-    'deasilworks.cef.config' => new CEFConfig()
+    'deasilworks.cef.config' => new CEFConfig(),
 ]);
-
 
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
@@ -63,11 +62,11 @@ $app['twig.options'] = ['cache' => __DIR__.'/../var/cache/twig'];
 
 if ($app['debug'] === true) {
     $app->register(new MonologServiceProvider(), [
-        'monolog.logfile' => __DIR__ . '/../var/logs/silex_dev.log',
+        'monolog.logfile' => __DIR__.'/../var/logs/silex_dev.log',
     ]);
 
     $app->register(new WebProfilerServiceProvider(), [
-        'profiler.cache_dir' => __DIR__ . '/../var/cache/profiler',
+        'profiler.cache_dir' => __DIR__.'/../var/cache/profiler',
     ]);
 }
 
@@ -79,7 +78,8 @@ $app->match('/api/', function (Request $request) use ($app) {
     $pageMgr = $cef->getEntityManager(\deasilworks\cms\CEF\Manager\PageManager::class);
 
     $api = new API();
-    return $api->getMessage() . ' - ' . $pageMgr->testMe();
+
+    return $api->getMessage().' - '.$pageMgr->testMe();
 });
 
 $app->get('/', function () use ($app) {
