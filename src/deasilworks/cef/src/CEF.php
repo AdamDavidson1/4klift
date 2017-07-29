@@ -53,6 +53,24 @@ class CEF
     }
 
     /**
+     * @return CEFConfig
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    /**
+     * @param CEFConfig $config
+     * @return CEF
+     */
+    public function setConfig($config)
+    {
+        $this->config = $config;
+        return $this;
+    }
+
+    /**
      * @param string $managerClass
      *
      * @throws \Exception

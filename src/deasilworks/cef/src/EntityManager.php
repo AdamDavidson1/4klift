@@ -34,7 +34,7 @@ use deasilworks\cef\Statement\Simple;
  * Responsible for implementing methods to retrieve entities and
  * provides a Statement Manager factory to help accomplish that.
  */
-abstract class EntityManager
+class EntityManager
 {
     /**
      * A ResultContainer class.

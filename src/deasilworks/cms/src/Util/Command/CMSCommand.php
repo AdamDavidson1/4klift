@@ -1,5 +1,4 @@
 <?php
-
 /*
  * MIT License
  *
@@ -22,43 +21,49 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+namespace deasilworks\cms\Util\Command;
 
-namespace deasilworks\cms\CEF\Manager;
+use deasilworks\cef\CEF;
+use deasilworks\cef\CEFConfig;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
-use deasilworks\cef\EntityManager;
-use deasilworks\cef\Statement\Simple;
-use deasilworks\cms\CEF\Collection\PageCollection;
-use deasilworks\cef\StatementBuilder\Select;
-use deasilworks\cms\CEF\Model\PageModel;
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('UTC');
+}
 
 /**
- * Class PageManager.
+ * Class CMSCommand
  */
-class PageManager extends EntityManager
+abstract class CMSCommand extends Command
 {
     /**
-     * @var string
+     * @var SymfonyStyle
      */
-    protected $collectionClass = PageCollection::class;
+    protected $io;
 
     /**
-     * @return PageModel
+     * @var \Twig_Environment
      */
-    public function getPage($stub)
+    protected $twig;
+
+    /**
+     * @var CEF
+     */
+    protected $cef;
+
+    /**
+     * InstallCommand constructor.
+     * @param null $name
+     */
+    public function __construct($name = null)
     {
-        $stmtManager = $this->getStatementManager(Simple::class);
+        parent::__construct($name);
 
-        /** @var Select $stmtBuilder */
-        $stmtBuilder = $stmtManager->getStatementBuilder(Select::class);
+        $loader= new \Twig_Loader_Filesystem(__DIR__ . '/../Template/');
+        $this->twig = new \Twig_Environment($loader);
 
-        /** @var PageCollection $collection */
-        $collection = $stmtManager->setStatement(
-            $stmtBuilder->setWhere(['stub = :stub'])
-        )
-            ->setArguments(['stub' => $stub])
-            ->execute();
-
-
-        return $collection->current();
+        $cefConfig = new CEFConfig();
+        $this->cef = new CEF($cefConfig);
     }
 }

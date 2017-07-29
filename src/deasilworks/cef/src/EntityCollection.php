@@ -102,6 +102,14 @@ class EntityCollection extends CEFData implements \Iterator
     }
 
     /**
+     * @return bool
+     */
+    public function isEmpty()
+    {
+        return $this->getCount() > 0 ? false : true;
+    }
+
+    /**
      * @return int
      */
     public function getCount()

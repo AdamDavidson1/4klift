@@ -23,42 +23,17 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cms\CEF\Manager;
+namespace deasilworks\cms\CEF\Collection;
 
-use deasilworks\cef\EntityManager;
-use deasilworks\cef\Statement\Simple;
-use deasilworks\cms\CEF\Collection\PageCollection;
-use deasilworks\cef\StatementBuilder\Select;
+use deasilworks\cef\ResultContainer;
 use deasilworks\cms\CEF\Model\PageModel;
 
-/**
- * Class PageManager.
- */
-class PageManager extends EntityManager
+class PageCollection extends ResultContainer
 {
     /**
+     * Overridden to customize Model Class.
+     *
      * @var string
      */
-    protected $collectionClass = PageCollection::class;
-
-    /**
-     * @return PageModel
-     */
-    public function getPage($stub)
-    {
-        $stmtManager = $this->getStatementManager(Simple::class);
-
-        /** @var Select $stmtBuilder */
-        $stmtBuilder = $stmtManager->getStatementBuilder(Select::class);
-
-        /** @var PageCollection $collection */
-        $collection = $stmtManager->setStatement(
-            $stmtBuilder->setWhere(['stub = :stub'])
-        )
-            ->setArguments(['stub' => $stub])
-            ->execute();
-
-
-        return $collection->current();
-    }
+    protected $valueClass = PageModel::class;
 }

@@ -71,6 +71,26 @@ class CEFConfig
     /**
      * @return string
      */
+    public function getKeyspace()
+    {
+        return $this->keyspace;
+    }
+
+    /**
+     * @param string $keyspace
+     *
+     * @return CEFConfig
+     */
+    public function setKeyspace($keyspace)
+    {
+        $this->keyspace = $keyspace;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
     public function getUsername()
     {
         return $this->username;
@@ -83,6 +103,7 @@ class CEFConfig
      */
     public function setUsername($username)
     {
+        $this->cluster = null;
         $this->username = $username;
 
         return $this;
@@ -103,27 +124,8 @@ class CEFConfig
      */
     public function setPassword($password)
     {
+        $this->cluster = null;
         $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getKeyspace()
-    {
-        return $this->keyspace;
-    }
-
-    /**
-     * @param string $keyspace
-     *
-     * @return CEFConfig
-     */
-    public function setKeyspace($keyspace)
-    {
-        $this->keyspace = $keyspace;
 
         return $this;
     }
@@ -133,6 +135,8 @@ class CEFConfig
      */
     public function getContactPoints()
     {
+        $this->cluster = null;
+
         if (!$this->contactPoints) {
             $this->contactPoints = ['127.0.0.1'];
         }
@@ -147,6 +151,7 @@ class CEFConfig
      */
     public function setContactPoints($contactPoints)
     {
+        $this->cluster = null;
         $this->contactPoints = $contactPoints;
 
         return $this;
@@ -157,7 +162,7 @@ class CEFConfig
      */
     public function getCluster()
     {
-        if (!$this->cluster) {
+        if ($this->cluster == null) {
             $retryPolicy = new RetryPolicy\DowngradingConsistency();
             $loggedRetry = new RetryPolicy\Logging($retryPolicy);
 

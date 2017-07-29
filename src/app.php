@@ -51,7 +51,7 @@ $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
 
 $app->register(new CEFServiceProvider(), [
-    'deasilworks.cef.config' => new CEFConfig(),
+    'deasilworks.cef.keyspace' => 'fl_cms',
 ]);
 
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
@@ -71,19 +71,23 @@ if ($app['debug'] === true) {
 }
 
 $app->match('/api/', function (Request $request) use ($app) {
-    /** @var \deasilworks\cef\CEF $cef */
-    $cef = $app['deasilworks.cef'];
-
-    /** @var \deasilworks\cms\CEF\Manager\PageManager $pageMgr */
-    $pageMgr = $cef->getEntityManager(\deasilworks\cms\CEF\Manager\PageManager::class);
-
     $api = new API();
 
-    return $api->getMessage().' - '.$pageMgr->testMe();
+    return $api->getMessage();
 });
 
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html.twig', []);
+
+    /** @var \deasilworks\cms\CEF\Manager\PageManager $pageMgr */
+    $pageMgr = $app['deasilworks.cef']->getEntityManager(\deasilworks\cms\CEF\Manager\PageManager::class);
+
+    try {
+        $pageModel = $pageMgr->getPage('welcome');
+    } catch (\Exception $exception) {
+        return $app['twig']->render('setup.html.twig', ['message' => $exception->getMessage()]);
+    }
+
+    return $app['twig']->render('index.html.twig', ['pageModel' => $pageModel]);
 })
     ->bind('homepage');
 

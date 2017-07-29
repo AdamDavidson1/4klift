@@ -23,39 +23,57 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef\ServiceProvider\Silex;
+namespace deasilworks\cfg\ServiceProvider\Silex;
 
-use deasilworks\cef\CEF;
-use deasilworks\cef\CEFConfig;
-use deasilworks\cfg\ServiceProvider\Silex\ServiceProvider;
 use Pimple\Container;
-use Pimple\ServiceProviderInterface;
+use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
 /**
  * Class CEFServiceProvider.
  *
- * Responsible for providing CEF as a service to
- * the application built on the Silex framework.
+ * Responsible for providing config population
  */
-class CEFServiceProvider extends ServiceProvider implements ServiceProviderInterface
+abstract class ServiceProvider
 {
     /**
-     * @param Container $container
+     * @var string
      */
-    public function register(Container $container)
+    protected $namespace;
+
+    /**
+     * CEFServiceProvider constructor.
+     * @param string $namespace
+     */
+    public function __construct($namespace = 'deasilworks')
     {
-        $container[$this->namespace . '.cef'] = function ($container) {
+        $this->namespace = $namespace;
+    }
 
-            $configKey = $this->namespace . '.cef.config';
+    /**
+     * @param Container $container
+     * @param string $serviceKey
+     */
+    protected function populateConfig($serviceKey, Container $container)
+    {
+        $config = $container[$this->namespace . '.'. $serviceKey .'.config'];
+        $configMethods = get_class_methods(get_class($config));
+        $converter = new CamelCaseToSnakeCaseNameConverter();
 
-            if (!isset($container[$configKey])) {
-                $container[$configKey] = new CEFConfig();
+        // Check container keys matching config setters.
+        //
+        foreach ($configMethods as $method) {
+            $matches = [];
+            preg_match('/^set_(.+)/', $converter->normalize($method), $matches);
+
+            if (count($matches) < 1) {
+                continue;
             }
 
-            $cef = new CEF($container[$configKey]);
-            $this->populateConfig('cef', $container);
+            $configKey = $this->namespace . '.' . $serviceKey .'.' . $matches[1];
 
-            return $cef;
-        };
+            if (isset($container[$configKey])) {
+                $config->$method($container[$configKey]);
+            }
+        }
     }
 }

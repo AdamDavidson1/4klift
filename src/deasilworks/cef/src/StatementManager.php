@@ -34,7 +34,7 @@ use deasilworks\cef\StatementBuilder\Select;
  * Responsible for executing CQL statements and providing a
  * StatementBuilder factory.
  */
-abstract class StatementManager
+class StatementManager
 {
     /**
      * @var \Cassandra\Session
