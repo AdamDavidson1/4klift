@@ -27,8 +27,8 @@ namespace deasilworks\cms\CEF\Manager;
 
 use deasilworks\cef\EntityManager;
 use deasilworks\cef\Statement\Simple;
-use deasilworks\cms\CEF\Collection\PageCollection;
 use deasilworks\cef\StatementBuilder\Select;
+use deasilworks\cms\CEF\Collection\PageCollection;
 use deasilworks\cms\CEF\Model\PageModel;
 
 /**
@@ -57,7 +57,6 @@ class PageManager extends EntityManager
         )
             ->setArguments(['stub' => $stub])
             ->execute();
-
 
         return $collection->current();
     }

@@ -31,23 +31,23 @@ require __DIR__.'/../vendor/autoload.php';
 use Symfony\Component\Console\Application;
 
 /**
- * Create a Silex CLI application
+ * Create a Silex CLI application.
  */
 $cli = new Application('4klift - Command Line Utilities', '1.0.0');
 
 /**
  * Add CLI Command Class names here.
  */
-$command_classes = array(
+$command_classes = [
     \deasilworks\cms\Util\Command\InstallCommand::class,
-);
+];
 
 /**
- * Storage for the instantiated classes
+ * Storage for the instantiated classes.
  */
-$commands = array();
+$commands = [];
 
-/**
+/*
  * Instantiate classes into command and add to cli app.
  */
 foreach ($command_classes as $command_class) {
@@ -55,7 +55,7 @@ foreach ($command_classes as $command_class) {
     $cli->add($commands[$command_class]);
 }
 
-/**
+/*
  * Run CLI application
  */
 $cli->run();
