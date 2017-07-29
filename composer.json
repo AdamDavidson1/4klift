@@ -41,7 +41,7 @@
         "deasilworks/cef": "self.version",
         "deasilworks/api": "self.version",
         "deasilworks/cms": "self.version",
-        "deasilworks/cfg": "self.version",
+        "deasilworks/cfg": "self.version"
     },
     "require-dev": {
         "behat/behat": "^3.3",
