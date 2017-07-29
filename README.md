@@ -23,7 +23,7 @@ Cassandra makes **4klift** well suited for server side applications requiring gr
 
 This framework of components can be used together or individually. Many components may be used individually in a variety of other frameworks, including Symfony, Silex, Laraval and Drupal.
 
-### No Code Yet.
+## Pre-Alpha / In Progress
 
 We are in the process of preparing some of our libraries for open source. This development VM is also a work-in-progress and may result in additional packages installed on provision and eventually a new base box with many of the provisioned requirements pre-installed. However, this remains a useful VM for high performance web development.
 
