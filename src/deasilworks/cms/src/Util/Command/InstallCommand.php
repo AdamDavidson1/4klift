@@ -1,4 +1,5 @@
 <?php
+
 /*
  * MIT License
  *
@@ -21,21 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 namespace deasilworks\cms\Util\Command;
 
 use deasilworks\cef\EntityManager;
 use deasilworks\cef\Statement\Simple;
+use deasilworks\cef\StatementManager;
 use deasilworks\cms\CEF\Manager\PageManager;
 use deasilworks\cms\CEF\Model\PageModel;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use deasilworks\cef\StatementManager;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
- * Class InstallCommand
+ * Class InstallCommand.
  *
  * Responsible for installing CMS.
  *  - Creating tables
@@ -61,8 +62,9 @@ class InstallCommand extends CMSCommand
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
+     *
      * @return int|null|void
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -75,7 +77,7 @@ class InstallCommand extends CMSCommand
 
         $files = [
             'CQL/keyspace.cql.twig',
-            'CQL/Table/page.cql.twig'
+            'CQL/Table/page.cql.twig',
         ];
 
         foreach ($files as $template) {
@@ -107,7 +109,8 @@ class InstallCommand extends CMSCommand
         $retPageModel = $pageMgr->getPage('welcome');
 
         if ($retPageModel->getStub() != 'welcome') {
-            $this->io->error("Something went wrong. Could not get the sample page.");
+            $this->io->error('Something went wrong. Could not get the sample page.');
+
             return;
         }
 
@@ -117,6 +120,7 @@ class InstallCommand extends CMSCommand
     /**
      * @param $template
      * @param $args
+     *
      * @return string
      */
     protected function getCqlFromTemplate($template, $args)
@@ -137,5 +141,4 @@ class InstallCommand extends CMSCommand
         $this->stmtManager->setStatement($cql)->execute();
         $this->stmtManager->reset();
     }
-
 }

@@ -44,9 +44,8 @@ class CEFServiceProvider extends ServiceProvider implements ServiceProviderInter
      */
     public function register(Container $container)
     {
-        $container[$this->namespace . '.cef'] = function ($container) {
-
-            $configKey = $this->namespace . '.cef.config';
+        $container[$this->namespace.'.cef'] = function ($container) {
+            $configKey = $this->namespace.'.cef.config';
 
             if (!isset($container[$configKey])) {
                 $container[$configKey] = new CEFConfig();

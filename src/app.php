@@ -24,7 +24,6 @@
  */
 
 use deasilworks\api\API;
-use deasilworks\cef\CEFConfig;
 use deasilworks\cef\ServiceProvider\Silex\CEFServiceProvider;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;

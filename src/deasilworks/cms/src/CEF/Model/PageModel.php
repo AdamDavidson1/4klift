@@ -72,11 +72,13 @@ class PageModel extends EntityModel
 
     /**
      * @param string $stub
+     *
      * @return PageModel
      */
     public function setStub($stub)
     {
         $this->stub = $stub;
+
         return $this;
     }
 
@@ -90,11 +92,13 @@ class PageModel extends EntityModel
 
     /**
      * @param string $content
+     *
      * @return PageModel
      */
     public function setContent($content)
     {
         $this->content = $content;
+
         return $this;
     }
 
@@ -108,11 +112,13 @@ class PageModel extends EntityModel
 
     /**
      * @param \DateTime $modified
+     *
      * @return PageModel
      */
     public function setModified($modified)
     {
         $this->modified = $modified;
+
         return $this;
     }
 
@@ -126,11 +132,13 @@ class PageModel extends EntityModel
 
     /**
      * @param string $title
+     *
      * @return PageModel
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 }

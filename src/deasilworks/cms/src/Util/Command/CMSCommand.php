@@ -1,4 +1,5 @@
 <?php
+
 /*
  * MIT License
  *
@@ -21,6 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 namespace deasilworks\cms\Util\Command;
 
 use deasilworks\cef\CEF;
@@ -33,7 +35,7 @@ if (!ini_get('date.timezone')) {
 }
 
 /**
- * Class CMSCommand
+ * Class CMSCommand.
  */
 abstract class CMSCommand extends Command
 {
@@ -54,13 +56,14 @@ abstract class CMSCommand extends Command
 
     /**
      * InstallCommand constructor.
+     *
      * @param null $name
      */
     public function __construct($name = null)
     {
         parent::__construct($name);
 
-        $loader= new \Twig_Loader_Filesystem(__DIR__ . '/../Template/');
+        $loader = new \Twig_Loader_Filesystem(__DIR__.'/../Template/');
         $this->twig = new \Twig_Environment($loader);
 
         $cefConfig = new CEFConfig();

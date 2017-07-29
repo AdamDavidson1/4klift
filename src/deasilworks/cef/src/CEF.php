@@ -62,11 +62,13 @@ class CEF
 
     /**
      * @param CEFConfig $config
+     *
      * @return CEF
      */
     public function setConfig($config)
     {
         $this->config = $config;
+
         return $this;
     }
 
