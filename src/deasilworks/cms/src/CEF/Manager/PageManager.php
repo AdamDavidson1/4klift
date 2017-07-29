@@ -22,5 +22,19 @@
  * SOFTWARE.
  */
 
-$app['twig.path'] = [__DIR__.'/../templates'];
-$app['twig.options'] = ['cache' => __DIR__.'/../var/cache/twig'];
+namespace deasilworks\cms\CEF\Manager;
+
+use deasilworks\cef\EntityManager;
+
+/**
+ * Class PageManager
+ *
+ * @package deasilworks\cms\CEF\Manager
+ */
+class PageManager extends EntityManager
+{
+
+    public function testMe() {
+        return "Test Manager...";
+    }
+}

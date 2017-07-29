@@ -23,7 +23,7 @@
  */
 
 use deasilworks\cef\CEF;
-use deasilworks\cef\Config;
+use deasilworks\cef\CEFConfig;
 use deasilworks\cef\EntityModel;
 use deasilworks\cef\ResultContainer;
 use deasilworks\cef\Statement\Simple;
@@ -56,17 +56,17 @@ class CefTest extends \PHPUnit_Framework_TestCase
     private $userMgr;
 
     /**
-     * @var Config
+     * @var CEFConfig
      */
     private $config;
 
     /**
-     * @return Config
+     * @return CEFConfig
      */
     private function getConfig()
     {
         if (!$this->config) {
-            $this->config = new Config();
+            $this->config = new CEFConfig();
         }
 
         return $this->config;

@@ -56,7 +56,7 @@ abstract class StatementManager
     protected $statementBuilder;
 
     /**
-     * @var Config
+     * @var CEFConfig
      */
     protected $config;
 
@@ -107,10 +107,10 @@ abstract class StatementManager
     /**
      * StatementManager constructor.
      *
-     * @param Config        $config
+     * @param CEFConfig        $config
      * @param EntityManager $entityManager
      */
-    public function __construct(Config $config, EntityManager $entityManager)
+    public function __construct(CEFConfig $config, EntityManager $entityManager)
     {
         $this->config = $config;
         $this->entityManager = $entityManager;

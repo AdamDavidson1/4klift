@@ -37,7 +37,7 @@ AR::registerLoader('class_exists');
 class CEF
 {
     /**
-     * @var Config
+     * @var CEFConfig
      */
     private $config;
 
@@ -46,7 +46,7 @@ class CEF
      *
      * @param $config
      */
-    public function __construct(Config $config)
+    public function __construct(CEFConfig $config)
     {
         $this->config = $config;
     }
@@ -62,4 +62,5 @@ class CEF
     {
         return new $managerClass($this->config);
     }
+
 }

@@ -40,5 +40,5 @@ before_install:
   - cd ext && ./install.sh && cd "$TRAVIS_BUILD_DIR"
   - echo "extension=cassandra.so" >> `php --ini | grep "Loaded Configuration" | sed
     -e "s|.*:\s*||"`
-  - bundle exec rake
+#  - bundle exec rake
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi

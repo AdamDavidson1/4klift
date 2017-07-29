@@ -22,27 +22,28 @@
  * SOFTWARE.
  */
 
-use Symfony\Component\Debug\Debug;
+namespace deasilworks\cef\ServiceProvider\Silex;
 
-if (!ini_get('date.timezone')) {
-    date_default_timezone_set('UTC');
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
+use deasilworks\cef\CEF;
+
+/**
+ * Class CEFServiceProvider.
+ *
+ * Responsible for providing CEF as a service to
+ * the application built on the Silex framework.
+ */
+class CEFServiceProvider implements ServiceProviderInterface
+{
+
+    /**
+     * @param Container $container
+     */
+    public function register(Container $container)
+    {
+        $container['deasilworks.cef'] = function ($container) {
+            return new CEF($container['deasilworks.cef.config']);
+        };
+    }
 }
-
-// This check prevents access to debug front controllers that are deployed by accident to production servers.
-// Feel free to remove this, extend it, or make something more sophisticated.
-if (isset($_SERVER['HTTP_CLIENT_IP'])
-    || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
-    || !in_array(@$_SERVER['REMOTE_ADDR'], ['127.0.0.1', 'fe80::1', '::1'])
-) {
-    header('HTTP/1.0 403 Forbidden');
-    exit('You are not allowed to access this file.');
-}
-
-require_once __DIR__.'/../vendor/autoload.php';
-Debug::enable();
-
-$app = require __DIR__.'/../src/app.php';
-
-require __DIR__.'/../cfg/dev.php';
-require __DIR__.'/../src/controllers.php';
-$app->run();

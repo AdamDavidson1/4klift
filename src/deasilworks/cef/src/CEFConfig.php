@@ -28,9 +28,9 @@ use Cassandra\Cluster;
 use Cassandra\RetryPolicy;
 
 /**
- * Class Config.
+ * Class CEFConfig.
  */
-class Config
+class CEFConfig
 {
     /**
      * @var string
@@ -78,7 +78,7 @@ class Config
     /**
      * @param string $username
      *
-     * @return Config
+     * @return CEFConfig
      */
     public function setUsername($username)
     {
@@ -98,7 +98,7 @@ class Config
     /**
      * @param string $password
      *
-     * @return Config
+     * @return CEFConfig
      */
     public function setPassword($password)
     {
@@ -118,7 +118,7 @@ class Config
     /**
      * @param string $keyspace
      *
-     * @return Config
+     * @return CEFConfig
      */
     public function setKeyspace($keyspace)
     {
@@ -142,7 +142,7 @@ class Config
     /**
      * @param array $contactPoints
      *
-     * @return Config
+     * @return CEFConfig
      */
     public function setContactPoints($contactPoints)
     {

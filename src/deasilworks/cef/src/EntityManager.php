@@ -43,19 +43,19 @@ abstract class EntityManager
     protected $collectionClass = ResultContainer::class;
 
     /**
-     * @var Config
+     * @var CEFConfig
      */
     private $config;
 
     /**
      * EntityManager constructor.
      *
-     * Config is required for getStatementManager to
+     * CEFConfig is required for getStatementManager to
      * produce Statement Managers.
      *
-     * @param Config $config
+     * @param CEFConfig $config
      */
-    public function __construct(Config $config)
+    public function __construct(CEFConfig $config)
     {
         $this->config = $config;
     }
