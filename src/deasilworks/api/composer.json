@@ -1,10 +1,10 @@
 {
-  "name": "deasilworks/cef",
+  "name": "deasilworks/api",
   "type": "library",
-  "description": "4klift CEF Component",
+  "description": "4klift API Component",
   "homepage": "https://github.com/deasilworks/4klift",
   "license": "MIT",
-  "keywords": ["4klift", "cassandra","php","database"],
+  "keywords": ["4klift","php","cassandra","cms","api","rest"],
   "authors": [
     {
       "name": "Deasil Works, Inc.",
@@ -18,17 +18,16 @@
   "require": {
     "php": "^5.6.0",
     "jms/serializer-bundle": ">=0.13.0 <2.0.0",
-    "datastax/php-driver": "^1.3"
   },
   "autoload": {
-    "psr-4": { "deasilworks\\cef\\": "src/" },
+    "psr-4": { "deasilworks\\api\\": "src/" },
     "exclude-from-classmap": [
-      "/Tests/"
+      "/tests/"
     ]
   },
   "autoload-dev": {
     "psr-4": {
-      "deasilworks\\cef\\test\\": "tests/src/deasilworks/cef/test"
+      "deasilworks\\api\\test\\": "tests/src/deasilworks/api/test"
     }
   },
   "minimum-stability": "dev"

@@ -3,7 +3,7 @@
     "description": "Big Data Framework",
     "type": "project",
     "license": "MIT",
-    "keywords": ["framework","cassandra","php"],
+    "keywords": ["framework","cassandra","php","4klift","cms","api"],
     "authors": [
         {
             "name": "Deasil Works, Inc.",
