@@ -12,7 +12,7 @@ CEF - 4klift Component
 [![Latest Unstable Version](https://poser.pugx.org/deasilworks/cef/v/unstable)](https://packagist.org/packages/deasilworks/4klift)
 [![License](https://poser.pugx.org/deasilworks/4klift/license)](https://packagist.org/packages/deasilworks/4klift)
 
-The CEF component to 4klift.
+The CEF component to [4klift](https://github.com/deasilworks/4klift).
 
 ##Warning: This component is Alpha and NOT ready for production.
 
