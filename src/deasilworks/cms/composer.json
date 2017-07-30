@@ -1,7 +1,7 @@
 {
-  "name": "deasilworks/api",
+  "name": "deasilworks/cms",
   "type": "library",
-  "description": "4klift API Component",
+  "description": "4klift CMS Component",
   "homepage": "https://github.com/deasilworks/4klift",
   "license": "MIT",
   "keywords": ["4klift","php","cassandra","cms","api","rest"],
@@ -20,14 +20,14 @@
     "jms/serializer-bundle": ">=0.13.0 <2.0.0"
   },
   "autoload": {
-    "psr-4": { "deasilworks\\api\\": "src/" },
+    "psr-4": { "deasilworks\\cms\\": "src/" },
     "exclude-from-classmap": [
       "/tests/"
     ]
   },
   "autoload-dev": {
     "psr-4": {
-      "deasilworks\\api\\test\\": "tests/src/deasilworks/api/test"
+      "deasilworks\\api\\test\\": "tests/src/deasilworks/cms/test"
     }
   },
   "minimum-stability": "dev"
