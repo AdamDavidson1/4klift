@@ -9,5 +9,6 @@ git subsplit update
 git subsplit publish "
     src/deasilworks/api:git@github.com:deasilworks/api.git
     src/deasilworks/cef:git@github.com:deasilworks/cef.git
+    src/deasilworks/cfg:git@github.com:deasilworks/cfg.git
     src/deasilworks/cms:git@github.com:deasilworks/cms.git
 " --heads=master
