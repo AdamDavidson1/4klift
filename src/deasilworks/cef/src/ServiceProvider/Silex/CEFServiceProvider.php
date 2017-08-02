@@ -58,8 +58,8 @@ class CEFServiceProvider extends ServiceProvider implements ServiceProviderInter
             return $cef;
         };
 
-        $container[$this->namespace .'.cef.controller_factory'] = $container->protect(
-            function($class) use ($container) {
+        $container[$this->namespace.'.cef.controller_factory'] = $container->protect(
+            function ($class) use ($container) {
                 /** @var CEF $cef */
                 $cef = $container[$this->namespace.'.cef'];
 
@@ -67,11 +67,10 @@ class CEFServiceProvider extends ServiceProvider implements ServiceProviderInter
             }
         );
 
-        $container[$this->namespace .'.cef.serializer'] = $container->protect(
-            function(EntityModel $entity) {
+        $container[$this->namespace.'.cef.serializer'] = $container->protect(
+            function (EntityModel $entity) {
                 return $entity->toJson();
             }
         );
-
     }
 }

@@ -29,9 +29,7 @@ use deasilworks\cef\EntityManager;
 
 /**
  * Class UserManager.
- *
  */
 class UserManager extends EntityManager
 {
-
 }

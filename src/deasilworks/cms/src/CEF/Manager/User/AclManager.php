@@ -29,9 +29,7 @@ use deasilworks\cef\EntityManager;
 
 /**
  * Class AclManager.
- *
  */
 class AclManager extends EntityManager
 {
-
 }
