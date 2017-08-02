@@ -46,6 +46,26 @@ class PageManager extends EntityManager
     protected $collectionClass = PageCollection::class;
 
     /**
+     * Set Page.
+     *
+     * @ApiAction()
+     *
+     * @param PageModel $pageModel
+     *
+     * @return bool
+     */
+    public function setPage(PageModel $pageModel)
+    {
+        $pageModel
+            ->setEntityManager($this)
+            ->save();
+
+        return true;
+    }
+
+    /**
+     * Get Page.
+     *
      * @ApiAction()
      *
      * @param string $stub the url friendly name of the page.
