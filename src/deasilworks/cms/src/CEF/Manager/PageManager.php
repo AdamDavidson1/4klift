@@ -70,6 +70,10 @@ class PageManager extends EntityManager
     }
 
     /**
+     * Set Message
+     *
+     * This is a 4klift test method.
+     *
      * @ApiAction()
      *
      * @param string $message
@@ -82,6 +86,26 @@ class PageManager extends EntityManager
     }
 
     /**
+     * Update Message
+     *
+     * This is a 4klift test method.
+     *
+     * @ApiAction()
+     *
+     * @param string $message
+     *
+     * @return string
+     */
+    public function updateMessage($message)
+    {
+        return $message;
+    }
+
+    /**
+     * Get Message
+     *
+     * This is a 4klift test method.
+     *
      * @ApiAction()
      *
      * @return string

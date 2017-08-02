@@ -23,37 +23,37 @@
  * SOFTWARE.
  */
 
-use Silex\WebTestCase;
+namespace deasilworks\api;
 
 /**
- * Class controllersTest.
+ * Class UUID.
  *
- * @SuppressWarnings(PHPMD)
  */
-class controllersTest extends WebTestCase
+class UUID
 {
     /**
-     * Homepage test.
+     * V4
+     *
+     * @return string
      */
-    public function testGetHomepage()
-    {
-        $client = $this->createClient();
-        $client->followRedirects(true);
-        $crawler = $client->request('GET', '/');
-        $this->assertTrue($client->getResponse()->isOk());
-        $this->assertContains('4klift', $crawler->filter('body')->text());
+    public static function v4() {
+        return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0x0fff) | 0x4000,
+            mt_rand(0, 0x3fff) | 0x8000,
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
+        );
     }
 
     /**
-     * Create Application.
+     * Is Valid
      *
-     * @return mixed
+     * @param $uuid
+     * @return bool
      */
-    public function createApplication()
-    {
-        require __DIR__.'/../src/app.php';
-        $app['session.test'] = true;
-
-        return $this->app = $app;
+    public static function isValid($uuid) {
+        return preg_match('/^\{?[0-9a-f]{8}\-?[0-9a-f]{4}\-?[0-9a-f]{4}\-?'.
+                '[0-9a-f]{4}\-?[0-9a-f]{12}\}?$/i', $uuid) === 1;
     }
 }
