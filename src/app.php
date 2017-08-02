@@ -32,7 +32,6 @@ use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
-use deasilworks\api\ServiceProvider\CEF\CEFManagerFactory;
 
 if (!ini_get('date.timezone')) {
     date_default_timezone_set('UTC');
@@ -60,15 +59,17 @@ $app->register(new CEFServiceProvider(), [
 // API
 $app->register(new APIServiceProvider(), [
     'deasilworks.api.class_path' => 'deasilworks\cms\CEF\Manager',
-    'deasilworks.api.aliases' => array(
+    'deasilworks.api.aliases'    => [
         'content' => 'PageManager',
-        'acl' => 'User\AclManager',
-    ),
+        'acl'     => 'User\AclManager',
+    ],
 ]);
 
 // twig (templating)
 //
-$app['twig'] = $app->extend('twig', function ($twig, $app) { return $twig; });
+$app['twig'] = $app->extend('twig', function ($twig, $app) {
+    return $twig;
+});
 $app['twig.path'] = [__DIR__.'/../templates'];
 $app['twig.options'] = ['cache' => __DIR__.'/../var/cache/twig'];
 
@@ -84,7 +85,7 @@ if ($app['debug'] === true) {
     ]);
 }
 
-$app->match('/api/{path}','deasilworks.api.responder')
+$app->match('/api/{path}', 'deasilworks.api.responder')
     ->assert('path', '.*');
 
 $app->get('/', function () use ($app) {

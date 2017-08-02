@@ -28,7 +28,6 @@ namespace deasilworks\cms\CEF\Manager;
 use deasilworks\api\Annotation\ApiAction;
 use deasilworks\api\Annotation\ApiController;
 use deasilworks\cef\EntityManager;
-use deasilworks\cef\EntityModel;
 use deasilworks\cef\Statement\Simple;
 use deasilworks\cef\StatementBuilder\Select;
 use deasilworks\cms\CEF\Collection\PageCollection;
@@ -50,6 +49,7 @@ class PageManager extends EntityManager
      * @ApiAction()
      *
      * @param string $stub the url friendly name of the page.
+     *
      * @return PageModel
      */
     public function getPage($stub)
@@ -73,6 +73,7 @@ class PageManager extends EntityManager
      * @ApiAction()
      *
      * @param string $message
+     *
      * @return string
      */
     public function setFunMessage($message)
@@ -87,7 +88,6 @@ class PageManager extends EntityManager
      */
     public function getFunMessage()
     {
-
-        return "Test Message";
+        return 'Test Message';
     }
 }
