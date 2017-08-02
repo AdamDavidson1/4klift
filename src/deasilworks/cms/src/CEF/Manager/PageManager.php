@@ -76,7 +76,7 @@ class PageManager extends EntityManager
      *
      * @return string
      */
-    public function setFunMessage($message)
+    public function setMessage($message)
     {
         return $message;
     }
@@ -86,7 +86,7 @@ class PageManager extends EntityManager
      *
      * @return string
      */
-    public function getFunMessage()
+    public function getMessage()
     {
         return 'Test Message';
     }
