@@ -22,6 +22,9 @@ before_script:
   - wget http://getcomposer.org/composer.phar
   - composer install -n
 
+after_script:
+  - php vendor/bin/codacycoverage clover build/logs/clover.xml
+
 before_install:
   - sudo apt-add-repository ppa:linuxjedi/ppa -y
   - sudo apt-get update
