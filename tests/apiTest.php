@@ -33,7 +33,7 @@ use Silex\WebTestCase;
 class apiTest extends WebTestCase
 {
     /**
-     * API Get
+     * API Get.
      */
     public function testApiGet()
     {
@@ -54,11 +54,11 @@ class apiTest extends WebTestCase
 
         $this->assertTrue($ack->success);
 
-        $this->assertEquals("Test Message", $ack->payload);
+        $this->assertEquals('Test Message', $ack->payload);
     }
 
     /**
-     * API Post JSON
+     * API Post JSON.
      */
     public function testApiPostJson()
     {
@@ -70,11 +70,11 @@ class apiTest extends WebTestCase
         $messageUrl = '/api/pageManager/message';
 
         $client->request(
-            'POST', $messageUrl, array(), array(),
-            array(
+            'POST', $messageUrl, [], [],
+            [
                 'CONTENT_TYPE' => 'application/json',
-            ),
-            '{"message":"'. $testMessage . '"}'
+            ],
+            '{"message":"'.$testMessage.'"}'
         );
 
         /** @var \Symfony\Component\HttpFoundation\Response $response */
@@ -92,7 +92,7 @@ class apiTest extends WebTestCase
     }
 
     /**
-     * API Update
+     * API Update.
      */
     public function testApiUpdate()
     {
@@ -104,11 +104,11 @@ class apiTest extends WebTestCase
         $client->followRedirects(true);
 
         $client->request(
-            'UPDATE', $messageUrl, array(), array(),
-            array(
+            'UPDATE', $messageUrl, [], [],
+            [
                 'CONTENT_TYPE' => 'application/json',
-            ),
-            '{"message":"'. $testMessage . '"}'
+            ],
+            '{"message":"'.$testMessage.'"}'
         );
 
         /** @var \Symfony\Component\HttpFoundation\Response $response */
@@ -126,7 +126,7 @@ class apiTest extends WebTestCase
     }
 
     /**
-     * API Get
+     * API Get.
      */
     public function testApiOptions()
     {
@@ -149,7 +149,6 @@ class apiTest extends WebTestCase
 
         $this->assertEquals('setMessage', $ack->payload->POST->class_method);
     }
-
 
     /**
      * Create Application.

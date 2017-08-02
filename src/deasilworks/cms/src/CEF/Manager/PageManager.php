@@ -70,7 +70,7 @@ class PageManager extends EntityManager
     }
 
     /**
-     * Set Message
+     * Set Message.
      *
      * This is a 4klift test method.
      *
@@ -86,7 +86,7 @@ class PageManager extends EntityManager
     }
 
     /**
-     * Update Message
+     * Update Message.
      *
      * This is a 4klift test method.
      *
@@ -102,7 +102,7 @@ class PageManager extends EntityManager
     }
 
     /**
-     * Get Message
+     * Get Message.
      *
      * This is a 4klift test method.
      *
