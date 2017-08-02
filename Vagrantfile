@@ -80,6 +80,9 @@ $provision_script = <<SCRIPT
 
     wget -q https://phar.phpunit.de/phpunit-5.7.phar -O /usr/local/bin/phpunit
     chmod 775 /usr/local/bin/phpunit
+
+    rm -f /etc/php.ini
+    ln -sf /home/vagrant/project/dev/vm/php.ini /etc/php.ini
 SCRIPT
 
 
