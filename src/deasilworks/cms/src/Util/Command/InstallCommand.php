@@ -69,11 +69,11 @@ class InstallCommand extends CMSCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->io = new SymfonyStyle($input, $output);
+        $this->cio = new SymfonyStyle($input, $output);
 
         $keyspace = $input->getOption('keyspace');
 
-        $this->io->title('Installing 4klift CMS');
+        $this->cio->title('Installing 4klift CMS');
 
         $files = [
             'CQL/keyspace.cql.twig',
@@ -109,7 +109,7 @@ class InstallCommand extends CMSCommand
         $retPageModel = $pageMgr->getPage('welcome');
 
         if ($retPageModel->getStub() != 'welcome') {
-            $this->io->error('Something went wrong. Could not get the sample page.');
+            $this->cio->error('Something went wrong. Could not get the sample page.');
 
             return;
         }

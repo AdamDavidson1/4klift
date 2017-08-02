@@ -40,9 +40,11 @@ if (!ini_get('date.timezone')) {
 abstract class CMSCommand extends Command
 {
     /**
+     * Command inout output
+     *
      * @var SymfonyStyle
      */
-    protected $io;
+    protected $cio;
 
     /**
      * @var \Twig_Environment
