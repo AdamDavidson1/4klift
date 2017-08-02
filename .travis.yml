@@ -20,7 +20,7 @@ addons:
 
 before_script:
   - wget http://getcomposer.org/composer.phar
-  - composer install -n
+  - composer install -o
 
 after_script:
   - php vendor/bin/codacycoverage clover build/logs/clover.xml
