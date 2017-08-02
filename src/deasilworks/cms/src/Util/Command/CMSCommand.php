@@ -40,7 +40,7 @@ if (!ini_get('date.timezone')) {
 abstract class CMSCommand extends Command
 {
     /**
-     * Command inout output
+     * Command inout output.
      *
      * @var SymfonyStyle
      */
