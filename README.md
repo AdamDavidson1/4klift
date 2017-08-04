@@ -37,8 +37,8 @@ To use the latest dev version, use the *dev-master* branch.
 | :---                                                                |      :---: |
 | **[API][api-url]**: Annotate existing controllers to create a REST API.        | [![API 4klift component][api-thumb]][api-url] |
 | **[CEF][cef-url]**: Cassandra Entity Framework for data management with models and a query builder. | [![CEF 4klift component][cef-thumb]][cef-url] |
-| **[CFG][cfg-url]**: Configuration management.                                  | [![CFG 4klift component][cef-thumb]][cef-url] | 
-| **[CMS][cms-url]**: Content management system built to utilize CEF / Cassandra | [![CMS 4klift component][cef-thumb]][cef-url] |
+| **[CFG][cfg-url]**: Configuration management.                                  | [![CFG 4klift component][cfg-thumb]][cfg-url] | 
+| **[CMS][cms-url]**: Content management system built to utilize CEF / Cassandra | [![CMS 4klift component][cms-thumb]][cms-url] |
 
 ## 4klift Requires:
 
