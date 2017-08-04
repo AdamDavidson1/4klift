@@ -76,6 +76,11 @@
         "phpdoc": [
             "cd build; wget http://phpdoc.org/phpDocumentor.phar"
         ],
+        "publish": [
+            "git pull origin master",
+            "git push origin master",
+            "git subsplit update"
+         ],
         "test": [
             "@composer install",
             "@phpunit",
