@@ -63,6 +63,12 @@ class CEFConfig
      */
     protected $cluster;
 
+    /**
+     * CEFConfig constructor.
+     *
+     * @SuppressWarnings(StaticAccess)
+     * Because DI does not make sense here.
+     */
     public function __construct()
     {
         $this->clusterBuilder = \Cassandra::cluster();

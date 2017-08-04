@@ -111,14 +111,13 @@ If you'd like to contribute to the **4klift** project, create component librarie
 - **[How to Contribute to 4klift](docs/CONTRIBUTING.md "Contributing to 4klift")**
 - **[4klift Logos and Assets](assets/README.md "4klift Logos and Assets")**
 
+## Code Quality
+
+4klift and it's components attempt to comply with PSR-1, PSR-2, and PSR-4. We welcome pull requests fixing any violations.
 
 ## LICENSE
 
 MIT
-
-## Code Quality
-
-4klift and it's components attempt to comply with PSR-1, PSR-2, and PSR-4. We welcome pull requests fixing any violations.
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 

@@ -94,6 +94,9 @@ abstract class CEFData
     /**
      * Serialize.
      *
+     * @SuppressWarnings(StaticAccess)
+     * Because DI does not make sense here.
+     *
      * @param $obj
      * @param string $type
      *

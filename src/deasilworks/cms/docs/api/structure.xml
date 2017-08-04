@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="v2.9.0">
+  <partials/>
+  <file path="CEF/Manager/PageManager.php" generated-path="CEF.Manager.PageManager.html" hash="32e8538f270e2e579dc93c66efd3c9db" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="ApiAction">\deasilworks\api\Annotation\ApiAction</namespace-alias>
+    <namespace-alias name="ApiController">\deasilworks\api\Annotation\ApiController</namespace-alias>
+    <namespace-alias name="EntityManager">\deasilworks\cef\EntityManager</namespace-alias>
+    <namespace-alias name="Simple">\deasilworks\cef\Statement\Simple</namespace-alias>
+    <namespace-alias name="Select">\deasilworks\cef\StatementBuilder\Select</namespace-alias>
+    <namespace-alias name="PageCollection">\deasilworks\cms\CEF\Collection\PageCollection</namespace-alias>
+    <namespace-alias name="PageModel">\deasilworks\cms\CEF\Model\PageModel</namespace-alias>
+    <class final="false" abstract="false" namespace="deasilworks\cms\CEF\Manager" line="41" package="Default">
+      <extends>\deasilworks\cef\EntityManager</extends>
+      <name>PageManager</name>
+      <full_name>\deasilworks\cms\CEF\Manager\PageManager</full_name>
+      <docblock line="41">
+        <description>Class PageManager.</description>
+        <long-description></long-description>
+        <tag name="ApiController" line="41" description="()"/>
+        <tag name="package" line="41" description="Default"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\CEF\Manager" line="46" package="Default">
+        <name>$collectionClass</name>
+        <full_name>\deasilworks\cms\CEF\Manager\PageManager::collectionClass</full_name>
+        <default>\deasilworks\cms\CEF\Collection\PageCollection::class</default>
+        <docblock line="46">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="46" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Manager" line="57" package="Default">
+        <name>setPage</name>
+        <full_name>\deasilworks\cms\CEF\Manager\PageManager::setPage()</full_name>
+        <docblock line="57">
+          <description>Set Page.</description>
+          <long-description></long-description>
+          <tag name="ApiAction" line="57" description="()"/>
+          <tag name="param" line="57" description="" type="\deasilworks\cms\CEF\Model\PageModel" variable="$pageModel">
+            <type>\deasilworks\cms\CEF\Model\PageModel</type>
+          </tag>
+          <tag name="return" line="57" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$pageModel</name>
+          <default></default>
+          <type>\deasilworks\cms\CEF\Model\PageModel</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Manager" line="75" package="Default">
+        <name>getPage</name>
+        <full_name>\deasilworks\cms\CEF\Manager\PageManager::getPage()</full_name>
+        <docblock line="75">
+          <description>Get Page.</description>
+          <long-description></long-description>
+          <tag name="ApiAction" line="75" description="()"/>
+          <tag name="param" line="75" description="&lt;p&gt;the url friendly name of the page.&lt;/p&gt;" type="string" variable="$stub">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="75" description="" type="\deasilworks\cms\CEF\Model\PageModel">
+            <type>\deasilworks\cms\CEF\Model\PageModel</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$stub</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Manager" line="103" package="Default">
+        <name>setMessage</name>
+        <full_name>\deasilworks\cms\CEF\Manager\PageManager::setMessage()</full_name>
+        <docblock line="103">
+          <description>Set Message.</description>
+          <long-description>This is a 4klift test method.</long-description>
+          <tag name="ApiAction" line="103" description="()"/>
+          <tag name="param" line="103" description="" type="string" variable="$message">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="103" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$message</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Manager" line="119" package="Default">
+        <name>updateMessage</name>
+        <full_name>\deasilworks\cms\CEF\Manager\PageManager::updateMessage()</full_name>
+        <docblock line="119">
+          <description>Update Message.</description>
+          <long-description>This is a 4klift test method.</long-description>
+          <tag name="ApiAction" line="119" description="()"/>
+          <tag name="param" line="119" description="" type="string" variable="$message">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="119" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$message</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Manager" line="133" package="Default">
+        <name>getMessage</name>
+        <full_name>\deasilworks\cms\CEF\Manager\PageManager::getMessage()</full_name>
+        <docblock line="133">
+          <description>Get Message.</description>
+          <long-description>This is a 4klift test method.</long-description>
+          <tag name="ApiAction" line="133" description="()"/>
+          <tag name="return" line="133" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="46" code="PPC:ERR-50007">No summary for property $collectionClass</error>
+    </parse_markers>
+    <source>eJzVVlFv2zYQfvevOAQB4hRKsg0FBqRLNsWWY2G2ZEhys2DuAy3RNldZFEiqaTD0v++OkpzIcbai2B4mGLB1vPu++47HM3/6udyUvd7Fmx68gamfwESkvNAcX8kykOWjEuuNgX56Cj989/2PMORMixzupPqoHfCLtHGdcbUVWgtZgNCw4YovH2GtWGF45sBKcQ5yBemGqTV3wEhgxSOUXGkMkEvDRCGKNTBIkZLw0NlsEEnLlXlgiqN/BkxrmQqGkJDJtNrywjBDlCuRcw19s+FwFDcRR6eWJ+MsJ0BRAC23q/AgzEZWBhTXRomUYBx0SvMqo0za5VxsRUNC4bYamvAQutIohRJ2YCszsaJvbvWV1TIXeuNAJgh9WRk0ajLa8jqk5kIq0Dy3ySGIQAFW9FOO1o2ISiquacqlyfKwkduuHmGzWlWqQGJuwzKJ5bO8f/DUkIUiVjLP5QNpTGWRCZKmLyk2wUW2lJ+41VTveyENplznQdtRPm1zs6Q3LM9hyZvaITNWmnVlKcpBG2wGwXIopbKk+3LPm1ZKxh7E4Si5cyMP/BhmUfjeH3pDOHJjfD9y4M5PxuE8AfSI3CC5h3AEbnAPv/rB0AHvt1nkxTGEEaH509nE99DsB4PJfOgHt3CDoUGIze5jyyNuElrOBs33YsKbetFgjK/ujT/xk3uHsEZ+EhDyKIzAhZkbJf5gPnEjmM2jWRh7mMQQkQM/GEVI5E29IDlHYrSB9x5fIB67kwmxEZw7RxkRJQqDcHYf+bfjBMbhZOih8cbD/NybiVezobrBxPWnDgzdqXvr2agQgaxI8qzThLuxR1ZidfEzSPwwID2DMEgifHVQbpTsou/82HPAjfyYKjOKwqlVStXFoNDiYGjg1UBU+e4GoQu9z2NvhwlDz50gXEzBjdbWnzb5otcr2JbrkmH/ZHagPNA8WaRbvRh4o8WUFWzN1bteD49Yx4OVYuEW2Hr2SC7cUrj26L77Cs+BLIzC5ifgfe+UrxYetqd53HEfcokRjdPYWcRiW+b8H7xuKpFnXC1inuMBPODc6B1QVlbHYobkT6+vh0xlxnPrbX+9oyFez+wcpyTYhVpJe6x+6ZSgf2o3It33Bv7Z8CLT0KlG788e4GMp6EG0TwxPNc62Yt2YLux3qaTB3HEMHKc7GXVOV9AVd3lp2TH1PeyYG+t63hh2nLvtpuy7SyVTbAu7esBx2f7c91Tc4JCEpZR5N3M7nnGCFpYCZ7MhuP4hzJq+Lgo9+2zNc3aNIJ1C9o9pjJ7ue7FPvH/aFIKeJkejKmwxMnx5UaTbby5SvWtwrE21tAO4Ujn+Qwvc9vwR6GS2k7k8hN/kNtur7+EirpsiWrIXVdNma9q+uwJbmrNrDNkdoLZq9WlrGuZ5obAgdSvWR6yGbI5dm9OOqrVfdZi7jI1Pv8b7O8ZuMz9v9w7xM/M+r37G2++0xPN0rd8d3aj6v5/YPbuCS/o++fDURy86ihtXre0NSTdhJ3B1XW/6h31v/pmneEU51ILP8j+7TiulKNfT15qSTu6Ua32gbxK6PuCHwduPuVjhdQQvXnhfwmtW9u09vK3JXunRQ/Pp5SlvEu63YPtt2laiWX5N+7zMcC//Z/Irm/S/VIHb/373v17Z+mljX5FzklAOjdNJK+pL7y/v+946</source>
+  </file>
+  <file path="CEF/Manager/User/AclManager.php" generated-path="CEF.Manager.User.AclManager.html" hash="b71fa804784822b21a0bc3135f2d1430" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="EntityManager">\deasilworks\cef\EntityManager</namespace-alias>
+    <class final="false" abstract="false" namespace="deasilworks\cms\CEF\Manager\User" line="33" package="Default">
+      <extends>\deasilworks\cef\EntityManager</extends>
+      <name>AclManager</name>
+      <full_name>\deasilworks\cms\CEF\Manager\User\AclManager</full_name>
+      <docblock line="33">
+        <description>Class AclManager.</description>
+        <long-description></long-description>
+        <tag name="package" line="33" description="Default"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJxdVF2L2zgUffevuMxTW8xMty8L7cKisZWJWMcOstN0IC+KrcTaOpaRlKZD2f++9yqelhQC5n6cc+65UvTX31M/JcnDuwTewUo0UJhWj15jSJnMTi/OHPsAb9q38OH9H39CrpU3A2yt++pTEGM7t661OxnvjR3BeOi10/sXODo1Bt2lcHBagz1A2yt31CkEC2p8gUk7jwC7D8qMZjyCghYliQ+bQ49M3h7CRTmN/R0o721rFFJCZ9vzSY9BBZI8mEF7eBN6DXf1jLh7G3U6rQYiNCNQ+bUKFxN6ew7gtA/OtESTYlM7nDua5LU8mJOZRQget+GJD6nPHq3QwCmcbGcO9NXR33TeD8b3KXSG2PfngElPybjelNw8WAdeD3E4JDFoIJr+NWNsI6GJlhvmdXnKXHp7uvVj4lSHsxtRWEdYZ3F9Ufdf3QbKEOJgh8FeyGNrx86QNf+RsA0W1d5+09HT9dxHG3Dk6xx0HNOvY55LvlfDAHs97w6VcdPq1pajGXzAy2DUAJN1UfR3u/fzVWqWHOpq0WyZ5CBqWMvqs8h5Dnesxvguha1oltWmAeyQrGyeoVoAK5/hH1HmKfAva8nrGipJbGK1LgTHtCizYpOL8gkeEVpWeNkFXnnkbaqoObMJXhPfistsiSF7FIVonlPiWoimJOZFJYHBmslGZJuCSVhv5LqqOQ6RI3MpyoVEIb7iZXOPwpgD/hkDqJesKEiN6NgGbUgaFLJq/SzF07KBZVXkHJOPHOdjjwW/qqG7rGBilULOVuyJR1SFRNEkdV7HhO2SU5ZUGf6yRlQl+cmqspEYpmhXNj/RW1HzFJgUNW1mIatVdErbRVAVeRBa8isRbf72gLCF4k3Nf3JCzlmBdDWBZ6+v/XTID0kyqpP2k8L708UH5ULvya49+V3GF7uVGtVRu93Ga/cpSfB/dtumDzuOdym8zI2f6Am7vlgDvhHA2mGuXOXa37Kgvwc9dh5uWJIfyX/J/2sTlbc=</source>
+  </file>
+  <file path="Util/Command/CMSCommand.php" generated-path="Util.Command.CMSCommand.html" hash="cf471cd42a0cbfbc2e2275737a350d39" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="CEF">\deasilworks\cef\CEF</namespace-alias>
+    <namespace-alias name="CEFConfig">\deasilworks\cef\CEFConfig</namespace-alias>
+    <namespace-alias name="Command">\Symfony\Component\Console\Command\Command</namespace-alias>
+    <namespace-alias name="SymfonyStyle">\Symfony\Component\Console\Style\SymfonyStyle</namespace-alias>
+    <class final="false" abstract="true" namespace="deasilworks\cms\Util\Command" line="40" package="Default">
+      <extends>\Symfony\Component\Console\Command\Command</extends>
+      <name>CMSCommand</name>
+      <full_name>\deasilworks\cms\Util\Command\CMSCommand</full_name>
+      <docblock line="40">
+        <description>Class CMSCommand.</description>
+        <long-description></long-description>
+        <tag name="package" line="40" description="Default"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="47" package="Default">
+        <name>$cio</name>
+        <full_name>\deasilworks\cms\Util\Command\CMSCommand::cio</full_name>
+        <default></default>
+        <docblock line="47">
+          <description>Command inout output.</description>
+          <long-description></long-description>
+          <tag name="var" line="47" description="" type="\Symfony\Component\Console\Style\SymfonyStyle" variable="">
+            <type>\Symfony\Component\Console\Style\SymfonyStyle</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="52" package="Default">
+        <name>$twig</name>
+        <full_name>\deasilworks\cms\Util\Command\CMSCommand::twig</full_name>
+        <default></default>
+        <docblock line="52">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="52" description="" type="\Twig_Environment" variable="">
+            <type>\Twig_Environment</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="57" package="Default">
+        <name>$cef</name>
+        <full_name>\deasilworks\cms\Util\Command\CMSCommand::cef</full_name>
+        <default></default>
+        <docblock line="57">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="57" description="" type="\deasilworks\cef\CEF" variable="">
+            <type>\deasilworks\cef\CEF</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\Util\Command" line="64" package="Default">
+        <name>__construct</name>
+        <full_name>\deasilworks\cms\Util\Command\CMSCommand::__construct()</full_name>
+        <docblock line="64">
+          <description>InstallCommand constructor.</description>
+          <long-description></long-description>
+          <tag name="param" line="64" description="" type="null" variable="$name">
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default>null</default>
+          <type>null</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="52" code="PPC:ERR-50007">No summary for property $twig</error>
+      <error line="57" code="PPC:ERR-50007">No summary for property $cef</error>
+    </parse_markers>
+    <source>eJx9VWtv6kYQ/c6vmEaRApEL7f1SKenLMSZYNTayzU0jRUKLvYZt7V3Lu4TS6v73zqxNckmaWrx2HufMmd0dfvyl2TWDweR6ANewCDIIRc6l5rgki6eaYyu2OwPDfASfvvv+B5hypkUFD6r9UzsQyLwPXfK2FloLJUFo2PGWb46wbZk0vHCgbDkHVUK+Y+2WO2AUMHmEhrcaE9TGMCGF3AKDHCkJD4PNDpG0Ks2BtRzjC2Baq1wwhIRC5fuaS8MMUZai4hqGZsfhIu0zLkaWp+CsIkAhgdwnLxyE2am9gZZr04qcYBwMyqt9QZWc3JWoRU9C6bYbmvAQeq9RChXsQK0KUdI3t/qa/aYSeudAIQh9szdo1GS07XVIzUS1oHlli0MQgQKs6NcabRgRNdRc07dLk+WwU/W5HmGrKvetRGJu0wqF7bO8f/DckIUySlVV6kAacyULQdL0DeVm6GQb9cytpm7fpTJYclcHbUfzus29S+9YVcGG971DZuw0O5fVUg3a4GEQrIJGtZb0rdxxf5SyuQ9pPMse3MSHIIVlEn8Opv4ULtwU1xcOPATZPF5lgBGJG2WPEM/AjR7htyCaOuD/vkz8NIU4IbRgsQwDH81B5IWraRDdwx2mRjEe9gCPPOJmseXs0QI/JbyFn3hzXLp3QRhkjw5hzYIsIuRZnIALSzfJAm8VugksV8kyTn0sYorIURDNEiTyF36UjZEYbeB/xgWkczcMiY3g3BXKSKhQ8OLlYxLczzOYx+HUR+Odj/W5d6HfsaE6L3SDhQNTd+He+zYrRiArkiK7MuFh7pOVWF18eVkQR6THi6MswaWDcpPsJfshSH0H3CRIqTOzJF5YpdRdTIotDqZGfgdEnT/fIAyh9Sr1XzBh6rshwqWU3Gs9xdMmTwYDyWquG4bnp7AD5UDz5Cmv9dPKiOrJU3WNZ+52MMA7dh7CyyfPn91+5PCULMW2c6fHulTySGiNkjgs8JfUquIn/Fee/w9PzZE+O79dYGWihOE3OLbWW26GVwVOpbERNf8bU69GI/hnAPiQeV3wku0rsz6515oyVpl3NbodfKHx203bCucbeIu0r6prFcOL0zK8vvkbN/C/DJcFmrr1oGO0YPRcnxx4IWmS4bvZm3HvPMX8+sxa+FpZ75jY76ZVBkcHXurLXCgU/YbBZj9lB7Fd+/JZtErSTP4IwhxoZ/4TA3fuQ2Jevk8KJI6TqjopxEmGXdrnRrXvBDasZTXIPU6pSzp25zx2JuPYlPYfANbrF6ihjYafbOrIRncdtnk4r6S5uXkXP+prpeeyUqzgLUHwQ9+m0JrWM/rDOmrD6+F6PQ2S9Xp8NRmPJxmvmwrPzISOxgsOjd5vf6b2nWF91fJhz3VGj53rrkOf9XI9hu/BMfY1avia2kd+wXP6L00lgJg=</source>
+  </file>
+  <file path="Util/Command/InstallCommand.php" generated-path="Util.Command.InstallCommand.html" hash="cded01328d742818ac4ad1acf9fbe67c" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="EntityManager">\deasilworks\cef\EntityManager</namespace-alias>
+    <namespace-alias name="Simple">\deasilworks\cef\Statement\Simple</namespace-alias>
+    <namespace-alias name="StatementManager">\deasilworks\cef\StatementManager</namespace-alias>
+    <namespace-alias name="PageManager">\deasilworks\cms\CEF\Manager\PageManager</namespace-alias>
+    <namespace-alias name="PageModel">\deasilworks\cms\CEF\Model\PageModel</namespace-alias>
+    <namespace-alias name="InputInterface">\Symfony\Component\Console\Input\InputInterface</namespace-alias>
+    <namespace-alias name="InputOption">\Symfony\Component\Console\Input\InputOption</namespace-alias>
+    <namespace-alias name="OutputInterface">\Symfony\Component\Console\Output\OutputInterface</namespace-alias>
+    <namespace-alias name="SymfonyStyle">\Symfony\Component\Console\Style\SymfonyStyle</namespace-alias>
+    <class final="false" abstract="false" namespace="deasilworks\cms\Util\Command" line="45" package="Default">
+      <extends>\deasilworks\cms\Util\Command\CMSCommand</extends>
+      <name>InstallCommand</name>
+      <full_name>\deasilworks\cms\Util\Command\InstallCommand</full_name>
+      <docblock line="45">
+        <description>Class InstallCommand.</description>
+        <long-description>Responsible for installing CMS.
+ - Creating tables
+ - Creating configuration</long-description>
+        <tag name="package" line="45" description="Default"/>
+        <tag name="inherited_from" description="\deasilworks\cms\Util\Command\CMSCommand" refers="\deasilworks\cms\Util\Command\CMSCommand" link="/classes/deasilworks.cms.Util.Command.CMSCommand.html"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="deasilworks\cms\Util\Command" line="50" package="Default">
+        <name>$stmtManager</name>
+        <full_name>\deasilworks\cms\Util\Command\InstallCommand::stmtManager</full_name>
+        <default></default>
+        <docblock line="50">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="50" description="" type="\deasilworks\cef\StatementManager" variable="">
+            <type>\deasilworks\cef\StatementManager</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="47" package="Default">
+        <name>$cio</name>
+        <full_name>\deasilworks\cms\Util\Command\CMSCommand::cio</full_name>
+        <default></default>
+        <docblock line="47">
+          <description>Command inout output.</description>
+          <long-description></long-description>
+          <tag name="var" line="47" description="" type="\Symfony\Component\Console\Style\SymfonyStyle" variable="">
+            <type>\Symfony\Component\Console\Style\SymfonyStyle</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="52" package="Default">
+        <name>$twig</name>
+        <full_name>\deasilworks\cms\Util\Command\CMSCommand::twig</full_name>
+        <default></default>
+        <docblock line="52">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="52" description="" type="\Twig_Environment" variable="">
+            <type>\Twig_Environment</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="57" package="Default">
+        <name>$cef</name>
+        <full_name>\deasilworks\cms\Util\Command\CMSCommand::cef</full_name>
+        <default></default>
+        <docblock line="57">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="57" description="" type="\deasilworks\cef\CEF" variable="">
+            <type>\deasilworks\cef\CEF</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="55" package="Default">
+        <name>configure</name>
+        <full_name>\deasilworks\cms\Util\Command\InstallCommand::configure()</full_name>
+        <docblock line="55">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="55" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="70" package="Default">
+        <name>execute</name>
+        <full_name>\deasilworks\cms\Util\Command\InstallCommand::execute()</full_name>
+        <docblock line="70">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="70" description="" type="\Symfony\Component\Console\Input\InputInterface" variable="$input">
+            <type>\Symfony\Component\Console\Input\InputInterface</type>
+          </tag>
+          <tag name="param" line="70" description="" type="\Symfony\Component\Console\Output\OutputInterface" variable="$output">
+            <type>\Symfony\Component\Console\Output\OutputInterface</type>
+          </tag>
+          <tag name="return" line="70" description="" type="integer|null|void">
+            <type>integer</type>
+            <type>null</type>
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$input</name>
+          <default></default>
+          <type>\Symfony\Component\Console\Input\InputInterface</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$output</name>
+          <default></default>
+          <type>\Symfony\Component\Console\Output\OutputInterface</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="126" package="Default">
+        <name>getCqlFromTemplate</name>
+        <full_name>\deasilworks\cms\Util\Command\InstallCommand::getCqlFromTemplate()</full_name>
+        <docblock line="126">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="126" description="" type="" variable="$template"/>
+          <tag name="param" line="126" description="" type="" variable="$args"/>
+          <tag name="return" line="126" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$template</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$args</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="deasilworks\cms\Util\Command" line="134" package="Default">
+        <name>exeCql</name>
+        <full_name>\deasilworks\cms\Util\Command\InstallCommand::exeCql()</full_name>
+        <docblock line="134">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="134" description="" type="" variable="$cql"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$cql</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\Util\Command" line="64" package="Default">
+        <name>__construct</name>
+        <full_name>\deasilworks\cms\Util\Command\CMSCommand::__construct()</full_name>
+        <docblock line="64">
+          <description>InstallCommand constructor.</description>
+          <long-description></long-description>
+          <tag name="param" line="64" description="" type="null" variable="$name">
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default>null</default>
+          <type>null</type>
+        </argument>
+        <inherited_from>\deasilworks\cms\Util\Command\CMSCommand</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="55" code="PPC:ERR-50008">No summary for method configure()</error>
+      <error line="70" code="PPC:ERR-50008">No summary for method execute()</error>
+      <error line="126" code="PPC:ERR-50008">No summary for method getCqlFromTemplate()</error>
+      <error line="134" code="PPC:ERR-50008">No summary for method exeCql()</error>
+      <error line="50" code="PPC:ERR-50007">No summary for property $stmtManager</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="CEF/Model/PageModel.php" generated-path="CEF.Model.PageModel.html" hash="f2dab7ffa1254a3cdbf31cdccc4206a7" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="EntityModel">\deasilworks\cef\EntityModel</namespace-alias>
+    <namespace-alias name="Exclude">\JMS\Serializer\Annotation\Exclude</namespace-alias>
+    <class final="false" abstract="false" namespace="deasilworks\cms\CEF\Model" line="34" package="Default">
+      <extends>\deasilworks\cef\EntityModel</extends>
+      <name>PageModel</name>
+      <full_name>\deasilworks\cms\CEF\Model\PageModel</full_name>
+      <docblock line="34">
+        <description>Class PageModel.</description>
+        <long-description></long-description>
+        <tag name="package" line="34" description="Default"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\CEF\Model" line="43" package="Default">
+        <name>$tableName</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::tableName</full_name>
+        <default>'page'</default>
+        <docblock line="43">
+          <description>Overridden to supply Table Name.</description>
+          <long-description></long-description>
+          <tag name="Exclude" line="43" description="()"/>
+          <tag name="var" line="43" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\CEF\Model" line="48" package="Default">
+        <name>$stub</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::stub</full_name>
+        <default></default>
+        <docblock line="48">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="48" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\CEF\Model" line="53" package="Default">
+        <name>$content</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::content</full_name>
+        <default></default>
+        <docblock line="53">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="53" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\CEF\Model" line="58" package="Default">
+        <name>$modified</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::modified</full_name>
+        <default></default>
+        <docblock line="58">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="58" description="" type="\DateTime" variable="">
+            <type>\DateTime</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\CEF\Model" line="63" package="Default">
+        <name>$title</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::title</full_name>
+        <default></default>
+        <docblock line="63">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="63" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Model" line="68" package="Default">
+        <name>getStub</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::getStub()</full_name>
+        <docblock line="68">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="68" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Model" line="78" package="Default">
+        <name>setStub</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::setStub()</full_name>
+        <docblock line="78">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="78" description="" type="string" variable="$stub">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="78" description="" type="\deasilworks\cms\CEF\Model\PageModel">
+            <type>\deasilworks\cms\CEF\Model\PageModel</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$stub</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Model" line="88" package="Default">
+        <name>getContent</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::getContent()</full_name>
+        <docblock line="88">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="88" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Model" line="98" package="Default">
+        <name>setContent</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::setContent()</full_name>
+        <docblock line="98">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="98" description="" type="string" variable="$content">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="98" description="" type="\deasilworks\cms\CEF\Model\PageModel">
+            <type>\deasilworks\cms\CEF\Model\PageModel</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$content</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Model" line="108" package="Default">
+        <name>getModified</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::getModified()</full_name>
+        <docblock line="108">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="108" description="" type="\DateTime">
+            <type>\DateTime</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Model" line="118" package="Default">
+        <name>setModified</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::setModified()</full_name>
+        <docblock line="118">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="118" description="" type="\DateTime" variable="$modified">
+            <type>\DateTime</type>
+          </tag>
+          <tag name="return" line="118" description="" type="\deasilworks\cms\CEF\Model\PageModel">
+            <type>\deasilworks\cms\CEF\Model\PageModel</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$modified</name>
+          <default></default>
+          <type>\DateTime</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Model" line="128" package="Default">
+        <name>getTitle</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::getTitle()</full_name>
+        <docblock line="128">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="128" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\cms\CEF\Model" line="138" package="Default">
+        <name>setTitle</name>
+        <full_name>\deasilworks\cms\CEF\Model\PageModel::setTitle()</full_name>
+        <docblock line="138">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="138" description="" type="string" variable="$title">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="138" description="" type="\deasilworks\cms\CEF\Model\PageModel">
+            <type>\deasilworks\cms\CEF\Model\PageModel</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$title</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="68" code="PPC:ERR-50008">No summary for method getStub()</error>
+      <error line="78" code="PPC:ERR-50008">No summary for method setStub()</error>
+      <error line="88" code="PPC:ERR-50008">No summary for method getContent()</error>
+      <error line="98" code="PPC:ERR-50008">No summary for method setContent()</error>
+      <error line="108" code="PPC:ERR-50008">No summary for method getModified()</error>
+      <error line="118" code="PPC:ERR-50008">No summary for method setModified()</error>
+      <error line="128" code="PPC:ERR-50008">No summary for method getTitle()</error>
+      <error line="138" code="PPC:ERR-50008">No summary for method setTitle()</error>
+      <error line="48" code="PPC:ERR-50007">No summary for property $stub</error>
+      <error line="53" code="PPC:ERR-50007">No summary for property $content</error>
+      <error line="58" code="PPC:ERR-50007">No summary for property $modified</error>
+      <error line="63" code="PPC:ERR-50007">No summary for property $title</error>
+    </parse_markers>
+    <source>eJy1VNtu4zYQfddXDIIFNlmocduXAk1vik3H3NqSIcmbBvALLdE2W1kURDrZtNh/7wxFO5tknaQbVDBgcC5nzhwO56dfm3UTBL13AbyDCc9hrApZG4lHsvR1c9uq1drCcXEC33/73Q8wkMKoCi51+5cJgdeFD53KdqOMUboGZWAtW7m4hVUraivLEJatlKCXUKxFu5IhWA2ivoVGtgYT9MIKVat6BQIKLEl4GGzXiGT00t6IVmJ8CcIYXSiBkFDqYruRtRWWSi5VJQ0c27WEo8xnHJ24OqUUFQGqGsi988KNsmu9tdBKY1tVEEyIQUW1LYnJzl2pjfJFKN2pYQgPobcGWyHCIWx0qZb0L11/zXZRKbMOoVSEvthaNBoyOnlD6qanWzCycuQQRGEDruk7ji6MCjUkrvVyGbLcrPXmfj/KsVpu2xoLS5dWapTP1f1TFpYslLHUVaVvqMdC16Wi1syPlJujUyz0tXQ9dfdea4uUOx50Hc3dNXuXWYuqgoX02mFlVFrcb6slDsbiMChRQaNbV/Rhu6d+lPIRgywZ5pdRyoBnME2TD3zABnAUZXg+CuGS56NklgNGpFGcX0EyhCi+gt95PAiB/TFNWZZBkhIan0zHnKGZx/3xbMDjCzjH1DjBYec48oibJ66mR+MsI7wJS/sjPEbnfMzzq5CwhjyPCXmYpBDBNEpz3p+NoxSms3SaZAxJDBA55vEwxUJswuL8FAujDdgHPEA2isZjqkZw0QzbSIko9JPpVcovRjmMkvGAofGcIb/ofMy6athdfxzxSQiDaBJdMJeVIJBrkiI7mnA5YmSlqhH++jlPYuqnn8R5iscQ203zffYlz1gIUcozUmaYJhPXKamLSYnDwdSYdUCk/P0LwhA6zzK2x4QBi8YIl1Gy73UXT5fcC4JabKRpBM5P6RbKDe2TebEx8z4bzie6lNVZEOADu++XyznDIbK3PoIC3k+yeSZbnCz1t2znUY2D6R7snH10E3lGC67bZxVuEJiKlXT5HZfivhHkRyvr0sBnhYJ/AsDPodCH+lzLtlVlKWt6VmbbNNUt5GJRSYixtVMftwv/zVM5PnnouBb4OHBF1Ctv6rn/ptUW3yy+pjeWUAkUfoa3DdJ8iw09oPMCGGO3izPo9cBig+HXIOC6QGXscyDzAS7oXG3kIRy3K5UsOyAMxM2wab6KEt5QJQmH+DwGaKXFffhFDLeLcV3WbvPDStoMBfL30103fR7hDS2/b35xGjrfp8fFGtGKja/Vyf3wrj3YftSeZGQ8I4f0kNZnfHAqursNvkj6IN3/pE2/u/pn5NkNyMsU8tGvFWlHbYd3QCrvJbX2NL9KsAPj/ViziR/zZ0Tbv4anVduXvXs/r1VuT3CPeEC7nZvEu6P7P45bTs/6Gd26p/+yUXOxr5WrI9VhHRDK+UglT+5JiT4F/wILO0x6</source>
+  </file>
+  <file path="CEF/Manager/UserManager.php" generated-path="CEF.Manager.UserManager.html" hash="423caa670335488e37b5feffb8c4d083" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="EntityManager">\deasilworks\cef\EntityManager</namespace-alias>
+    <class final="false" abstract="false" namespace="deasilworks\cms\CEF\Manager" line="33" package="Default">
+      <extends>\deasilworks\cef\EntityManager</extends>
+      <name>UserManager</name>
+      <full_name>\deasilworks\cms\CEF\Manager\UserManager</full_name>
+      <docblock line="33">
+        <description>Class UserManager.</description>
+        <long-description></long-description>
+        <tag name="package" line="33" description="Default"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJxdVMFu2zgQvesrBjm1gZDs7qVAu0DBSHRMVJYMSq4bIBdaoi1uZVEg6brBYv99Z2ilgQsYEDgz7715wzH//jz1U5Lc3yZwCyvRQGFaPXqNR4pkdnpx5tAHeNe+h7/++PMD5Fp5M8DWuu8+BTG2c+lau6Px3tgRjIdeO717gYNTY9BdCnunNdg9tL1yB51CsKDGF5i08wiwu6DMaMYDKGhRkviwOPTI5O0+nJXTWN+B8t62RiEldLY9HfUYVCDJvRm0h3eh13BTz4ib91Gn02ogQjMCpV+zcDaht6cATvvgTEs0KRa1w6mjTl7TgzmaWYTgcRqe+JD65NEKNZzC0XZmT18d/U2n3WB8n0JniH13Chj0FIzjTcnNvXXg9RCbQxKDBqLptx5jGQlNNNwwj8tT5Nzb47UfE7van9yIwjrCOovji7r/6DZQhBB7Owz2TB5bO3aGrPmPhG0wqXb2h46eLvc+2oAtX/qg65jernlO+V4NA+z0PDtUxkmra1uOevABl8GoASbroujvdu/mVWqWHOpq0WyZ5CBqWMvqq8h5DjesxvNNClvRLKtNA1ghWdk8QbUAVj7BF1HmKfBva8nrGipJbGK1LgTHsCizYpOL8hEeEFpWuOwCVx55mypqzmyC18S34jJb4pE9iEI0TylxLURTEvOiksBgzWQjsk3BJKw3cl3VHJvIkbkU5UKiEF/xsrlDYYwB/4oHqJesKEiN6NgGbUhqFLJq/STF47KBZVXkHIMPHPtjDwW/qKG7rGBilULOVuyRR1SFRNEkVV7ahO2SU5RUGf6yRlQl+cmqspF4TNGubH6ht6LmKTApaprMQlar6JSmi6Aq8iC05Bcimvz1BWEJnTc1/8UJOWcF0tUEnr2+1tMl3yfJqI7aTwr3p4sPypnek+f26J8zvnheqVEdtPuUJPgXu67Q+2eOaxRe3mruby+P1YDPA2y8dnPqItX+Hgb9M+ix83DFk/yb/Jf8D5w2lNo=</source>
+  </file>
+  <file path="CEF/Collection/PageCollection.php" generated-path="CEF.Collection.PageCollection.html" hash="548353104cb2668910ffc1e7b9d9a34f" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="ResultContainer">\deasilworks\cef\ResultContainer</namespace-alias>
+    <namespace-alias name="PageModel">\deasilworks\cms\CEF\Model\PageModel</namespace-alias>
+    <class final="false" abstract="false" namespace="deasilworks\cms\CEF\Collection" line="31" package="Default">
+      <extends>\deasilworks\cef\ResultContainer</extends>
+      <name>PageCollection</name>
+      <full_name>\deasilworks\cms\CEF\Collection\PageCollection</full_name>
+      <docblock line="31">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="31" description="Default"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="deasilworks\cms\CEF\Collection" line="38" package="Default">
+        <name>$valueClass</name>
+        <full_name>\deasilworks\cms\CEF\Collection\PageCollection::valueClass</full_name>
+        <default>\deasilworks\cms\CEF\Model\PageModel::class</default>
+        <docblock line="38">
+          <description>Overridden to customize Model Class.</description>
+          <long-description></long-description>
+          <tag name="var" line="38" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="31" code="PPC:ERR-50005">No summary for class \deasilworks\cms\CEF\Collection\PageCollection</error>
+    </parse_markers>
+    <source>eJxlVMFu4zYQvesrBkEPu4EQd3spkLRoFYmOicqSIMnrBvCFlmiLW1kUSCre7KL/3hlaSZBtEEDmcN5784ZD/vbH2I1BsLgO4BrWvIZUNXKwEpcUifX4bNSxc/Ch+Qi//PzpV0iksKqHrTb/2BD40MyphTQnZa3SAygLnTRy/wxHIwYn2xAORkrQB2g6YY4yBKdBDM8wSmMRoPdOqEENRxDQoCTxYbLrkMnqgzsLIzG/BWGtbpRASmh1M53k4IQjyYPqpYUPrpNwVc2Iq49ep5WiJ0I1AG2/7MJZuU5PDoy0zqiGaEJMavqppUpetnt1UrMIwX03LPEh9WTRChUcwkm36kBf6f2N075XtguhVcS+nxwGLQV9e0Nys9AGrOx9cUii0IA3/VajTyOhkZrr5nZZipw7fXrvR/mqDpMZUFh6WKuxfV73i2wcRQhx0H2vz+Sx0UOryJq9JWyNm2Kvn6T3dDn3QTss+VIHHcf4dszzlu1E38Nezr1DZey0eG/LUA3W4TAo0cOojRf90e7NPEr1ikGVL+ttVDLgFRRl/pknLIGrqML1VQhbXq/yTQ2YUUZZ/Qj5EqLsEf7iWRIC+7soWVVBXhIbXxcpZxjmWZxuEp49wD1CsxyHnePII2+de82ZjbOK+NasjFe4jO55yuvHkLiWvM6IeZmXEEERlTWPN2lUQrEpi7xiWESCzBnPliUKsTXL6hsUxhiwz7iAahWlKakRXbRBGyUVCnFePJb8YVXDKk8ThsF7hvVF9ym7qKG7OI34OoQkWkcPzKNyJPImKfNSJmxXjKKkGuF/XPM8Iz9xntUlLkO0W9av6C2vWAhRySvqzLLM194pdRdBuedBaMYuRNT59weEKbTeVOyVExIWpUhXEXj2+pJPh7wIgkGcpB0Fzk/rH5QzvSe75mR3MVvuYhxR6a/kXRDgLXufJA+7Utqpd7Ee6OGQ5u7/STPTWrey3xXiKP0vpGt6fEWAIm8qIL86ObQWfuANvgeAf4vra/+lvjxJY1TbyoGuUzNZp0/qmwTPDjFx38y5L5A/nwTOP74Cw3EOLfx3NNqhPF6Yn55EP0kPht/htdjbW1/rXfBv8B9x9cYa</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="deasilworks" full_name="deasilworks">
+    <namespace name="cms" full_name="deasilworks\cms">
+      <namespace name="CEF" full_name="deasilworks\cms\CEF">
+        <namespace name="Collection" full_name="deasilworks\cms\CEF\Collection"/>
+        <namespace name="Manager" full_name="deasilworks\cms\CEF\Manager">
+          <namespace name="User" full_name="deasilworks\cms\CEF\Manager\User"/>
+        </namespace>
+        <namespace name="Model" full_name="deasilworks\cms\CEF\Model"/>
+      </namespace>
+      <namespace name="Util" full_name="deasilworks\cms\Util">
+        <namespace name="Command" full_name="deasilworks\cms\Util\Command"/>
+      </namespace>
+    </namespace>
+  </namespace>
+  <deprecated count="0"/>
+</project>

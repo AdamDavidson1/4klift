@@ -23,8 +23,6 @@ $provision_script = <<SCRIPT
     yum install -y php-fpm php php-devel php-mysql php-mbstring php-xml pcre-devel php-pecl-xdebug
     yum install -y cassandra-cpp-driver cassandra-cpp-driver-devel libuv libuv-devel
 
-
-
     cd /usr/src/
     wget https://pecl.php.net/get/cassandra-1.3.0.tgz
     tar -xzvf cassandra-1.3.0.tgz

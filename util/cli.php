@@ -40,6 +40,7 @@ $cli = new Application('4klift - Command Line Utilities', '1.0.0');
  */
 $command_classes = [
     \deasilworks\cms\Util\Command\InstallCommand::class,
+    \deasilworks\util\DocGenCommand::class,
 ];
 
 /**
