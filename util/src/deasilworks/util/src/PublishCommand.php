@@ -23,12 +23,51 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\api;
+namespace deasilworks\util;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
  * Class PublishCommand.
  */
-class PublishCommand
+class PublishCommand extends Command
 {
+    /**
+     * @return void
+     */
+    protected function configure()
+    {
+        $this->setName('util-publish');
+        $this->setDescription('Prepare and publish 4klift and components.');
+    }
 
+    /**
+     * @param InputInterface  $input
+     * @param OutputInterface $output
+     *
+     * @return int|null|void
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $io = new SymfonyStyle($input, $output);
+
+        $io->title('Publishing 4klift and Components');
+
+        $io->writeln(`git pull origin master`);
+        $io->writeln(`git push origin master`);
+        $io->writeln(`git subsplit update`);
+
+        // see https://github.com/dflydev/git-subsplit
+
+        $io->writeln(`git subsplit publish "
+             src/deasilworks/api:git@github.com:deasilworks/api.git
+             src/deasilworks/cef:git@github.com:deasilworks/cef.git
+             src/deasilworks/cfg:git@github.com:deasilworks/cfg.git
+             src/deasilworks/cms:git@github.com:deasilworks/cms.git
+         " --heads=master`);
+        
+    }
 }
