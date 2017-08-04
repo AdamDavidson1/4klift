@@ -33,12 +33,13 @@ We target software that can run on CentOS 6.7. **4klift** is required to run on 
 To use the latest dev version, use the *dev-master* branch.
 
 ## Components
+
 | Component | Repository |
-| :---                                                                |      :---: |
-| **[API][api-url]**: Annotate existing controllers to create a REST API.        | [![API 4klift component][api-thumb]][api-url] |
+| :--- | :--- |
+| **[API][api-url]**: Annotate existing controllers to create a REST API.                             | [![API 4klift component][api-thumb]][api-url] |
 | **[CEF][cef-url]**: Cassandra Entity Framework for data management with models and a query builder. | [![CEF 4klift component][cef-thumb]][cef-url] |
-| **[CFG][cfg-url]**: Configuration management.                                  | [![CFG 4klift component][cfg-thumb]][cfg-url] | 
-| **[CMS][cms-url]**: Content management system built to utilize CEF / Cassandra | [![CMS 4klift component][cms-thumb]][cms-url] |
+| **[CFG][cfg-url]**: Configuration management.                                                       | [![CFG 4klift component][cfg-thumb]][cfg-url] | 
+| **[CMS][cms-url]**: Content management system built to utilize CEF / Cassandra.                     | [![CMS 4klift component][cms-thumb]][cms-url] |
 
 ## 4klift Requires:
 
@@ -121,7 +122,7 @@ If you'd like to contribute to the **4klift** project, create component librarie
 
 ## Code Quality
 
-4klift and it's components attempt to comply with PSR-1, PSR-2, and PSR-4. We welcome pull requests fixing any violations.
+4klift and its components attempt to comply with PSR-1, PSR-2, and PSR-4. We welcome pull requests fixing any violations.
 
 ## LICENSE
 
