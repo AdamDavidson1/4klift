@@ -25,13 +25,13 @@
 
 namespace deasilworks\Util;
 
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Style\SymfonyStyle;
-use Symfony\Component\Console\Input\InputOption;
-use PHPDocMD\Parser;
 use PHPDocMD\Generator;
+use PHPDocMD\Parser;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 error_reporting(E_ERROR | E_PARSE);
 
@@ -77,20 +77,20 @@ class DocGenCommand extends Command
 
         // generate for each project
         foreach ($components as $component) {
-            $io->writeln('Generating markdown for component ' . $component . '.');
+            $io->writeln('Generating markdown for component '.$component.'.');
 
-            exec('php ' .
-                $phpDocPath .
-                ' -d ../src/deasilworks/' . $component . '/src' .
-                ' -t ../src/deasilworks/' . $component . '/docs/api' .
-                ' --template="xml"' .
-                ' --cache-folder="../var/cache/phpdoc/' . $component . '"'
+            exec('php '.
+                $phpDocPath.
+                ' -d ../src/deasilworks/'.$component.'/src'.
+                ' -t ../src/deasilworks/'.$component.'/docs/api'.
+                ' --template="xml"'.
+                ' --cache-folder="../var/cache/phpdoc/'.$component.'"'
             );
 
-            $parser = new Parser('../src/deasilworks/' . $component . '/docs/api/structure.xml');
+            $parser = new Parser('../src/deasilworks/'.$component.'/docs/api/structure.xml');
             $classDefs = $parser->run();
-            $outputDir = '../src/deasilworks/' . $component . '/docs/api';
-            $templateDir = __DIR__ . '/../templates/docgen/';
+            $outputDir = '../src/deasilworks/'.$component.'/docs/api';
+            $templateDir = __DIR__.'/../templates/docgen/';
 
             $generator = new Generator(
                 $classDefs,
@@ -102,7 +102,5 @@ class DocGenCommand extends Command
 
             $generator->run();
         }
-
     }
-
 }
