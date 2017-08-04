@@ -1,4 +1,4 @@
-deasilworks\cms\CEF\Collection\PageCollection
+deasilworks\CMS\CEF\Collection\PageCollection
 ===============
 
 
@@ -7,8 +7,8 @@ deasilworks\cms\CEF\Collection\PageCollection
 
 
 * Class name: PageCollection
-* Namespace: deasilworks\cms\CEF\Collection
-* Parent class: deasilworks\cef\ResultContainer
+* Namespace: deasilworks\CMS\CEF\Collection
+* Parent class: deasilworks\CEF\ResultContainer
 
 
 
@@ -20,7 +20,7 @@ Properties
 
 ### $valueClass
 
-    protected string $valueClass = \deasilworks\cms\CEF\Model\PageModel::class
+    protected string $valueClass = \deasilworks\CMS\CEF\Model\PageModel::class
 
 Overridden to customize Model Class.
 

@@ -1,4 +1,4 @@
-deasilworks\cef\StatementComponent\Obj
+deasilworks\CEF\StatementComponent\Obj
 ===============
 
 Class Obj.
@@ -8,7 +8,7 @@ for CQL statements
 
 
 * Class name: Obj
-* Namespace: deasilworks\cef\StatementComponent
+* Namespace: deasilworks\CEF\StatementComponent
 
 
 
@@ -20,7 +20,7 @@ Properties
 
 ### $cefData
 
-    protected \deasilworks\cef\CEFData $cefData
+    protected \deasilworks\CEF\CEFData $cefData
 
 
 
@@ -35,7 +35,7 @@ Methods
 
 ### __toString
 
-    mixed deasilworks\cef\StatementComponent\Obj::__toString()
+    mixed deasilworks\CEF\StatementComponent\Obj::__toString()
 
 
 
@@ -48,7 +48,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cef\StatementComponent\Obj::__construct(\deasilworks\cef\CEFData $cefData)
+    mixed deasilworks\CEF\StatementComponent\Obj::__construct(\deasilworks\CEF\CEFData $cefData)
 
 Obj constructor.
 
@@ -58,13 +58,13 @@ Obj constructor.
 
 
 #### Arguments
-* $cefData **[deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)**
+* $cefData **[deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)**
 
 
 
 ### getCefData
 
-    \deasilworks\cef\CEFData deasilworks\cef\StatementComponent\Obj::getCefData()
+    \deasilworks\CEF\CEFData deasilworks\CEF\StatementComponent\Obj::getCefData()
 
 
 
@@ -77,7 +77,7 @@ Obj constructor.
 
 ### setCefData
 
-    \deasilworks\cef\StatementComponent\Obj deasilworks\cef\StatementComponent\Obj::setCefData(\deasilworks\cef\CEFData $cefData)
+    \deasilworks\CEF\StatementComponent\Obj deasilworks\CEF\StatementComponent\Obj::setCefData(\deasilworks\CEF\CEFData $cefData)
 
 
 
@@ -87,7 +87,7 @@ Obj constructor.
 
 
 #### Arguments
-* $cefData **[deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)**
+* $cefData **[deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)**
 
 
 

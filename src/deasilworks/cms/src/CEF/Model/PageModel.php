@@ -23,9 +23,9 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cms\CEF\Model;
+namespace deasilworks\CMS\CEF\Model;
 
-use deasilworks\cef\EntityModel;
+use deasilworks\CEF\EntityModel;
 use JMS\Serializer\Annotation\Exclude;
 
 /**

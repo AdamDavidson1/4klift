@@ -1,4 +1,4 @@
-deasilworks\cef\CEFData
+deasilworks\CEF\CEFData
 ===============
 
 Class CEFData.
@@ -7,7 +7,7 @@ Class CEFData.
 
 
 * Class name: CEFData
-* Namespace: deasilworks\cef
+* Namespace: deasilworks\CEF
 * This is an **abstract** class
 
 
@@ -35,7 +35,7 @@ Methods
 
 ### __toString
 
-    string deasilworks\cef\CEFData::__toString()
+    string deasilworks\CEF\CEFData::__toString()
 
 
 
@@ -48,7 +48,7 @@ Methods
 
 ### isSerializeNull
 
-    boolean deasilworks\cef\CEFData::isSerializeNull()
+    boolean deasilworks\CEF\CEFData::isSerializeNull()
 
 
 
@@ -61,7 +61,7 @@ Methods
 
 ### setSerializeNull
 
-    \deasilworks\cef\CEFData deasilworks\cef\CEFData::setSerializeNull(boolean $serializeNull)
+    \deasilworks\CEF\CEFData deasilworks\CEF\CEFData::setSerializeNull(boolean $serializeNull)
 
 
 
@@ -77,7 +77,7 @@ Methods
 
 ### toJson
 
-    string deasilworks\cef\CEFData::toJson()
+    string deasilworks\CEF\CEFData::toJson()
 
 To JSON.
 
@@ -90,7 +90,7 @@ To JSON.
 
 ### serialize
 
-    mixed|string deasilworks\cef\CEFData::serialize($obj, string $type)
+    mixed|string deasilworks\CEF\CEFData::serialize($obj, string $type)
 
 Serialize.
 
@@ -107,7 +107,7 @@ Serialize.
 
 ### __set
 
-    mixed deasilworks\cef\CEFData::__set($name, $value)
+    mixed deasilworks\CEF\CEFData::__set($name, $value)
 
 Handle attribute sets.
 
@@ -126,7 +126,7 @@ REQUIRED for hydration of entities with defined models.
 
 ### hydrate
 
-    boolean deasilworks\cef\CEFData::hydrate($context, $name, $value)
+    boolean deasilworks\CEF\CEFData::hydrate($context, $name, $value)
 
 Hydrate.
 
@@ -144,7 +144,7 @@ Hydrate.
 
 ### hydrateEntityCollection
 
-    mixed deasilworks\cef\CEFData::hydrateEntityCollection(\deasilworks\cef\EntityCollection $obj, $value)
+    mixed deasilworks\CEF\CEFData::hydrateEntityCollection(\deasilworks\CEF\EntityCollection $obj, $value)
 
 
 
@@ -154,14 +154,14 @@ Hydrate.
 
 
 #### Arguments
-* $obj **[deasilworks\cef\EntityCollection](deasilworks-cef-EntityCollection.md)**
+* $obj **[deasilworks\CEF\EntityCollection](deasilworks-CEF-EntityCollection.md)**
 * $value **mixed**
 
 
 
 ### hydrateClassObject
 
-    mixed deasilworks\cef\CEFData::hydrateClassObject($obj, $data)
+    mixed deasilworks\CEF\CEFData::hydrateClassObject($obj, $data)
 
 Hydrate class object.
 

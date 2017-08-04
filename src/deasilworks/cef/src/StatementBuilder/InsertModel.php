@@ -23,9 +23,9 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef\StatementBuilder;
+namespace deasilworks\CEF\StatementBuilder;
 
-use deasilworks\cef\EntityModel;
+use deasilworks\CEF\EntityModel;
 
 /**
  * Class InsertModel.

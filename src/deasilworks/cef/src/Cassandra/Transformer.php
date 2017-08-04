@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef\Cassandra;
+namespace deasilworks\CEF\Cassandra;
 
 use Cassandra\Timestamp;
 

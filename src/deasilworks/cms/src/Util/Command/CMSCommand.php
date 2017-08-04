@@ -23,10 +23,10 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cms\Util\Command;
+namespace deasilworks\CMS\Util\Command;
 
-use deasilworks\cef\CEF;
-use deasilworks\cef\CEFConfig;
+use deasilworks\CEF\CEF;
+use deasilworks\CEF\CEFConfig;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Style\SymfonyStyle;
 

@@ -1,4 +1,4 @@
-deasilworks\cef\Cassandra\Transformer
+deasilworks\CEF\Cassandra\Transformer
 ===============
 
 Class Transformer.
@@ -9,7 +9,7 @@ a CEF EntityModel.
 
 
 * Class name: Transformer
-* Namespace: deasilworks\cef\Cassandra
+* Namespace: deasilworks\CEF\Cassandra
 
 
 
@@ -23,7 +23,7 @@ Methods
 
 ### transformRows
 
-    array deasilworks\cef\Cassandra\Transformer::transformRows(\Cassandra\Rows $rows)
+    array deasilworks\CEF\Cassandra\Transformer::transformRows(\Cassandra\Rows $rows)
 
 Transform Cassandra Rows.
 
@@ -39,7 +39,7 @@ Transform Cassandra Rows.
 
 ### handleTimestamp
 
-    mixed deasilworks\cef\Cassandra\Transformer::handleTimestamp(\Cassandra\Timestamp $timestamp)
+    mixed deasilworks\CEF\Cassandra\Transformer::handleTimestamp(\Cassandra\Timestamp $timestamp)
 
 
 
@@ -55,7 +55,7 @@ Transform Cassandra Rows.
 
 ### transform
 
-    mixed deasilworks\cef\Cassandra\Transformer::transform($row)
+    mixed deasilworks\CEF\Cassandra\Transformer::transform($row)
 
 
 

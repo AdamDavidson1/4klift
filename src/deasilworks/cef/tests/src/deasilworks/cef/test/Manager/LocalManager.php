@@ -25,8 +25,8 @@
 
 namespace deasilworks\cef\test\Manager;
 
-use deasilworks\cef\EntityManager;
-use deasilworks\cef\test\Collection\LocalCollection;
+use deasilworks\CEF\EntityManager;
+use deasilworks\CEF\test\Collection\LocalCollection;
 
 class LocalManager extends EntityManager
 {

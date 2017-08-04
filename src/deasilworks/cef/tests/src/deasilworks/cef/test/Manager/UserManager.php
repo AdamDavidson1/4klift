@@ -25,11 +25,11 @@
 
 namespace deasilworks\cef\test\Manager;
 
-use deasilworks\cef\EntityManager;
-use deasilworks\cef\Statement\Simple;
-use deasilworks\cef\StatementBuilder\Select;
-use deasilworks\cef\test\Collection\UserCollection;
-use deasilworks\cef\test\Model\LocalModel;
+use deasilworks\CEF\EntityManager;
+use deasilworks\CEF\Statement\Simple;
+use deasilworks\CEF\StatementBuilder\Select;
+use deasilworks\CEF\test\Collection\UserCollection;
+use deasilworks\CEF\test\Model\LocalModel;
 
 class UserManager extends EntityManager
 {

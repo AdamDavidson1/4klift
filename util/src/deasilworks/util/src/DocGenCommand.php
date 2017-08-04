@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\util;
+namespace deasilworks\Util;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

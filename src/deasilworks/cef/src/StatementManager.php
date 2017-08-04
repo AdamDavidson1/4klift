@@ -23,10 +23,10 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef;
+namespace deasilworks\CEF;
 
-use deasilworks\cef\Cassandra\Transformer;
-use deasilworks\cef\StatementBuilder\Select;
+use deasilworks\CEF\Cassandra\Transformer;
+use deasilworks\CEF\StatementBuilder\Select;
 
 /**
  * Class StatementManager.

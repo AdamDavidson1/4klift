@@ -1,4 +1,4 @@
-deasilworks\cef\StatementManager
+deasilworks\CEF\StatementManager
 ===============
 
 Class StatementManager.
@@ -8,7 +8,7 @@ StatementBuilder factory.
 
 
 * Class name: StatementManager
-* Namespace: deasilworks\cef
+* Namespace: deasilworks\CEF
 
 
 
@@ -53,7 +53,7 @@ Properties
 
 ### $statementBuilder
 
-    protected \deasilworks\cef\StatementBuilder $statementBuilder
+    protected \deasilworks\CEF\StatementBuilder $statementBuilder
 
 
 
@@ -64,7 +64,7 @@ Properties
 
 ### $config
 
-    protected \deasilworks\cef\CEFConfig $config
+    protected \deasilworks\CEF\CEFConfig $config
 
 
 
@@ -119,7 +119,7 @@ Properties
 
 ### $entityManager
 
-    protected \deasilworks\cef\EntityManager; $entityManager
+    protected \deasilworks\CEF\EntityManager; $entityManager
 
 
 
@@ -130,7 +130,7 @@ Properties
 
 ### $transformerClass
 
-    protected string $transformerClass = \deasilworks\cef\Cassandra\Transformer::class
+    protected string $transformerClass = \deasilworks\CEF\Cassandra\Transformer::class
 
 
 
@@ -141,7 +141,7 @@ Properties
 
 ### $resultClass
 
-    protected string $resultClass = \deasilworks\cef\ResultContainer::class
+    protected string $resultClass = \deasilworks\CEF\ResultContainer::class
 
 ResultContainer class.
 
@@ -152,7 +152,7 @@ ResultContainer class.
 
 ### $resultModelClass
 
-    protected string $resultModelClass = \deasilworks\cef\EntityModel::class
+    protected string $resultModelClass = \deasilworks\CEF\EntityModel::class
 
 EntityModel class.
 
@@ -167,7 +167,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cef\StatementManager::__construct(\deasilworks\cef\CEFConfig $config, \deasilworks\cef\EntityManager $entityManager)
+    mixed deasilworks\CEF\StatementManager::__construct(\deasilworks\CEF\CEFConfig $config, \deasilworks\CEF\EntityManager $entityManager)
 
 StatementManager constructor.
 
@@ -177,14 +177,14 @@ StatementManager constructor.
 
 
 #### Arguments
-* $config **[deasilworks\cef\CEFConfig](deasilworks-cef-CEFConfig.md)**
-* $entityManager **[deasilworks\cef\EntityManager](deasilworks-cef-EntityManager.md)**
+* $config **[deasilworks\CEF\CEFConfig](deasilworks-CEF-CEFConfig.md)**
+* $entityManager **[deasilworks\CEF\EntityManager](deasilworks-CEF-EntityManager.md)**
 
 
 
 ### getTransformerClass
 
-    string deasilworks\cef\StatementManager::getTransformerClass()
+    string deasilworks\CEF\StatementManager::getTransformerClass()
 
 
 
@@ -197,7 +197,7 @@ StatementManager constructor.
 
 ### setTransformerClass
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setTransformerClass(string $transformerClass)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setTransformerClass(string $transformerClass)
 
 
 
@@ -213,7 +213,7 @@ StatementManager constructor.
 
 ### getTransformer
 
-    mixed deasilworks\cef\StatementManager::getTransformer()
+    mixed deasilworks\CEF\StatementManager::getTransformer()
 
 
 
@@ -226,7 +226,7 @@ StatementManager constructor.
 
 ### getEntityManager
 
-    \deasilworks\cef\EntityManager deasilworks\cef\StatementManager::getEntityManager()
+    \deasilworks\CEF\EntityManager deasilworks\CEF\StatementManager::getEntityManager()
 
 
 
@@ -239,7 +239,7 @@ StatementManager constructor.
 
 ### setEntityManager
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setEntityManager(\deasilworks\cef\EntityManager $entityManager)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setEntityManager(\deasilworks\CEF\EntityManager $entityManager)
 
 
 
@@ -249,13 +249,13 @@ StatementManager constructor.
 
 
 #### Arguments
-* $entityManager **[deasilworks\cef\EntityManager](deasilworks-cef-EntityManager.md)**
+* $entityManager **[deasilworks\CEF\EntityManager](deasilworks-CEF-EntityManager.md)**
 
 
 
 ### getCluster
 
-    mixed deasilworks\cef\StatementManager::getCluster()
+    mixed deasilworks\CEF\StatementManager::getCluster()
 
 
 
@@ -268,7 +268,7 @@ StatementManager constructor.
 
 ### getSession
 
-    \Cassandra\Session deasilworks\cef\StatementManager::getSession()
+    \Cassandra\Session deasilworks\CEF\StatementManager::getSession()
 
 
 
@@ -281,7 +281,7 @@ StatementManager constructor.
 
 ### getConsistency
 
-    mixed deasilworks\cef\StatementManager::getConsistency()
+    mixed deasilworks\CEF\StatementManager::getConsistency()
 
 
 
@@ -294,7 +294,7 @@ StatementManager constructor.
 
 ### setConsistency
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setConsistency(mixed|null $consistency)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setConsistency(mixed|null $consistency)
 
 
 
@@ -310,7 +310,7 @@ StatementManager constructor.
 
 ### getRetryPolicy
 
-    mixed deasilworks\cef\StatementManager::getRetryPolicy()
+    mixed deasilworks\CEF\StatementManager::getRetryPolicy()
 
 
 
@@ -323,7 +323,7 @@ StatementManager constructor.
 
 ### setRetryPolicy
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setRetryPolicy(mixed|null $retryPolicy)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setRetryPolicy(mixed|null $retryPolicy)
 
 
 
@@ -339,7 +339,7 @@ StatementManager constructor.
 
 ### setArguments
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setArguments(null|array $arguments)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setArguments(null|array $arguments)
 
 
 
@@ -355,7 +355,7 @@ StatementManager constructor.
 
 ### getArguments
 
-    array|null deasilworks\cef\StatementManager::getArguments()
+    array|null deasilworks\CEF\StatementManager::getArguments()
 
 
 
@@ -368,7 +368,7 @@ StatementManager constructor.
 
 ### getSb
 
-    \DeasilWorks\CEF\StatementBuilder deasilworks\cef\StatementManager::getSb()
+    \DeasilWorks\CEF\StatementBuilder deasilworks\CEF\StatementManager::getSb()
 
 
 
@@ -381,7 +381,7 @@ StatementManager constructor.
 
 ### setSb
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setSb(\DeasilWorks\CEF\StatementBuilder $statementBuilder)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setSb(\DeasilWorks\CEF\StatementBuilder $statementBuilder)
 
 
 
@@ -397,7 +397,7 @@ StatementManager constructor.
 
 ### setStatement
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setStatement(string|\deasilworks\cef\StatementBuilder $simpleStatement)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setStatement(string|\deasilworks\CEF\StatementBuilder $simpleStatement)
 
 
 
@@ -407,13 +407,13 @@ StatementManager constructor.
 
 
 #### Arguments
-* $simpleStatement **string|[string](deasilworks-cef-StatementBuilder.md)**
+* $simpleStatement **string|[string](deasilworks-CEF-StatementBuilder.md)**
 
 
 
 ### getStatement
 
-    \Cassandra\Statement deasilworks\cef\StatementManager::getStatement()
+    \Cassandra\Statement deasilworks\CEF\StatementManager::getStatement()
 
 
 
@@ -426,7 +426,7 @@ StatementManager constructor.
 
 ### reset
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::reset()
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::reset()
 
 
 
@@ -439,7 +439,7 @@ StatementManager constructor.
 
 ### executeStatement
 
-    mixed deasilworks\cef\StatementManager::executeStatement(string $type)
+    mixed deasilworks\CEF\StatementManager::executeStatement(string $type)
 
 
 
@@ -455,7 +455,7 @@ StatementManager constructor.
 
 ### execute
 
-    \deasilworks\cef\ResultContainer deasilworks\cef\StatementManager::execute()
+    \deasilworks\CEF\ResultContainer deasilworks\CEF\StatementManager::execute()
 
 
 
@@ -468,7 +468,7 @@ StatementManager constructor.
 
 ### getResultContainerClass
 
-    string deasilworks\cef\StatementManager::getResultContainerClass()
+    string deasilworks\CEF\StatementManager::getResultContainerClass()
 
 
 
@@ -481,7 +481,7 @@ StatementManager constructor.
 
 ### setResultContainerClass
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setResultContainerClass(string $resultClass)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setResultContainerClass(string $resultClass)
 
 
 
@@ -497,7 +497,7 @@ StatementManager constructor.
 
 ### getResultContainer
 
-    \deasilworks\cef\ResultContainer deasilworks\cef\StatementManager::getResultContainer()
+    \deasilworks\CEF\ResultContainer deasilworks\CEF\StatementManager::getResultContainer()
 
 Result Container Factory.
 
@@ -510,7 +510,7 @@ Result Container Factory.
 
 ### getResultModelClass
 
-    string deasilworks\cef\StatementManager::getResultModelClass()
+    string deasilworks\CEF\StatementManager::getResultModelClass()
 
 
 
@@ -523,7 +523,7 @@ Result Container Factory.
 
 ### setResultModelClass
 
-    \deasilworks\cef\StatementManager deasilworks\cef\StatementManager::setResultModelClass(string $resultModelClass)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setResultModelClass(string $resultModelClass)
 
 
 
@@ -539,7 +539,7 @@ Result Container Factory.
 
 ### getResultModel
 
-    \deasilworks\cef\EntityModel deasilworks\cef\StatementManager::getResultModel()
+    \deasilworks\CEF\EntityModel deasilworks\CEF\StatementManager::getResultModel()
 
 
 
@@ -552,7 +552,7 @@ Result Container Factory.
 
 ### getStatementBuilder
 
-    \DeasilWorks\CEF\StatementBuilder deasilworks\cef\StatementManager::getStatementBuilder($builderClass)
+    \DeasilWorks\CEF\StatementBuilder deasilworks\CEF\StatementManager::getStatementBuilder($builderClass)
 
 
 
@@ -568,7 +568,7 @@ Result Container Factory.
 
 ### previousArgs
 
-    mixed deasilworks\cef\StatementManager::previousArgs(array $previousArgs)
+    mixed deasilworks\CEF\StatementManager::previousArgs(array $previousArgs)
 
 
 

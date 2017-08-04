@@ -23,9 +23,9 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef\StatementComponent;
+namespace deasilworks\CEF\StatementComponent;
 
-use deasilworks\cef\CEFData;
+use deasilworks\CEF\CEFData;
 
 /**
  * Class Obj.

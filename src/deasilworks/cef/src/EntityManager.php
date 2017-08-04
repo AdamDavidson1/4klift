@@ -23,9 +23,9 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef;
+namespace deasilworks\CEF;
 
-use deasilworks\cef\Statement\Simple;
+use deasilworks\CEF\Statement\Simple;
 
 /**
  * Class EntityManager.

@@ -1,4 +1,4 @@
-deasilworks\cms\CEF\Model\PageModel
+deasilworks\CMS\CEF\Model\PageModel
 ===============
 
 Class PageModel.
@@ -7,8 +7,8 @@ Class PageModel.
 
 
 * Class name: PageModel
-* Namespace: deasilworks\cms\CEF\Model
-* Parent class: deasilworks\cef\EntityModel
+* Namespace: deasilworks\CMS\CEF\Model
+* Parent class: deasilworks\CEF\EntityModel
 
 
 
@@ -79,7 +79,7 @@ Methods
 
 ### getStub
 
-    string deasilworks\cms\CEF\Model\PageModel::getStub()
+    string deasilworks\CMS\CEF\Model\PageModel::getStub()
 
 
 
@@ -92,7 +92,7 @@ Methods
 
 ### setStub
 
-    \deasilworks\cms\CEF\Model\PageModel deasilworks\cms\CEF\Model\PageModel::setStub(string $stub)
+    \deasilworks\CMS\CEF\Model\PageModel deasilworks\CMS\CEF\Model\PageModel::setStub(string $stub)
 
 
 
@@ -108,7 +108,7 @@ Methods
 
 ### getContent
 
-    string deasilworks\cms\CEF\Model\PageModel::getContent()
+    string deasilworks\CMS\CEF\Model\PageModel::getContent()
 
 
 
@@ -121,7 +121,7 @@ Methods
 
 ### setContent
 
-    \deasilworks\cms\CEF\Model\PageModel deasilworks\cms\CEF\Model\PageModel::setContent(string $content)
+    \deasilworks\CMS\CEF\Model\PageModel deasilworks\CMS\CEF\Model\PageModel::setContent(string $content)
 
 
 
@@ -137,7 +137,7 @@ Methods
 
 ### getModified
 
-    \DateTime deasilworks\cms\CEF\Model\PageModel::getModified()
+    \DateTime deasilworks\CMS\CEF\Model\PageModel::getModified()
 
 
 
@@ -150,7 +150,7 @@ Methods
 
 ### setModified
 
-    \deasilworks\cms\CEF\Model\PageModel deasilworks\cms\CEF\Model\PageModel::setModified(\DateTime $modified)
+    \deasilworks\CMS\CEF\Model\PageModel deasilworks\CMS\CEF\Model\PageModel::setModified(\DateTime $modified)
 
 
 
@@ -166,7 +166,7 @@ Methods
 
 ### getTitle
 
-    string deasilworks\cms\CEF\Model\PageModel::getTitle()
+    string deasilworks\CMS\CEF\Model\PageModel::getTitle()
 
 
 
@@ -179,7 +179,7 @@ Methods
 
 ### setTitle
 
-    \deasilworks\cms\CEF\Model\PageModel deasilworks\cms\CEF\Model\PageModel::setTitle(string $title)
+    \deasilworks\CMS\CEF\Model\PageModel deasilworks\CMS\CEF\Model\PageModel::setTitle(string $title)
 
 
 

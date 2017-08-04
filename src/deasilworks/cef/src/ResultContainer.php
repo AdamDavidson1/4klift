@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef;
+namespace deasilworks\CEF;
 
 use JMS\Serializer\Annotation as JMS;
 

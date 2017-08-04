@@ -1,4 +1,4 @@
-deasilworks\cef\StatementBuilder\InsertModel
+deasilworks\CEF\StatementBuilder\InsertModel
 ===============
 
 Class InsertModel.
@@ -7,8 +7,8 @@ Class InsertModel.
 
 
 * Class name: InsertModel
-* Namespace: deasilworks\cef\StatementBuilder
-* Parent class: [deasilworks\cef\StatementBuilder\InsertJson](deasilworks-cef-StatementBuilder-InsertJson.md)
+* Namespace: deasilworks\CEF\StatementBuilder
+* Parent class: [deasilworks\CEF\StatementBuilder\InsertJson](deasilworks-CEF-StatementBuilder-InsertJson.md)
 
 
 
@@ -68,7 +68,7 @@ Methods
 
 ### isSerializeNull
 
-    boolean deasilworks\cef\StatementBuilder\InsertModel::isSerializeNull()
+    boolean deasilworks\CEF\StatementBuilder\InsertModel::isSerializeNull()
 
 
 
@@ -81,7 +81,7 @@ Methods
 
 ### setSerializeNull
 
-    \deasilworks\cef\StatementBuilder\InsertModel deasilworks\cef\StatementBuilder\InsertModel::setSerializeNull(boolean $serializeNull)
+    \deasilworks\CEF\StatementBuilder\InsertModel deasilworks\CEF\StatementBuilder\InsertModel::setSerializeNull(boolean $serializeNull)
 
 
 
@@ -97,7 +97,7 @@ Methods
 
 ### setModel
 
-    \deasilworks\cef\StatementBuilder\InsertModel deasilworks\cef\StatementBuilder\InsertModel::setModel(\deasilworks\cef\EntityModel $model)
+    \deasilworks\CEF\StatementBuilder\InsertModel deasilworks\CEF\StatementBuilder\InsertModel::setModel(\deasilworks\CEF\EntityModel $model)
 
 Set Model.
 
@@ -107,62 +107,62 @@ Set Model.
 
 
 #### Arguments
-* $model **[deasilworks\cef\EntityModel](deasilworks-cef-EntityModel.md)**
+* $model **[deasilworks\CEF\EntityModel](deasilworks-CEF-EntityModel.md)**
 
 
 
 ### __toString
 
-    mixed deasilworks\cef\StatementBuilder\InsertJson::__toString()
+    mixed deasilworks\CEF\StatementBuilder\InsertJson::__toString()
 
 To String.
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder\InsertJson](deasilworks-cef-StatementBuilder-InsertJson.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder\InsertJson](deasilworks-CEF-StatementBuilder-InsertJson.md)
 
 
 
 
 ### getStatement
 
-    string deasilworks\cef\StatementBuilder\InsertJson::getStatement()
+    string deasilworks\CEF\StatementBuilder\InsertJson::getStatement()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder\InsertJson](deasilworks-cef-StatementBuilder-InsertJson.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder\InsertJson](deasilworks-CEF-StatementBuilder-InsertJson.md)
 
 
 
 
 ### getJson
 
-    string deasilworks\cef\StatementBuilder\InsertJson::getJson()
+    string deasilworks\CEF\StatementBuilder\InsertJson::getJson()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder\InsertJson](deasilworks-cef-StatementBuilder-InsertJson.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder\InsertJson](deasilworks-CEF-StatementBuilder-InsertJson.md)
 
 
 
 
 ### setJson
 
-    \deasilworks\cef\StatementBuilder\InsertJson deasilworks\cef\StatementBuilder\InsertJson::setJson(string $json)
+    \deasilworks\CEF\StatementBuilder\InsertJson deasilworks\CEF\StatementBuilder\InsertJson::setJson(string $json)
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder\InsertJson](deasilworks-cef-StatementBuilder-InsertJson.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder\InsertJson](deasilworks-CEF-StatementBuilder-InsertJson.md)
 
 
 #### Arguments
@@ -172,28 +172,28 @@ To String.
 
 ### getFrom
 
-    string deasilworks\cef\StatementBuilder::getFrom()
+    string deasilworks\CEF\StatementBuilder::getFrom()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
 
 ### setFrom
 
-    \deasilworks\cef\StatementBuilder deasilworks\cef\StatementBuilder::setFrom(string $from)
+    \deasilworks\CEF\StatementBuilder deasilworks\CEF\StatementBuilder::setFrom(string $from)
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 #### Arguments

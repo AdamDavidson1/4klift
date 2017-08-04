@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef\StatementComponent;
+namespace deasilworks\CEF\StatementComponent;
 
 /**
  * Class Exp.

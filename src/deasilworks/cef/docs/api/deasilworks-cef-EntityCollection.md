@@ -1,4 +1,4 @@
-deasilworks\cef\EntityCollection
+deasilworks\CEF\EntityCollection
 ===============
 
 Class EntityCollection.
@@ -7,8 +7,8 @@ Class EntityCollection.
 
 
 * Class name: EntityCollection
-* Namespace: deasilworks\cef
-* Parent class: [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* Namespace: deasilworks\CEF
+* Parent class: [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 * This class implements: Iterator
 
 
@@ -20,7 +20,7 @@ Properties
 
 ### $valueClass
 
-    protected string $valueClass = \deasilworks\cef\EntityModel::class
+    protected string $valueClass = \deasilworks\CEF\EntityModel::class
 
 Class name of values.
 
@@ -79,7 +79,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cef\EntityCollection::__construct()
+    mixed deasilworks\CEF\EntityCollection::__construct()
 
 EntityCollection constructor.
 
@@ -92,28 +92,28 @@ EntityCollection constructor.
 
 ### isSerializeNull
 
-    boolean deasilworks\cef\CEFData::isSerializeNull()
+    boolean deasilworks\CEF\CEFData::isSerializeNull()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 
 
 ### setSerializeNull
 
-    \deasilworks\cef\CEFData deasilworks\cef\CEFData::setSerializeNull(boolean $serializeNull)
+    \deasilworks\CEF\CEFData deasilworks\CEF\CEFData::setSerializeNull(boolean $serializeNull)
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
@@ -123,21 +123,21 @@ EntityCollection constructor.
 
 ### toJson
 
-    string deasilworks\cef\CEFData::toJson()
+    string deasilworks\CEF\CEFData::toJson()
 
 To JSON.
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 
 
 ### isEmpty
 
-    boolean deasilworks\cef\EntityCollection::isEmpty()
+    boolean deasilworks\CEF\EntityCollection::isEmpty()
 
 
 
@@ -150,7 +150,7 @@ To JSON.
 
 ### getCount
 
-    integer deasilworks\cef\EntityCollection::getCount()
+    integer deasilworks\CEF\EntityCollection::getCount()
 
 
 
@@ -163,7 +163,7 @@ To JSON.
 
 ### setCount
 
-    \deasilworks\cef\EntityCollection deasilworks\cef\EntityCollection::setCount(integer $count)
+    \deasilworks\CEF\EntityCollection deasilworks\CEF\EntityCollection::setCount(integer $count)
 
 
 
@@ -179,7 +179,7 @@ To JSON.
 
 ### getModel
 
-    mixed deasilworks\cef\EntityCollection::getModel()
+    mixed deasilworks\CEF\EntityCollection::getModel()
 
 Model Factory.
 
@@ -192,7 +192,7 @@ Model Factory.
 
 ### getModelClass
 
-    string deasilworks\cef\EntityCollection::getModelClass()
+    string deasilworks\CEF\EntityCollection::getModelClass()
 
 
 
@@ -205,7 +205,7 @@ Model Factory.
 
 ### getValueClass
 
-    string deasilworks\cef\EntityCollection::getValueClass()
+    string deasilworks\CEF\EntityCollection::getValueClass()
 
 
 
@@ -218,7 +218,7 @@ Model Factory.
 
 ### setModelClass
 
-    \deasilworks\cef\EntityCollection deasilworks\cef\EntityCollection::setModelClass(string $valueClass)
+    \deasilworks\CEF\EntityCollection deasilworks\CEF\EntityCollection::setModelClass(string $valueClass)
 
 
 
@@ -234,7 +234,7 @@ Model Factory.
 
 ### getCollection
 
-    array deasilworks\cef\EntityCollection::getCollection()
+    array deasilworks\CEF\EntityCollection::getCollection()
 
 
 
@@ -247,7 +247,7 @@ Model Factory.
 
 ### setCollection
 
-    \deasilworks\cef\EntityCollection deasilworks\cef\EntityCollection::setCollection(array $collection)
+    \deasilworks\CEF\EntityCollection deasilworks\CEF\EntityCollection::setCollection(array $collection)
 
 Creates all entities from an array at once.
 
@@ -263,7 +263,7 @@ These are an array of entries that need to be converted to models.
 
 ### addEntity
 
-    \deasilworks\cef\EntityCollection deasilworks\cef\EntityCollection::addEntity(array $entity)
+    \deasilworks\CEF\EntityCollection deasilworks\CEF\EntityCollection::addEntity(array $entity)
 
 Adds a single entity.
 
@@ -279,7 +279,7 @@ Adds a single entity.
 
 ### rewind
 
-    mixed deasilworks\cef\EntityCollection::rewind()
+    mixed deasilworks\CEF\EntityCollection::rewind()
 
 Iterator rewind.
 
@@ -292,7 +292,7 @@ Iterator rewind.
 
 ### current
 
-    mixed deasilworks\cef\EntityCollection::current()
+    mixed deasilworks\CEF\EntityCollection::current()
 
 Iterator current.
 
@@ -305,7 +305,7 @@ Iterator current.
 
 ### key
 
-    integer deasilworks\cef\EntityCollection::key()
+    integer deasilworks\CEF\EntityCollection::key()
 
 Iterator key.
 
@@ -318,7 +318,7 @@ Iterator key.
 
 ### next
 
-    mixed deasilworks\cef\EntityCollection::next()
+    mixed deasilworks\CEF\EntityCollection::next()
 
 Iterator next.
 
@@ -331,7 +331,7 @@ Iterator next.
 
 ### valid
 
-    boolean deasilworks\cef\EntityCollection::valid()
+    boolean deasilworks\CEF\EntityCollection::valid()
 
 Iterator valid.
 
@@ -344,28 +344,28 @@ Iterator valid.
 
 ### __toString
 
-    string deasilworks\cef\CEFData::__toString()
+    string deasilworks\CEF\CEFData::__toString()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 
 
 ### serialize
 
-    mixed|string deasilworks\cef\CEFData::serialize($obj, string $type)
+    mixed|string deasilworks\CEF\CEFData::serialize($obj, string $type)
 
 Serialize.
 
 
 
 * Visibility: **protected**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
@@ -376,7 +376,7 @@ Serialize.
 
 ### __set
 
-    mixed deasilworks\cef\CEFData::__set($name, $value)
+    mixed deasilworks\CEF\CEFData::__set($name, $value)
 
 Handle attribute sets.
 
@@ -385,7 +385,7 @@ used for collections without defined models and
 REQUIRED for hydration of entities with defined models.
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
@@ -396,14 +396,14 @@ REQUIRED for hydration of entities with defined models.
 
 ### hydrate
 
-    boolean deasilworks\cef\CEFData::hydrate($context, $name, $value)
+    boolean deasilworks\CEF\CEFData::hydrate($context, $name, $value)
 
 Hydrate.
 
 
 
 * Visibility: **private**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
@@ -415,32 +415,32 @@ Hydrate.
 
 ### hydrateEntityCollection
 
-    mixed deasilworks\cef\CEFData::hydrateEntityCollection(\deasilworks\cef\EntityCollection $obj, $value)
+    mixed deasilworks\CEF\CEFData::hydrateEntityCollection(\deasilworks\CEF\EntityCollection $obj, $value)
 
 
 
 
 
 * Visibility: **private**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
-* $obj **[deasilworks\cef\EntityCollection](deasilworks-cef-EntityCollection.md)**
+* $obj **[deasilworks\CEF\EntityCollection](deasilworks-CEF-EntityCollection.md)**
 * $value **mixed**
 
 
 
 ### hydrateClassObject
 
-    mixed deasilworks\cef\CEFData::hydrateClassObject($obj, $data)
+    mixed deasilworks\CEF\CEFData::hydrateClassObject($obj, $data)
 
 Hydrate class object.
 
 
 
 * Visibility: **private**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments

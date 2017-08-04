@@ -23,9 +23,9 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cms\CEF\Manager;
+namespace deasilworks\CMS\CEF\Manager;
 
-use deasilworks\cef\EntityManager;
+use deasilworks\CEF\EntityManager;
 
 /**
  * Class UserManager.

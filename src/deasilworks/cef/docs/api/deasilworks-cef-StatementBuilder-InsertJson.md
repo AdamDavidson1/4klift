@@ -1,4 +1,4 @@
-deasilworks\cef\StatementBuilder\InsertJson
+deasilworks\CEF\StatementBuilder\InsertJson
 ===============
 
 Class InsertJson.
@@ -7,8 +7,8 @@ Class InsertJson.
 
 
 * Class name: InsertJson
-* Namespace: deasilworks\cef\StatementBuilder
-* Parent class: [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* Namespace: deasilworks\CEF\StatementBuilder
+* Parent class: [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
@@ -57,7 +57,7 @@ Methods
 
 ### __toString
 
-    mixed deasilworks\cef\StatementBuilder\InsertJson::__toString()
+    mixed deasilworks\CEF\StatementBuilder\InsertJson::__toString()
 
 To String.
 
@@ -70,7 +70,7 @@ To String.
 
 ### getStatement
 
-    string deasilworks\cef\StatementBuilder\InsertJson::getStatement()
+    string deasilworks\CEF\StatementBuilder\InsertJson::getStatement()
 
 
 
@@ -83,7 +83,7 @@ To String.
 
 ### getJson
 
-    string deasilworks\cef\StatementBuilder\InsertJson::getJson()
+    string deasilworks\CEF\StatementBuilder\InsertJson::getJson()
 
 
 
@@ -96,7 +96,7 @@ To String.
 
 ### setJson
 
-    \deasilworks\cef\StatementBuilder\InsertJson deasilworks\cef\StatementBuilder\InsertJson::setJson(string $json)
+    \deasilworks\CEF\StatementBuilder\InsertJson deasilworks\CEF\StatementBuilder\InsertJson::setJson(string $json)
 
 
 
@@ -112,28 +112,28 @@ To String.
 
 ### getFrom
 
-    string deasilworks\cef\StatementBuilder::getFrom()
+    string deasilworks\CEF\StatementBuilder::getFrom()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
 
 ### setFrom
 
-    \deasilworks\cef\StatementBuilder deasilworks\cef\StatementBuilder::setFrom(string $from)
+    \deasilworks\CEF\StatementBuilder deasilworks\CEF\StatementBuilder::setFrom(string $from)
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 #### Arguments

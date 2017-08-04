@@ -1,4 +1,4 @@
-deasilworks\cef\CEFConfig
+deasilworks\CEF\CEFConfig
 ===============
 
 Class CEFConfig.
@@ -7,7 +7,7 @@ Class CEFConfig.
 
 
 * Class name: CEFConfig
-* Namespace: deasilworks\cef
+* Namespace: deasilworks\CEF
 
 
 
@@ -89,7 +89,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cef\CEFConfig::__construct()
+    mixed deasilworks\CEF\CEFConfig::__construct()
 
 CEFConfig constructor.
 
@@ -102,7 +102,7 @@ CEFConfig constructor.
 
 ### getKeyspace
 
-    string deasilworks\cef\CEFConfig::getKeyspace()
+    string deasilworks\CEF\CEFConfig::getKeyspace()
 
 
 
@@ -115,7 +115,7 @@ CEFConfig constructor.
 
 ### setKeyspace
 
-    \deasilworks\cef\CEFConfig deasilworks\cef\CEFConfig::setKeyspace(string $keyspace)
+    \deasilworks\CEF\CEFConfig deasilworks\CEF\CEFConfig::setKeyspace(string $keyspace)
 
 
 
@@ -131,7 +131,7 @@ CEFConfig constructor.
 
 ### getUsername
 
-    string deasilworks\cef\CEFConfig::getUsername()
+    string deasilworks\CEF\CEFConfig::getUsername()
 
 
 
@@ -144,7 +144,7 @@ CEFConfig constructor.
 
 ### setUsername
 
-    \deasilworks\cef\CEFConfig deasilworks\cef\CEFConfig::setUsername(string $username)
+    \deasilworks\CEF\CEFConfig deasilworks\CEF\CEFConfig::setUsername(string $username)
 
 
 
@@ -160,7 +160,7 @@ CEFConfig constructor.
 
 ### getPassword
 
-    string deasilworks\cef\CEFConfig::getPassword()
+    string deasilworks\CEF\CEFConfig::getPassword()
 
 
 
@@ -173,7 +173,7 @@ CEFConfig constructor.
 
 ### setPassword
 
-    \deasilworks\cef\CEFConfig deasilworks\cef\CEFConfig::setPassword(string $password)
+    \deasilworks\CEF\CEFConfig deasilworks\CEF\CEFConfig::setPassword(string $password)
 
 
 
@@ -189,7 +189,7 @@ CEFConfig constructor.
 
 ### getContactPoints
 
-    array deasilworks\cef\CEFConfig::getContactPoints()
+    array deasilworks\CEF\CEFConfig::getContactPoints()
 
 
 
@@ -202,7 +202,7 @@ CEFConfig constructor.
 
 ### setContactPoints
 
-    \deasilworks\cef\CEFConfig deasilworks\cef\CEFConfig::setContactPoints(array $contactPoints)
+    \deasilworks\CEF\CEFConfig deasilworks\CEF\CEFConfig::setContactPoints(array $contactPoints)
 
 
 
@@ -218,7 +218,7 @@ CEFConfig constructor.
 
 ### getCluster
 
-    \Cassandra\Cluster deasilworks\cef\CEFConfig::getCluster()
+    \Cassandra\Cluster deasilworks\CEF\CEFConfig::getCluster()
 
 
 

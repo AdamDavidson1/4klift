@@ -23,13 +23,13 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cms\Util\Command;
+namespace deasilworks\CMS\Util\Command;
 
-use deasilworks\cef\EntityManager;
-use deasilworks\cef\Statement\Simple;
-use deasilworks\cef\StatementManager;
-use deasilworks\cms\CEF\Manager\PageManager;
-use deasilworks\cms\CEF\Model\PageModel;
+use deasilworks\CEF\EntityManager;
+use deasilworks\CEF\Statement\Simple;
+use deasilworks\CEF\StatementManager;
+use deasilworks\CMS\CEF\Manager\PageManager;
+use deasilworks\CMS\CEF\Model\PageModel;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;

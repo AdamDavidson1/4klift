@@ -1,4 +1,4 @@
-deasilworks\cms\Util\Command\CMSCommand
+deasilworks\CMS\Util\Command\CMSCommand
 ===============
 
 Class CMSCommand.
@@ -7,7 +7,7 @@ Class CMSCommand.
 
 
 * Class name: CMSCommand
-* Namespace: deasilworks\cms\Util\Command
+* Namespace: deasilworks\CMS\Util\Command
 * This is an **abstract** class
 * Parent class: Symfony\Component\Console\Command\Command
 
@@ -43,7 +43,7 @@ Command inout output.
 
 ### $cef
 
-    protected \deasilworks\cef\CEF $cef
+    protected \deasilworks\CEF\CEF $cef
 
 
 
@@ -58,7 +58,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cms\Util\Command\CMSCommand::__construct(null $name)
+    mixed deasilworks\CMS\Util\Command\CMSCommand::__construct(null $name)
 
 InstallCommand constructor.
 

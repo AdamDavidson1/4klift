@@ -23,9 +23,9 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cms\CEF\Manager\User;
+namespace deasilworks\CMS\CEF\Manager\User;
 
-use deasilworks\cef\EntityManager;
+use deasilworks\CEF\EntityManager;
 
 /**
  * Class AclManager.

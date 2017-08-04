@@ -25,8 +25,8 @@
 
 namespace deasilworks\cef\test\Collection;
 
-use deasilworks\cef\ResultContainer;
-use deasilworks\cef\test\Model\LocalModel;
+use deasilworks\CEF\ResultContainer;
+use deasilworks\CEF\test\Model\LocalModel;
 
 class LocalCollection extends ResultContainer
 {

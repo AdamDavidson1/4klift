@@ -23,10 +23,10 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef\Statement;
+namespace deasilworks\CEF\Statement;
 
-use deasilworks\cef\StatementBuilder;
-use deasilworks\cef\StatementManager;
+use deasilworks\CEF\StatementBuilder;
+use deasilworks\CEF\StatementManager;
 
 /**
  * Class Simple.

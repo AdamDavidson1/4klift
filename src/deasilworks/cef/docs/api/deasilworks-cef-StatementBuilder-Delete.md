@@ -1,4 +1,4 @@
-deasilworks\cef\StatementBuilder\Delete
+deasilworks\CEF\StatementBuilder\Delete
 ===============
 
 Class Delete.
@@ -7,8 +7,8 @@ Class Delete.
 
 
 * Class name: Delete
-* Namespace: deasilworks\cef\StatementBuilder
-* Parent class: [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* Namespace: deasilworks\CEF\StatementBuilder
+* Parent class: [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
@@ -79,7 +79,7 @@ Methods
 
 ### __toString
 
-    mixed deasilworks\cef\StatementBuilder\Delete::__toString()
+    mixed deasilworks\CEF\StatementBuilder\Delete::__toString()
 
 To String.
 
@@ -92,7 +92,7 @@ To String.
 
 ### getStatement
 
-    string deasilworks\cef\StatementBuilder\Delete::getStatement()
+    string deasilworks\CEF\StatementBuilder\Delete::getStatement()
 
 
 
@@ -105,7 +105,7 @@ To String.
 
 ### getType
 
-    string deasilworks\cef\StatementBuilder\Delete::getType()
+    string deasilworks\CEF\StatementBuilder\Delete::getType()
 
 
 
@@ -118,7 +118,7 @@ To String.
 
 ### setType
 
-    \deasilworks\cef\StatementBuilder\Delete deasilworks\cef\StatementBuilder\Delete::setType(string $type)
+    \deasilworks\CEF\StatementBuilder\Delete deasilworks\CEF\StatementBuilder\Delete::setType(string $type)
 
 
 
@@ -134,7 +134,7 @@ To String.
 
 ### getWhere
 
-    string deasilworks\cef\StatementBuilder\Delete::getWhere()
+    string deasilworks\CEF\StatementBuilder\Delete::getWhere()
 
 
 
@@ -147,7 +147,7 @@ To String.
 
 ### setWhere
 
-    \deasilworks\cef\StatementBuilder\Delete deasilworks\cef\StatementBuilder\Delete::setWhere(array $where)
+    \deasilworks\CEF\StatementBuilder\Delete deasilworks\CEF\StatementBuilder\Delete::setWhere(array $where)
 
 
 
@@ -163,7 +163,7 @@ To String.
 
 ### getColumns
 
-    string deasilworks\cef\StatementBuilder\Delete::getColumns()
+    string deasilworks\CEF\StatementBuilder\Delete::getColumns()
 
 
 
@@ -176,7 +176,7 @@ To String.
 
 ### setColumns
 
-    \deasilworks\cef\StatementBuilder\Delete deasilworks\cef\StatementBuilder\Delete::setColumns(array $columns)
+    \deasilworks\CEF\StatementBuilder\Delete deasilworks\CEF\StatementBuilder\Delete::setColumns(array $columns)
 
 
 
@@ -192,7 +192,7 @@ To String.
 
 ### isIfExists
 
-    boolean deasilworks\cef\StatementBuilder\Delete::isIfExists()
+    boolean deasilworks\CEF\StatementBuilder\Delete::isIfExists()
 
 
 
@@ -205,7 +205,7 @@ To String.
 
 ### setIfExists
 
-    \deasilworks\cef\StatementBuilder\Delete deasilworks\cef\StatementBuilder\Delete::setIfExists(boolean $ifExists)
+    \deasilworks\CEF\StatementBuilder\Delete deasilworks\CEF\StatementBuilder\Delete::setIfExists(boolean $ifExists)
 
 
 
@@ -221,28 +221,28 @@ To String.
 
 ### getFrom
 
-    string deasilworks\cef\StatementBuilder::getFrom()
+    string deasilworks\CEF\StatementBuilder::getFrom()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
 
 ### setFrom
 
-    \deasilworks\cef\StatementBuilder deasilworks\cef\StatementBuilder::setFrom(string $from)
+    \deasilworks\CEF\StatementBuilder deasilworks\CEF\StatementBuilder::setFrom(string $from)
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 #### Arguments

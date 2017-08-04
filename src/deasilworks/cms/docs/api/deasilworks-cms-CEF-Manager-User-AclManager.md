@@ -1,4 +1,4 @@
-deasilworks\cms\CEF\Manager\User\AclManager
+deasilworks\CMS\CEF\Manager\User\AclManager
 ===============
 
 Class AclManager.
@@ -7,8 +7,8 @@ Class AclManager.
 
 
 * Class name: AclManager
-* Namespace: deasilworks\cms\CEF\Manager\User
-* Parent class: deasilworks\cef\EntityManager
+* Namespace: deasilworks\CMS\CEF\Manager\User
+* Parent class: deasilworks\CEF\EntityManager
 
 
 

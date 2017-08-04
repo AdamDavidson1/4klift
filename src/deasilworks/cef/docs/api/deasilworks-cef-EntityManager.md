@@ -1,4 +1,4 @@
-deasilworks\cef\EntityManager
+deasilworks\CEF\EntityManager
 ===============
 
 Class EntityManager.
@@ -9,7 +9,7 @@ provides a Statement Manager factory to help accomplish that.
 
 
 * Class name: EntityManager
-* Namespace: deasilworks\cef
+* Namespace: deasilworks\CEF
 
 
 
@@ -21,7 +21,7 @@ Properties
 
 ### $collectionClass
 
-    protected string $collectionClass = \deasilworks\cef\ResultContainer::class
+    protected string $collectionClass = \deasilworks\CEF\ResultContainer::class
 
 A ResultContainer class.
 
@@ -32,7 +32,7 @@ A ResultContainer class.
 
 ### $config
 
-    private \deasilworks\cef\CEFConfig $config
+    private \deasilworks\CEF\CEFConfig $config
 
 
 
@@ -47,7 +47,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cef\EntityManager::__construct(\deasilworks\cef\CEFConfig $config)
+    mixed deasilworks\CEF\EntityManager::__construct(\deasilworks\CEF\CEFConfig $config)
 
 EntityManager constructor.
 
@@ -58,13 +58,13 @@ produce Statement Managers.
 
 
 #### Arguments
-* $config **[deasilworks\cef\CEFConfig](deasilworks-cef-CEFConfig.md)**
+* $config **[deasilworks\CEF\CEFConfig](deasilworks-CEF-CEFConfig.md)**
 
 
 
 ### getCollection
 
-    \deasilworks\cef\ResultContainer deasilworks\cef\EntityManager::getCollection()
+    \deasilworks\CEF\ResultContainer deasilworks\CEF\EntityManager::getCollection()
 
 Collection Factory.
 
@@ -77,7 +77,7 @@ Collection Factory.
 
 ### getModel
 
-    \deasilworks\cef\EntityModel deasilworks\cef\EntityManager::getModel()
+    \deasilworks\CEF\EntityModel deasilworks\CEF\EntityManager::getModel()
 
 Get the model associated with the collection.
 
@@ -90,7 +90,7 @@ Get the model associated with the collection.
 
 ### setCollectionClass
 
-    \deasilworks\cef\EntityManager deasilworks\cef\EntityManager::setCollectionClass(string $collectionClass)
+    \deasilworks\CEF\EntityManager deasilworks\CEF\EntityManager::setCollectionClass(string $collectionClass)
 
 
 
@@ -106,7 +106,7 @@ Get the model associated with the collection.
 
 ### getCollectionClass
 
-    string deasilworks\cef\EntityManager::getCollectionClass()
+    string deasilworks\CEF\EntityManager::getCollectionClass()
 
 
 
@@ -119,7 +119,7 @@ Get the model associated with the collection.
 
 ### getStatementManager
 
-    \deasilworks\cef\StatementManager deasilworks\cef\EntityManager::getStatementManager(string $statementClass)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\EntityManager::getStatementManager(string $statementClass)
 
 Statement Manager Factory.
 

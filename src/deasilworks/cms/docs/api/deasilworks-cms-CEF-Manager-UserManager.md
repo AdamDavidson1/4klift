@@ -1,4 +1,4 @@
-deasilworks\cms\CEF\Manager\UserManager
+deasilworks\CMS\CEF\Manager\UserManager
 ===============
 
 Class UserManager.
@@ -7,8 +7,8 @@ Class UserManager.
 
 
 * Class name: UserManager
-* Namespace: deasilworks\cms\CEF\Manager
-* Parent class: deasilworks\cef\EntityManager
+* Namespace: deasilworks\CMS\CEF\Manager
+* Parent class: deasilworks\CEF\EntityManager
 
 
 

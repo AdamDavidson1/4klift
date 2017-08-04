@@ -1,4 +1,4 @@
-deasilworks\cef\CEF
+deasilworks\CEF\CEF
 ===============
 
 Class CEF.
@@ -8,7 +8,7 @@ providing an EntityManager factory.
 
 
 * Class name: CEF
-* Namespace: deasilworks\cef
+* Namespace: deasilworks\CEF
 
 
 
@@ -20,7 +20,7 @@ Properties
 
 ### $config
 
-    private \deasilworks\cef\CEFConfig $config
+    private \deasilworks\CEF\CEFConfig $config
 
 
 
@@ -35,7 +35,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cef\CEF::__construct($config)
+    mixed deasilworks\CEF\CEF::__construct($config)
 
 CEF constructor.
 
@@ -51,7 +51,7 @@ CEF constructor.
 
 ### getConfig
 
-    \deasilworks\cef\CEFConfig deasilworks\cef\CEF::getConfig()
+    \deasilworks\CEF\CEFConfig deasilworks\CEF\CEF::getConfig()
 
 
 
@@ -64,7 +64,7 @@ CEF constructor.
 
 ### setConfig
 
-    \deasilworks\cef\CEF deasilworks\cef\CEF::setConfig(\deasilworks\cef\CEFConfig $config)
+    \deasilworks\CEF\CEF deasilworks\CEF\CEF::setConfig(\deasilworks\CEF\CEFConfig $config)
 
 
 
@@ -74,13 +74,13 @@ CEF constructor.
 
 
 #### Arguments
-* $config **[deasilworks\cef\CEFConfig](deasilworks-cef-CEFConfig.md)**
+* $config **[deasilworks\CEF\CEFConfig](deasilworks-CEF-CEFConfig.md)**
 
 
 
 ### getEntityManager
 
-    \deasilworks\cef\EntityManager deasilworks\cef\CEF::getEntityManager(string $managerClass)
+    \deasilworks\CEF\EntityManager deasilworks\CEF\CEF::getEntityManager(string $managerClass)
 
 
 

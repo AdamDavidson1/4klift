@@ -23,18 +23,18 @@
  * SOFTWARE.
  */
 
-use deasilworks\cef\CEF;
-use deasilworks\cef\CEFConfig;
-use deasilworks\cef\EntityModel;
-use deasilworks\cef\ResultContainer;
-use deasilworks\cef\Statement\Simple;
-use deasilworks\cef\StatementBuilder\Select;
-use deasilworks\cef\test\Collection\LocalCollection;
-use deasilworks\cef\test\Collection\UserCollection;
-use deasilworks\cef\test\Manager\LocalManager;
-use deasilworks\cef\test\Manager\UserManager;
-use deasilworks\cef\test\Model\UdtAddressModel;
-use deasilworks\cef\test\Model\UserModel;
+use deasilworks\CEF\CEF;
+use deasilworks\CEF\CEFConfig;
+use deasilworks\CEF\EntityModel;
+use deasilworks\CEF\ResultContainer;
+use deasilworks\CEF\Statement\Simple;
+use deasilworks\CEF\StatementBuilder\Select;
+use deasilworks\CEF\test\Collection\LocalCollection;
+use deasilworks\CEF\test\Collection\UserCollection;
+use deasilworks\CEF\test\Manager\LocalManager;
+use deasilworks\CEF\test\Manager\UserManager;
+use deasilworks\CEF\test\Model\UdtAddressModel;
+use deasilworks\CEF\test\Model\UserModel;
 
 /**
  * Class cassandraTest.

@@ -23,10 +23,10 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cms\CEF\Collection;
+namespace deasilworks\CMS\CEF\Collection;
 
-use deasilworks\cef\ResultContainer;
-use deasilworks\cms\CEF\Model\PageModel;
+use deasilworks\CEF\ResultContainer;
+use deasilworks\CMS\CEF\Model\PageModel;
 
 class PageCollection extends ResultContainer
 {

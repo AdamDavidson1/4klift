@@ -1,4 +1,4 @@
-deasilworks\cef\EntityModel
+deasilworks\CEF\EntityModel
 ===============
 
 Class EntityModel.
@@ -7,8 +7,8 @@ This is the generic entity model and allows the setting of arbitrary properties.
 
 
 * Class name: EntityModel
-* Namespace: deasilworks\cef
-* Parent class: [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* Namespace: deasilworks\CEF
+* Parent class: [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 
@@ -31,7 +31,7 @@ Properties
 
 ### $entityManager
 
-    protected \deasilworks\cef\EntityManager $entityManager
+    protected \deasilworks\CEF\EntityManager $entityManager
 
 
 
@@ -57,7 +57,7 @@ Methods
 
 ### getTableName
 
-    string deasilworks\cef\EntityModel::getTableName()
+    string deasilworks\CEF\EntityModel::getTableName()
 
 
 
@@ -70,7 +70,7 @@ Methods
 
 ### setTableName
 
-    \deasilworks\cef\EntityModel deasilworks\cef\EntityModel::setTableName(string $tableName)
+    \deasilworks\CEF\EntityModel deasilworks\CEF\EntityModel::setTableName(string $tableName)
 
 
 
@@ -86,7 +86,7 @@ Methods
 
 ### getEntityManager
 
-    \deasilworks\cef\EntityManager deasilworks\cef\EntityModel::getEntityManager()
+    \deasilworks\CEF\EntityManager deasilworks\CEF\EntityModel::getEntityManager()
 
 
 
@@ -99,7 +99,7 @@ Methods
 
 ### setEntityManager
 
-    \deasilworks\cef\EntityModel deasilworks\cef\EntityModel::setEntityManager(\deasilworks\cef\EntityManager $entityManager)
+    \deasilworks\CEF\EntityModel deasilworks\CEF\EntityModel::setEntityManager(\deasilworks\CEF\EntityManager $entityManager)
 
 
 
@@ -109,13 +109,13 @@ Methods
 
 
 #### Arguments
-* $entityManager **[deasilworks\cef\EntityManager](deasilworks-cef-EntityManager.md)**
+* $entityManager **[deasilworks\CEF\EntityManager](deasilworks-CEF-EntityManager.md)**
 
 
 
 ### save
 
-    \deasilworks\cef\EntityCollection deasilworks\cef\EntityModel::save()
+    \deasilworks\CEF\EntityCollection deasilworks\CEF\EntityModel::save()
 
 Saves a model to the database.
 
@@ -128,42 +128,42 @@ Saves a model to the database.
 
 ### __toString
 
-    string deasilworks\cef\CEFData::__toString()
+    string deasilworks\CEF\CEFData::__toString()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 
 
 ### isSerializeNull
 
-    boolean deasilworks\cef\CEFData::isSerializeNull()
+    boolean deasilworks\CEF\CEFData::isSerializeNull()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 
 
 ### setSerializeNull
 
-    \deasilworks\cef\CEFData deasilworks\cef\CEFData::setSerializeNull(boolean $serializeNull)
+    \deasilworks\CEF\CEFData deasilworks\CEF\CEFData::setSerializeNull(boolean $serializeNull)
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
@@ -173,28 +173,28 @@ Saves a model to the database.
 
 ### toJson
 
-    string deasilworks\cef\CEFData::toJson()
+    string deasilworks\CEF\CEFData::toJson()
 
 To JSON.
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 
 
 ### serialize
 
-    mixed|string deasilworks\cef\CEFData::serialize($obj, string $type)
+    mixed|string deasilworks\CEF\CEFData::serialize($obj, string $type)
 
 Serialize.
 
 
 
 * Visibility: **protected**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
@@ -205,7 +205,7 @@ Serialize.
 
 ### __set
 
-    mixed deasilworks\cef\CEFData::__set($name, $value)
+    mixed deasilworks\CEF\CEFData::__set($name, $value)
 
 Handle attribute sets.
 
@@ -214,7 +214,7 @@ used for collections without defined models and
 REQUIRED for hydration of entities with defined models.
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
@@ -225,14 +225,14 @@ REQUIRED for hydration of entities with defined models.
 
 ### hydrate
 
-    boolean deasilworks\cef\CEFData::hydrate($context, $name, $value)
+    boolean deasilworks\CEF\CEFData::hydrate($context, $name, $value)
 
 Hydrate.
 
 
 
 * Visibility: **private**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
@@ -244,32 +244,32 @@ Hydrate.
 
 ### hydrateEntityCollection
 
-    mixed deasilworks\cef\CEFData::hydrateEntityCollection(\deasilworks\cef\EntityCollection $obj, $value)
+    mixed deasilworks\CEF\CEFData::hydrateEntityCollection(\deasilworks\CEF\EntityCollection $obj, $value)
 
 
 
 
 
 * Visibility: **private**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments
-* $obj **[deasilworks\cef\EntityCollection](deasilworks-cef-EntityCollection.md)**
+* $obj **[deasilworks\CEF\EntityCollection](deasilworks-CEF-EntityCollection.md)**
 * $value **mixed**
 
 
 
 ### hydrateClassObject
 
-    mixed deasilworks\cef\CEFData::hydrateClassObject($obj, $data)
+    mixed deasilworks\CEF\CEFData::hydrateClassObject($obj, $data)
 
 Hydrate class object.
 
 
 
 * Visibility: **private**
-* This method is defined by [deasilworks\cef\CEFData](deasilworks-cef-CEFData.md)
+* This method is defined by [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
 
 #### Arguments

@@ -2,21 +2,21 @@ API Index
 =========
 
 * deasilworks
-    * deasilworks\cms
-        * deasilworks\cms\CEF
-            * deasilworks\cms\CEF\Manager
-                * [PageManager](deasilworks-cms-CEF-Manager-PageManager.md)
-                * deasilworks\cms\CEF\Manager\User
-                    * [AclManager](deasilworks-cms-CEF-Manager-User-AclManager.md)
-                * [UserManager](deasilworks-cms-CEF-Manager-UserManager.md)
-            * deasilworks\cms\CEF\Model
-                * [PageModel](deasilworks-cms-CEF-Model-PageModel.md)
-            * deasilworks\cms\CEF\Collection
-                * [PageCollection](deasilworks-cms-CEF-Collection-PageCollection.md)
-        * deasilworks\cms\Util
-            * deasilworks\cms\Util\Command
-                * [CMSCommand](deasilworks-cms-Util-Command-CMSCommand.md)
-                * [InstallCommand](deasilworks-cms-Util-Command-InstallCommand.md)
+    * deasilworks\CMS
+        * deasilworks\CMS\CEF
+            * deasilworks\CMS\CEF\Manager
+                * [PageManager](deasilworks-CMS-CEF-Manager-PageManager.md)
+                * deasilworks\CMS\CEF\Manager\User
+                    * [AclManager](deasilworks-CMS-CEF-Manager-User-AclManager.md)
+                * [UserManager](deasilworks-CMS-CEF-Manager-UserManager.md)
+            * deasilworks\CMS\CEF\Model
+                * [PageModel](deasilworks-CMS-CEF-Model-PageModel.md)
+            * deasilworks\CMS\CEF\Collection
+                * [PageCollection](deasilworks-CMS-CEF-Collection-PageCollection.md)
+        * deasilworks\CMS\Util
+            * deasilworks\CMS\Util\Command
+                * [CMSCommand](deasilworks-CMS-Util-Command-CMSCommand.md)
+                * [InstallCommand](deasilworks-CMS-Util-Command-InstallCommand.md)
 
 
 ## LICENSE

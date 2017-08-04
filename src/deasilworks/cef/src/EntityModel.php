@@ -23,10 +23,10 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef;
+namespace deasilworks\CEF;
 
-use deasilworks\cef\Statement\Simple;
-use deasilworks\cef\StatementBuilder\InsertModel;
+use deasilworks\CEF\Statement\Simple;
+use deasilworks\CEF\StatementBuilder\InsertModel;
 use JMS\Serializer\Annotation\Exclude;
 
 /**

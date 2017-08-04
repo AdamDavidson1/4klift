@@ -1,4 +1,4 @@
-deasilworks\cef\StatementBuilder\Select
+deasilworks\CEF\StatementBuilder\Select
 ===============
 
 Class Select.
@@ -7,8 +7,8 @@ Class Select.
 
 
 * Class name: Select
-* Namespace: deasilworks\cef\StatementBuilder
-* Parent class: [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* Namespace: deasilworks\CEF\StatementBuilder
+* Parent class: [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
@@ -86,7 +86,7 @@ Methods
 
 ### __toString
 
-    mixed deasilworks\cef\StatementBuilder\Select::__toString()
+    mixed deasilworks\CEF\StatementBuilder\Select::__toString()
 
 To String.
 
@@ -99,7 +99,7 @@ To String.
 
 ### getStatement
 
-    string deasilworks\cef\StatementBuilder\Select::getStatement()
+    string deasilworks\CEF\StatementBuilder\Select::getStatement()
 
 
 
@@ -112,7 +112,7 @@ To String.
 
 ### getType
 
-    string deasilworks\cef\StatementBuilder\Select::getType()
+    string deasilworks\CEF\StatementBuilder\Select::getType()
 
 
 
@@ -125,7 +125,7 @@ To String.
 
 ### setType
 
-    \deasilworks\cef\StatementBuilder\Select deasilworks\cef\StatementBuilder\Select::setType(string $type)
+    \deasilworks\CEF\StatementBuilder\Select deasilworks\CEF\StatementBuilder\Select::setType(string $type)
 
 
 
@@ -141,7 +141,7 @@ To String.
 
 ### getColumns
 
-    array deasilworks\cef\StatementBuilder\Select::getColumns()
+    array deasilworks\CEF\StatementBuilder\Select::getColumns()
 
 
 
@@ -154,7 +154,7 @@ To String.
 
 ### setColumns
 
-    \deasilworks\cef\StatementBuilder\Select deasilworks\cef\StatementBuilder\Select::setColumns(array $columns)
+    \deasilworks\CEF\StatementBuilder\Select deasilworks\CEF\StatementBuilder\Select::setColumns(array $columns)
 
 
 
@@ -170,7 +170,7 @@ To String.
 
 ### getWhere
 
-    string deasilworks\cef\StatementBuilder\Select::getWhere()
+    string deasilworks\CEF\StatementBuilder\Select::getWhere()
 
 
 
@@ -183,7 +183,7 @@ To String.
 
 ### setWhere
 
-    \deasilworks\cef\StatementBuilder\Select deasilworks\cef\StatementBuilder\Select::setWhere(array $where)
+    \deasilworks\CEF\StatementBuilder\Select deasilworks\CEF\StatementBuilder\Select::setWhere(array $where)
 
 
 
@@ -199,28 +199,28 @@ To String.
 
 ### getFrom
 
-    string deasilworks\cef\StatementBuilder::getFrom()
+    string deasilworks\CEF\StatementBuilder::getFrom()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
 
 ### setFrom
 
-    \deasilworks\cef\StatementBuilder deasilworks\cef\StatementBuilder::setFrom(string $from)
+    \deasilworks\CEF\StatementBuilder deasilworks\CEF\StatementBuilder::setFrom(string $from)
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 #### Arguments

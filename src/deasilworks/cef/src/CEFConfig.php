@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef;
+namespace deasilworks\CEF;
 
 use Cassandra\Cluster;
 use Cassandra\RetryPolicy;

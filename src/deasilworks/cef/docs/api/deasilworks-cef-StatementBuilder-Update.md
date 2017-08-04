@@ -1,4 +1,4 @@
-deasilworks\cef\StatementBuilder\Update
+deasilworks\CEF\StatementBuilder\Update
 ===============
 
 Class Update.
@@ -7,8 +7,8 @@ Class Update.
 
 
 * Class name: Update
-* Namespace: deasilworks\cef\StatementBuilder
-* Parent class: [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* Namespace: deasilworks\CEF\StatementBuilder
+* Parent class: [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
@@ -79,7 +79,7 @@ Methods
 
 ### __toString
 
-    mixed deasilworks\cef\StatementBuilder\Update::__toString()
+    mixed deasilworks\CEF\StatementBuilder\Update::__toString()
 
 To String.
 
@@ -92,7 +92,7 @@ To String.
 
 ### getStatement
 
-    string deasilworks\cef\StatementBuilder\Update::getStatement()
+    string deasilworks\CEF\StatementBuilder\Update::getStatement()
 
 
 
@@ -105,7 +105,7 @@ To String.
 
 ### getColValMap
 
-    string deasilworks\cef\StatementBuilder\Update::getColValMap()
+    string deasilworks\CEF\StatementBuilder\Update::getColValMap()
 
 
 
@@ -118,7 +118,7 @@ To String.
 
 ### setColValMap
 
-    \deasilworks\cef\StatementBuilder\Update deasilworks\cef\StatementBuilder\Update::setColValMap(array $columValueMap)
+    \deasilworks\CEF\StatementBuilder\Update deasilworks\CEF\StatementBuilder\Update::setColValMap(array $columValueMap)
 
 
 
@@ -134,7 +134,7 @@ To String.
 
 ### getType
 
-    string deasilworks\cef\StatementBuilder\Update::getType()
+    string deasilworks\CEF\StatementBuilder\Update::getType()
 
 
 
@@ -147,7 +147,7 @@ To String.
 
 ### setType
 
-    \deasilworks\cef\StatementBuilder\Update deasilworks\cef\StatementBuilder\Update::setType(string $type)
+    \deasilworks\CEF\StatementBuilder\Update deasilworks\CEF\StatementBuilder\Update::setType(string $type)
 
 
 
@@ -163,7 +163,7 @@ To String.
 
 ### getWhere
 
-    string deasilworks\cef\StatementBuilder\Update::getWhere()
+    string deasilworks\CEF\StatementBuilder\Update::getWhere()
 
 
 
@@ -176,7 +176,7 @@ To String.
 
 ### setWhere
 
-    \deasilworks\cef\StatementBuilder\Update deasilworks\cef\StatementBuilder\Update::setWhere(array $where)
+    \deasilworks\CEF\StatementBuilder\Update deasilworks\CEF\StatementBuilder\Update::setWhere(array $where)
 
 
 
@@ -192,7 +192,7 @@ To String.
 
 ### isIfExists
 
-    boolean deasilworks\cef\StatementBuilder\Update::isIfExists()
+    boolean deasilworks\CEF\StatementBuilder\Update::isIfExists()
 
 
 
@@ -205,7 +205,7 @@ To String.
 
 ### setIfExists
 
-    \deasilworks\cef\StatementBuilder\Update deasilworks\cef\StatementBuilder\Update::setIfExists(boolean $ifExists)
+    \deasilworks\CEF\StatementBuilder\Update deasilworks\CEF\StatementBuilder\Update::setIfExists(boolean $ifExists)
 
 
 
@@ -221,28 +221,28 @@ To String.
 
 ### getFrom
 
-    string deasilworks\cef\StatementBuilder::getFrom()
+    string deasilworks\CEF\StatementBuilder::getFrom()
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 
 
 ### setFrom
 
-    \deasilworks\cef\StatementBuilder deasilworks\cef\StatementBuilder::setFrom(string $from)
+    \deasilworks\CEF\StatementBuilder deasilworks\CEF\StatementBuilder::setFrom(string $from)
 
 
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cef\StatementBuilder](deasilworks-cef-StatementBuilder.md)
+* This method is defined by [deasilworks\CEF\StatementBuilder](deasilworks-CEF-StatementBuilder.md)
 
 
 #### Arguments

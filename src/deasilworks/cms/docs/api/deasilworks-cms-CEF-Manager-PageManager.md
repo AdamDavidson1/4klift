@@ -1,4 +1,4 @@
-deasilworks\cms\CEF\Manager\PageManager
+deasilworks\CMS\CEF\Manager\PageManager
 ===============
 
 Class PageManager.
@@ -7,8 +7,8 @@ Class PageManager.
 
 
 * Class name: PageManager
-* Namespace: deasilworks\cms\CEF\Manager
-* Parent class: deasilworks\cef\EntityManager
+* Namespace: deasilworks\CMS\CEF\Manager
+* Parent class: deasilworks\CEF\EntityManager
 
 
 
@@ -20,7 +20,7 @@ Properties
 
 ### $collectionClass
 
-    protected string $collectionClass = \deasilworks\cms\CEF\Collection\PageCollection::class
+    protected string $collectionClass = \deasilworks\CMS\CEF\Collection\PageCollection::class
 
 
 
@@ -35,7 +35,7 @@ Methods
 
 ### setPage
 
-    boolean deasilworks\cms\CEF\Manager\PageManager::setPage(\deasilworks\cms\CEF\Model\PageModel $pageModel)
+    boolean deasilworks\CMS\CEF\Manager\PageManager::setPage(\deasilworks\CMS\CEF\Model\PageModel $pageModel)
 
 Set Page.
 
@@ -45,13 +45,13 @@ Set Page.
 
 
 #### Arguments
-* $pageModel **[deasilworks\cms\CEF\Model\PageModel](deasilworks-cms-CEF-Model-PageModel.md)**
+* $pageModel **[deasilworks\CMS\CEF\Model\PageModel](deasilworks-CMS-CEF-Model-PageModel.md)**
 
 
 
 ### getPage
 
-    \deasilworks\cms\CEF\Model\PageModel deasilworks\cms\CEF\Manager\PageManager::getPage(string $stub)
+    \deasilworks\CMS\CEF\Model\PageModel deasilworks\CMS\CEF\Manager\PageManager::getPage(string $stub)
 
 Get Page.
 
@@ -67,7 +67,7 @@ Get Page.
 
 ### setMessage
 
-    string deasilworks\cms\CEF\Manager\PageManager::setMessage(string $message)
+    string deasilworks\CMS\CEF\Manager\PageManager::setMessage(string $message)
 
 Set Message.
 
@@ -83,7 +83,7 @@ This is a 4klift test method.
 
 ### updateMessage
 
-    string deasilworks\cms\CEF\Manager\PageManager::updateMessage(string $message)
+    string deasilworks\CMS\CEF\Manager\PageManager::updateMessage(string $message)
 
 Update Message.
 
@@ -99,7 +99,7 @@ This is a 4klift test method.
 
 ### getMessage
 
-    string deasilworks\cms\CEF\Manager\PageManager::getMessage()
+    string deasilworks\CMS\CEF\Manager\PageManager::getMessage()
 
 Get Message.
 

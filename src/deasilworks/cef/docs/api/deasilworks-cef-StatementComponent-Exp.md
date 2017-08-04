@@ -1,4 +1,4 @@
-deasilworks\cef\StatementComponent\Exp
+deasilworks\CEF\StatementComponent\Exp
 ===============
 
 Class Exp.
@@ -7,7 +7,7 @@ Class Exp.
 
 
 * Class name: Exp
-* Namespace: deasilworks\cef\StatementComponent
+* Namespace: deasilworks\CEF\StatementComponent
 
 
 
@@ -34,7 +34,7 @@ Methods
 
 ### __toString
 
-    mixed deasilworks\cef\StatementComponent\Exp::__toString()
+    mixed deasilworks\CEF\StatementComponent\Exp::__toString()
 
 
 
@@ -47,7 +47,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cef\StatementComponent\Exp::__construct(string $expString)
+    mixed deasilworks\CEF\StatementComponent\Exp::__construct(string $expString)
 
 Exp constructor.
 
@@ -63,7 +63,7 @@ Exp constructor.
 
 ### getExpression
 
-    string deasilworks\cef\StatementComponent\Exp::getExpression()
+    string deasilworks\CEF\StatementComponent\Exp::getExpression()
 
 
 
@@ -76,7 +76,7 @@ Exp constructor.
 
 ### setExpression
 
-    \deasilworks\cef\StatementComponent\Exp deasilworks\cef\StatementComponent\Exp::setExpression(string $expression)
+    \deasilworks\CEF\StatementComponent\Exp deasilworks\CEF\StatementComponent\Exp::setExpression(string $expression)
 
 
 

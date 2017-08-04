@@ -25,7 +25,7 @@
 
 namespace deasilworks\cef\test\Model;
 
-use deasilworks\cef\EntityModel;
+use deasilworks\CEF\EntityModel;
 use JMS\Serializer\Annotation\Exclude;
 
 /**

@@ -54,16 +54,16 @@
     },
     "autoload": {
         "psr-4": {
-            "deasilworks\\api\\": "src/deasilworks/api/src",
-            "deasilworks\\cef\\": "src/deasilworks/cef/src",
-            "deasilworks\\cms\\": "src/deasilworks/cms/src",
-            "deasilworks\\cfg\\": "src/deasilworks/cfg/src"
+            "deasilworks\\API\\": "src/deasilworks/api/src",
+            "deasilworks\\CEF\\": "src/deasilworks/cef/src",
+            "deasilworks\\CMS\\": "src/deasilworks/cms/src",
+            "deasilworks\\CFG\\": "src/deasilworks/cfg/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "deasilworks\\util\\": "util/src/deasilworks/util/src",
-            "deasilworks\\cef\\test\\": "src/deasilworks/cef/tests/src/deasilworks/cef/test"
+            "deasilworks\\Util\\": "util/src/deasilworks/util/src",
+            "deasilworks\\CEF\\test\\": "src/deasilworks/cef/tests/src/deasilworks/cef/test"
         }
     },
     "scripts": {
@@ -73,8 +73,8 @@
         "phpunit": [
             "phpunit"
         ],
-        "phpdoc": [
-            "cd build; wget http://phpdoc.org/phpDocumentor.phar"
+        "doc": [
+            "cd ./util; ./cli.php --ansi util-docgen"
         ],
         "publish": [
             "./util/publish.sh"

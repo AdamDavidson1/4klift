@@ -1,4 +1,4 @@
-deasilworks\cef\StatementBuilder
+deasilworks\CEF\StatementBuilder
 ===============
 
 Class StatementBuilder.
@@ -7,7 +7,7 @@ Class StatementBuilder.
 
 
 * Class name: StatementBuilder
-* Namespace: deasilworks\cef
+* Namespace: deasilworks\CEF
 
 
 
@@ -34,7 +34,7 @@ Methods
 
 ### getFrom
 
-    string deasilworks\cef\StatementBuilder::getFrom()
+    string deasilworks\CEF\StatementBuilder::getFrom()
 
 
 
@@ -47,7 +47,7 @@ Methods
 
 ### setFrom
 
-    \deasilworks\cef\StatementBuilder deasilworks\cef\StatementBuilder::setFrom(string $from)
+    \deasilworks\CEF\StatementBuilder deasilworks\CEF\StatementBuilder::setFrom(string $from)
 
 
 

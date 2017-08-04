@@ -1,4 +1,4 @@
-deasilworks\cms\Util\Command\InstallCommand
+deasilworks\CMS\Util\Command\InstallCommand
 ===============
 
 Class InstallCommand.
@@ -9,8 +9,8 @@ Responsible for installing CMS.
 
 
 * Class name: InstallCommand
-* Namespace: deasilworks\cms\Util\Command
-* Parent class: [deasilworks\cms\Util\Command\CMSCommand](deasilworks-cms-Util-Command-CMSCommand.md)
+* Namespace: deasilworks\CMS\Util\Command
+* Parent class: [deasilworks\CMS\Util\Command\CMSCommand](deasilworks-CMS-Util-Command-CMSCommand.md)
 
 
 
@@ -22,7 +22,7 @@ Properties
 
 ### $stmtManager
 
-    private \deasilworks\cef\StatementManager $stmtManager
+    private \deasilworks\CEF\StatementManager $stmtManager
 
 
 
@@ -55,7 +55,7 @@ Command inout output.
 
 ### $cef
 
-    protected \deasilworks\cef\CEF $cef
+    protected \deasilworks\CEF\CEF $cef
 
 
 
@@ -70,7 +70,7 @@ Methods
 
 ### configure
 
-    void deasilworks\cms\Util\Command\InstallCommand::configure()
+    void deasilworks\CMS\Util\Command\InstallCommand::configure()
 
 
 
@@ -83,7 +83,7 @@ Methods
 
 ### execute
 
-    integer|null|void deasilworks\cms\Util\Command\InstallCommand::execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output)
+    integer|null|void deasilworks\CMS\Util\Command\InstallCommand::execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output)
 
 
 
@@ -100,7 +100,7 @@ Methods
 
 ### getCqlFromTemplate
 
-    string deasilworks\cms\Util\Command\InstallCommand::getCqlFromTemplate($template, $args)
+    string deasilworks\CMS\Util\Command\InstallCommand::getCqlFromTemplate($template, $args)
 
 
 
@@ -117,7 +117,7 @@ Methods
 
 ### exeCql
 
-    mixed deasilworks\cms\Util\Command\InstallCommand::exeCql($cql)
+    mixed deasilworks\CMS\Util\Command\InstallCommand::exeCql($cql)
 
 
 
@@ -133,14 +133,14 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\cms\Util\Command\CMSCommand::__construct(null $name)
+    mixed deasilworks\CMS\Util\Command\CMSCommand::__construct(null $name)
 
 InstallCommand constructor.
 
 
 
 * Visibility: **public**
-* This method is defined by [deasilworks\cms\Util\Command\CMSCommand](deasilworks-cms-Util-Command-CMSCommand.md)
+* This method is defined by [deasilworks\CMS\Util\Command\CMSCommand](deasilworks-CMS-Util-Command-CMSCommand.md)
 
 
 #### Arguments

@@ -2,31 +2,31 @@ API Index
 =========
 
 * deasilworks
-    * deasilworks\cef
-        * [StatementBuilder](deasilworks-cef-StatementBuilder.md)
-            * [Delete](deasilworks-cef-StatementBuilder-Delete.md)
-            * [Update](deasilworks-cef-StatementBuilder-Update.md)
-            * [InsertModel](deasilworks-cef-StatementBuilder-InsertModel.md)
-            * [Select](deasilworks-cef-StatementBuilder-Select.md)
-            * [InsertJson](deasilworks-cef-StatementBuilder-InsertJson.md)
-        * deasilworks\cef\StatementComponent
-            * [Obj](deasilworks-cef-StatementComponent-Obj.md)
-            * [Exp](deasilworks-cef-StatementComponent-Exp.md)
-        * [ResultContainer](deasilworks-cef-ResultContainer.md)
-        * [EntityManager](deasilworks-cef-EntityManager.md)
-        * deasilworks\cef\Cassandra
-            * [Transformer](deasilworks-cef-Cassandra-Transformer.md)
-        * [EntityModel](deasilworks-cef-EntityModel.md)
-        * deasilworks\cef\Statement
-            * [Simple](deasilworks-cef-Statement-Simple.md)
-        * [CEFData](deasilworks-cef-CEFData.md)
-        * [CEFConfig](deasilworks-cef-CEFConfig.md)
-        * [StatementManager](deasilworks-cef-StatementManager.md)
-        * deasilworks\cef\ServiceProvider
-            * deasilworks\cef\ServiceProvider\Silex
-                * [CEFServiceProvider](deasilworks-cef-ServiceProvider-Silex-CEFServiceProvider.md)
-        * [EntityCollection](deasilworks-cef-EntityCollection.md)
-        * [CEF](deasilworks-cef-CEF.md)
+    * deasilworks\CEF
+        * [StatementBuilder](deasilworks-CEF-StatementBuilder.md)
+            * [Delete](deasilworks-CEF-StatementBuilder-Delete.md)
+            * [Update](deasilworks-CEF-StatementBuilder-Update.md)
+            * [InsertModel](deasilworks-CEF-StatementBuilder-InsertModel.md)
+            * [Select](deasilworks-CEF-StatementBuilder-Select.md)
+            * [InsertJson](deasilworks-CEF-StatementBuilder-InsertJson.md)
+        * deasilworks\CEF\StatementComponent
+            * [Obj](deasilworks-CEF-StatementComponent-Obj.md)
+            * [Exp](deasilworks-CEF-StatementComponent-Exp.md)
+        * [ResultContainer](deasilworks-CEF-ResultContainer.md)
+        * [EntityManager](deasilworks-CEF-EntityManager.md)
+        * deasilworks\CEF\Cassandra
+            * [Transformer](deasilworks-CEF-Cassandra-Transformer.md)
+        * [EntityModel](deasilworks-CEF-EntityModel.md)
+        * deasilworks\CEF\Statement
+            * [Simple](deasilworks-CEF-Statement-Simple.md)
+        * [CEFData](deasilworks-CEF-CEFData.md)
+        * [CEFConfig](deasilworks-CEF-CEFConfig.md)
+        * [StatementManager](deasilworks-CEF-StatementManager.md)
+        * deasilworks\CEF\ServiceProvider
+            * deasilworks\CEF\ServiceProvider\Silex
+                * [CEFServiceProvider](deasilworks-CEF-ServiceProvider-Silex-CEFServiceProvider.md)
+        * [EntityCollection](deasilworks-CEF-EntityCollection.md)
+        * [CEF](deasilworks-CEF-CEF.md)
 
 
 ## LICENSE

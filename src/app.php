@@ -23,8 +23,8 @@
  * SOFTWARE.
  */
 
-use deasilworks\api\ServiceProvider\Silex\APIServiceProvider;
-use deasilworks\cef\ServiceProvider\Silex\CEFServiceProvider;
+use deasilworks\API\ServiceProvider\Silex\APIServiceProvider;
+use deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
@@ -58,7 +58,7 @@ $app->register(new CEFServiceProvider(), [
 
 // API
 $app->register(new APIServiceProvider(), [
-    'deasilworks.api.class_path' => 'deasilworks\cms\CEF\Manager',
+    'deasilworks.api.class_path' => 'deasilworks\CMS\CEF\Manager',
     'deasilworks.api.aliases'    => [
         'content' => 'PageManager',
         'acl'     => 'User\AclManager',
@@ -91,7 +91,7 @@ $app->match('/api/{path}', 'deasilworks.api.responder')
 $app->get('/', function () use ($app) {
 
     /** @var \deasilworks\cms\CEF\Manager\PageManager $pageMgr */
-    $pageMgr = $app['deasilworks.cef']->getEntityManager(\deasilworks\cms\CEF\Manager\PageManager::class);
+    $pageMgr = $app['deasilworks.cef']->getEntityManager(\deasilworks\CMS\CEF\Manager\PageManager::class);
 
     try {
         $pageModel = $pageMgr->getPage('welcome');

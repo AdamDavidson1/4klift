@@ -1,4 +1,4 @@
-deasilworks\cef\ServiceProvider\Silex\CEFServiceProvider
+deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider
 ===============
 
 Class CEFServiceProvider.
@@ -8,8 +8,8 @@ the application built on the Silex framework.
 
 
 * Class name: CEFServiceProvider
-* Namespace: deasilworks\cef\ServiceProvider\Silex
-* Parent class: deasilworks\cfg\ServiceProvider\Silex\ServiceProvider
+* Namespace: deasilworks\CEF\ServiceProvider\Silex
+* Parent class: deasilworks\CFG\ServiceProvider\Silex\ServiceProvider
 * This class implements: Pimple\ServiceProviderInterface
 
 
@@ -23,7 +23,7 @@ Methods
 
 ### register
 
-    mixed deasilworks\cef\ServiceProvider\Silex\CEFServiceProvider::register(\Pimple\Container $container)
+    mixed deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider::register(\Pimple\Container $container)
 
 
 

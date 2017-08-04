@@ -23,12 +23,12 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\cef\ServiceProvider\Silex;
+namespace deasilworks\CEF\ServiceProvider\Silex;
 
-use deasilworks\cef\CEF;
-use deasilworks\cef\CEFConfig;
-use deasilworks\cef\EntityModel;
-use deasilworks\cfg\ServiceProvider\Silex\ServiceProvider;
+use deasilworks\CEF\CEF;
+use deasilworks\CEF\CEFConfig;
+use deasilworks\CEF\EntityModel;
+use deasilworks\CFG\ServiceProvider\Silex\ServiceProvider;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
