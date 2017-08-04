@@ -1,8 +1,8 @@
-# Management Utility Classes
+# Management Utilities
 
-A collection of classes for managing projects.
+A collection of commands for managing te 4klift project and components.
 
-- Publish - subtree split
-- DocGen - phpdoc markdown generation
+- PublishCommand - subtree split
+- DocGenCommand - phpdoc markdown generation
 
   

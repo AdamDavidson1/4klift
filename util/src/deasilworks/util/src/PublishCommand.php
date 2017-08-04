@@ -68,6 +68,6 @@ class PublishCommand extends Command
              src/deasilworks/cfg:git@github.com:deasilworks/cfg.git
              src/deasilworks/cms:git@github.com:deasilworks/cms.git
          " --heads=master`);
-        
+
     }
 }
