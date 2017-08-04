@@ -32,6 +32,14 @@ We target software that can run on CentOS 6.7. **4klift** is required to run on 
 
 To use the latest dev version, use the *dev-master* branch.
 
+## Components
+| Component | Repository |
+| :---                                                                |      :---: |
+| **[API][api-url]**: Annotate existing controllers to create a REST API.        | [![API 4klift component][api-thumb]][api-url] |
+| **[CEF][cef-url]**: Cassandra Entity Framework for data management with models and a query builder. | [![CEF 4klift component][cef-thumb]][cef-url] |
+| **[CFG][cfg-url]**: Configuration management.                                  | [![CFG 4klift component][cef-thumb]][cef-url] | 
+| **[CMS][cms-url]**: Content management system built to utilize CEF / Cassandra | [![CMS 4klift component][cef-thumb]][cef-url] |
+
 ## 4klift Requires:
 
   - [Composer](https://getcomposer.org/ "Composer")
@@ -121,4 +129,11 @@ MIT
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
-    
+[api-url]: http://github.com/deasilworks/api    
+[api-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_API_thumb.png 
+[cef-url]: http://github.com/deasilworks/cef    
+[cef-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_CEF_thumb.png 
+[cfg-url]: http://github.com/deasilworks/cfg    
+[cfg-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_CFG_thumb.png
+[cms-url]: http://github.com/deasilworks/cms    
+[cms-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_CMS_thumb.png 
