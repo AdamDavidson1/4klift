@@ -121,9 +121,9 @@ class apiTest extends WebTestCase
         /** @var \Symfony\Component\HttpFoundation\Response $response */
         $response = $client->getResponse();
 
+        // TODO: figure out why this only fails on Travis
         if (getenv('SKIP_TEST' ) == 1) {
-            echo "Skipping testApiPostJsonModel: \n";
-            print_r($response);
+            echo "Skipping testApiPostJsonModel on Travis\n";
             return;
         }
 
