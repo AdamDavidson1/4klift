@@ -92,6 +92,39 @@ class apiTest extends WebTestCase
     }
 
     /**
+     * API Post JSON Model.
+     */
+    public function testApiPostJsonModel()
+    {
+        /** @var \Symfony\Component\HttpKernel\Client $client */
+        $client = $this->createClient();
+        $client->followRedirects(true);
+
+        $pageUrl = '/api/pageManager/page';
+
+        $client->request(
+            'POST', $pageUrl, [], [],
+            [
+                'CONTENT_TYPE' => 'application/json',
+            ],
+            file_get_contents(__DIR__.'/./resources/post_page_model.json')
+        );
+
+        /** @var \Symfony\Component\HttpFoundation\Response $response */
+        $response = $client->getResponse();
+
+        $this->assertTrue($response->isOk());
+
+        $ack = json_decode($response->getContent());
+
+        $this->assertTrue(is_object($ack));
+
+        $this->assertTrue($ack->success);
+
+        $this->assertEquals('deasilworks\\CMS\\CEF\\Model\\PageModel', $ack->request_args[0]);
+    }
+
+    /**
      * API Update.
      */
     public function testApiUpdate()
