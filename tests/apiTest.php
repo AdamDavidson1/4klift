@@ -122,8 +122,9 @@ class apiTest extends WebTestCase
         $response = $client->getResponse();
 
         // TODO: figure out why this only fails on Travis
-        if (getenv('SKIP_TEST' ) == 1) {
+        if (getenv('SKIP_TEST') == 1) {
             echo "Skipping testApiPostJsonModel on Travis\n";
+
             return;
         }
 
