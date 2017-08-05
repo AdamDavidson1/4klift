@@ -27,6 +27,10 @@ To report bugs, please report it via the *[Issues](https://github.com/deasilwork
 
 If you have created a component for 4klift, refer to the [Assets Documentation](assets/README.md "4klift Logos and Assets") for creating a logo.
 
+### Code Quality
+
+4klift and its components attempt to comply with PSR-1, PSR-2, and PSR-4. We welcome pull requests fixing any violations.
+
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
     
