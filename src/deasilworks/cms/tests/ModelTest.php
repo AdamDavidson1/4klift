@@ -25,8 +25,8 @@
 
 use deasilworks\CEF\CEF;
 use deasilworks\CEF\CEFConfig;
-use deasilworks\CMS\CEF\Model\PageModel;
 use deasilworks\CMS\CEF\Collection\PageCollection;
+use deasilworks\CMS\CEF\Model\PageModel;
 
 /**
  * Class ModelTest.
@@ -36,7 +36,6 @@ use deasilworks\CMS\CEF\Collection\PageCollection;
  */
 class ModelTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * Test Page.
      */
@@ -65,7 +64,5 @@ class ModelTest extends \PHPUnit_Framework_TestCase
         $pageCollection->setCollection([$pageModel]);
 
         $this->assertInstanceOf($pageModelClass, $pageCollection->current());
-
     }
-
 }

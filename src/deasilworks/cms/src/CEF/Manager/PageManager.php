@@ -32,7 +32,6 @@ use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementBuilder\Select;
 use deasilworks\CMS\CEF\Collection\PageCollection;
 use deasilworks\CMS\CEF\Model\PageModel;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Class PageManager.
