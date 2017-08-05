@@ -107,7 +107,15 @@ class apiTest extends WebTestCase
             [
                 'CONTENT_TYPE' => 'application/json',
             ],
-            file_get_contents(__DIR__.'/./resources/post_page_model.json')
+            '
+                {
+                  "pageModel": {
+                    "stub": "unit_test_post",
+                    "content": "4klift API unit test was here.",
+                    "title": "Unit Test POST"
+                  }
+                }
+            '
         );
 
         /** @var \Symfony\Component\HttpFoundation\Response $response */
