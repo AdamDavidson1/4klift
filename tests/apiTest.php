@@ -121,7 +121,7 @@ class apiTest extends WebTestCase
         /** @var \Symfony\Component\HttpFoundation\Response $response */
         $response = $client->getResponse();
 
-        if (!getenv('SKIP_TEST' == 1)) {
+        if (getenv('SKIP_TEST' ) == 1) {
             echo "Skipping testApiPostJsonModel: \n";
             print_r($response);
             return;
