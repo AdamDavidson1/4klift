@@ -1,0 +1,24 @@
+# Application Configuration
+#
+# For business logic not tied to specific
+# environment operating parameters.
+#
+# This configuration should be the same on
+# local, development and production environments.
+#
+deasilworks.cef:
+  keyspace: 'fl_cms'
+
+deasilworks.api:
+  class_path: 'deasilworks\CMS\CEF\Manager'
+
+  aliases:
+    - path: 'content'
+      class: 'PageManager'
+
+    - path: 'acl'
+      class: 'User\AclManager'
+
+twig:
+  path:
+    - '__DIR__."/../templates"'

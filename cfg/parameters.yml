@@ -1,0 +1,14 @@
+# Environment Parameters Configuration
+#
+# For specific environment based operating
+# parameters.
+#
+# This configuration should only contain keys
+# the differentiate operational configuration
+# for local, development and production environments.
+#
+env: 'dev'
+
+deasilworks.cef:
+  contact_points:
+    - "127.0.0.1"

@@ -23,6 +23,7 @@
  * SOFTWARE.
  */
 
+use deasilworks\API\ServiceProvider\Silex\ConfigServiceProvider;
 use deasilworks\API\ServiceProvider\Silex\APIServiceProvider;
 use deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider;
 use Silex\Application;
@@ -50,6 +51,7 @@ $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
+
 
 // CEF
 $app->register(new CEFServiceProvider(), [
