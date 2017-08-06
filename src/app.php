@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-use deasilworks\API\ServiceProvider\Silex\ConfigServiceProvider;
+use deasilworks\CFG\ServiceProvider\Silex\ConfigServiceProvider;
 use deasilworks\API\ServiceProvider\Silex\APIServiceProvider;
 use deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider;
 use Silex\Application;
@@ -47,31 +47,32 @@ $app['debug'] = true;
 
 // register services
 //
+
+$app->register(new ConfigServiceProvider(), [
+    'deasilworks.cfg.load_files' => [
+        __DIR__.'/../cfg/defaults.yml',
+        __DIR__.'/../cfg/application.yml',
+        __DIR__.'/../cfg/parameters.yml',
+    ]
+]);
+
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
 
 
-// CEF
-$app->register(new CEFServiceProvider(), [
-    'deasilworks.cef.keyspace' => 'fl_cms',
-]);
+// CEF, API
+$app->register(new CEFServiceProvider());
+$app->register(new APIServiceProvider());
 
-// API
-$app->register(new APIServiceProvider(), [
-    'deasilworks.api.class_path' => 'deasilworks\CMS\CEF\Manager',
-    'deasilworks.api.aliases'    => [
-        'content' => 'PageManager',
-        'acl'     => 'User\AclManager',
-    ],
-]);
 
 // twig (templating)
 //
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
+
 $app['twig.path'] = [__DIR__.'/../templates'];
 $app['twig.options'] = ['cache' => __DIR__.'/../var/cache/twig'];
 

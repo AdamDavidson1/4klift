@@ -9,6 +9,7 @@
 #
 env: 'dev'
 
-deasilworks.cef:
-  contact_points:
-    - "127.0.0.1"
+deasilworks:
+  cef:
+    contact_points:
+      - "127.0.0.1"

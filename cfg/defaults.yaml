@@ -1,6 +1,0 @@
-# Default Configuration
-#
-
-deasilworks.cef:
-  contact_points:
-    - "127.0.0.1"

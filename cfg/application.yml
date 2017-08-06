@@ -6,19 +6,17 @@
 # This configuration should be the same on
 # local, development and production environments.
 #
-deasilworks.cef:
-  keyspace: 'fl_cms'
+deasilworks:
+  cef:
+    keyspace: 'fl_cms'
 
-deasilworks.api:
-  class_path: 'deasilworks\CMS\CEF\Manager'
+  api:
+    class_path: 'deasilworks\CMS\CEF\Manager'
 
-  aliases:
-    - path: 'content'
-      class: 'PageManager'
+    aliases:
+        content: 'PageManager'
+        acl: 'User\AclManager'
 
-    - path: 'acl'
-      class: 'User\AclManager'
-
-twig:
-  path:
-    - '__DIR__."/../templates"'
+#app:
+#twig.path:
+#  - '%__DIR__%/../templates'
