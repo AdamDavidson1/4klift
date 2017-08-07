@@ -23,9 +23,9 @@
  * SOFTWARE.
  */
 
-use deasilworks\CFG\ServiceProvider\Silex\CFGServiceProvider;
 use deasilworks\API\ServiceProvider\Silex\APIServiceProvider;
 use deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider;
+use deasilworks\CFG\ServiceProvider\Silex\CFGServiceProvider;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
@@ -50,7 +50,7 @@ $app->register(new CFGServiceProvider(), [
         __DIR__.'/../cfg/application.yml',
         __DIR__.'/../cfg/parameters.yml',
     ],
-    'deasilworks.cfg.app_root' => __DIR__
+    'deasilworks.cfg.app_root' => __DIR__,
 ]);
 $app->register(new CEFServiceProvider());
 $app->register(new APIServiceProvider());
