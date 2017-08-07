@@ -14,7 +14,6 @@ deasilworks:
         acl: 'User\AclManager'
 
 app:
-  debug: true
   twig.path:
     - '%app_root%/../templates'
   twig.options:

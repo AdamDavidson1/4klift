@@ -26,6 +26,7 @@
 use deasilworks\API\ServiceProvider\Silex\APIServiceProvider;
 use deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider;
 use deasilworks\CFG\ServiceProvider\Silex\CFGServiceProvider;
+use deasilworks\CMS\ServiceProvider\Silex\CMSServiceProvider;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
@@ -54,36 +55,22 @@ $app->register(new CFGServiceProvider(), [
 ]);
 $app->register(new CEFServiceProvider());
 $app->register(new APIServiceProvider());
+$app->register(new CMSServiceProvider());
 
-// Additional Services
+// Services
 //
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
-$app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
+
+$app->register(new TwigServiceProvider());
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
+
 if ($app['debug'] === true) {
-    $app->register(new MonologServiceProvider());
     $app->register(new WebProfilerServiceProvider());
+    $app->register(new MonologServiceProvider());
 }
-
-// Routes
-//
-$app->get('/', function () use ($app) {
-
-    /** @var \deasilworks\cms\CEF\Manager\PageManager $pageMgr */
-    $pageMgr = $app['deasilworks.cef']->getEntityManager(\deasilworks\CMS\CEF\Manager\PageManager::class);
-
-    try {
-        $pageModel = $pageMgr->getPage('welcome');
-    } catch (\Exception $exception) {
-        return $app['twig']->render('setup.html.twig', ['message' => $exception->getMessage()]);
-    }
-
-    return $app['twig']->render('index.html.twig', ['pageModel' => $pageModel]);
-})
-    ->bind('homepage');
 
 return $app;
