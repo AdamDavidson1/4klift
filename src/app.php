@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-use deasilworks\CFG\ServiceProvider\Silex\ConfigServiceProvider;
+use deasilworks\CFG\ServiceProvider\Silex\CFGServiceProvider;
 use deasilworks\API\ServiceProvider\Silex\APIServiceProvider;
 use deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider;
 use Silex\Application;
@@ -39,58 +39,38 @@ if (!ini_get('date.timezone')) {
 }
 
 $app = new Application();
-
-// enable the debug mode
-//
-ini_set('display_errors', true);
 $app['debug'] = true;
+$app['debug'] ? ini_set('display_errors', true) : true;
 
-// register services
+// 4klift Components - CFG, CEF, CMS and API
 //
-
-$app->register(new ConfigServiceProvider(), [
+$app->register(new CFGServiceProvider(), [
     'deasilworks.cfg.load_files' => [
         __DIR__.'/../cfg/defaults.yml',
         __DIR__.'/../cfg/application.yml',
         __DIR__.'/../cfg/parameters.yml',
-    ]
+    ],
+    'deasilworks.cfg.app_root' => __DIR__
 ]);
+$app->register(new CEFServiceProvider());
+$app->register(new APIServiceProvider());
 
+// Additional Services
+//
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
-
-
-// CEF, API
-$app->register(new CEFServiceProvider());
-$app->register(new APIServiceProvider());
-
-
-// twig (templating)
-//
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
-
-$app['twig.path'] = [__DIR__.'/../templates'];
-$app['twig.options'] = ['cache' => __DIR__.'/../var/cache/twig'];
-
-// debug
-//
 if ($app['debug'] === true) {
-    $app->register(new MonologServiceProvider(), [
-        'monolog.logfile' => __DIR__.'/../var/logs/silex_dev.log',
-    ]);
-
-    $app->register(new WebProfilerServiceProvider(), [
-        'profiler.cache_dir' => __DIR__.'/../var/cache/profiler',
-    ]);
+    $app->register(new MonologServiceProvider());
+    $app->register(new WebProfilerServiceProvider());
 }
 
-$app->match('/api/{path}', 'deasilworks.api.responder')
-    ->assert('path', '.*');
-
+// Routes
+//
 $app->get('/', function () use ($app) {
 
     /** @var \deasilworks\cms\CEF\Manager\PageManager $pageMgr */

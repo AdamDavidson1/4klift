@@ -7,16 +7,15 @@
 # local, development and production environments.
 #
 deasilworks:
-  cef:
-    keyspace: 'fl_cms'
-
   api:
     class_path: 'deasilworks\CMS\CEF\Manager'
-
     aliases:
         content: 'PageManager'
         acl: 'User\AclManager'
 
-#app:
-#twig.path:
-#  - '%__DIR__%/../templates'
+app:
+  debug: true
+  twig.path:
+    - '%app_root%/../templates'
+  twig.options:
+    cache: '%app_root%/../var/cache/twig'

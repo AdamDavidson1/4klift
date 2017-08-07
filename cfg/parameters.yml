@@ -7,9 +7,15 @@
 # the differentiate operational configuration
 # for local, development and production environments.
 #
-env: 'dev'
-
 deasilworks:
   cef:
+    keyspace: 'fl_cms'
     contact_points:
       - "127.0.0.1"
+
+app:
+  debug: false
+
+  # only needed if app.debug is true
+  monolog.logfile: '%app_root%/../var/logs/silex_dev.log'
+  profiler.cache_dir: '%app_root%/../var/cache/profiler'
