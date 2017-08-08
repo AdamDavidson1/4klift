@@ -73,11 +73,11 @@ Install Virtualbox and Vagrant with `brew`:
 
 Navigate to or create a project directory. Run:
     
-    composer create-project deasilworks/4klift-se
+    composer create-project deasilworks/4klift-se 4klift-se dev-master
 
 This will clone the project and create a 4klift directory pointing to the *dev-master* branch. CD into the directory and fire up vagrant:
 
-    cd 4klift
+    cd 4klift-se
     vagrant up
     vagrant ssh
 
