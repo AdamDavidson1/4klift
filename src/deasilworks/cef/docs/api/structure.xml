@@ -3714,7 +3714,7 @@ StatementBuilder factory.</long-description>
     </parse_markers>
     <source>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</source>
   </file>
-  <file path="ServiceProvider/Silex/CEFServiceProvider.php" generated-path="ServiceProvider.Silex.CEFServiceProvider.html" hash="be0b94e14c60833c0f2b1929100ec5ae" package="Default">
+  <file path="ServiceProvider/Silex/CEFServiceProvider.php" generated-path="ServiceProvider.Silex.CEFServiceProvider.html" hash="e9e36253b0b3fde5189ed251c585ca92" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -3723,27 +3723,28 @@ StatementBuilder factory.</long-description>
     <namespace-alias name="CEF">\deasilworks\CEF\CEF</namespace-alias>
     <namespace-alias name="CEFConfig">\deasilworks\CEF\CEFConfig</namespace-alias>
     <namespace-alias name="EntityModel">\deasilworks\CEF\EntityModel</namespace-alias>
+    <namespace-alias name="Config">\deasilworks\CFG\Config</namespace-alias>
     <namespace-alias name="ServiceProvider">\deasilworks\CFG\ServiceProvider\Silex\ServiceProvider</namespace-alias>
     <namespace-alias name="Container">\Pimple\Container</namespace-alias>
     <namespace-alias name="ServiceProviderInterface">\Pimple\ServiceProviderInterface</namespace-alias>
-    <class final="false" abstract="false" namespace="deasilworks\CEF\ServiceProvider\Silex" line="41" package="Default">
+    <class final="false" abstract="false" namespace="deasilworks\CEF\ServiceProvider\Silex" line="42" package="Default">
       <extends>\deasilworks\CFG\ServiceProvider\Silex\ServiceProvider</extends>
       <implements>\Pimple\ServiceProviderInterface</implements>
       <name>CEFServiceProvider</name>
       <full_name>\deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider</full_name>
-      <docblock line="41">
+      <docblock line="42">
         <description>Class CEFServiceProvider.</description>
         <long-description>Responsible for providing CEF as a service to
 the application built on the Silex framework.</long-description>
-        <tag name="package" line="41" description="Default"/>
+        <tag name="package" line="42" description="Default"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF\ServiceProvider\Silex" line="46" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF\ServiceProvider\Silex" line="47" package="Default">
         <name>register</name>
         <full_name>\deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider::register()</full_name>
-        <docblock line="46">
+        <docblock line="47">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="46" description="" type="\Pimple\Container" variable="$container">
+          <tag name="param" line="47" description="" type="\Pimple\Container" variable="$container">
             <type>\Pimple\Container</type>
           </tag>
         </docblock>
@@ -3756,9 +3757,9 @@ the application built on the Silex framework.</long-description>
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="46" code="PPC:ERR-50008">No summary for method register()</error>
+      <error line="47" code="PPC:ERR-50008">No summary for method register()</error>
     </parse_markers>
-    <source>eJyVVm1vo0YQ/u5fMY1Oih2RpL0vlZo2PWLjmB4GC/ClUXOqMCz2tphFu+v43Cr/vTMLfiNO20OJ7J2deZ55ZmcH//hztag6neuLDlzA2I3B4ykrFcMlWfqi2kg+X2jopj14/+1338OAJYoX8CDkn8oCt0wb1wmTS64UFyVwBQsm2WwDc5mUmmUW5JIxEDmki0TOmQVaQFJuoGJSYYCY6YSXvJxDAilSEh466wUiKZHrdSIZ+meQKCVSniAkZCJdLVmpE02UOS+Ygq5eMDiLmoiznuHJWFIQIC+Btre7sOZ6IVYaJFNa8pRgLHRKi1VGmWy3C77kDQmFm2oowkPolUIplLAFS5HxnD6Z0VetZgVXCwsyTuizlUajIqMpr0VqroUExQqTHIJwFGBE73M0bkRUUXF1Uy5FlvVCLI/1cJNVvpIlEjMTlgksn+H9g6WaLBSRi6IQa9KYijLjJE39QLExbiYz8cyMpvrcS6Ex5ToPOo5qf8zNllokRQEz1tQOmbHSybEsSTkojc3AkwIqIQ1pW+5V00rxyIEoGMYPduiAG8EkDD65A2cAZ3aE6zMLHtx4FExjQI/Q9uNHCIZg+4/w0fUHFji/TkIniiAICc0dTzzXQbPr973pwPXv4Q5D/QCb3cWWR9w4MJwNmutEhDd2wv4Il/ad67nxo0VYQzf2CXkYhGDDxA5jtz/17BAm03ASRA4mMUBk3/WHIRI5Y8ePr5AYbeB8wgVEI9vziI3g7CnKCClR6AeTx9C9H8UwCryBg8Y7B/Oz7zynZkN1fc92xxYM7LF975ioAIGMSPKs04SHkUNWYrXxrx+7gU96+oEfh7i0UG4Y76If3MixwA7diCozDIOxUUrVxaDA4GCo79RAVPnjA0IXWk8jZ4cJA8f2EC6i4Ebr1p8O+brTKZMlU1WC/ZOZgbKmefLUd4ZPEZPP2FcTKZ55xuRThFf7y02ng5ftlS/+37y10Rdlzuentx1sRL0Zi4wVJxyG96eTaFvr0AlfVgV7QjoaYi1rK8LFaShzVH1DM7cesQUONcCkWq7byxBimfCu8FlBN1dCZfbp9mIMDkQcmaqOxPtt5hLd4qrCSVNPrdmKFxqa8WV04DTG6pPY+jDSN1IA9kWzMlPQthttNHxfbe0Edv7uAD5GJD0X8KFKkBZ2dYJ36fZr43JtPs3oTHGQlWYm43ye4wxlsnsqsmdCai569ju/vaN5dXm7a7Sr86uU5eef4ac9dvcA6QBli4T985FtMOA01lXtco6HeRjJc+h+gzOS6e5hOju8z702VzvzvStyl2wNu3bu9m6OIl86raRZvg95i/4YotFWiWpV4Ju14TmnWlmHlW6plEzjq8Yw7vFeDpz+8yiofFriy4jJ37FltJAbczr7QMxKCo2vru4R9eHxUev26EX8b2fZdCJ8eE6kuTamTk2/najf/+iiVjVaFbm8nTPdDJmkTObYvU2q7ePbfut9VeXwxuOLlP/F5NdW7GDywTtmFqeqtdVSe1zeavEL/vJ43X0H6deGl84/N8UpWw==</source>
+    <source>eJytVm1v4kYQ/s6vmEYnBSIntP1Sqeml54AJ7oGNbHNp1JwqY69hW+O1dpdwtMp/78zavDkk7UlFicC7M8888+zMrH/6uVyUrVb3ogUXMHYjGPGEFYrhI630RLmRfL7Q0E468P233/0AfRYrnsO9kH8qC9wiqU0nTC65UlwUwBUsmGSzDcxlXGiWWpBJxkBkkCxiOWcWaAFxsYGSSYUOYqZjXvBiDjEkGJLw0FgvEEmJTK9jydA+hVgpkfAYISEVyWrJCh1rCpnxnClo6wWDs7D2OOuYOCmLcwLkBdD2dhfWXC/ESoNkSkueEIyFRkm+SonJdjvnS14HIXejhiI8hF4pTIUIW7AUKc/om5n8ytUs52phQcoJfbbSuKho0chrUTZdIUGx3JBDEI4JmKT3HI0ZBSpJXF3LpWhlvRDL43y4YZWtZIGBmXFLBcpn4v7BEk0r5JGJPBdryjERRcopNfUj+Ua4Gc/EEzM5VedeCI2UKx50HOX+mOsttYjzHGas1g4jo9LxcVqSOCiNxcDjHEohTdBmuld1KUVDB0J/EN3bgQNuCJPA/+T2nT6c2SE+n1lw70ZDfxoBWgS2Fz2APwDbe4CPrte3wPl1EjhhCH5AaO54MnIdXHa93mjad707uEVXz8did7HkETfyTcwazXVCwhs7QW+Ij/atO3KjB4uwBm7kEfLAD8CGiR1Ebm86sgOYTIOJHzpIoo/InusNAgzkjB0vusLAuAbOJ3yAcGiPRhSN4OwpphEQUej5k4fAvRtGMPRHfQcXbx3kZ9+OnCoaZtcb2e7Ygr49tu8c4+UjkEmSLCuacD90aJWi2vjXi1zfo3x6vhcF+GhhukG08753Q8cCO3BDUmYQ+GOTKamLTr7BQVfPqYBI+eMDQhN6nobODhP6jj1CuJCc61y39nTI3VariJdMlTHWT2oGyprmyWPPGTyGTD5hXU2keOIpk48htvaX61YLm+2FLf5fv7bRE0XG56e3HSxEvRmLlOUnDAZ3j686495Jgs3VynXCl2XOCI0GXGO14eHipJQZKnJN87gavzkOPEDCDdNtowQoIfYRn+XU1RJKs0+djT44LHGcqsoTe9/MLOrwssQpVE202YrnGurRZvLASY0nQ8lWB5W8QgHYF82KVEFz3eRGg/nF1i7B1t8twI9Jkj4X8KGMMSzsdIJ3yfZnbdI132asJjjkCjOvcXbPcb4y2T7l2TEuVSz67Hd+e0ez7PJmV4RX51cJy84/w/s9dvsA6QClQmJZVSEf2QZ9TsNdJcbkHM/z0Jln0P4GRyjT7UNGh5CfO82ITf5H1sigYGvY1Xy7c33k/Nx6wX7v8gaJBvFuF69ZqfAekRtzKYlyleNdjCWDd1GSzRtRsjfUyU7KckKV7HU9sH7gw1MsoaJs9KHvulaa0tHWezgBfv3SvGK8TbBW9VWhLDin6rG2YS5v5kzbed7uvH0QKGiBbXRaT+rIRhP8D+zqem5oL5nG1wZTGHvCzwdG/9o6VOta4osFk79ji2shN6ab9o5IWAqNryHto9CH7UajpkMvVW/13vHJ45gz5XzyzE2Z/4eub6jRUMScZn1hxEU8x2lTU20e7vZX56uUwwmNL0X8Lya/VrGDWwzeMfNwSq1tLpXF5Y0Wv+Bb5MshcUC/Wnhu/QNmJa2l</source>
   </file>
   <file path="EntityCollection.php" generated-path="EntityCollection.html" hash="8216286ac4df2ef892ecea1f3dfa8480" package="Default">
     <docblock line="0">

@@ -1,4 +1,4 @@
-deasilworks\API\ServiceProvider\Silex\APIServiceProvider
+deasilworks\CMS\ServiceProvider\Silex\CMSServiceProvider
 ===============
 
 Class APIServiceProvider.
@@ -7,8 +7,8 @@ Responsible for providing API as a service to
 the applications built on the Silex framework.
 
 
-* Class name: APIServiceProvider
-* Namespace: deasilworks\API\ServiceProvider\Silex
+* Class name: CMSServiceProvider
+* Namespace: deasilworks\CMS\ServiceProvider\Silex
 * Parent class: deasilworks\CFG\ServiceProvider\Silex\ServiceProvider
 * This class implements: Pimple\ServiceProviderInterface, Silex\Api\BootableProviderInterface
 
@@ -23,7 +23,7 @@ Methods
 
 ### boot
 
-    mixed deasilworks\API\ServiceProvider\Silex\APIServiceProvider::boot(\Silex\Application $app)
+    mixed deasilworks\CMS\ServiceProvider\Silex\CMSServiceProvider::boot(\Silex\Application $app)
 
 
 
@@ -39,7 +39,7 @@ Methods
 
 ### register
 
-    mixed deasilworks\API\ServiceProvider\Silex\APIServiceProvider::register(\Pimple\Container $container)
+    mixed deasilworks\CMS\ServiceProvider\Silex\CMSServiceProvider::register(\Pimple\Container $container)
 
 
 

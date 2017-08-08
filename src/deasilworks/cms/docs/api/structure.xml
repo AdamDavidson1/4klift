@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="API Documentation" version="v2.9.0">
   <partials/>
-  <file path="CEF/Manager/PageManager.php" generated-path="CEF.Manager.PageManager.html" hash="302e56daa7cce3acc52b2b7073b62aba" package="Default">
+  <file path="CEF/Manager/PageManager.php" generated-path="CEF.Manager.PageManager.html" hash="83f33abdf9e6535cd677e4465dae6e85" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -56,17 +56,17 @@
           <type>\deasilworks\CMS\CEF\Model\PageModel</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\CEF\Manager" line="75" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\CEF\Manager" line="76" package="Default">
         <name>getPage</name>
         <full_name>\deasilworks\CMS\CEF\Manager\PageManager::getPage()</full_name>
-        <docblock line="75">
+        <docblock line="76">
           <description>Get Page.</description>
           <long-description></long-description>
-          <tag name="ApiAction" line="75" description="()"/>
-          <tag name="param" line="75" description="&lt;p&gt;the url friendly name of the page.&lt;/p&gt;" type="string" variable="$stub">
+          <tag name="ApiAction" line="76" description="()"/>
+          <tag name="param" line="76" description="&lt;p&gt;the url friendly name of the page.&lt;/p&gt;" type="string" variable="$stub">
             <type>string</type>
           </tag>
-          <tag name="return" line="75" description="" type="\deasilworks\CMS\CEF\Model\PageModel">
+          <tag name="return" line="76" description="" type="\deasilworks\CMS\CEF\Model\PageModel">
             <type>\deasilworks\CMS\CEF\Model\PageModel</type>
           </tag>
         </docblock>
@@ -76,17 +76,17 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\CEF\Manager" line="103" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\CEF\Manager" line="104" package="Default">
         <name>setMessage</name>
         <full_name>\deasilworks\CMS\CEF\Manager\PageManager::setMessage()</full_name>
-        <docblock line="103">
+        <docblock line="104">
           <description>Set Message.</description>
           <long-description>This is a 4klift test method.</long-description>
-          <tag name="ApiAction" line="103" description="()"/>
-          <tag name="param" line="103" description="" type="string" variable="$message">
+          <tag name="ApiAction" line="104" description="()"/>
+          <tag name="param" line="104" description="" type="string" variable="$message">
             <type>string</type>
           </tag>
-          <tag name="return" line="103" description="" type="string">
+          <tag name="return" line="104" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -96,17 +96,17 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\CEF\Manager" line="119" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\CEF\Manager" line="120" package="Default">
         <name>updateMessage</name>
         <full_name>\deasilworks\CMS\CEF\Manager\PageManager::updateMessage()</full_name>
-        <docblock line="119">
+        <docblock line="120">
           <description>Update Message.</description>
           <long-description>This is a 4klift test method.</long-description>
-          <tag name="ApiAction" line="119" description="()"/>
-          <tag name="param" line="119" description="" type="string" variable="$message">
+          <tag name="ApiAction" line="120" description="()"/>
+          <tag name="param" line="120" description="" type="string" variable="$message">
             <type>string</type>
           </tag>
-          <tag name="return" line="119" description="" type="string">
+          <tag name="return" line="120" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -116,14 +116,14 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\CEF\Manager" line="133" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\CEF\Manager" line="134" package="Default">
         <name>getMessage</name>
         <full_name>\deasilworks\CMS\CEF\Manager\PageManager::getMessage()</full_name>
-        <docblock line="133">
+        <docblock line="134">
           <description>Get Message.</description>
           <long-description>This is a 4klift test method.</long-description>
-          <tag name="ApiAction" line="133" description="()"/>
-          <tag name="return" line="133" description="" type="string">
+          <tag name="ApiAction" line="134" description="()"/>
+          <tag name="return" line="134" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -133,7 +133,28 @@
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
       <error line="46" code="PPC:ERR-50007">No summary for property $collectionClass</error>
     </parse_markers>
-    <source>eJzVVlFv4kYQfudXjKJIgZOTtNVJlZImrQMmWAUb2eZoVO7B2Atsz3it3XVyUXX/vTNrm2BC2tOpfaiFBJ6d+b75ZmeH/ennYlN0OpfvOvAOJm4EY56wXDF8JUtfFM+SrzcaukkPfvju+x9hwGLFM5gL+UlZ4OZJ7TplcsuV4iIHrmDDJFs+w1rGuWapBSvJGIgVJJtYrpkFWkCcP0PBpMIAsdQxz3m+hhgSpCQ8dNYbRFJipZ9iydA/hVgpkfAYISEVSblluY41Ua54xhR09YbBSVhHnPQMT8rijAB5DrTcrMIT1xtRapBMackTgrHQKcnKlDJpljO+5TUJhZtqKMJD6FKhFErYgq1I+Yq+mdFXlMuMq40FKSf0ZanRqMhoymuRmkshQbHMJIcgHAUY0S85GjciKqi4ui6XIsvTRmzberjJalXKHImZCUsFls/w/sESTRaKWIksE0+kMRF5ykmauqLYCBfjpXhkRlO177nQmHKVB21H8bLN9ZLaxFkGS1bXDpmx0nFblqQclMZm4HEGhZCG9FDuRd1K0ciB0B9GcztwwA1hGvgf3IEzgBM7xPcTC+ZuNPJnEaBHYHvRA/hDsL0H+NX1BhY4v00DJwzBDwjNnUzHroNm1+uPZwPXu4c7DPV8bHYXWx5xI99w1miuExLexAn6I3y179yxGz1YhDV0I4+Qh34ANkztIHL7s7EdwHQWTP3QwSQGiOy53jBAImfieNEFEqMNnA/4AuHIHo+JjeDsGcoIKFHo+9OHwL0fRTDyxwMHjXcO5mffjZ2KDdX1x7Y7sWBgT+x7x0T5CGREkmeVJsxHDlmJ1cZPP3J9j/T0fS8K8NVCuUG0i567oWOBHbghVWYY+BOjlKqLQb7BwVDPqYCo8u0NQhd6n4XODhMGjj1GuJCCa62NP23yZaeTx1umihj7JzUD5YnmyaI/CRd9Z7iYxHm8ZvK608Ej1vKwp+7CzrH1zJFc2AW3zdG9/grPvsi1xOYn4ENvYnWwPfXzjvuYS4hojMbOIuTbImP/4HVX8ixlchGyDA/gEedab5+yMjoWUyR/eX07ZCJSlhlv8+uahng1szOckmAWKiXNsfqlVYJuz2xEcugN7LNmeaqgVY3Onx3Ax1DQg2iPMZ5qnG35ujZdmu9CCo254xg4TXYyqpxuoC3u6sqwY+oH2CHTxvWiNuw4d9tN2beXiljGW9jVA06L5uehp2QahyQshcjamZvxjBM0NxQ4mzXBdY9hVvRVUeg5ZKuf81sEaRWye0pjtHfoFT+ybq8uBD11jlqW2GJk+PKqSPffXKRq1+BU6XJpBnApM/yH5rjt2TPQyWwmc3EMv85telDf40Vc10U0ZK+qpvRWN313A6Y057cYsjtATdWq01Y3zH6hsCBVK1ZHrIKsj12T046qsd+0mNuMtU+3wvs7xnYz77d7i3jPfMir9ni7rZbYT9f4zelG1f39zOzZDVzR99nHlz561VFM23JtbkiqDjuDm9tq0z8eerPPLMEryrEW3Mv//DYppaRce281JZ3cCVPqSN9EdH3ATwzvP2V8hdcRvHjhfQmvWem39/C2InujR4/Np9envE6424AdtmlTiXr5Le2zIsW9/J/JL03S/1IF7v/73f96ZeuXjX1DzllEOdROZ42oL52/AAHC2zo=</source>
+    <source>eJzVVlFv4kYQfudXjKJIIScnaauTKiVNWgdMsAo2ss3RqNyDsRfYnvFau+twUXX/vTNrm2BC2tOpfaiFBJ6d+b75ZmeH/ennYl10OlfvOvAOxm4EI56wXDF8JUtPFM+Sr9Yausk5/PDd9z9Cn8WKZzAT8pOywM2T2nXC5IYrxUUOXMGaSbZ4hpWMc81SC5aSMRBLSNaxXDELtIA4f4aCSYUBYqFjnvN8BTEkSEl46KzXiKTEUm9jydA/hVgpkfAYISEVSblhuY41US55xhR09ZrBSVhHnJwbnpTFGQHyHGi5WYUt12tRapBMackTgrHQKcnKlDJpljO+4TUJhZtqKMJD6FKhFErYgo1I+ZK+mdFXlIuMq7UFKSf0RanRqMhoymuRmishQbHMJIcgHAUY0S85GjciKqi4ui6XIst2LTZtPdxktSxljsTMhKUCy2d4/2CJJgtFLEWWiS1pTESecpKmrik2wsV4IZ6Y0VTtey40plzlQdtRvGxzvaTWcZbBgtW1Q2asdNyWJSkHpbEZeJxBIaQhPZR7WbdSNHQg9AfRzA4ccEOYBP4Ht+/04cQO8f3EgpkbDf1pBOgR2F70CP4AbO8RfnW9vgXOb5PACUPwA0Jzx5OR66DZ9Xqjad/1HuAeQz0fm93FlkfcyDecNZrrhIQ3doLeEF/te3fkRo8WYQ3cyCPkgR+ADRM7iNzedGQHMJkGEz90MIk+InuuNwiQyBk7XnSJxGgD5wO+QDi0RyNiIzh7ijICShR6/uQxcB+GEQz9Ud9B472D+dn3I6diQ3W9ke2OLejbY/vBMVE+AhmR5FmlCbOhQ1ZitfHTi1zfIz0934sCfLVQbhDtomdu6FhgB25IlRkE/tgopepikG9wMNRzKiCqfHuD0IXep6Gzw4S+Y48QLqTgWmvjT5t81enk8YapIsb+Sc1A2dI8mffG4bznDObjOI9XTN50OnjEWh72xJ3bObaeOZJzu+C2Obo3X+HZE7mW2PwEfOhNrA62p37ecR9zCRGN0diZh3xTZOwfvO5LnqVMzkOW4QE84lzr7VFWRsd8guQvr2+HjEXKMuNtft3QEK9mdoZTEsxCpaQ5Vr+0StA9NxuRHHoD+6xZnipoVaPzZwfwMRT0INpTjKcaZ1u+qk1X5ruQQmPuOAZOk52MKqdbaIu7vjbsmPoBdsi0cb2sDTvO3XZT9u2lIpbxBnb1gNOi+XnoKZnGIQkLIbJ25mY84wTNDQXOZk1w3WOYFX1VFHoO2ern4g5BxvTXwFnazdkW5n1sjYhvWPf8/LVrq+bdU5q4r7ziJ4yta0ZPLUfLEruRDF9e1fPhm+tZbTCcKl0uzKwuZYZ/5hw7JHsGOsTNEC+O4de5TQ624ni9V3W9DdmrAiu90U2L3oIpzcUdhuzOWlO16mDWvbVfKCxI1bXVaawg6xPa5LSjauy3LeY2Y+3TrfD+jrHd9/sno0W8Zz7kVXu83VZL7Kdr/GZ0+er+fmb27Bau6fvs40sfHek7W67MZUrVYWdwe1dt+sdDb/aZJXibOdaCe/lf3CWllJTr+VtNSYd8zJQ60jcR3TTwE8P7Txlf4s0F72h4tcIbWfrtPbypyN7o0WOj7PVAqBPuNmCHbdpUol5+S/u0SHEv/2fyS5P0v1SBh/9+979e2eplY9+QcxZRDrXTWSPqS+cv5KrnEQ==</source>
+  </file>
+  <file path="Controller/DefaultController.php" generated-path="Controller.DefaultController.html" hash="928cbeacf9a7261145fd8c8d841891fc" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="deasilworks\CMS\Controller" line="32" package="Default">
+      <extends/>
+      <name>DefaultController</name>
+      <full_name>\deasilworks\CMS\Controller\DefaultController</full_name>
+      <docblock line="32">
+        <description>Class DefaultController.</description>
+        <long-description></long-description>
+        <tag name="package" line="32" description="Default"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJxtVFFr2zAQfvevOPrUDdNuexlsg6HaSiPm2EF2lhX6othKrc2xjKQslLH/vjvFXekYBIzu7vu++04Xffo89VOSXL9O4DWsRAOFafXoNR4pktnp0ZmHPsBl+wrevXn7HnKtvBlga90Pn4IY27l0rd3BeG/sCMZDr53ePcKDU2PQXQp7pzXYPbS9cg86hWBBjY8waecRYHdBmdGMD6CgRUniw+LQI5O3+3BSTmN9B8p72xqFlNDZ9njQY1CBJPdm0B4uQ6/hop4RF6+iTqfVQIRmBEo/ZeFkQm+PAZz2wZmWaFIsaodjR508pQdzMLMIweM0PPEh9dGjFWo4hYPtzJ6+OvqbjrvB+D6FzhD77hgw6CkYx5uSm2vrwOshNockBg1E0889xjISmmi4YR6Xp8ipt4eXfkzsan90IwrrCOssji/qftdtoAgh9nYY7Ik8tnbsDFnzHwjbYFLt7E8dPZ3vfbQBWz73QdcxPV/znPK9GgbY6Xl2qIyTVi9tOerBB1wGowaYrIui/9q9mlepWXKoq0WzZZKDqGEtq68i5zlcsBrPFylsRbOsNg1ghWRlcwfVAlh5B19EmafAv60lr2uoJLGJ1boQHMOizIpNLspbuEFoWeGyC1x55G2qqDmzCV4T34rLbIlHdiMK0dylxLUQTUnMi0oCgzWTjcg2BZOw3sh1VXNsIkfmUpQLiUJ8xcvmCoUxBvwrHqBesqIgNaJjG7QhqVHIqvWdFLfLBpZVkXMM3nDsj90U/KyG7rKCiVUKOVuxWx5RFRJFk1R5bhO2S05RUmX4yxpRleQnq8pG4jFFu7L5i96KmqfApKhpMgtZraJTmi6CqsiD0JKfiWjyLy8IS+i8qflfTsg5K5CuJvDs9ameLvk6SUZ10H5SuD9dfFBO9J7cZ6v6PrNjcLii2n2kh+n8Dg34z8enZ6+OQ3gumBfmOmn/n09+Jcnv5A9k1YRA</source>
   </file>
   <file path="CEF/Manager/User/AclManager.php" generated-path="CEF.Manager.User.AclManager.html" hash="a1ff169fda1cd59b0136b17a17ffadb1" package="Default">
     <docblock line="0">
@@ -236,7 +257,7 @@
     </parse_markers>
     <source>eJx9VWtv6kYQ/c6vmEaRApEL7f1SKenLARNWNTayzU0jRbKMvYZt7V3Lu4TS6v73zqxNckmaWrx2HufMmd0dfvyl2TWDweR6ANewZAn4IudSc1ySZaqaYyu2OwPDfASfvvv+B5jxTIsKHlT7p3aAybwPXfG2FloLJUFo2PGWb46wbTNpeOFA2XIOqoR8l7Vb7oBRkMkjNLzVmKA2JhNSyC1kkCMl4WGw2SGSVqU5ZC3H+AIyrVUuMoSEQuX7mkuTGaIsRcU1DM2Ow0XcZ1yMLE/Bs4oAhQRyn7xwEGan9gZark0rcoJxMCiv9gVVcnJXohY9CaXbbmjCQ+i9RilUsAO1KkRJ39zqa/abSuidA4Ug9M3eoFGT0bbXITUT1YLmlS0OQQQKsKJfa7RhRNRQc03fLk2Ww07V53qErarctxKJuU0rFLbP8v7Bc0MWyihVVakDacyVLARJ0zeUm6Az26hnbjV1+y6VwZK7Omg7mtdt7l16l1UVbHjfO2TGTmfnslqqQRs8DCKroFGtJX0rd9wfpWThQRzOkwc38oDFsIrCz2zmzeDCjXF94cADSxbhOgGMiNwgeYRwDm7wCL+xYOaA9/sq8uIYwojQ2HLlMw/NLJj66xkL7uEOU4MQDzvDI4+4SWg5ezTmxYS39KLpApfuHfNZ8ugQ1pwlASHPwwhcWLlRwqZr341gtY5WYexhETNEDlgwj5DIW3pBMkZitIH3GRcQL1zfJzaCc9coI6JCYRquHiN2v0hgEfozD413Htbn3vlex4bqpr7Llg7M3KV779msEIGsSIrsyoSHhUdWYnXxNU1YGJCeaRgkES4dlBslL9kPLPYccCMWU2fmUbi0Sqm7mBRaHEwNvA6IOn++QRhC63XsvWDCzHN9hIspudd6iqdNngwGMqu5bjI8P4UdKAeaJ0/TZfy0NqJ6mqq6xjN3OxjgHTsP8eb0vv3IMVWyFNvOHR/rUskjoTVK4rDAX1Krip/wX3n+Pzw2R/rs/HaBlYkSht/g2Eq33AyvCpxKYyNq/jemXo1G8M8A8CFzWvAy21cmPblTTRnrZHo1uh18ofHbTdsK5xtgD/qqulZleHHaDK9v/sYN/C/DZYGmbj3oGC0YPdcnB15ImmT4bvZm3DtPMb8+Zy18rax3TOx30yqDowMv9WUuFIp+w2Czn5KD2KaefBatkjSTP4IwB9qZ/8TAnfuQmJfvk5jEcVJVJ4U4ybBL+9yo9p3AJmuzGuQep9QlHbtzHjuTcWxK+w8AafoCNbTR8JNNHdnorsM2D+eVNDc37+JHfa30XFYqK3hLEPzQt8m3pnROf1hHbXg9TNMZi9J0fDUZjycJr5sKz8yEjsYLDo3eb3+m9p1hfdXyYc91Ro+d665Dn/VyPYbvwTH2NWr4mtpHfsFz+i9f6X94</source>
   </file>
-  <file path="Util/Command/InstallCommand.php" generated-path="Util.Command.InstallCommand.html" hash="7e4b3099f3bbea1ee4f492b622b970ff" package="Default">
+  <file path="Util/Command/InstallCommand.php" generated-path="Util.Command.InstallCommand.html" hash="d4775cad8b48a482f7a3d0c2803df9af" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -414,7 +435,73 @@
       <error line="134" code="PPC:ERR-50008">No summary for method exeCql()</error>
       <error line="50" code="PPC:ERR-50007">No summary for property $stmtManager</error>
     </parse_markers>
-    <source>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</source>
+    <source>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</source>
+  </file>
+  <file path="ServiceProvider/Silex/CMSServiceProvider.php" generated-path="ServiceProvider.Silex.CMSServiceProvider.html" hash="158ef82e47de0af21e517aed997270ec" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="ServiceProvider">\deasilworks\CFG\ServiceProvider\Silex\ServiceProvider</namespace-alias>
+    <namespace-alias name="PageManager">\deasilworks\CMS\CEF\Manager\PageManager</namespace-alias>
+    <namespace-alias name="Container">\Pimple\Container</namespace-alias>
+    <namespace-alias name="ServiceProviderInterface">\Pimple\ServiceProviderInterface</namespace-alias>
+    <namespace-alias name="BootableProviderInterface">\Silex\Api\BootableProviderInterface</namespace-alias>
+    <namespace-alias name="Application">\Silex\Application</namespace-alias>
+    <namespace-alias name="MonologServiceProvider">\Silex\Provider\MonologServiceProvider</namespace-alias>
+    <namespace-alias name="WebProfilerServiceProvider">\Silex\Provider\WebProfilerServiceProvider</namespace-alias>
+    <class final="false" abstract="false" namespace="deasilworks\CMS\ServiceProvider\Silex" line="43" package="Default">
+      <extends>\deasilworks\CFG\ServiceProvider\Silex\ServiceProvider</extends>
+      <implements>\Pimple\ServiceProviderInterface</implements>
+      <implements>\Silex\Api\BootableProviderInterface</implements>
+      <name>CMSServiceProvider</name>
+      <full_name>\deasilworks\CMS\ServiceProvider\Silex\CMSServiceProvider</full_name>
+      <docblock line="43">
+        <description>Class APIServiceProvider.</description>
+        <long-description>Responsible for providing API as a service to
+the applications built on the Silex framework.</long-description>
+        <tag name="package" line="43" description="Default"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\ServiceProvider\Silex" line="48" package="Default">
+        <name>boot</name>
+        <full_name>\deasilworks\CMS\ServiceProvider\Silex\CMSServiceProvider::boot()</full_name>
+        <docblock line="48">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="48" description="" type="\Silex\Application" variable="$app">
+            <type>\Silex\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Silex\Application</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CMS\ServiceProvider\Silex" line="69" package="Default">
+        <name>register</name>
+        <full_name>\deasilworks\CMS\ServiceProvider\Silex\CMSServiceProvider::register()</full_name>
+        <docblock line="69">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="69" description="" type="\Pimple\Container" variable="$container">
+            <type>\Pimple\Container</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$container</name>
+          <default></default>
+          <type>\Pimple\Container</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="48" code="PPC:ERR-50008">No summary for method boot()</error>
+      <error line="69" code="PPC:ERR-50008">No summary for method register()</error>
+    </parse_markers>
+    <source>eJyFVlFvo0YQfvevGEWRsCPitH2plPTSIzaO0dmAgJwbne8Bw9psi1m0u44TVfnvnVmwYzu5K4oCOzvzzffNDoP/+LMu6k7n6qIDFzD1EpjwjFWK4ZIsA1G/SL4qNHSzHvz2y6+/w5ClipcwE/IfZYNXZa1ryOSaK8VFBVxBwSRbvMBKppVmuQ1LyRiIJWRFKlfMBi0grV6gZlJhgFjolFe8WkEKGaYkPHTWBSIpsdTbVDL0zyFVSmQ8RUjIRbZZs0qnmlIueckUdHXB4CxuI856Jk/O0pIAeQW0vduFLdeF2GiQTGnJM4Kx0SkrNzkx2W2XfM3bJBRuqqEID6E3CqUQYRvWIudLujOjr94sSq4KG3JO6IuNRqMioymvTWquhATFSkMOQTgKMKLfOBo3SlRTcXVbLkWWbSHWx3q4YbXcyAoTMxOWCyyfyfs3yzRZKGIpylJsSWMmqpyTNHVNsQlupgvxxIym5twroZFyw4OOo3475nZLFWlZwoK1tcPMWOn0WJYkDkpjM/C0hFpIk/RUbr9tpWTsQhyMkpkTueDFEEbBV2/oDuHMiXF9ZsPMS8bBQwLoETl+8gjBCBz/Eb54/tAG968wcuMYgojQvGk48Vw0e/5g8jD0/Hu4w1A/wGb3sOURNwlMzhbNc2PCm7rRYIxL586beMmjTVgjL/EJeRRE4EDoRIk3eJg4EYQPURjELpIYIrLv+aMIE7lT10/6mBht4H7FBcRjZzKhbATnPKCMiIjCIAgfI+9+nMA4mAxdNN65yM+5m7hNNlQ3mDje1IahM3XuXRMVIJARSZ4NTZiNXbJSVgf/BokX+KRnEPhJhEsb5UbJPnrmxa4NTuTFVJlRFEyNUqouBgUGB0N9twGiyh8fELrQ+iF295gwdJ0JwsUU3Grd+dMhX3U6Vbpmqk6xf3IzULY0T+aDaTyPmXzCvgqleOI5k/MYX+3nm04HX7Zj39H9x76n1pv3oZhm4I7m07RKVxgW4v/2uXEO+bou2XwgKhpMJ9YTeA8nnFyiksapoeDUfH4nhE4X5f851jgTzHw5NO8VTUUlSrH6UNKJ64wt8JkmoXznjhO+GegljlBwQu/EY/fqRXgo+GZypI1zQkJt9mlWYAyOXxzQqonEaWKmIM2MNw0KFhteaminpWGIwx8PmyrfnH1mOOAZnHAA9qxZlSs4tZuy06x/t7UvqQ0/rHbn3w7gZQpA1wV8rlNkBAelh3PU0G5fmbsZ4BmO08p8GWCB8N3TiJ5xbfDpItvl7YrprnVl2W/B3R59KqBrYtB/H9ASg89PqYT5YYtma/WjFoXzmhYrueO6T7+zfzJMvp3TxL683b9qfaufsaX13VB0cRbrlxayewB/fW0OqHdzTFPLlwOlxylFzkpK2uY3+ITYtbaszMSaWYh2GPYKWMWsgO7cfc5Y3RSU7R57HySSTOOXrdFl6S1fkQyJ7YLkLYWbdb/Q67Jvtmz4ZqFmhRQs+HR7AG2oTZutbu/7Ka1jyT/NyfH2fJJzX4wm6355mOe1d5Tj8naBSF0LP+eM/HeVaqm879r9TILzbPf4086VbIW/QZDyR5HvOni/82H3rFV/B8dy6zueuZYbtmP82vkP0DpAQg==</source>
   </file>
   <file path="CEF/Model/PageModel.php" generated-path="CEF.Model.PageModel.html" hash="16127d6819464a3e5a648c9ce2bcf651" package="Default">
     <docblock line="0">
@@ -700,6 +787,10 @@
           <namespace name="User" full_name="deasilworks\CMS\CEF\Manager\User"/>
         </namespace>
         <namespace name="Model" full_name="deasilworks\CMS\CEF\Model"/>
+      </namespace>
+      <namespace name="Controller" full_name="deasilworks\CMS\Controller"/>
+      <namespace name="ServiceProvider" full_name="deasilworks\CMS\ServiceProvider">
+        <namespace name="Silex" full_name="deasilworks\CMS\ServiceProvider\Silex"/>
       </namespace>
       <namespace name="Util" full_name="deasilworks\CMS\Util">
         <namespace name="Command" full_name="deasilworks\CMS\Util\Command"/>

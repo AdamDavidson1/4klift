@@ -23,37 +23,8 @@
  * SOFTWARE.
  */
 
-use Silex\WebTestCase;
+require_once __DIR__.'/../vendor/autoload.php';
 
-/**
- * Class controllersTest.
- *
- * @SuppressWarnings(PHPMD)
- */
-class controllersTest extends WebTestCase
-{
-    /**
-     * Homepage test.
-     */
-    public function testGetHomepage()
-    {
-        $client = $this->createClient();
-        $client->followRedirects(true);
-        $crawler = $client->request('GET', '/');
-        $this->assertTrue($client->getResponse()->isOk());
-        $this->assertContains('4klift', $crawler->filter('body')->text());
-    }
+require __DIR__.'/../core/4klift.php';
 
-    /**
-     * Create Application.
-     *
-     * @return mixed
-     */
-    public function createApplication()
-    {
-        require __DIR__.'/../core/4klift.php';
-        $app['session.test'] = true;
-
-        return $this->app = $app;
-    }
-}
+$app->run();

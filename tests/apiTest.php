@@ -205,7 +205,7 @@ class apiTest extends WebTestCase
      */
     public function createApplication()
     {
-        require __DIR__.'/../src/app.php';
+        require __DIR__.'/../core/4klift.php';
         $app['session.test'] = true;
 
         return $this->app = $app;

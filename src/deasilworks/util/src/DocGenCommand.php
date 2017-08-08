@@ -65,8 +65,10 @@ class DocGenCommand extends Command
 
         $io->title('Generating Documentation');
 
+        $projectRoot = __DIR__.'/../../../../';
+
         // get phpdoc if is does not exists
-        $phpDocPath = '../build/phpDocumentor.phar';
+        $phpDocPath = $projectRoot.'build/phpDocumentor.phar';
 
         if (!file_exists($phpDocPath)) {
             $io->writeln('Downloading phpDocumentor...');
@@ -81,15 +83,15 @@ class DocGenCommand extends Command
 
             exec('php '.
                 $phpDocPath.
-                ' -d ../src/deasilworks/'.$component.'/src'.
-                ' -t ../src/deasilworks/'.$component.'/docs/api'.
+                ' -d '.$projectRoot.'src/deasilworks/'.$component.'/src'.
+                ' -t '.$projectRoot.'src/deasilworks/'.$component.'/docs/api'.
                 ' --template="xml"'.
-                ' --cache-folder="../var/cache/phpdoc/'.$component.'"'
+                ' --cache-folder="'.$projectRoot.'var/cache/phpdoc/'.$component.'"'
             );
 
-            $parser = new Parser('../src/deasilworks/'.$component.'/docs/api/structure.xml');
+            $parser = new Parser($projectRoot.'src/deasilworks/'.$component.'/docs/api/structure.xml');
             $classDefs = $parser->run();
-            $outputDir = '../src/deasilworks/'.$component.'/docs/api';
+            $outputDir = $projectRoot.'src/deasilworks/'.$component.'/docs/api';
             $templateDir = __DIR__.'/../templates/docgen/';
 
             $generator = new Generator(

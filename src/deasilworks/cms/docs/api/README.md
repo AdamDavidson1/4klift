@@ -13,10 +13,15 @@ API Index
                 * [PageModel](deasilworks-CMS-CEF-Model-PageModel.md)
             * deasilworks\CMS\CEF\Collection
                 * [PageCollection](deasilworks-CMS-CEF-Collection-PageCollection.md)
+        * deasilworks\CMS\Controller
+            * [DefaultController](deasilworks-CMS-Controller-DefaultController.md)
         * deasilworks\CMS\Util
             * deasilworks\CMS\Util\Command
                 * [CMSCommand](deasilworks-CMS-Util-Command-CMSCommand.md)
                 * [InstallCommand](deasilworks-CMS-Util-Command-InstallCommand.md)
+        * deasilworks\CMS\ServiceProvider
+            * deasilworks\CMS\ServiceProvider\Silex
+                * [CMSServiceProvider](deasilworks-CMS-ServiceProvider-Silex-CMSServiceProvider.md)
 
 
 ## LICENSE
