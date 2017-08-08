@@ -1,0 +1,22 @@
+{
+  "name": "deasilworks/4klift-core",
+  "description": "4klift Core Files",
+  "type": "project",
+  "license": "MIT",
+  "keywords": ["4klift"],
+  "authors": [
+    {
+      "name": "Deasil Works, Inc.",
+      "email": "code@deasil.works"
+    },
+    {
+      "name": "Craig Johnston",
+      "email": "craig@deasil.works"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0"
+  },
+  "scripts": {
+  }
+}
