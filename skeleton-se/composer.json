@@ -25,7 +25,7 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.6.0",
-    "deasilworks/4klift-core": "dev-master"
+    "deasilworks/4klift-core": "self.version"
   },
   "autoload": {
     "psr-0": {
