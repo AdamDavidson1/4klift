@@ -26,7 +26,7 @@
     "scripts": {
         "link-core": [
             "ln -sf ./vendor/deasilworks/4klift-core/Vagrantfile ./",
-            "ln -sf ../vendor/deasilworks/4klift-core/dev ./dev",
+            "ln -sf ./vendor/deasilworks/4klift-core/dev ./dev",
             "ln -sf ../vendor/deasilworks/4klift-core/index.php ./web",
             "ln -sf ../vendor/deasilworks/4klift-core/4klift.php ./core",
             "ln -sf ../vendor/deasilworks/4klift-core/cli.php ./core",
