@@ -63,13 +63,18 @@
     "update-core": [
       "cp ./vendor/deasilworks/4klift-core/index.php ./web/index.php",
       "cp ./vendor/deasilworks/4klift-core/4klift.php ./core/4klift.php",
-      "cp ./vendor/deasilworks/4klift-core/cli.php ./core/cli.php",
+      "cp ./vendor/deasilworks/4klift-core/cli.php ./core/cli.php"
+    ],
+    "link-examples": [
       "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-application.yml ./cfg/application.yml",
       "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-defaults.yml ./cfg/defaults.yml",
-      "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-parameters.yml ./cfg/parameters.yml"
+      "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-parameters.yml ./cfg/parameters.yml",
+      "ln -sf ../vendor/deasilworks/4klift-core/templates/4klift-index.html.twig ./templates/4klift-index.html.twig",
+      "ln -sf ../vendor/deasilworks/4klift-core/templates/4klift-setup.html.twig ./templates/4klift-setup.html.twig"
     ],
     "post-install-cmd": [
-      "@update-core"
+      "@update-core",
+      "@link-examples"
     ],
     "post-update-cmd": [
       "@update-core"

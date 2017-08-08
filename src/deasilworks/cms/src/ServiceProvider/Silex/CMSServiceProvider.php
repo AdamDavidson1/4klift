@@ -55,10 +55,10 @@ class CMSServiceProvider extends ServiceProvider implements ServiceProviderInter
             try {
                 $pageModel = $pageMgr->getPage('welcome');
             } catch (\Exception $exception) {
-                return $app['twig']->render('setup.html.twig', ['message' => $exception->getMessage()]);
+                return $app['twig']->render('4klift-setup.html.twig', ['message' => $exception->getMessage()]);
             }
 
-            return $app['twig']->render('index.html.twig', ['pageModel' => $pageModel]);
+            return $app['twig']->render('4klift-index.html.twig', ['pageModel' => $pageModel]);
         })
             ->bind('homepage');
     }
