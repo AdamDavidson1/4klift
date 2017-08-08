@@ -25,6 +25,6 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-require __DIR__.'/../src/app.php';
+require __DIR__.'/../core/4klift.php';
 
 $app->run();

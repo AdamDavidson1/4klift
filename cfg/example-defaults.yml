@@ -1,0 +1,11 @@
+# Default Configuration
+#
+deasilworks:
+  cef:
+    contact_points:
+      - "127.0.0.1"
+
+app:
+  # only needed if app.debug is true
+  monolog.logfile: '%app_root%/../var/logs/silex_dev.log'
+  profiler.cache_dir: '%app_root%/../var/cache/profiler'

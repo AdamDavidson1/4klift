@@ -35,13 +35,19 @@ use Symfony\Component\Console\Application;
  */
 $cli = new Application('4klift - Command Line Utilities', '1.0.0');
 
+// @TODO register 4klift components, use configuration for command loading
+
 /**
- * Add CLI Command Class names here.
+ * Add 4klift CLI Command Classes
  */
 $command_classes = [
     \deasilworks\CMS\Util\Command\InstallCommand::class,
     \deasilworks\Util\DocGenCommand::class,
 ];
+
+/**
+ * Add Framework Administrative classes
+ */
 
 /**
  * Storage for the instantiated classes.
