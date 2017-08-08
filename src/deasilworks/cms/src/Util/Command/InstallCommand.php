@@ -114,7 +114,7 @@ class InstallCommand extends CMSCommand
             return;
         }
 
-        $this->io->writeln('done...');
+        $this->cio->writeln('done...');
     }
 
     /**
