@@ -16,14 +16,12 @@
 The following files are copied into a 4klift file structure after a composer install of
 deasilworks/4klift-se.
 
-- 4klift.php -> core/
-- cli.php -> core/
-- index.php -> web/
-- Vagrantfile -> ../
-- ./cfg/example-application.yml -> cfg/
-- ./cfg/example-defaults.yml -> cfg/
-- ./cfg/example-parameters.yml -> cfg/
-- ./dev -> ../dev
+- copy 4klift.php -> core/
+- copy cli.php -> core/
+- copy index.php -> web/
+- link ./cfg/example-application.yml -> cfg/
+- link ./cfg/example-defaults.yml -> cfg/
+- link ./cfg/example-parameters.yml -> cfg/
 
 ## LICENSE
 
