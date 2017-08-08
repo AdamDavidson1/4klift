@@ -86,17 +86,17 @@ $provision_script = <<SCRIPT
     /usr/local/bin/composer install &1
     /usr/local/bin/composer link-examples &1
 
-    echo ""
-    echo "----------------------------------------------------"
-    echo ""
+    /bin/echo ""
+    /bin/echo "----------------------------------------------------"
+    /bin/echo ""
     /usr/bin/figlet 4klift
-    echo ""
-    echo "Install complete."
-    echo ""
-    echo "Browse to http://localhost:8080/"
-    echo ""
-    ecgo "Run: \"vagrant ssh\" to use the new vm."
-    echo ""
+    /bin/echo ""
+    /bin/echo "Install complete."
+    /bin/echo ""
+    /bin/echo "Browse to http://localhost:8080/"
+    /bin/echo ""
+    /bin/echo "Run: \"vagrant ssh\" to use the new vm."
+    /bin/echo ""
 SCRIPT
 
 
