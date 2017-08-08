@@ -40,14 +40,14 @@
     "symfony/http-kernel": "^3.1"
   },
   "autoload": {
-    "psr-4": { "deasilworks\\cms\\": "src/" },
+    "psr-4": { "deasilworks\\CMS\\": "src/" },
     "exclude-from-classmap": [
       "/tests/"
     ]
   },
   "autoload-dev": {
     "psr-4": {
-      "deasilworks\\api\\test\\": "tests/src/deasilworks/cms/test"
+      "deasilworks\\CMS\\test\\": "tests/src/deasilworks/cms/test"
     }
   },
   "minimum-stability": "dev"

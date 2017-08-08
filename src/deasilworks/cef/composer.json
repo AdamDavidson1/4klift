@@ -41,14 +41,14 @@
     "symfony/http-kernel": "^3.1"
   },
   "autoload": {
-    "psr-4": { "deasilworks\\cef\\": "src/" },
+    "psr-4": { "deasilworks\\CEF\\": "src/" },
     "exclude-from-classmap": [
       "/Tests/"
     ]
   },
   "autoload-dev": {
     "psr-4": {
-      "deasilworks\\cef\\test\\": "tests/src/deasilworks/cef/test"
+      "deasilworks\\CEF\\test\\": "tests/src/deasilworks/cef/test"
     }
   },
   "minimum-stability": "dev"
