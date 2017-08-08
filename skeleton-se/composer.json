@@ -1,41 +1,50 @@
 {
-    "name": "deasilworks/4klift-se",
-    "description": "Big Data Framework",
-    "type": "project",
-    "license": "MIT",
-    "keywords": ["framework","cassandra","php","4klift","cms","api"],
-    "authors": [
-        {
-            "name": "Deasil Works, Inc.",
-            "email": "code@deasil.works"
-        },
-        {
-            "name": "Craig Johnston",
-            "email": "craig@deasil.works"
-        }
-    ],
-    "prefer-stable": true,
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.6.0",
-        "deasilworks/4klift-core": "dev-master"
+  "name": "deasilworks/4klift-se",
+  "description": "Big Data Framework",
+  "type": "project",
+  "license": "MIT",
+  "keywords": [
+    "framework",
+    "cassandra",
+    "php",
+    "4klift",
+    "cms",
+    "api"
+  ],
+  "authors": [
+    {
+      "name": "Deasil Works, Inc.",
+      "email": "code@deasil.works"
     },
-    "autoload": {
-        "psr-0": { "MyProject": "src/" }
-    },
-    "scripts": {
-        "link-core": [
-            "ln -sf ./vendor/deasilworks/4klift-core/Vagrantfile ./",
-            "ln -sf ./vendor/deasilworks/4klift-core/dev ./dev",
-            "ln -sf ../vendor/deasilworks/4klift-core/index.php ./web",
-            "ln -sf ../vendor/deasilworks/4klift-core/4klift.php ./core",
-            "ln -sf ../vendor/deasilworks/4klift-core/cli.php ./core",
-            "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-application.yml ./cfg/application.yml",
-            "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-defaults.yml ./cfg/defaults.yml",
-            "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-parameters.yml ./cfg/parameters.yml"
-        ],
-        "post-create-project-cmd": [
-            "@link-core"
-        ]
+    {
+      "name": "Craig Johnston",
+      "email": "craig@deasil.works"
     }
+  ],
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.6.0",
+    "deasilworks/4klift-core": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "MyProject": "src/"
+    }
+  },
+  "scripts": {
+    "link-core": [
+      "cp ./vendor/deasilworks/4klift-core/index.php ./web/index.php",
+      "cp ./vendor/deasilworks/4klift-core/4klift.php ./core/4klift.php",
+      "cp ./vendor/deasilworks/4klift-core/cli.php ./core/cli.php",
+      "ln -sf ./vendor/deasilworks/4klift-core/Vagrantfile ./",
+      "ln -sf ./vendor/deasilworks/4klift-core/dev ./dev",
+      "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-application.yml ./cfg/application.yml",
+      "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-defaults.yml ./cfg/defaults.yml",
+      "ln -sf ../vendor/deasilworks/4klift-core/cfg/example-parameters.yml ./cfg/parameters.yml"
+    ],
+    "post-install-cmd": [
+      "@link-core"
+    ]
+  }
 }
