@@ -81,6 +81,22 @@ $provision_script = <<SCRIPT
 
     rm -f /etc/php.ini
     ln -sf /home/vagrant/project/dev/vm/php.ini /etc/php.ini
+
+    cd /home/vagrant/project/
+    /usr/local/bin/composer install &1
+    /usr/local/bin/composer link-examples &1
+
+    echo ""
+    echo "----------------------------------------------------"
+    echo ""
+    /usr/bin/figlet 4klift
+    echo ""
+    echo "Install complete."
+    echo ""
+    echo "Browse to http://localhost:8080/"
+    echo ""
+    ecgo "Run: \"vagrant ssh\" to use the new vm."
+    echo ""
 SCRIPT
 
 
