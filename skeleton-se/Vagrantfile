@@ -16,6 +16,7 @@ $provision_script = <<SCRIPT
     /usr/bin/yum-config-manager --enable remi-php56
     /usr/bin/yum-config-manager --enable remi
 
+
     yum install -y figlet python27 java-1.8.0-openjdk datastax-ddc nginx gcc g++ make automake autoconf git
     yum install -y curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel sqlite-devel
     yum install -y gmp gmp-devel boost cmake libtool openssl-devel pcre-devel automake openssl-devel
