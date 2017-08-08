@@ -69,11 +69,11 @@ Install Virtualbox and Vagrant with `brew`:
     brew cask install virtualbox
     brew cask install vagrant
 
-## Installing the 4klift Base Project
+## Installing the 4klift (Silex Edition) Base Project
 
 Navigate to or create a project directory. Run:
     
-    composer create-project -s dev deasilworks/4klift 4klift dev-master
+    composer create-project deasilworks/4klift-se
 
 This will clone the project and create a 4klift directory pointing to the *dev-master* branch. CD into the directory and fire up vagrant:
 
