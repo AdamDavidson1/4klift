@@ -1,6 +1,12 @@
 #!/bin/sh
 
+version=1.0
+
+git pull origin $version
+pit push origin $version
+git checkout master
 git pull origin master
+git merge $version
 git push origin master
 git subsplit update
 
@@ -14,3 +20,6 @@ git subsplit publish "
      core:git@github.com:deasilworks/4klift-core.git
      skeleton-se:git@github.com:deasilworks/4klift-se.git
  " --heads="master 1.0"
+
+git checkout $version
+git merge master
