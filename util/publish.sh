@@ -3,7 +3,7 @@
 version=1.0
 
 git pull origin $version
-pit push origin $version
+git push origin $version
 git checkout master
 git pull origin master
 git merge $version
