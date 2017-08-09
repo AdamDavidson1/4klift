@@ -42,11 +42,11 @@
     "symfony/translation": "~2.8|^3.0",
     "symfony/twig-bridge": "~2.8|^3.0",
     "symfony/validator": "~2.8|^3.0",
-    "deasilworks/cef": "self.version",
-    "deasilworks/api": "self.version",
-    "deasilworks/cms": "self.version",
-    "deasilworks/cfg": "self.version",
-    "deasilworks/4klift-core": "self.version"
+    "deasilworks/cef": "^1.0",
+    "deasilworks/api": "^1.0",
+    "deasilworks/cms": "^1.0",
+    "deasilworks/cfg": "^1.0",
+    "deasilworks/4klift-core": "^1.0"
   },
   "require-dev": {
     "behat/behat": "^3.3",
