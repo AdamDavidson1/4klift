@@ -39,7 +39,7 @@ class ResultContainer extends EntityCollection
      *
      * @var string
      */
-    protected $valueClass = EntityModel::class;
+    protected $valueClass = EntityDataModel::class;
 
     /**
      * @JMS\Exclude
@@ -134,7 +134,7 @@ class ResultContainer extends EntityCollection
     {
         // hydrate model
         foreach ($results as $entry) {
-            /** @var EntityModel $model */
+            /** @var EntityDataModel $model */
             $model = $this->getModel();
             $model->setEntityManager($this->getEntityManager());
 

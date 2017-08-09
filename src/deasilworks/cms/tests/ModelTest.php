@@ -26,7 +26,7 @@
 use deasilworks\CEF\CEF;
 use deasilworks\CEF\CEFConfig;
 use deasilworks\CMS\CEF\Collection\PageCollection;
-use deasilworks\CMS\CEF\Model\PageModel;
+use deasilworks\CMS\CEF\Model\PageDataModel;
 
 /**
  * Class ModelTest.
@@ -41,7 +41,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase
      */
     public function testPage()
     {
-        $pageModel = new PageModel();
+        $pageModel = new PageDataModel();
 
         $pageModelClass = get_class($pageModel);
 

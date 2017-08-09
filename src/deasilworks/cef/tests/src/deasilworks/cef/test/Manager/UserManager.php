@@ -29,7 +29,7 @@ use deasilworks\CEF\EntityManager;
 use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementBuilder\Select;
 use deasilworks\CEF\test\Collection\UserCollection;
-use deasilworks\CEF\test\Model\LocalModel;
+use deasilworks\CEF\test\Model\LocalDataModel;
 
 class UserManager extends EntityManager
 {
@@ -64,7 +64,7 @@ class UserManager extends EntityManager
      * @param $username
      * @param $type
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function getUserByUsername($username, $type = Select::SELECT_TYPE)
     {
@@ -81,7 +81,7 @@ class UserManager extends EntityManager
         /** @var \deasilworks\cef\test\Collection\UserCollection $userCollection */
         $userCollection = $ssm->execute();
 
-        /* @var \deasilworks\cef\test\Model\LocalModel $localModel */
+        /* @var \deasilworks\cef\test\Model\LocalDataModel $localModel */
         return $userCollection->current();
     }
 }

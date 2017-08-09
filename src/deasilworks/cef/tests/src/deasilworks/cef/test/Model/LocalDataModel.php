@@ -25,13 +25,13 @@
 
 namespace deasilworks\cef\test\Model;
 
-use deasilworks\CEF\EntityModel;
+use deasilworks\CEF\EntityDataModel;
 use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Class LocalModel.
  */
-class LocalModel extends EntityModel
+class LocalDataModel extends EntityDataModel
 {
     /**
      * Overridden to supply Table Name.
@@ -118,7 +118,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $key
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setKey($key)
     {
@@ -138,7 +138,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $bootstrapped
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setBootstrapped($bootstrapped)
     {
@@ -158,7 +158,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $broadcastAddress
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setBroadcastAddress($broadcastAddress)
     {
@@ -178,7 +178,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $clusterName
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setClusterName($clusterName)
     {
@@ -198,7 +198,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $cqlVersion
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setCqlVersion($cqlVersion)
     {
@@ -218,7 +218,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $dataCenter
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setDataCenter($dataCenter)
     {
@@ -238,7 +238,7 @@ class LocalModel extends EntityModel
     /**
      * @param int $gossipGeneration
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setGossipGeneration($gossipGeneration)
     {
@@ -258,7 +258,7 @@ class LocalModel extends EntityModel
     /**
      * @param $listenAddress
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setListenAddress($listenAddress)
     {
@@ -278,7 +278,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $partitioner
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setPartitioner($partitioner)
     {
@@ -298,7 +298,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $rack
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setRack($rack)
     {
@@ -318,7 +318,7 @@ class LocalModel extends EntityModel
     /**
      * @param $releaseVersion
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setReleaseVersion($releaseVersion)
     {
@@ -338,7 +338,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $rpcAddress
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setRpcAddress($rpcAddress)
     {
@@ -358,7 +358,7 @@ class LocalModel extends EntityModel
     /**
      * @param string $thriftVersion
      *
-     * @return LocalModel
+     * @return LocalDataModel
      */
     public function setThriftVersion($thriftVersion)
     {

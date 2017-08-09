@@ -29,7 +29,7 @@ use deasilworks\CEF\EntityManager;
 use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementManager;
 use deasilworks\CMS\CEF\Manager\PageManager;
-use deasilworks\CMS\CEF\Model\PageModel;
+use deasilworks\CMS\CEF\Model\PageDataModel;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -95,7 +95,7 @@ class InstallCommand extends CMSCommand
         /** @var PageManager $pageMgr */
         $pageMgr = $this->cef->getEntityManager(PageManager::class);
 
-        /** @var PageModel $pageModel */
+        /** @var PageDataModel $pageModel */
         $pageModel = $pageMgr->getModel();
 
         $pageModel
@@ -105,7 +105,7 @@ class InstallCommand extends CMSCommand
             ->setModified(new \DateTime())
             ->save();
 
-        /** @var PageModel $retPageModel */
+        /** @var PageDataModel $retPageModel */
         $retPageModel = $pageMgr->getPage('welcome');
 
         if ($retPageModel->getStub() != 'welcome') {

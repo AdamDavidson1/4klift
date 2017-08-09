@@ -31,7 +31,7 @@ use deasilworks\CEF\EntityManager;
 use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementBuilder\Select;
 use deasilworks\CMS\CEF\Collection\PageCollection;
-use deasilworks\CMS\CEF\Model\PageModel;
+use deasilworks\CMS\CEF\Model\PageDataModel;
 
 /**
  * Class PageManager.
@@ -50,11 +50,11 @@ class PageManager extends EntityManager
      *
      * @ApiAction()
      *
-     * @param PageModel $pageModel
+     * @param PageDataModel $pageModel
      *
      * @return bool
      */
-    public function setPage(PageModel $pageModel)
+    public function setPage(PageDataModel $pageModel)
     {
         $pageModel
             ->setModified(new \DateTime())
@@ -71,7 +71,7 @@ class PageManager extends EntityManager
      *
      * @param string $stub the url friendly name of the page.
      *
-     * @return PageModel
+     * @return PageDataModel
      */
     public function getPage($stub)
     {

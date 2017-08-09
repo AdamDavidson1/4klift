@@ -26,7 +26,7 @@
 namespace deasilworks\cef\test\Collection;
 
 use deasilworks\CEF\ResultContainer;
-use deasilworks\CEF\test\Model\UserModel;
+use deasilworks\CEF\test\Model\UserDataModel;
 
 class UserCollection extends ResultContainer
 {
@@ -35,5 +35,5 @@ class UserCollection extends ResultContainer
      *
      * @var string
      */
-    protected $valueClass = UserModel::class;
+    protected $valueClass = UserDataModel::class;
 }

@@ -25,13 +25,13 @@
 
 namespace deasilworks\cef\test\Model;
 
-use deasilworks\CEF\EntityModel;
+use deasilworks\CEF\EntityDataModel;
 use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Class UserModel.
  */
-class UserModel extends EntityModel
+class UserDataModel extends EntityDataModel
 {
     /**
      * Overridden to supply Table Name.
@@ -68,7 +68,7 @@ class UserModel extends EntityModel
     protected $message;
 
     /**
-     * @var UdtAddressModel
+     * @var UdtAddressDataModel
      */
     protected $address;
 
@@ -83,7 +83,7 @@ class UserModel extends EntityModel
     /**
      * @param string $username
      *
-     * @return UserModel
+     * @return UserDataModel
      */
     public function setUsername($username)
     {
@@ -103,7 +103,7 @@ class UserModel extends EntityModel
     /**
      * @param string $firstName
      *
-     * @return UserModel
+     * @return UserDataModel
      */
     public function setFirstName($firstName)
     {
@@ -123,7 +123,7 @@ class UserModel extends EntityModel
     /**
      * @param string $lastName
      *
-     * @return UserModel
+     * @return UserDataModel
      */
     public function setLastName($lastName)
     {
@@ -143,7 +143,7 @@ class UserModel extends EntityModel
     /**
      * @param string $email
      *
-     * @return UserModel
+     * @return UserDataModel
      */
     public function setEmail($email)
     {
@@ -163,7 +163,7 @@ class UserModel extends EntityModel
     /**
      * @param string $message
      *
-     * @return UserModel
+     * @return UserDataModel
      */
     public function setMessage($message)
     {
@@ -173,7 +173,7 @@ class UserModel extends EntityModel
     }
 
     /**
-     * @return \deasilworks\cef\test\Model\UdtAddressModel
+     * @return \deasilworks\cef\test\Model\UdtAddressDataModel
      */
     public function getAddress()
     {
@@ -181,11 +181,11 @@ class UserModel extends EntityModel
     }
 
     /**
-     * @param \deasilworks\cef\test\Model\UdtAddressModel $address
+     * @param \deasilworks\cef\test\Model\UdtAddressDataModel $address
      *
-     * @return UserModel
+     * @return UserDataModel
      */
-    public function setAddress(UdtAddressModel $address)
+    public function setAddress(UdtAddressDataModel $address)
     {
         $this->address = $address;
 

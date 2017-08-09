@@ -26,7 +26,7 @@
 namespace deasilworks\cef\test\Collection;
 
 use deasilworks\CEF\ResultContainer;
-use deasilworks\CEF\test\Model\LocalModel;
+use deasilworks\CEF\test\Model\LocalDataModel;
 
 class LocalCollection extends ResultContainer
 {
@@ -35,5 +35,5 @@ class LocalCollection extends ResultContainer
      *
      * @var string
      */
-    protected $valueClass = LocalModel::class;
+    protected $valueClass = LocalDataModel::class;
 }

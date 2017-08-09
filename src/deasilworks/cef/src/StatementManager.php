@@ -103,7 +103,7 @@ class StatementManager
      *
      * @var string
      */
-    protected $resultModelClass = EntityModel::class;
+    protected $resultModelClass = EntityDataModel::class;
 
     /**
      * StatementManager constructor.
@@ -433,7 +433,7 @@ class StatementManager
     }
 
     /**
-     * @return EntityModel
+     * @return EntityDataModel
      */
     public function getResultModel()
     {
@@ -441,7 +441,7 @@ class StatementManager
 
         // @SOMEDAY: thow exception if this fails / check for EntityModel
 
-        /** @var EntityModel $rc */
+        /** @var EntityDataModel $rc */
         $resultModel = new $rmClass();
 
         return $resultModel;

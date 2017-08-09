@@ -39,7 +39,7 @@ class EntityCollection extends CEFData implements \Iterator
      *
      * @var string
      */
-    protected $valueClass = EntityModel::class;
+    protected $valueClass = EntityDataModel::class;
 
     /**
      * @Exclude()
@@ -141,7 +141,7 @@ class EntityCollection extends CEFData implements \Iterator
         $namePath = $this->getModelClass();
         $model = new $namePath();
 
-        if (!($model instanceof EntityModel)) {
+        if (!($model instanceof EntityDataModel)) {
             throw new \Exception($this->valueClass.' is not an instance of EntityModel.');
         }
 

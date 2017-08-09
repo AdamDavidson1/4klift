@@ -25,13 +25,13 @@
 
 namespace deasilworks\CMS\CEF\Model;
 
-use deasilworks\CEF\EntityModel;
+use deasilworks\CEF\EntityDataModel;
 use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Class PageModel.
  */
-class PageModel extends EntityModel
+class PageDataModel extends EntityDataModel
 {
     /**
      * Overridden to supply Table Name.
@@ -73,7 +73,7 @@ class PageModel extends EntityModel
     /**
      * @param string $stub
      *
-     * @return PageModel
+     * @return PageDataModel
      */
     public function setStub($stub)
     {
@@ -93,7 +93,7 @@ class PageModel extends EntityModel
     /**
      * @param string $content
      *
-     * @return PageModel
+     * @return PageDataModel
      */
     public function setContent($content)
     {
@@ -113,7 +113,7 @@ class PageModel extends EntityModel
     /**
      * @param \DateTime $modified
      *
-     * @return PageModel
+     * @return PageDataModel
      */
     public function setModified($modified)
     {
@@ -133,7 +133,7 @@ class PageModel extends EntityModel
     /**
      * @param string $title
      *
-     * @return PageModel
+     * @return PageDataModel
      */
     public function setTitle($title)
     {

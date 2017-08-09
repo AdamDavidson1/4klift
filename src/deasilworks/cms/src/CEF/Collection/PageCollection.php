@@ -26,7 +26,7 @@
 namespace deasilworks\CMS\CEF\Collection;
 
 use deasilworks\CEF\ResultContainer;
-use deasilworks\CMS\CEF\Model\PageModel;
+use deasilworks\CMS\CEF\Model\PageDataModel;
 
 class PageCollection extends ResultContainer
 {
@@ -35,5 +35,5 @@ class PageCollection extends ResultContainer
      *
      * @var string
      */
-    protected $valueClass = PageModel::class;
+    protected $valueClass = PageDataModel::class;
 }

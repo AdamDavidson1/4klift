@@ -34,7 +34,7 @@ use JMS\Serializer\Annotation\Exclude;
  *
  * This is the generic entity model and allows the setting of arbitrary properties.
  */
-class EntityModel extends CEFData
+class EntityDataModel extends CEFData
 {
     /**
      * @Exclude()
@@ -61,7 +61,7 @@ class EntityModel extends CEFData
     /**
      * @param string $tableName
      *
-     * @return EntityModel
+     * @return EntityDataModel
      */
     public function setTableName($tableName)
     {
@@ -81,7 +81,7 @@ class EntityModel extends CEFData
     /**
      * @param EntityManager $entityManager
      *
-     * @return EntityModel
+     * @return EntityDataModel
      */
     public function setEntityManager(EntityManager $entityManager)
     {

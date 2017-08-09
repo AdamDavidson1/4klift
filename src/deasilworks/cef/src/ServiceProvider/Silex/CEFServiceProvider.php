@@ -27,7 +27,7 @@ namespace deasilworks\CEF\ServiceProvider\Silex;
 
 use deasilworks\CEF\CEF;
 use deasilworks\CEF\CEFConfig;
-use deasilworks\CEF\EntityModel;
+use deasilworks\CEF\EntityDataModel;
 use deasilworks\CFG\Config;
 use deasilworks\CFG\ServiceProvider\Silex\ServiceProvider;
 use Pimple\Container;
@@ -80,7 +80,7 @@ class CEFServiceProvider extends ServiceProvider implements ServiceProviderInter
         );
 
         $container[$this->namespace.'.cef.serializer'] = $container->protect(
-            function (EntityModel $entity) {
+            function (EntityDataModel $entity) {
                 return $entity->toJson();
             }
         );

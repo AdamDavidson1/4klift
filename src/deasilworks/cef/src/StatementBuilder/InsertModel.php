@@ -25,7 +25,7 @@
 
 namespace deasilworks\CEF\StatementBuilder;
 
-use deasilworks\CEF\EntityModel;
+use deasilworks\CEF\EntityDataModel;
 
 /**
  * Class InsertModel.
@@ -60,7 +60,7 @@ class InsertModel extends InsertJson
     /**
      * Set Model.
      *
-     * @param EntityModel $model
+     * @param EntityDataModel $model
      *
      * @return InsertModel
      */

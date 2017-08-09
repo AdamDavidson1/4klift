@@ -25,12 +25,12 @@
 
 namespace deasilworks\cef\test\Model;
 
-use deasilworks\CEF\EntityModel;
+use deasilworks\CEF\EntityDataModel;
 
 /**
  * Class UdtAddressModel.
  */
-class UdtAddressModel extends EntityModel
+class UdtAddressDataModel extends EntityDataModel
 {
     /**
      * @var string
@@ -73,7 +73,7 @@ class UdtAddressModel extends EntityModel
     /**
      * @param string $street
      *
-     * @return UdtAddressModel
+     * @return UdtAddressDataModel
      */
     public function setStreet($street)
     {
@@ -93,7 +93,7 @@ class UdtAddressModel extends EntityModel
     /**
      * @param string $street2
      *
-     * @return UdtAddressModel
+     * @return UdtAddressDataModel
      */
     public function setStreet2($street2)
     {
@@ -113,7 +113,7 @@ class UdtAddressModel extends EntityModel
     /**
      * @param string $city
      *
-     * @return UdtAddressModel
+     * @return UdtAddressDataModel
      */
     public function setCity($city)
     {
@@ -133,7 +133,7 @@ class UdtAddressModel extends EntityModel
     /**
      * @param string $state
      *
-     * @return UdtAddressModel
+     * @return UdtAddressDataModel
      */
     public function setState($state)
     {
@@ -153,7 +153,7 @@ class UdtAddressModel extends EntityModel
     /**
      * @param string $zip
      *
-     * @return UdtAddressModel
+     * @return UdtAddressDataModel
      */
     public function setZip($zip)
     {
@@ -173,7 +173,7 @@ class UdtAddressModel extends EntityModel
     /**
      * @param string $country
      *
-     * @return UdtAddressModel
+     * @return UdtAddressDataModel
      */
     public function setCountry($country)
     {

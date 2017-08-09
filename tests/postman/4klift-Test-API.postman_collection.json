@@ -32,7 +32,7 @@
 			},
 			"response": [
 				{
-					"id": "10b1ee09-bd8f-4713-aea1-eb440a20fea5",
+					"id": "f5a48f69-0134-4151-8ec9-5cd908497777",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -152,7 +152,7 @@
 			},
 			"response": [
 				{
-					"id": "dfdc18f1-b1e9-4164-8b9c-e6c5bccf3439",
+					"id": "cd5f2972-eef2-4114-8304-a84148fba843",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -251,7 +251,7 @@
 			},
 			"response": [
 				{
-					"id": "2e4c9571-2a68-45d9-a5d9-6c8da9f798b1",
+					"id": "72a65f5a-8e4e-41c6-9be1-e8f82f36619b",
 					"name": "API page OPTIONS",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page",
@@ -366,7 +366,7 @@
 			},
 			"response": [
 				{
-					"id": "a6fa1b47-ef5b-4c98-86c1-6d49ee3b72e0",
+					"id": "eeb39c64-a827-407a-86f1-5cd918436dde",
 					"name": "Form response.",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/message",
@@ -491,7 +491,7 @@
 			},
 			"response": [
 				{
-					"id": "9310acc4-3218-4661-badb-863f0f6bcc08",
+					"id": "7e00548c-38fe-4927-b005-9f23c65f8842",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -631,7 +631,7 @@
 			},
 			"response": [
 				{
-					"id": "f9385cff-9620-40ca-b1cc-03496fc412d3",
+					"id": "abffbec0-8ade-4719-9a52-de2dc2b886ee",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -728,7 +728,7 @@
 							"",
 							"var jsonData = JSON.parse(responseBody);",
 							"tests[\"ACK Success\"] = jsonData.success === true;",
-							"tests[\"Test json\"] = jsonData.request_args[0] === 'deasilworks\\\\CMS\\\\CEF\\\\Model\\\\PageModel';"
+							"tests[\"Test json\"] = jsonData.request_args[0] === 'deasilworks\\\\CMS\\\\CEF\\\\Model\\\\PageDataModel';"
 						]
 					}
 				}
@@ -751,23 +751,21 @@
 			},
 			"response": [
 				{
-					"id": "35d0451c-c8de-434c-a59d-fe38e935f6f6",
-					"name": "Message",
+					"id": "786bcda6-b9e5-4cef-bad5-a39c0415fc67",
+					"name": "PageDataModel",
 					"originalRequest": {
-						"url": "http://{{server}}/api/pageManager/message",
+						"url": "http://{{server}}/api/cms/pageManager/page",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"type": "text",
-								"name": "Content-Type",
 								"value": "application/json",
 								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"message\": \"from json\"\n}"
+							"raw": "{\n\t\"pageModel\":\n\t\t{\n\t\t\t\"title\": \"Test Page\",\n\t\t\t\"stub\": \"test-page\",\n\t\t\t\"content\": \"This is a test page.\"\n\t\t}\n}\n"
 						}
 					},
 					"status": "OK",
@@ -796,7 +794,7 @@
 						{
 							"name": "date",
 							"key": "date",
-							"value": "Wed, 09 Aug 2017 05:24:57 GMT",
+							"value": "Wed, 09 Aug 2017 19:58:08 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -814,13 +812,13 @@
 						{
 							"name": "x-debug-token",
 							"key": "x-debug-token",
-							"value": "2de056",
+							"value": "6facbb",
 							"description": "Custom header"
 						},
 						{
 							"name": "x-debug-token-link",
 							"key": "x-debug-token-link",
-							"value": "http://4klift.vm.deasil.works/_profiler/2de056",
+							"value": "http://4klift.vm.deasil.works/_profiler/6facbb",
 							"description": "Custom header"
 						},
 						{
@@ -831,8 +829,8 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": 661,
-					"body": "{\"ack_version\":4,\"ack_uuid\":\"3a18b48b-c3f0-445a-962f-5688b9f672bb\",\"date_time\":\"2017-08-09T05:24:57+0000\",\"server_code\":\"200\",\"success\":true,\"error_code\":null,\"error_class\":null,\"error_payload\":null,\"error_message\":null,\"api_level\":1,\"location\":\"pageManager\\/message\",\"location_params\":[{\"name\":\"message\",\"type\":null}],\"request_args\":[\"from json\"],\"payload_class\":\"\",\"payload\":\"from json\"}"
+					"responseTime": 732,
+					"body": "{\"ack_version\":4,\"ack_uuid\":\"4bf48e60-15c2-4bea-9baf-94126c6677ee\",\"date_time\":\"2017-08-09T19:58:08+0000\",\"server_code\":\"200\",\"success\":true,\"error_code\":null,\"error_class\":null,\"error_payload\":null,\"error_message\":null,\"api_level\":1,\"location\":\"pageManager\\/page\",\"location_params\":[{\"name\":\"pageModel\",\"type\":\"deasilworks\\\\CMS\\\\CEF\\\\Model\\\\PageDataModel\"}],\"request_args\":[\"deasilworks\\\\CMS\\\\CEF\\\\Model\\\\PageDataModel\"],\"payload_class\":\"\",\"payload\":true}"
 				}
 			]
 		}

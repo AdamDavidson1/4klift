@@ -25,7 +25,7 @@
 
 use deasilworks\CEF\CEF;
 use deasilworks\CEF\CEFConfig;
-use deasilworks\CEF\EntityModel;
+use deasilworks\CEF\EntityDataModel;
 use deasilworks\CEF\ResultContainer;
 use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementBuilder\Select;
@@ -33,8 +33,8 @@ use deasilworks\CEF\test\Collection\LocalCollection;
 use deasilworks\CEF\test\Collection\UserCollection;
 use deasilworks\CEF\test\Manager\LocalManager;
 use deasilworks\CEF\test\Manager\UserManager;
-use deasilworks\CEF\test\Model\UdtAddressModel;
-use deasilworks\CEF\test\Model\UserModel;
+use deasilworks\CEF\test\Model\UdtAddressDataModel;
+use deasilworks\CEF\test\Model\UserDataModel;
 
 /**
  * Class cassandraTest.
@@ -127,7 +127,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
 
         $this->assertGreaterThan(0, $localCollection->getCount());
 
-        /** @var \deasilworks\cef\test\Model\LocalModel $localModel */
+        /** @var \deasilworks\cef\test\Model\LocalDataModel $localModel */
         $localModel = $localCollection->current();
 
         // does it exist?
@@ -206,11 +206,11 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(ResultContainer::class, $usrCollection);
         $this->assertInstanceOf(UserCollection::class, $usrCollection);
 
-        /** @var UserModel $userModel */
+        /** @var UserDataModel $userModel */
         $userModel = $userMgr->getModel();
 
-        $this->assertInstanceOf(UserModel::class, $userModel, 'StatementManager model factory test.');
-        $this->assertInstanceOf(EntityModel::class, $userModel, 'StatementManager model factory test.');
+        $this->assertInstanceOf(UserDataModel::class, $userModel, 'StatementManager model factory test.');
+        $this->assertInstanceOf(EntityDataModel::class, $userModel, 'StatementManager model factory test.');
 
         // test setCollectionClass this is just to test the setter since
         // local collection can not hold user models...
@@ -246,10 +246,10 @@ class CefTest extends \PHPUnit_Framework_TestCase
         /** @var UserManager $userMgr */
         $userMgr = $this->getUserManager();
 
-        /** @var \deasilworks\cef\test\Model\UserModel $userModel */
+        /** @var \deasilworks\cef\test\Model\UserDataModel $userModel */
         $userModel = $userMgr->getModel();
 
-        $addressModel = new UdtAddressModel();
+        $addressModel = new UdtAddressDataModel();
 
         $userModel
             ->setUsername('4klift')
@@ -278,7 +278,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($userModel->getFirstName() == 'Deasil');
         $this->assertTrue($userModel->getEmail() == 'code@deasil.works');
 
-        $this->assertInstanceOf(UdtAddressModel::class, $userModel->getAddress());
+        $this->assertInstanceOf(UdtAddressDataModel::class, $userModel->getAddress());
 
         // testing generic select (non JSON)
         $userModel = $userMgr->getUserByUsername('4klift', Select::SELECT_TYPE);
@@ -289,6 +289,6 @@ class CefTest extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $userModel->getMessage());
 
         $this->assertTrue($userModel->getEmail() == 'code@deasil.works');
-        $this->assertInstanceOf(UdtAddressModel::class, $userModel->getAddress());
+        $this->assertInstanceOf(UdtAddressDataModel::class, $userModel->getAddress());
     }
 }

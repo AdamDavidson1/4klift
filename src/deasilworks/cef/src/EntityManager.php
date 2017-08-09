@@ -76,13 +76,13 @@ class EntityManager
     /**
      * Get the model associated with the collection.
      *
-     * @return EntityModel
+     * @return EntityDataModel
      */
     public function getModel()
     {
         $collection = $this->getCollection();
 
-        /** @var EntityModel $model */
+        /** @var EntityDataModel $model */
         $model = $collection->getModel();
         $model->setEntityManager($this);
 

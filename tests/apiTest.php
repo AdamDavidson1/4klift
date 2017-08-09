@@ -136,7 +136,7 @@ class apiTest extends WebTestCase
 
         $this->assertTrue($ack->success);
 
-        $this->assertEquals('deasilworks\\CMS\\CEF\\Model\\PageModel', $ack->request_args[0]);
+        $this->assertEquals('deasilworks\\CMS\\CEF\\Model\\PageDataModel', $ack->request_args[0]);
     }
 
     /**
