@@ -78,6 +78,7 @@ $provision_script = <<SCRIPT
     npm install -g bower
     npm install -g webpack
     gem install sass
+    npm install newman --global;
 
     wget -q https://phar.phpunit.de/phpunit-5.7.phar -O /usr/local/bin/phpunit
     chmod 775 /usr/local/bin/phpunit

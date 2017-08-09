@@ -80,9 +80,13 @@
         "publish": [
             "./util/publish.sh"
          ],
+        "newman": [
+            "newman run ./tests/postman/4klift-Test-API.postman_collection.json --environment ./tests/postman/Local.postman_environment.json"
+        ],
         "test": [
             "@composer install",
             "@phpunit",
+            "@newman",
             "@phpmd"
         ]
     }
