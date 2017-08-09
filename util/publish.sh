@@ -13,4 +13,4 @@ git subsplit publish "
      src/deasilworks/cms:git@github.com:deasilworks/cms.git
      core:git@github.com:deasilworks/4klift-core.git
      skeleton-se:git@github.com:deasilworks/4klift-se.git
- " --heads=master
+ " --heads="master 1.0"
