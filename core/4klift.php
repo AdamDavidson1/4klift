@@ -47,9 +47,9 @@ $app['debug'] ? ini_set('display_errors', true) : true;
 //
 $app->register(new CFGServiceProvider(), [
     'deasilworks.cfg.load_files' => [
-        __DIR__ . '/../cfg/defaults.yml',
-        __DIR__ . '/../cfg/application.yml',
-        __DIR__ . '/../cfg/parameters.yml',
+        __DIR__.'/../cfg/defaults.yml',
+        __DIR__.'/../cfg/application.yml',
+        __DIR__.'/../cfg/parameters.yml',
     ],
     'deasilworks.cfg.app_root' => __DIR__,
 ]);

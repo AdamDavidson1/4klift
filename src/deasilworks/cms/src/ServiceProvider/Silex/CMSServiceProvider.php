@@ -31,8 +31,6 @@ use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Silex\Api\BootableProviderInterface;
 use Silex\Application;
-use Silex\Provider\MonologServiceProvider;
-use Silex\Provider\WebProfilerServiceProvider;
 
 /**
  * Class APIServiceProvider.
