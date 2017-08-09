@@ -41,7 +41,7 @@ class apiTest extends WebTestCase
         $client = $this->createClient();
         $client->followRedirects(true);
 
-        $client->request('GET', '/api/pageManager/message');
+        $client->request('GET', '/api/cms/pageManager/message');
 
         /** @var \Symfony\Component\HttpFoundation\Response $response */
         $response = $client->getResponse();
@@ -67,7 +67,7 @@ class apiTest extends WebTestCase
         $client->followRedirects(true);
 
         $testMessage = 'From unit test!';
-        $messageUrl = '/api/pageManager/message';
+        $messageUrl = '/api/cms/pageManager/message';
 
         $client->request(
             'POST', $messageUrl, [], [],
@@ -100,7 +100,7 @@ class apiTest extends WebTestCase
         $client = $this->createClient();
         $client->followRedirects(true);
 
-        $pageUrl = '/api/pageManager/page';
+        $pageUrl = '/api/cms/pageManager/page';
 
         $client->request(
             'POST', $pageUrl, [], [],
@@ -145,7 +145,7 @@ class apiTest extends WebTestCase
     public function testApiUpdate()
     {
         $testMessage = 'From unit test!';
-        $messageUrl = '/api/pageManager/message';
+        $messageUrl = '/api/cms/pageManager/message';
 
         /** @var \Symfony\Component\HttpKernel\Client $client */
         $client = $this->createClient();
@@ -182,7 +182,7 @@ class apiTest extends WebTestCase
         $client = $this->createClient();
         $client->followRedirects(true);
 
-        $client->request('OPTIONS', '/api/pageManager/message');
+        $client->request('OPTIONS', '/api/cms/pageManager/message');
 
         /** @var \Symfony\Component\HttpFoundation\Response $response */
         $response = $client->getResponse();
