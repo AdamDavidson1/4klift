@@ -73,9 +73,9 @@ Install Virtualbox and Vagrant with `brew`:
 
 **composer create-project**: Latest development version.
     
-    mkdir my_project
-    cd my_project
-    composer -n --no-install create-project deasilworks/4klift-se . dev-master
+    mkdir my-project
+    cd my-project
+    composer -n --no-install create-project deasilworks/4klift-se . 1.0.x-dev
     vagrant up
     vagrant ssh
 
@@ -85,6 +85,8 @@ Or, add the following line to your workstation's *hosts* file:
     192.168.222.11 4klift.vm.deasil.works
 
 ... and browse to `http://4klift.vm.deasil.works`.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/be4039e7495cc4402b40#?env%5BLocal%5D=W3siZW5hYmxlZCI6dHJ1ZSwia2V5Ijoic2VydmVyIiwidmFsdWUiOiI0a2xpZnQudm0uZGVhc2lsLndvcmtzIiwidHlwZSI6InRleHQifV0=)
 
 ## What's on the Virtual Machine?
 
