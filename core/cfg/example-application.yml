@@ -12,8 +12,7 @@ deasilworks:
       cms:
         class_path: 'deasilworks\CMS\CEF\Manager'
         aliases:
-            content: 'PageManager'
-            acl: 'User\AclManager'
+            content: 'PageDataManager'
       v1:
         class_path: 'MyProject\CEF\Manager'
 

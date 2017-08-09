@@ -32,7 +32,111 @@
 			},
 			"response": [
 				{
-					"id": "acaf59a4-b962-4d1f-8707-550efe1c6004",
+					"id": "03fccdaa-6ff7-481d-a960-2c7899669aa7",
+					"name": "PageModel",
+					"originalRequest": {
+						"url": "http://{{server}}/api/pageManager/page/welcome",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "no-cache, private",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 07 Aug 2017 23:52:55 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.10.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-Debug-Token",
+							"key": "X-Debug-Token",
+							"value": "47a5b7",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Debug-Token-Link",
+							"key": "X-Debug-Token-Link",
+							"value": "http://4klift.vm.deasil.works/_profiler/47a5b7",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.31",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 829,
+					"body": "{\"ack_version\":4,\"ack_uuid\":\"9c0acd3b-d22c-4094-ab1a-3090990df6d0\",\"date_time\":\"2017-08-07T23:52:55+0000\",\"server_code\":\"200\",\"success\":true,\"error_code\":null,\"error_class\":null,\"error_payload\":null,\"error_message\":null,\"api_level\":1,\"location\":\"pageManager\\/page\\/welcome\",\"location_params\":[{\"name\":\"stub\",\"type\":null}],\"request_args\":[\"welcome\"],\"payload_class\":\"deasilworks\\\\CMS\\\\CEF\\\\Model\\\\PageModel\",\"payload\":{\"stub\":\"welcome\",\"content\":\"Welcome to the 4klift CMS\",\"modified\":\"2017-08-07 22:46:35.000Z\",\"title\":\"Welcome\"}}"
+				}
+			]
+		},
+		{
+			"name": "API GET Page w/ route alias",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"ACK Success\"] = jsonData.success === true;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Test API location_params\"] = jsonData.location_params[0].name === \"stub\";",
+							"tests[\"Test API request_args\"] = jsonData.request_args[0] === \"welcome\";",
+							"tests[\"Test JSON Payload\"] = jsonData.payload.stub === \"welcome\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{server}}/api/cms/content/page/welcome",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get's a CMS PageModel from the API.\n\nhttp://{{server}}/api/pageManager/page/welcome\n"
+			},
+			"response": [
+				{
+					"id": "b3490367-0891-4306-91b0-8888546b9405",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -152,7 +256,7 @@
 			},
 			"response": [
 				{
-					"id": "9ca56325-cbe2-4b84-aa72-d452a1f4b643",
+					"id": "75c943c0-e1ff-4bdc-88aa-519cb3ca68f6",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -251,7 +355,7 @@
 			},
 			"response": [
 				{
-					"id": "2147a9e6-98c3-47a4-b432-926f5d0e86a5",
+					"id": "5d07941b-c4f2-4a59-9d69-f81a8658b65c",
 					"name": "API page OPTIONS",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page",
@@ -366,7 +470,7 @@
 			},
 			"response": [
 				{
-					"id": "aa7dc66a-9a0d-4e58-9178-366d86bc9694",
+					"id": "4fb2004f-4c17-4ac1-8082-fe3952fe9cd0",
 					"name": "Form response.",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/message",
@@ -491,7 +595,7 @@
 			},
 			"response": [
 				{
-					"id": "44c24c32-303b-451c-b1c3-09d8f7711d46",
+					"id": "06a0e6fc-422f-4f37-9aef-66f029380c76",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -587,6 +691,9 @@
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
 							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Test ACK\"] = jsonData.success === true;",
+							"tests[\"Test ACK Location\"] = jsonData.location === \"pageDataManager/message\";",
+							"tests[\"Test ACK Location Params\"] = jsonData.location_params[0].name === \"message\";",
 							"tests[\"Test json\"] = jsonData.payload === \"from qstring\";"
 						]
 					}
@@ -631,7 +738,150 @@
 			},
 			"response": [
 				{
-					"id": "43cd5676-458f-46af-9ca6-9dd1c9901ded",
+					"id": "2eeeb90c-0818-4948-bdd1-1c10e03572bb",
+					"name": "Message",
+					"originalRequest": {
+						"url": "http://{{server}}/api/pageManager/message",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"message\": \"from json\"\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, private",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Wed, 09 Aug 2017 05:24:57 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "server",
+							"key": "server",
+							"value": "nginx/1.10.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-debug-token",
+							"key": "x-debug-token",
+							"value": "2de056",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-debug-token-link",
+							"key": "x-debug-token-link",
+							"value": "http://4klift.vm.deasil.works/_profiler/2de056",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-powered-by",
+							"key": "x-powered-by",
+							"value": "PHP/5.6.31",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 661,
+					"body": "{\"ack_version\":4,\"ack_uuid\":\"3a18b48b-c3f0-445a-962f-5688b9f672bb\",\"date_time\":\"2017-08-09T05:24:57+0000\",\"server_code\":\"200\",\"success\":true,\"error_code\":null,\"error_class\":null,\"error_payload\":null,\"error_message\":null,\"api_level\":1,\"location\":\"pageManager\\/message\",\"location_params\":[{\"name\":\"message\",\"type\":null}],\"request_args\":[\"from json\"],\"payload_class\":\"\",\"payload\":\"from json\"}"
+				}
+			]
+		},
+		{
+			"name": "API POST message w/ QSTRING & alias",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Test ACK\"] = jsonData.success === true;",
+							"tests[\"Test ACK Location\"] = jsonData.location === \"content/message\";",
+							"tests[\"Test ACK Location Params\"] = jsonData.location_params[0].name === \"message\";",
+							"tests[\"Test json\"] = jsonData.payload === \"from qstring\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "http://{{server}}/api/cms/content/message?message=from%20qstring",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"cms",
+						"content",
+						"message"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "from%20qstring",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "http://{{server}}/api/pageManager/message/hello"
+			},
+			"response": [
+				{
+					"id": "fb36aa4d-6fe0-4cce-a692-4fdf104bcdc5",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -751,7 +1001,7 @@
 			},
 			"response": [
 				{
-					"id": "2d88e335-0da3-4682-bec8-636d09fb7f85",
+					"id": "ad4584ad-76d6-4fbc-9be6-533b9eeb8727",
 					"name": "PageDataModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/page",

@@ -86,6 +86,13 @@ Or, add the following line to your workstation's *hosts* file:
 
 ... and browse to `http://4klift.vm.deasil.works`.
 
+Install the CMS and test the API.
+
+    vagrant ssh
+    ./core/cli --ansi cms-install
+
+Now that you have some sample data with the CMS you can run API tests with [postman][postman-link]:
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/be4039e7495cc4402b40#?env%5BLocal%5D=W3siZW5hYmxlZCI6dHJ1ZSwia2V5Ijoic2VydmVyIiwidmFsdWUiOiI0a2xpZnQudm0uZGVhc2lsLndvcmtzIiwidHlwZSI6InRleHQifV0=)
 
 ## What's on the Virtual Machine?
@@ -136,3 +143,4 @@ MIT
 [cfg-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_CFG_thumb.png
 [cms-url]: http://github.com/deasilworks/cms    
 [cms-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_CMS_thumb.png 
+[postman-link]: https://www.getpostman.com/
