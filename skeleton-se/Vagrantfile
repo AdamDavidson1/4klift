@@ -86,7 +86,7 @@ $provision_script = <<SCRIPT
     ln -sf /home/vagrant/project/dev/vm/php.ini /etc/php.ini
 
     cd /home/vagrant/project/
-    /usr/local/bin/composer --no-ansi -n install 2>&1
+    /usr/local/bin/composer --no-ansi -n --no-progress --no-suggest install 2>&1
     /usr/local/bin/composer --no-ansi -n link-examples 2>&1
 
     /bin/echo " "
