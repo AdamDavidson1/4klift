@@ -27,9 +27,7 @@ namespace deasilworks\CMS\Controller;
 
 /**
  * Class DefaultController.
- *
  */
 class DefaultController
 {
-
 }

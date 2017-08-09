@@ -38,7 +38,7 @@ $cli = new Application('4klift - Command Line Utilities', '1.0.0');
 // @TODO register 4klift components, use configuration for command loading
 
 /**
- * Add 4klift CLI Command Classes
+ * Add 4klift CLI Command Classes.
  */
 $command_classes = [
     \deasilworks\CMS\Util\Command\InstallCommand::class,
@@ -49,7 +49,7 @@ if (class_exists('\deasilworks\Util\DocGenCommand')) {
 }
 
 /**
- * Add Framework Administrative classes
+ * Add Framework Administrative classes.
  */
 
 /**
