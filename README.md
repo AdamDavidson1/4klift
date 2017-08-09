@@ -41,37 +41,24 @@ To use the latest dev version, use the *dev-master* branch.
 | **[CFG][cfg-url]**: Configuration management.                                                       | [![CFG 4klift component][cfg-thumb]][cfg-url] | 
 | **[CMS][cms-url]**: Content management system built to utilize CEF / Cassandra.                     | [![CMS 4klift component][cms-thumb]][cms-url] |
 
-## 4klift Requires:
-
-  - [Composer](https://getcomposer.org/ "Composer")
-  - [Vagrant](https://www.vagrantup.com/ "Vagrant")
-  - [VirtualBox](https://www.virtualbox.org/ "VirtualBox")
-
-## The Development Environment
-
-**4klift** requires Vagrant and VirtualBox. This development virtual machine works on Mac, Windows and most Linux variants. Install for the appropriate platform:
-
-  - [Vagrant](https://www.vagrantup.com/downloads.html "Download Vagrant")
-  - [VirtualBox](https://www.virtualbox.org/wiki/Downloads "Download VirtualBox")
-
-Provisioning the VM will require the vagrant-vbguest plugin.
-   
-    vagrant plugin install vagrant-vbguest
-
-If you have a Mac, you can use Homebrew to install.
-
-If you do not have Homebrew:
-
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-Install Virtualbox and Vagrant with `brew`:
-
-    brew cask install virtualbox
-    brew cask install vagrant
-
 ## Installing the 4klift (Silex Edition) Base Project
 
-**composer create-project**: Latest development version.
+### [4klift Development Virtual Machine][vm]
+
+**4klift** provides a Vagrant configured virtual machine (VM) containing all the 
+services and utilities needed for development. Setting up the VM requires [Vagrant][vagrant-link] 
+and [VirtualBox][virtualbox-link]. This development virtual machine works on Mac, Windows and most 
+Linux variants. 
+
+### 4klift Requires:
+
+  - [Composer](https://getcomposer.org/ "Composer")
+  - [VirtualBox](https://www.virtualbox.org/ "VirtualBox")
+  - [Vagrant](https://www.vagrantup.com/ "Vagrant")
+
+### Getting Started
+  
+##### Create Project
     
     mkdir my-project
     cd my-project
@@ -86,7 +73,7 @@ Or, add the following line to your workstation's *hosts* file:
 
 ... and browse to `http://4klift.vm.deasil.works`.
 
-Install the CMS and test the API.
+##### Install the CMS and test the API
 
     vagrant ssh
     ./core/cli --ansi cms-install
@@ -95,24 +82,6 @@ Now that you have some sample data with the CMS you can run API tests with [post
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/be4039e7495cc4402b40#?env%5BLocal%5D=W3siZW5hYmxlZCI6dHJ1ZSwia2V5Ijoic2VydmVyIiwidmFsdWUiOiI0a2xpZnQudm0uZGVhc2lsLndvcmtzIiwidHlwZSI6InRleHQifV0=)
 
-## What's on the Virtual Machine?
-
-The 4klift development VM currently consists of the following packages:
-
-  - [CentOS 6.7](https://www.centos.org/)
-  - [java-1.8.0-openjdk](http://openjdk.java.net/)
-  - [Apache Cassandra 3.9.0 (CQL spec 3.4.2) (datastax-ddc)](https://academy.datastax.com/planet-cassandra/cassandra)
-  - [cqlsh 5.0.1](http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlsh.html)
-  - [NGINX 1.10.2](https://nginx.org/en/)
-  - [PHP 5.6.31](http://php.net/) / [php-fpm](https://php-fpm.org/)
-  - [Composer >=1.4.2](https://getcomposer.org/)
-  - [PHPUnit 5.7.21](https://phpunit.de/)
-  - [NodeJS 6.11.1](https://nodejs.org/en/)
-  - [npm 3.10.10](https://www.npmjs.com/)
-  - [Sass 3.4.25](http://sass-lang.com/)
-  - [Bower 1.8.0](https://bower.io/)
-  - [Yarn 0.27.5](https://yarnpkg.com/en/)
-  - [git 1.7.1](https://git-scm.com/)
 
 ## Changelog and Features
 
@@ -135,6 +104,7 @@ MIT
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
+[vm]: skeleton-se/VM.md "4klift Virtual Machine"
 [api-url]: http://github.com/deasilworks/api    
 [api-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_API_thumb.png 
 [cef-url]: http://github.com/deasilworks/cef    
@@ -144,3 +114,5 @@ MIT
 [cms-url]: http://github.com/deasilworks/cms    
 [cms-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_CMS_thumb.png 
 [postman-link]: https://www.getpostman.com/
+[vagrant-link]: https://www.vagrantup.com/downloads.html "Download Vagrant"
+[virtualbox-link]: https://www.virtualbox.org/wiki/Downloads "Download VirtualBox"
