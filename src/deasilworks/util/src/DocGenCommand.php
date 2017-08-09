@@ -61,9 +61,9 @@ class DocGenCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $io = new SymfonyStyle($input, $output);
+        $cio = new SymfonyStyle($input, $output);
 
-        $io->title('Generating Documentation');
+        $cio->title('Generating Documentation');
 
         $projectRoot = __DIR__.'/../../../../';
 
@@ -71,7 +71,7 @@ class DocGenCommand extends Command
         $phpDocPath = $projectRoot.'build/phpDocumentor.phar';
 
         if (!file_exists($phpDocPath)) {
-            $io->writeln('Downloading phpDocumentor...');
+            $cio->writeln('Downloading phpDocumentor...');
             copy('http://phpdoc.org/phpDocumentor.phar', $phpDocPath);
         }
 
@@ -79,7 +79,7 @@ class DocGenCommand extends Command
 
         // generate for each project
         foreach ($components as $component) {
-            $io->writeln('Generating markdown for component '.$component.'.');
+            $cio->writeln('Generating markdown for component '.$component.'.');
 
             exec('php '.
                 $phpDocPath.
