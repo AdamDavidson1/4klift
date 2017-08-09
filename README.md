@@ -71,16 +71,13 @@ Install Virtualbox and Vagrant with `brew`:
 
 ## Installing the 4klift (Silex Edition) Base Project
 
-Run:
+**composer create-project**: Latest development version.
     
-    git clone git@github.com:deasilworks/4klift-se
-
-This will clone the project and create a 4klift directory pointing to the *dev-master* branch. CD into the directory and fire up vagrant:
-
-    cd 4klift-se
+    mkdir my_project
+    cd my_project
+    composer -n --no-install create-project deasilworks/4klift-se . dev-master
     vagrant up
     vagrant ssh
-    composer install
 
 When running, browse to `http://localhost:8080`.
 Or, add the following line to your workstation's *hosts* file:
