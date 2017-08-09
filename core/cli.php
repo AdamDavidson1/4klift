@@ -42,8 +42,11 @@ $cli = new Application('4klift - Command Line Utilities', '1.0.0');
  */
 $command_classes = [
     \deasilworks\CMS\Util\Command\InstallCommand::class,
-    \deasilworks\Util\DocGenCommand::class,
 ];
+
+if (class_exists('\deasilworks\Util\DocGenCommand')) {
+    $command_classes[] = \deasilworks\Util\DocGenCommand::class;
+}
 
 /**
  * Add Framework Administrative classes
