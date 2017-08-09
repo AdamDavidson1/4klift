@@ -24,7 +24,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/pageManager/page/welcome",
+				"url": "http://{{server}}/api/cms/pageManager/page/welcome",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -32,7 +32,7 @@
 			},
 			"response": [
 				{
-					"id": "5bd1977e-4fc3-4aec-af7d-7b7c2deff051",
+					"id": "10b1ee09-bd8f-4713-aea1-eb440a20fea5",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -124,13 +124,14 @@
 			],
 			"request": {
 				"url": {
-					"raw": "http://{{server}}/api/pageManager/page?stub=welcome",
+					"raw": "http://{{server}}/api/cms/pageManager/page?stub=welcome",
 					"protocol": "http",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"api",
+						"cms",
 						"pageManager",
 						"page"
 					],
@@ -151,7 +152,7 @@
 			},
 			"response": [
 				{
-					"id": "eb5f4c64-d6e2-45e5-8858-05cb6ae1f9ab",
+					"id": "dfdc18f1-b1e9-4164-8b9c-e6c5bccf3439",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -242,7 +243,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/pageManager/page",
+				"url": "http://{{server}}/api/cms/pageManager/page",
 				"method": "OPTIONS",
 				"header": [],
 				"body": {},
@@ -250,7 +251,7 @@
 			},
 			"response": [
 				{
-					"id": "9f987025-18a3-4fd6-b95e-c4ea2792cb75",
+					"id": "2e4c9571-2a68-45d9-a5d9-6c8da9f798b1",
 					"name": "API page OPTIONS",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page",
@@ -341,7 +342,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/pageManager/message",
+				"url": "http://{{server}}/api/cms/pageManager/message",
 				"method": "POST",
 				"header": [
 					{
@@ -363,7 +364,98 @@
 				},
 				"description": "http://{{server}}/api/pageManager/message/hello"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "a6fa1b47-ef5b-4c98-86c1-6d49ee3b72e0",
+					"name": "Form response.",
+					"originalRequest": {
+						"url": "http://{{server}}/api/cms/pageManager/message",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "message",
+									"value": "from form",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, private",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Wed, 09 Aug 2017 06:36:32 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "server",
+							"key": "server",
+							"value": "nginx/1.10.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-debug-token",
+							"key": "x-debug-token",
+							"value": "e41333",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-debug-token-link",
+							"key": "x-debug-token-link",
+							"value": "http://4klift.vm.deasil.works/_profiler/e41333",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-powered-by",
+							"key": "x-powered-by",
+							"value": "PHP/5.6.31",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 669,
+					"body": "{\"ack_version\":4,\"ack_uuid\":\"adf6c0c6-1ddf-4b18-b02e-0d48b384b6ef\",\"date_time\":\"2017-08-09T06:36:31+0000\",\"server_code\":\"200\",\"success\":true,\"error_code\":null,\"error_class\":null,\"error_payload\":null,\"error_message\":null,\"api_level\":1,\"location\":\"pageManager\\/message\",\"location_params\":[{\"name\":\"message\",\"type\":null}],\"request_args\":[\"from form\"],\"payload_class\":\"\",\"payload\":\"from form\"}"
+				}
+			]
 		},
 		{
 			"name": "API POST message w/ JSON body",
@@ -382,7 +474,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/pageManager/message",
+				"url": "http://{{server}}/api/cms/pageManager/message",
 				"method": "POST",
 				"header": [
 					{
@@ -399,7 +491,7 @@
 			},
 			"response": [
 				{
-					"id": "6d1b2e7a-15d4-4c5f-a213-2b1bb9334d95",
+					"id": "9310acc4-3218-4661-badb-863f0f6bcc08",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -502,13 +594,14 @@
 			],
 			"request": {
 				"url": {
-					"raw": "http://{{server}}/api/pageManager/message?message=from%20qstring",
+					"raw": "http://{{server}}/api/cms/pageManager/message?message=from%20qstring",
 					"protocol": "http",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"api",
+						"cms",
 						"pageManager",
 						"message"
 					],
@@ -538,7 +631,7 @@
 			},
 			"response": [
 				{
-					"id": "b7c7f0a2-8b14-436b-a233-881079e27755",
+					"id": "f9385cff-9620-40ca-b1cc-03496fc412d3",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -641,7 +734,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/pageManager/page",
+				"url": "http://{{server}}/api/cms/pageManager/page",
 				"method": "POST",
 				"header": [
 					{
@@ -658,7 +751,7 @@
 			},
 			"response": [
 				{
-					"id": "9737cd00-abc6-4dca-844c-09a8750fcfad",
+					"id": "35d0451c-c8de-434c-a59d-fe38e935f6f6",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",

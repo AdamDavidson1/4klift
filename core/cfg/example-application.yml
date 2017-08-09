@@ -8,10 +8,14 @@
 #
 deasilworks:
   api:
-    class_path: 'deasilworks\CMS\CEF\Manager'
-    aliases:
-        content: 'PageManager'
-        acl: 'User\AclManager'
+    routes:
+      cms:
+        class_path: 'deasilworks\CMS\CEF\Manager'
+        aliases:
+            content: 'PageManager'
+            acl: 'User\AclManager'
+      v1:
+        class_path: 'MyProject\CEF\Manager'
 
 app:
   twig.path:
