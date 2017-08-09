@@ -56,7 +56,7 @@ class ResultContainer extends EntityCollection
     private $arguments;
 
     /**
-     * @var EntityManager
+     * @var EntityDataManager
      */
     protected $entityManager;
 
@@ -65,9 +65,9 @@ class ResultContainer extends EntityCollection
      *
      * Result containers are used by Entity Managers.
      *
-     * @param EntityManager $entityManager
+     * @param EntityDataManager $entityManager
      */
-    public function __construct(EntityManager $entityManager)
+    public function __construct(EntityDataManager $entityManager)
     {
         parent::__construct();
 
@@ -75,7 +75,7 @@ class ResultContainer extends EntityCollection
     }
 
     /**
-     * @return EntityManager
+     * @return EntityDataManager
      */
     public function getEntityManager()
     {

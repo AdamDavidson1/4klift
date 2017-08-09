@@ -31,8 +31,8 @@ use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementBuilder\Select;
 use deasilworks\CEF\test\Collection\LocalCollection;
 use deasilworks\CEF\test\Collection\UserCollection;
-use deasilworks\CEF\test\Manager\LocalManager;
-use deasilworks\CEF\test\Manager\UserManager;
+use deasilworks\CEF\test\Manager\LocalDataManager;
+use deasilworks\CEF\test\Manager\UserDataManager;
 use deasilworks\CEF\test\Model\UdtAddressDataModel;
 use deasilworks\CEF\test\Model\UserDataModel;
 
@@ -47,12 +47,12 @@ use deasilworks\CEF\test\Model\UserDataModel;
 class CefTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var LocalManager
+     * @var LocalDataManager
      */
     private $localMgr;
 
     /**
-     * @var UserManager
+     * @var UserDataManager
      */
     private $userMgr;
 
@@ -76,13 +76,13 @@ class CefTest extends \PHPUnit_Framework_TestCase
     /**
      * Get Local Entity Manager.
      *
-     * @return LocalManager
+     * @return LocalDataManager
      */
     private function getLocalManager()
     {
-        if (!$this->localMgr || !($this->localMgr instanceof LocalManager)) {
+        if (!$this->localMgr || !($this->localMgr instanceof LocalDataManager)) {
             $cef = new CEF($this->getConfig()->setKeyspace('system'));
-            $this->localMgr = $cef->getEntityManager(LocalManager::class);
+            $this->localMgr = $cef->getEntityManager(LocalDataManager::class);
         }
 
         return $this->localMgr;
@@ -91,13 +91,13 @@ class CefTest extends \PHPUnit_Framework_TestCase
     /**
      * Get User Entity Manager.
      *
-     * @return UserManager
+     * @return UserDataManager
      */
     private function getUserManager()
     {
-        if (!$this->userMgr || !($this->userMgr instanceof UserManager)) {
+        if (!$this->userMgr || !($this->userMgr instanceof UserDataManager)) {
             $cef = new CEF($this->getConfig()->setKeyspace('test_4klift'));
-            $this->userMgr = $cef->getEntityManager(UserManager::class);
+            $this->userMgr = $cef->getEntityManager(UserDataManager::class);
         }
 
         return $this->userMgr;
@@ -108,7 +108,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testCEF()
     {
-        /** @var LocalManager $entityMgr */
+        /** @var LocalDataManager $entityMgr */
         $entityMgr = $this->getLocalManager();
 
         /** @var Simple $statementMgr */
@@ -196,7 +196,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testEntityManager()
     {
-        /** @var UserManager $userMgr */
+        /** @var UserDataManager $userMgr */
         $userMgr = $this->getUserManager();
 
         $resCollection = $userMgr->getCollectionClass();
@@ -230,7 +230,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testStatementBuilder()
     {
-        /** @var UserManager $userMgr */
+        /** @var UserDataManager $userMgr */
         $userMgr = $this->getUserManager();
 
         $stmtBuilder = $userMgr->getStatementManager(Simple::class);
@@ -243,7 +243,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
      */
     public function testInsertUpdate()
     {
-        /** @var UserManager $userMgr */
+        /** @var UserDataManager $userMgr */
         $userMgr = $this->getUserManager();
 
         /** @var \deasilworks\cef\test\Model\UserDataModel $userModel */

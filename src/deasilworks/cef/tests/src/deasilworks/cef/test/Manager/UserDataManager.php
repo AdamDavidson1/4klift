@@ -25,13 +25,13 @@
 
 namespace deasilworks\cef\test\Manager;
 
-use deasilworks\CEF\EntityManager;
+use deasilworks\CEF\EntityDataManager;
 use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementBuilder\Select;
 use deasilworks\CEF\test\Collection\UserCollection;
 use deasilworks\CEF\test\Model\LocalDataModel;
 
-class UserManager extends EntityManager
+class UserDataManager extends EntityDataManager
 {
     /**
      * A ResultContainer class.

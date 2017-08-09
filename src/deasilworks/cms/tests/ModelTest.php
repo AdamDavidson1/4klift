@@ -56,7 +56,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('This is a test page.', $pageModel->getContent());
 
         $cef = new CEF(new CEFConfig());
-        $pageManager = $cef->getEntityManager(\deasilworks\CMS\CEF\Manager\PageManager::class);
+        $pageManager = $cef->getEntityManager(\deasilworks\CMS\CEF\Manager\PageDataManager::class);
 
         /** @var PageCollection $pageCollection */
         $pageCollection = new PageCollection($pageManager);

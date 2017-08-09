@@ -82,7 +82,7 @@ class StatementManager
     protected $previousArguments;
 
     /**
-     * @var EntityManager;
+     * @var EntityDataManager;
      */
     protected $entityManager;
 
@@ -109,9 +109,9 @@ class StatementManager
      * StatementManager constructor.
      *
      * @param CEFConfig     $config
-     * @param EntityManager $entityManager
+     * @param EntityDataManager $entityManager
      */
-    public function __construct(CEFConfig $config, EntityManager $entityManager)
+    public function __construct(CEFConfig $config, EntityDataManager $entityManager)
     {
         $this->config = $config;
         $this->entityManager = $entityManager;
@@ -146,7 +146,7 @@ class StatementManager
     }
 
     /**
-     * @return EntityManager
+     * @return EntityDataManager
      */
     public function getEntityManager()
     {
@@ -154,7 +154,7 @@ class StatementManager
     }
 
     /**
-     * @param EntityManager $entityManager
+     * @param EntityDataManager $entityManager
      *
      * @return StatementManager
      */

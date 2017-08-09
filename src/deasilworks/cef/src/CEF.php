@@ -77,7 +77,7 @@ class CEF
      *
      * @throws \Exception
      *
-     * @return EntityManager
+     * @return EntityDataManager
      */
     public function getEntityManager($managerClass)
     {

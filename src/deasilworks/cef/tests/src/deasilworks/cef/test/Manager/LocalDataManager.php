@@ -25,10 +25,10 @@
 
 namespace deasilworks\cef\test\Manager;
 
-use deasilworks\CEF\EntityManager;
+use deasilworks\CEF\EntityDataManager;
 use deasilworks\CEF\test\Collection\LocalCollection;
 
-class LocalManager extends EntityManager
+class LocalDataManager extends EntityDataManager
 {
     /**
      * A ResultContainer class.

@@ -24,7 +24,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/cms/pageManager/page/welcome",
+				"url": "http://{{server}}/api/cms/pageDataManager/page/welcome",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -32,7 +32,7 @@
 			},
 			"response": [
 				{
-					"id": "f5a48f69-0134-4151-8ec9-5cd908497777",
+					"id": "acaf59a4-b962-4d1f-8707-550efe1c6004",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -124,7 +124,7 @@
 			],
 			"request": {
 				"url": {
-					"raw": "http://{{server}}/api/cms/pageManager/page?stub=welcome",
+					"raw": "http://{{server}}/api/cms/pageDataManager/page?stub=welcome",
 					"protocol": "http",
 					"host": [
 						"{{server}}"
@@ -132,7 +132,7 @@
 					"path": [
 						"api",
 						"cms",
-						"pageManager",
+						"pageDataManager",
 						"page"
 					],
 					"query": [
@@ -152,7 +152,7 @@
 			},
 			"response": [
 				{
-					"id": "cd5f2972-eef2-4114-8304-a84148fba843",
+					"id": "9ca56325-cbe2-4b84-aa72-d452a1f4b643",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -243,7 +243,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/cms/pageManager/page",
+				"url": "http://{{server}}/api/cms/pageDataManager/page",
 				"method": "OPTIONS",
 				"header": [],
 				"body": {},
@@ -251,7 +251,7 @@
 			},
 			"response": [
 				{
-					"id": "72a65f5a-8e4e-41c6-9be1-e8f82f36619b",
+					"id": "2147a9e6-98c3-47a4-b432-926f5d0e86a5",
 					"name": "API page OPTIONS",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page",
@@ -342,7 +342,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/cms/pageManager/message",
+				"url": "http://{{server}}/api/cms/pageDataManager/message",
 				"method": "POST",
 				"header": [
 					{
@@ -366,7 +366,7 @@
 			},
 			"response": [
 				{
-					"id": "eeb39c64-a827-407a-86f1-5cd918436dde",
+					"id": "aa7dc66a-9a0d-4e58-9178-366d86bc9694",
 					"name": "Form response.",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/message",
@@ -474,7 +474,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/cms/pageManager/message",
+				"url": "http://{{server}}/api/cms/pageDataManager/message",
 				"method": "POST",
 				"header": [
 					{
@@ -491,7 +491,7 @@
 			},
 			"response": [
 				{
-					"id": "7e00548c-38fe-4927-b005-9f23c65f8842",
+					"id": "44c24c32-303b-451c-b1c3-09d8f7711d46",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -594,7 +594,7 @@
 			],
 			"request": {
 				"url": {
-					"raw": "http://{{server}}/api/cms/pageManager/message?message=from%20qstring",
+					"raw": "http://{{server}}/api/cms/pageDataManager/message?message=from%20qstring",
 					"protocol": "http",
 					"host": [
 						"{{server}}"
@@ -602,7 +602,7 @@
 					"path": [
 						"api",
 						"cms",
-						"pageManager",
+						"pageDataManager",
 						"message"
 					],
 					"query": [
@@ -631,7 +631,7 @@
 			},
 			"response": [
 				{
-					"id": "abffbec0-8ade-4719-9a52-de2dc2b886ee",
+					"id": "43cd5676-458f-46af-9ca6-9dd1c9901ded",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -734,7 +734,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/cms/pageManager/page",
+				"url": "http://{{server}}/api/cms/pageDataManager/page",
 				"method": "POST",
 				"header": [
 					{
@@ -751,7 +751,7 @@
 			},
 			"response": [
 				{
-					"id": "786bcda6-b9e5-4cef-bad5-a39c0415fc67",
+					"id": "2d88e335-0da3-4682-bec8-636d09fb7f85",
 					"name": "PageDataModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/page",

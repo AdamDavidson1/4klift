@@ -46,7 +46,7 @@ class EntityDataModel extends CEFData
     /**
      * @Exclude()
      *
-     * @var EntityManager
+     * @var EntityDataManager
      */
     protected $entityManager;
 
@@ -71,7 +71,7 @@ class EntityDataModel extends CEFData
     }
 
     /**
-     * @return EntityManager
+     * @return EntityDataManager
      */
     public function getEntityManager()
     {
@@ -79,11 +79,11 @@ class EntityDataModel extends CEFData
     }
 
     /**
-     * @param EntityManager $entityManager
+     * @param EntityDataManager $entityManager
      *
      * @return EntityDataModel
      */
-    public function setEntityManager(EntityManager $entityManager)
+    public function setEntityManager(EntityDataManager $entityManager)
     {
         $this->entityManager = $entityManager;
 

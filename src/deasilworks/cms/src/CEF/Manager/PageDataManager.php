@@ -27,7 +27,7 @@ namespace deasilworks\CMS\CEF\Manager;
 
 use deasilworks\API\Annotation\ApiAction;
 use deasilworks\API\Annotation\ApiController;
-use deasilworks\CEF\EntityManager;
+use deasilworks\CEF\EntityDataManager;
 use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementBuilder\Select;
 use deasilworks\CMS\CEF\Collection\PageCollection;
@@ -38,7 +38,7 @@ use deasilworks\CMS\CEF\Model\PageDataModel;
  *
  * @ApiController()
  */
-class PageManager extends EntityManager
+class PageDataManager extends EntityDataManager
 {
     /**
      * @var string

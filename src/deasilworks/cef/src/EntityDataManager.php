@@ -34,7 +34,7 @@ use deasilworks\CEF\Statement\Simple;
  * Responsible for implementing methods to retrieve entities and
  * provides a Statement Manager factory to help accomplish that.
  */
-class EntityManager
+class EntityDataManager
 {
     /**
      * A ResultContainer class.
@@ -92,7 +92,7 @@ class EntityManager
     /**
      * @param string $collectionClass
      *
-     * @return EntityManager
+     * @return EntityDataManager
      */
     public function setCollectionClass($collectionClass)
     {

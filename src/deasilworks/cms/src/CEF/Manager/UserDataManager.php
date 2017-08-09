@@ -23,13 +23,13 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\CMS\CEF\Manager\User;
+namespace deasilworks\CMS\CEF\Manager;
 
-use deasilworks\CEF\EntityManager;
+use deasilworks\CEF\EntityDataManager;
 
 /**
- * Class AclManager.
+ * Class UserManager.
  */
-class AclManager extends EntityManager
+class UserDataManager extends EntityDataManager
 {
 }

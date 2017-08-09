@@ -25,10 +25,10 @@
 
 namespace deasilworks\CMS\Util\Command;
 
-use deasilworks\CEF\EntityManager;
+use deasilworks\CEF\EntityDataManager;
 use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementManager;
-use deasilworks\CMS\CEF\Manager\PageManager;
+use deasilworks\CMS\CEF\Manager\PageDataManager;
 use deasilworks\CMS\CEF\Model\PageDataModel;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -92,8 +92,8 @@ class InstallCommand extends CMSCommand
         //
         $this->cef->getConfig()->setKeyspace($keyspace);
 
-        /** @var PageManager $pageMgr */
-        $pageMgr = $this->cef->getEntityManager(PageManager::class);
+        /** @var PageDataManager $pageMgr */
+        $pageMgr = $this->cef->getEntityManager(PageDataManager::class);
 
         /** @var PageDataModel $pageModel */
         $pageModel = $pageMgr->getModel();
@@ -134,7 +134,7 @@ class InstallCommand extends CMSCommand
     protected function exeCql($cql)
     {
         if (!$this->stmtManager) {
-            $entityManager = new EntityManager($this->cef->getConfig());
+            $entityManager = new EntityDataManager($this->cef->getConfig());
             $this->stmtManager = $entityManager->getStatementManager(Simple::class);
         }
 
