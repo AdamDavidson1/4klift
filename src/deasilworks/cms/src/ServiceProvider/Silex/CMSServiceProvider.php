@@ -26,7 +26,7 @@
 namespace deasilworks\CMS\ServiceProvider\Silex;
 
 use deasilworks\CFG\ServiceProvider\Silex\ServiceProvider;
-use deasilworks\CMS\CEF\Manager\PageDataManager;
+use deasilworks\CMS\CEF\Data\Manager\PageDataManager;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Silex\Api\BootableProviderInterface;
@@ -47,7 +47,7 @@ class CMSServiceProvider extends ServiceProvider implements ServiceProviderInter
     {
         $app->get('/', function () use ($app) {
 
-            /** @var \deasilworks\cms\CEF\Manager\PageDataManager $pageMgr */
+            /** @var PageDataManager $pageMgr */
             $pageMgr = $app[$this->namespace.'.cef']->getDataManager(PageDataManager::class);
 
             try {

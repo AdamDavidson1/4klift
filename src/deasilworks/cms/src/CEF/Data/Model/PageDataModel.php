@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\CMS\CEF\Model;
+namespace deasilworks\CMS\CEF\Data\Model;
 
 use deasilworks\CEF\EntityDataModel;
 use JMS\Serializer\Annotation\Exclude;

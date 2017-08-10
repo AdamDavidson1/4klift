@@ -23,17 +23,13 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\CMS\CEF\Collection;
+namespace deasilworks\CMS\CEF\Data\Manager;
 
-use deasilworks\CEF\ResultContainer;
-use deasilworks\CMS\CEF\Model\PageDataModel;
+use deasilworks\CEF\EntityDataManager;
 
-class PageCollection extends ResultContainer
+/**
+ * Class UserManager.
+ */
+class UserDataManager extends EntityDataManager
 {
-    /**
-     * Overridden to customize Model Class.
-     *
-     * @var string
-     */
-    protected $valueClass = PageDataModel::class;
 }

@@ -10,11 +10,11 @@ deasilworks:
   api:
     routes:
       cms:
-        class_path: 'deasilworks\CMS\CEF\Manager'
+        class_path: 'deasilworks\CMS\CEF'
         aliases:
-            content: 'PageDataManager'
+            content: 'Data\Manager\PageDataManager'
       v1:
-        class_path: 'MyProject\CEF\Manager'
+        class_path: 'MyProject\CEF\Data\Manager'
 
 app:
   twig.path:

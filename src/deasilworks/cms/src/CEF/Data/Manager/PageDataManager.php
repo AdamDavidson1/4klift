@@ -23,15 +23,15 @@
  * SOFTWARE.
  */
 
-namespace deasilworks\CMS\CEF\Manager;
+namespace deasilworks\CMS\CEF\Data\Manager;
 
 use deasilworks\API\Annotation\ApiAction;
 use deasilworks\API\Annotation\ApiController;
 use deasilworks\CEF\EntityDataManager;
 use deasilworks\CEF\Statement\Simple;
 use deasilworks\CEF\StatementBuilder\Select;
-use deasilworks\CMS\CEF\Collection\PageCollection;
-use deasilworks\CMS\CEF\Model\PageDataModel;
+use deasilworks\CMS\CEF\Data\Collection\PageCollection;
+use deasilworks\CMS\CEF\Data\Model\PageDataModel;
 
 /**
  * Class PageManager.
