@@ -28,6 +28,7 @@ namespace deasilworks\CMS\CEF\Domain\Manager;
 use deasilworks\API\Annotation\ApiAction;
 use deasilworks\API\Annotation\ApiController;
 use deasilworks\CEF\DomainEntityManager;
+use deasilworks\CMS\CEF\Data\Manager\PageDataManager;
 
 /**
  * Class ContentDomainManager.
@@ -45,6 +46,8 @@ class ContentDomainManager extends DomainEntityManager
      */
     public function getWelcome()
     {
-        return 'Hello';
+        /** @var PageDataManager $pageMgr */
+        $pageMgr = $this->getDataManager(PageDataManager::class);
+        return $pageMgr->getPage('welcome')->getTitle();
     }
 }
