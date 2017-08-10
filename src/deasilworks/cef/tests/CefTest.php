@@ -82,7 +82,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
     {
         if (!$this->localMgr || !($this->localMgr instanceof LocalDataManager)) {
             $cef = new CEF($this->getConfig()->setKeyspace('system'));
-            $this->localMgr = $cef->getEntityManager(LocalDataManager::class);
+            $this->localMgr = $cef->getDataManager(LocalDataManager::class);
         }
 
         return $this->localMgr;
@@ -97,7 +97,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
     {
         if (!$this->userMgr || !($this->userMgr instanceof UserDataManager)) {
             $cef = new CEF($this->getConfig()->setKeyspace('test_4klift'));
-            $this->userMgr = $cef->getEntityManager(UserDataManager::class);
+            $this->userMgr = $cef->getDataManager(UserDataManager::class);
         }
 
         return $this->userMgr;

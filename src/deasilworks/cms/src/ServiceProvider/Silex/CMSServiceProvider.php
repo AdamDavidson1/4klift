@@ -48,7 +48,7 @@ class CMSServiceProvider extends ServiceProvider implements ServiceProviderInter
         $app->get('/', function () use ($app) {
 
             /** @var \deasilworks\cms\CEF\Manager\PageDataManager $pageMgr */
-            $pageMgr = $app[$this->namespace.'.cef']->getEntityManager(PageDataManager::class);
+            $pageMgr = $app[$this->namespace.'.cef']->getDataManager(PageDataManager::class);
 
             try {
                 $pageModel = $pageMgr->getPage('welcome');

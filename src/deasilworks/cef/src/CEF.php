@@ -25,6 +25,7 @@
 
 namespace deasilworks\CEF;
 
+use DI\ContainerBuilder;
 use Doctrine\Common\Annotations\AnnotationRegistry as AR;
 
 AR::registerLoader('class_exists');
@@ -43,6 +44,11 @@ class CEF
     private $config;
 
     /**
+     * @var \DI\Container
+     */
+    private $container;
+
+    /**
      * CEF constructor.
      *
      * @param $config
@@ -50,6 +56,11 @@ class CEF
     public function __construct(CEFConfig $config)
     {
         $this->config = $config;
+
+        $builder = new ContainerBuilder();
+        $this->container = $builder->build();
+
+        $this->container->set(CEFConfig::class, $config);
     }
 
     /**
@@ -73,14 +84,62 @@ class CEF
     }
 
     /**
-     * @param string $managerClass
+     * @param string $dataMgrClass
      *
      * @throws \Exception
      *
      * @return EntityDataManager
      */
-    public function getEntityManager($managerClass)
+    public function getDataManager($dataMgrClass)
     {
-        return new $managerClass($this->config);
+        return $this->classGetter($dataMgrClass, EntityDataManager::class);
+    }
+
+    /**
+     * @param string $domainMgrClass
+     *
+     * @throws \Exception
+     *
+     * @return DomainEntityManager
+     */
+    public function getDomainManager($domainMgrClass)
+    {
+        return $this->classGetter($domainMgrClass, DomainEntityManager::class);
+    }
+
+    /**
+     * @param string $domainModelClass
+     *
+     * @throws \Exception
+     *
+     * @return DomainEntityManager
+     */
+    public function getDomainModel($domainModelClass)
+    {
+        return $this->classGetter($domainModelClass, DomainEntityManager::class);
+    }
+
+    /**
+     * @param $className
+     *
+     * @param $type
+     *
+     * @param $type
+     *
+     * @return mixed
+     */
+    private function classGetter($className, $type)
+    {
+        if (!class_exists($className)) {
+            return null;
+        }
+
+        $obj = $this->container->get($className);
+
+        if (!$obj instanceof $type) {
+            return null;
+        }
+
+        return $obj;
     }
 }

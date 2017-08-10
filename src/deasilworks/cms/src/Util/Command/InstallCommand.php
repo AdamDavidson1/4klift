@@ -93,7 +93,7 @@ class InstallCommand extends CMSCommand
         $this->cef->getConfig()->setKeyspace($keyspace);
 
         /** @var PageDataManager $pageMgr */
-        $pageMgr = $this->cef->getEntityManager(PageDataManager::class);
+        $pageMgr = $this->cef->getDataManager(PageDataManager::class);
 
         /** @var PageDataModel $pageModel */
         $pageModel = $pageMgr->getModel();

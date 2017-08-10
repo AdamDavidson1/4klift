@@ -75,7 +75,7 @@ class CEFServiceProvider extends ServiceProvider implements ServiceProviderInter
                 /** @var CEF $cef */
                 $cef = $container[$this->namespace.'.cef'];
 
-                return $cef->getEntityManager($class);
+                return $cef->getDataManager($class);
             }
         );
 
