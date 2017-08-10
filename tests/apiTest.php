@@ -27,6 +27,7 @@ use Silex\WebTestCase;
 
 /**
  * Class controllersTest.
+ *
  * @backupGlobals disabled
  * @SuppressWarnings(PHPMD)
  */

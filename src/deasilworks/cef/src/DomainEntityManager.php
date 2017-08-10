@@ -32,6 +32,4 @@ namespace deasilworks\CEF;
  */
 abstract class DomainEntityManager extends CEF
 {
-
-
 }
