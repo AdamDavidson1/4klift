@@ -84,6 +84,18 @@ class CEF
     }
 
     /**
+     * @param string $mgrClass
+     *
+     * @throws \Exception
+     *
+     * @return EntityDataManager
+     */
+    public function getManager($mgrClass)
+    {
+        return $this->classGetter($mgrClass, [EntityDataManager::class, DomainEntityManager::class]);
+    }
+
+    /**
      * @param string $dataMgrClass
      *
      * @throws \Exception
@@ -92,7 +104,7 @@ class CEF
      */
     public function getDataManager($dataMgrClass)
     {
-        return $this->classGetter($dataMgrClass, EntityDataManager::class);
+        return $this->classGetter($dataMgrClass, [EntityDataManager::class]);
     }
 
     /**
@@ -104,7 +116,7 @@ class CEF
      */
     public function getDomainManager($domainMgrClass)
     {
-        return $this->classGetter($domainMgrClass, DomainEntityManager::class);
+        return $this->classGetter($domainMgrClass, [DomainEntityManager::class]);
     }
 
     /**
@@ -116,19 +128,17 @@ class CEF
      */
     public function getDomainModel($domainModelClass)
     {
-        return $this->classGetter($domainModelClass, DomainEntityManager::class);
+        return $this->classGetter($domainModelClass, [DomainEntityManager::class]);
     }
 
     /**
-     * @param $className
+     * @param string $className
      *
-     * @param $type
-     *
-     * @param $type
+     * @param array $types
      *
      * @return mixed
      */
-    private function classGetter($className, $type)
+    private function classGetter($className, $types)
     {
         if (!class_exists($className)) {
             return null;
@@ -136,10 +146,12 @@ class CEF
 
         $obj = $this->container->get($className);
 
-        if (!$obj instanceof $type) {
-            return null;
+        foreach ($types as $type) {
+            if ($obj instanceof $type) {
+                return $obj;
+            }
         }
 
-        return $obj;
+        return null;
     }
 }
