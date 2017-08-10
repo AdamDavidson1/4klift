@@ -79,5 +79,10 @@
     "post-update-cmd": [
       "@update-core"
     ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
   }
 }

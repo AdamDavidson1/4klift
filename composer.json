@@ -89,5 +89,10 @@
             "@newman",
             "@phpmd"
         ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
