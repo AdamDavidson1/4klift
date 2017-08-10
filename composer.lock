@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "425acdbaa816e199372894850b67251e",
+    "content-hash": "9a8cf747964bd5eb6d07e146f146f55d",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -4054,7 +4054,7 @@
         },
         {
             "name": "codacy/coverage",
-            "version": "dev-master",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codacy/php-codacy-coverage.git",
@@ -5891,8 +5891,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phpmd/phpmd": 0,
-        "codacy/coverage": 20
+        "phpmd/phpmd": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,

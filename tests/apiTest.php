@@ -27,7 +27,7 @@ use Silex\WebTestCase;
 
 /**
  * Class controllersTest.
- *
+ * @backupGlobals disabled
  * @SuppressWarnings(PHPMD)
  */
 class apiTest extends WebTestCase
@@ -136,7 +136,7 @@ class apiTest extends WebTestCase
 
         $this->assertTrue($ack->success);
 
-        $this->assertEquals('deasilworks\\CMS\\CEF\\Model\\PageDataModel', $ack->request_args[0]);
+        $this->assertEquals('deasilworks\CMS\CEF\Data\Model\PageDataModel', $ack->request_args[0]);
     }
 
     /**
@@ -206,7 +206,7 @@ class apiTest extends WebTestCase
     public function createApplication()
     {
         require __DIR__.'/../core/4klift.php';
-        $app['session.test'] = true;
+        $app['session.test'] = false;
 
         return $this->app = $app;
     }

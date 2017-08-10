@@ -32,7 +32,7 @@
 			},
 			"response": [
 				{
-					"id": "52e9f26b-ba05-43eb-a315-997777c7a810",
+					"id": "57d3cf7a-a537-48c5-95cf-3c06db6095c1",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -138,7 +138,7 @@
 			},
 			"response": [
 				{
-					"id": "4892fa80-28a6-4205-8f9b-ab4bf102fed0",
+					"id": "cdf2ce31-587e-4935-96ae-5fa81d8d503f",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -223,14 +223,19 @@
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
 							"var jsonData = JSON.parse(responseBody);",
-							"tests[\"ACK Success\"] = jsonData.success === true;"
+							"tests[\"ACK Success\"] = jsonData.success === true;",
+							"",
+							"tests[\"Test API location_params\"] = jsonData.location_params[0].name === \"stub\";",
+							"tests[\"Test API request_args\"] = jsonData.request_args[0] === \"welcome\";",
+							"tests[\"Test JSON Payload Class\"] = jsonData.payload.stub === \"welcome\";",
+							"tests[\"Test JSON Payload\"] = jsonData.payload.stub === \"welcome\";"
 						]
 					}
 				}
 			],
 			"request": {
 				"url": {
-					"raw": "http://{{server}}/api/cms/pageDataManager/page?stub=welcome",
+					"raw": "http://{{server}}/api/cms/data/manager/pageDataManager/page?stub=welcome",
 					"protocol": "http",
 					"host": [
 						"{{server}}"
@@ -238,6 +243,8 @@
 					"path": [
 						"api",
 						"cms",
+						"data",
+						"manager",
 						"pageDataManager",
 						"page"
 					],
@@ -258,7 +265,7 @@
 			},
 			"response": [
 				{
-					"id": "85228889-7ed6-4145-bd06-d98611f9fee2",
+					"id": "c08d07eb-b4ba-4861-8449-2999e990f617",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -349,7 +356,7 @@
 				}
 			],
 			"request": {
-				"url": "http://{{server}}/api/cms/pageDataManager/page",
+				"url": "http://{{server}}/api/cms/data/manager/pageDataManager/page",
 				"method": "OPTIONS",
 				"header": [],
 				"body": {},
@@ -357,7 +364,7 @@
 			},
 			"response": [
 				{
-					"id": "ae05f14a-d761-4fa9-8dd3-872fc6cb7b8e",
+					"id": "9d6b31e3-6ea5-4d09-8b40-825b1eaa6577",
 					"name": "API page OPTIONS",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page",
@@ -472,7 +479,7 @@
 			},
 			"response": [
 				{
-					"id": "9714c21f-dd92-4e21-8a00-02cee0337113",
+					"id": "5f5d09cb-02c2-4bbe-ba85-445dce3706f5",
 					"name": "Form response.",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/message",
@@ -597,7 +604,7 @@
 			},
 			"response": [
 				{
-					"id": "33569856-57d9-4756-8dce-16c7f3cd36df",
+					"id": "04343356-7871-42e5-bd00-2f7549d566db",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -742,7 +749,7 @@
 			},
 			"response": [
 				{
-					"id": "0e22104a-56fe-49ea-bad7-e9aed4155fe8",
+					"id": "03af4ee6-0289-48b9-8b63-ed49c541940b",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -885,7 +892,7 @@
 			},
 			"response": [
 				{
-					"id": "0dbb2a80-55aa-4e32-a198-3e14594eca97",
+					"id": "c6f5f35d-e9d7-4b7b-8b09-5e38a40b3eb7",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -1006,7 +1013,7 @@
 			},
 			"response": [
 				{
-					"id": "1b4ad50c-df98-41d3-971a-dbdcb50652c4",
+					"id": "3cc350b8-f76c-4dab-a598-e171288db8ef",
 					"name": "PageDataModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/page",
