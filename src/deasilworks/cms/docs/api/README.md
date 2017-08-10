@@ -5,12 +5,12 @@ API Index
     * deasilworks\CMS
         * deasilworks\CMS\CEF
             * deasilworks\CMS\CEF\Manager
-                * [PageManager](deasilworks-CMS-CEF-Manager-PageManager.md)
+                * [PageDataManager](deasilworks-CMS-CEF-Manager-PageDataManager.md)
+                * [UserDataManager](deasilworks-CMS-CEF-Manager-UserDataManager.md)
                 * deasilworks\CMS\CEF\Manager\User
-                    * [AclManager](deasilworks-CMS-CEF-Manager-User-AclManager.md)
-                * [UserManager](deasilworks-CMS-CEF-Manager-UserManager.md)
+                    * [AclDataManager](deasilworks-CMS-CEF-Manager-User-AclDataManager.md)
             * deasilworks\CMS\CEF\Model
-                * [PageModel](deasilworks-CMS-CEF-Model-PageModel.md)
+                * [PageDataModel](deasilworks-CMS-CEF-Model-PageDataModel.md)
             * deasilworks\CMS\CEF\Collection
                 * [PageCollection](deasilworks-CMS-CEF-Collection-PageCollection.md)
         * deasilworks\CMS\Controller

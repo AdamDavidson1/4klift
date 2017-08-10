@@ -1,4 +1,4 @@
-deasilworks\CEF\EntityModel
+deasilworks\CEF\EntityDataModel
 ===============
 
 Class EntityModel.
@@ -6,7 +6,7 @@ Class EntityModel.
 This is the generic entity model and allows the setting of arbitrary properties.
 
 
-* Class name: EntityModel
+* Class name: EntityDataModel
 * Namespace: deasilworks\CEF
 * Parent class: [deasilworks\CEF\CEFData](deasilworks-CEF-CEFData.md)
 
@@ -31,7 +31,7 @@ Properties
 
 ### $entityManager
 
-    protected \deasilworks\CEF\EntityManager $entityManager
+    protected \deasilworks\CEF\EntityDataManager $entityManager
 
 
 
@@ -57,7 +57,7 @@ Methods
 
 ### getTableName
 
-    string deasilworks\CEF\EntityModel::getTableName()
+    string deasilworks\CEF\EntityDataModel::getTableName()
 
 
 
@@ -70,7 +70,7 @@ Methods
 
 ### setTableName
 
-    \deasilworks\CEF\EntityModel deasilworks\CEF\EntityModel::setTableName(string $tableName)
+    \deasilworks\CEF\EntityDataModel deasilworks\CEF\EntityDataModel::setTableName(string $tableName)
 
 
 
@@ -86,7 +86,7 @@ Methods
 
 ### getEntityManager
 
-    \deasilworks\CEF\EntityManager deasilworks\CEF\EntityModel::getEntityManager()
+    \deasilworks\CEF\EntityDataManager deasilworks\CEF\EntityDataModel::getEntityManager()
 
 
 
@@ -99,7 +99,7 @@ Methods
 
 ### setEntityManager
 
-    \deasilworks\CEF\EntityModel deasilworks\CEF\EntityModel::setEntityManager(\deasilworks\CEF\EntityManager $entityManager)
+    \deasilworks\CEF\EntityDataModel deasilworks\CEF\EntityDataModel::setEntityManager(\deasilworks\CEF\EntityDataManager $entityManager)
 
 
 
@@ -109,13 +109,13 @@ Methods
 
 
 #### Arguments
-* $entityManager **[deasilworks\CEF\EntityManager](deasilworks-CEF-EntityManager.md)**
+* $entityManager **[deasilworks\CEF\EntityDataManager](deasilworks-CEF-EntityDataManager.md)**
 
 
 
 ### save
 
-    \deasilworks\CEF\EntityCollection deasilworks\CEF\EntityModel::save()
+    \deasilworks\CEF\EntityCollection deasilworks\CEF\EntityDataModel::save()
 
 Saves a model to the database.
 

@@ -20,7 +20,7 @@ Properties
 
 ### $valueClass
 
-    protected string $valueClass = \deasilworks\CEF\EntityModel::class
+    protected string $valueClass = \deasilworks\CEF\EntityDataModel::class
 
 Class name of values.
 

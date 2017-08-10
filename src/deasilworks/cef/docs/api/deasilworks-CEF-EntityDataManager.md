@@ -1,4 +1,4 @@
-deasilworks\CEF\EntityManager
+deasilworks\CEF\EntityDataManager
 ===============
 
 Class EntityManager.
@@ -8,7 +8,7 @@ Responsible for implementing methods to retrieve entities and
 provides a Statement Manager factory to help accomplish that.
 
 
-* Class name: EntityManager
+* Class name: EntityDataManager
 * Namespace: deasilworks\CEF
 
 
@@ -47,7 +47,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\CEF\EntityManager::__construct(\deasilworks\CEF\CEFConfig $config)
+    mixed deasilworks\CEF\EntityDataManager::__construct(\deasilworks\CEF\CEFConfig $config)
 
 EntityManager constructor.
 
@@ -64,7 +64,7 @@ produce Statement Managers.
 
 ### getCollection
 
-    \deasilworks\CEF\ResultContainer deasilworks\CEF\EntityManager::getCollection()
+    \deasilworks\CEF\ResultContainer deasilworks\CEF\EntityDataManager::getCollection()
 
 Collection Factory.
 
@@ -77,7 +77,7 @@ Collection Factory.
 
 ### getModel
 
-    \deasilworks\CEF\EntityModel deasilworks\CEF\EntityManager::getModel()
+    \deasilworks\CEF\EntityDataModel deasilworks\CEF\EntityDataManager::getModel()
 
 Get the model associated with the collection.
 
@@ -90,7 +90,7 @@ Get the model associated with the collection.
 
 ### setCollectionClass
 
-    \deasilworks\CEF\EntityManager deasilworks\CEF\EntityManager::setCollectionClass(string $collectionClass)
+    \deasilworks\CEF\EntityDataManager deasilworks\CEF\EntityDataManager::setCollectionClass(string $collectionClass)
 
 
 
@@ -106,7 +106,7 @@ Get the model associated with the collection.
 
 ### getCollectionClass
 
-    string deasilworks\CEF\EntityManager::getCollectionClass()
+    string deasilworks\CEF\EntityDataManager::getCollectionClass()
 
 
 
@@ -119,7 +119,7 @@ Get the model associated with the collection.
 
 ### getStatementManager
 
-    \deasilworks\CEF\StatementManager deasilworks\CEF\EntityManager::getStatementManager(string $statementClass)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\EntityDataManager::getStatementManager(string $statementClass)
 
 Statement Manager Factory.
 

@@ -75,7 +75,7 @@
             "phpunit"
         ],
         "doc": [
-            "cd ./util; ./cli.php --ansi util-docgen"
+            "cd ./core; ./cli.php --ansi util-docgen"
         ],
         "publish": [
             "./util/publish.sh"

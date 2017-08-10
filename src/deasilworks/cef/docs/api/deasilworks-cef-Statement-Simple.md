@@ -120,7 +120,7 @@ Properties
 
 ### $entityManager
 
-    protected \deasilworks\CEF\EntityManager; $entityManager
+    protected \deasilworks\CEF\EntityDataManager; $entityManager
 
 
 
@@ -153,7 +153,7 @@ ResultContainer class.
 
 ### $resultModelClass
 
-    protected string $resultModelClass = \deasilworks\CEF\EntityModel::class
+    protected string $resultModelClass = \deasilworks\CEF\EntityDataModel::class
 
 EntityModel class.
 
@@ -185,7 +185,7 @@ Methods
 
 ### __construct
 
-    mixed deasilworks\CEF\StatementManager::__construct(\deasilworks\CEF\CEFConfig $config, \deasilworks\CEF\EntityManager $entityManager)
+    mixed deasilworks\CEF\StatementManager::__construct(\deasilworks\CEF\CEFConfig $config, \deasilworks\CEF\EntityDataManager $entityManager)
 
 StatementManager constructor.
 
@@ -197,7 +197,7 @@ StatementManager constructor.
 
 #### Arguments
 * $config **[deasilworks\CEF\CEFConfig](deasilworks-CEF-CEFConfig.md)**
-* $entityManager **[deasilworks\CEF\EntityManager](deasilworks-CEF-EntityManager.md)**
+* $entityManager **[deasilworks\CEF\EntityDataManager](deasilworks-CEF-EntityDataManager.md)**
 
 
 
@@ -248,7 +248,7 @@ StatementManager constructor.
 
 ### getEntityManager
 
-    \deasilworks\CEF\EntityManager deasilworks\CEF\StatementManager::getEntityManager()
+    \deasilworks\CEF\EntityDataManager deasilworks\CEF\StatementManager::getEntityManager()
 
 
 
@@ -262,7 +262,7 @@ StatementManager constructor.
 
 ### setEntityManager
 
-    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setEntityManager(\deasilworks\CEF\EntityManager $entityManager)
+    \deasilworks\CEF\StatementManager deasilworks\CEF\StatementManager::setEntityManager(\deasilworks\CEF\EntityDataManager $entityManager)
 
 
 
@@ -273,7 +273,7 @@ StatementManager constructor.
 
 
 #### Arguments
-* $entityManager **[deasilworks\CEF\EntityManager](deasilworks-CEF-EntityManager.md)**
+* $entityManager **[deasilworks\CEF\EntityDataManager](deasilworks-CEF-EntityDataManager.md)**
 
 
 
@@ -566,7 +566,7 @@ Result Container Factory.
 
 ### getResultModel
 
-    \deasilworks\CEF\EntityModel deasilworks\CEF\StatementManager::getResultModel()
+    \deasilworks\CEF\EntityDataModel deasilworks\CEF\StatementManager::getResultModel()
 
 
 

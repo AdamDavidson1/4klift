@@ -13,15 +13,15 @@ API Index
             * [Obj](deasilworks-CEF-StatementComponent-Obj.md)
             * [Exp](deasilworks-CEF-StatementComponent-Exp.md)
         * [ResultContainer](deasilworks-CEF-ResultContainer.md)
-        * [EntityManager](deasilworks-CEF-EntityManager.md)
         * deasilworks\CEF\Cassandra
             * [Transformer](deasilworks-CEF-Cassandra-Transformer.md)
-        * [EntityModel](deasilworks-CEF-EntityModel.md)
         * deasilworks\CEF\Statement
             * [Simple](deasilworks-CEF-Statement-Simple.md)
         * [CEFData](deasilworks-CEF-CEFData.md)
         * [CEFConfig](deasilworks-CEF-CEFConfig.md)
+        * [EntityDataModel](deasilworks-CEF-EntityDataModel.md)
         * [StatementManager](deasilworks-CEF-StatementManager.md)
+        * [EntityDataManager](deasilworks-CEF-EntityDataManager.md)
         * deasilworks\CEF\ServiceProvider
             * deasilworks\CEF\ServiceProvider\Silex
                 * [CEFServiceProvider](deasilworks-CEF-ServiceProvider-Silex-CEFServiceProvider.md)

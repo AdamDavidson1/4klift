@@ -80,7 +80,7 @@ CEF constructor.
 
 ### getEntityManager
 
-    \deasilworks\CEF\EntityManager deasilworks\CEF\CEF::getEntityManager(string $managerClass)
+    \deasilworks\CEF\EntityDataManager deasilworks\CEF\CEF::getEntityManager(string $managerClass)
 
 
 

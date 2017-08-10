@@ -97,7 +97,7 @@ Methods
 
 ### setModel
 
-    \deasilworks\CEF\StatementBuilder\InsertModel deasilworks\CEF\StatementBuilder\InsertModel::setModel(\deasilworks\CEF\EntityModel $model)
+    \deasilworks\CEF\StatementBuilder\InsertModel deasilworks\CEF\StatementBuilder\InsertModel::setModel(\deasilworks\CEF\EntityDataModel $model)
 
 Set Model.
 
@@ -107,7 +107,7 @@ Set Model.
 
 
 #### Arguments
-* $model **[deasilworks\CEF\EntityModel](deasilworks-CEF-EntityModel.md)**
+* $model **[deasilworks\CEF\EntityDataModel](deasilworks-CEF-EntityDataModel.md)**
 
 
 

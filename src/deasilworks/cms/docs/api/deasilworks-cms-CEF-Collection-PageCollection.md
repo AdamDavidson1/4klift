@@ -20,7 +20,7 @@ Properties
 
 ### $valueClass
 
-    protected string $valueClass = \deasilworks\CMS\CEF\Model\PageModel::class
+    protected string $valueClass = \deasilworks\CMS\CEF\Model\PageDataModel::class
 
 Overridden to customize Model Class.
 

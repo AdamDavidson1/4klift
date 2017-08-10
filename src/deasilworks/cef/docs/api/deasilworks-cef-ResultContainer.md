@@ -20,7 +20,7 @@ Properties
 
 ### $valueClass
 
-    protected string $valueClass = \deasilworks\CEF\EntityModel::class
+    protected string $valueClass = \deasilworks\CEF\EntityDataModel::class
 
 Class name of values.
 
@@ -53,7 +53,7 @@ Class name of values.
 
 ### $entityManager
 
-    protected \deasilworks\CEF\EntityManager $entityManager
+    protected \deasilworks\CEF\EntityDataManager $entityManager
 
 
 
@@ -126,7 +126,7 @@ EntityCollection constructor.
 
 ### getEntityManager
 
-    \deasilworks\CEF\EntityManager deasilworks\CEF\ResultContainer::getEntityManager()
+    \deasilworks\CEF\EntityDataManager deasilworks\CEF\ResultContainer::getEntityManager()
 
 
 
