@@ -1,14 +1,15 @@
-deasilworks\CEF\CEF
+deasilworks\CEF\DomainEntityManager
 ===============
 
-Class CEF.
+Class DomainEntityManager.
 
-Responsible for managing configuration and
-providing an EntityManager factory.
+Base class for domain entity managers.
 
 
-* Class name: CEF
+* Class name: DomainEntityManager
 * Namespace: deasilworks\CEF
+* This is an **abstract** class
+* Parent class: [deasilworks\CEF\CEF](deasilworks-CEF-CEF.md)
 
 
 
@@ -53,6 +54,7 @@ CEF constructor.
 
 
 * Visibility: **public**
+* This method is defined by [deasilworks\CEF\CEF](deasilworks-CEF-CEF.md)
 
 
 #### Arguments
@@ -69,6 +71,7 @@ CEF constructor.
 
 
 * Visibility: **public**
+* This method is defined by [deasilworks\CEF\CEF](deasilworks-CEF-CEF.md)
 
 
 
@@ -82,6 +85,7 @@ CEF constructor.
 
 
 * Visibility: **public**
+* This method is defined by [deasilworks\CEF\CEF](deasilworks-CEF-CEF.md)
 
 
 #### Arguments
@@ -98,6 +102,7 @@ CEF constructor.
 
 
 * Visibility: **public**
+* This method is defined by [deasilworks\CEF\CEF](deasilworks-CEF-CEF.md)
 
 
 #### Arguments
@@ -114,6 +119,7 @@ CEF constructor.
 
 
 * Visibility: **public**
+* This method is defined by [deasilworks\CEF\CEF](deasilworks-CEF-CEF.md)
 
 
 #### Arguments
@@ -130,6 +136,7 @@ CEF constructor.
 
 
 * Visibility: **public**
+* This method is defined by [deasilworks\CEF\CEF](deasilworks-CEF-CEF.md)
 
 
 #### Arguments
@@ -146,6 +153,7 @@ CEF constructor.
 
 
 * Visibility: **private**
+* This method is defined by [deasilworks\CEF\CEF](deasilworks-CEF-CEF.md)
 
 
 #### Arguments

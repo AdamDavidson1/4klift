@@ -27,6 +27,8 @@ API Index
                 * [CEFServiceProvider](deasilworks-CEF-ServiceProvider-Silex-CEFServiceProvider.md)
         * [EntityCollection](deasilworks-CEF-EntityCollection.md)
         * [CEF](deasilworks-CEF-CEF.md)
+        * [DomainEntityManager](deasilworks-CEF-DomainEntityManager.md)
+        * [DomainEntityModel](deasilworks-CEF-DomainEntityModel.md)
 
 
 ## LICENSE
