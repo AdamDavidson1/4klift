@@ -29,9 +29,7 @@ namespace deasilworks\CEF;
  * Class DomainEntityModel.
  *
  * Provides a base for Classes modeling a domain.
- *
  */
 abstract class DomainEntityModel
 {
-
 }

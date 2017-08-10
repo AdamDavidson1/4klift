@@ -133,15 +133,14 @@ class CEF
 
     /**
      * @param string $className
-     *
-     * @param array $types
+     * @param array  $types
      *
      * @return mixed
      */
     private function classGetter($className, $types)
     {
         if (!class_exists($className)) {
-            return null;
+            return;
         }
 
         $obj = $this->container->get($className);
@@ -151,7 +150,5 @@ class CEF
                 return $obj;
             }
         }
-
-        return null;
     }
 }

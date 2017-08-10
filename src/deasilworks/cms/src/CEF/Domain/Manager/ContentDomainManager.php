@@ -25,8 +25,8 @@
 
 namespace deasilworks\CMS\CEF\Domain\Manager;
 
-use deasilworks\API\Annotation\ApiController;
 use deasilworks\API\Annotation\ApiAction;
+use deasilworks\API\Annotation\ApiController;
 use deasilworks\CEF\DomainEntityManager;
 
 /**
@@ -36,9 +36,8 @@ use deasilworks\CEF\DomainEntityManager;
  */
 class ContentDomainManager extends DomainEntityManager
 {
-
     /**
-     * Get Welcome
+     * Get Welcome.
      *
      * @ApiAction()
      *
@@ -46,6 +45,6 @@ class ContentDomainManager extends DomainEntityManager
      */
     public function getWelcome()
     {
-        return "Hello";
+        return 'Hello';
     }
 }
