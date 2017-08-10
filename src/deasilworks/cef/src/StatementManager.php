@@ -108,7 +108,7 @@ class StatementManager
     /**
      * StatementManager constructor.
      *
-     * @param CEFConfig     $config
+     * @param CEFConfig         $config
      * @param EntityDataManager $entityManager
      */
     public function __construct(CEFConfig $config, EntityDataManager $entityManager)
