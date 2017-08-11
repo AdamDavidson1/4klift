@@ -13,6 +13,8 @@ demo:
 deasilworks:
   api:
     routes:
+      util:
+        class_path: 'deasilworks\API'
       cms:
         class_path: 'deasilworks\CMS\CEF'
         aliases:

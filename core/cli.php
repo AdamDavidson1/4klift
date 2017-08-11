@@ -35,8 +35,6 @@ use Symfony\Component\Console\Application;
  */
 $cli = new Application('4klift - Command Line Utilities', '1.0.0');
 
-// @TODO register 4klift components, use configuration for command loading
-
 /**
  * Add 4klift CLI Command Classes.
  */

@@ -32,7 +32,106 @@
 			},
 			"response": [
 				{
-					"id": "57d3cf7a-a537-48c5-95cf-3c06db6095c1",
+					"id": "dae16416-7cf2-43d2-a21e-dba403b0ddff",
+					"name": "PageModel",
+					"originalRequest": {
+						"url": "http://{{server}}/api/pageManager/page/welcome",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "no-cache, private",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 07 Aug 2017 23:52:55 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.10.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-Debug-Token",
+							"key": "X-Debug-Token",
+							"value": "47a5b7",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Debug-Token-Link",
+							"key": "X-Debug-Token-Link",
+							"value": "http://4klift.vm.deasil.works/_profiler/47a5b7",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.31",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 829,
+					"body": "{\"ack_version\":4,\"ack_uuid\":\"9c0acd3b-d22c-4094-ab1a-3090990df6d0\",\"date_time\":\"2017-08-07T23:52:55+0000\",\"server_code\":\"200\",\"success\":true,\"error_code\":null,\"error_class\":null,\"error_payload\":null,\"error_message\":null,\"api_level\":1,\"location\":\"pageManager\\/page\\/welcome\",\"location_params\":[{\"name\":\"stub\",\"type\":null}],\"request_args\":[\"welcome\"],\"payload_class\":\"deasilworks\\\\CMS\\\\CEF\\\\Model\\\\PageModel\",\"payload\":{\"stub\":\"welcome\",\"content\":\"Welcome to the 4klift CMS\",\"modified\":\"2017-08-07 22:46:35.000Z\",\"title\":\"Welcome\"}}"
+				}
+			]
+		},
+		{
+			"name": "API GET Page copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"ACK Success\"] = jsonData.success === true;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{server}}/api/cms/data/manager/pageDataManager/page/welcome",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get's a CMS PageModel from the API.\n\nhttp://{{server}}/api/pageManager/page/welcome\n"
+			},
+			"response": [
+				{
+					"id": "f90f435e-f7a1-4f1e-bcfb-f1b5500497fd",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -138,7 +237,7 @@
 			},
 			"response": [
 				{
-					"id": "cdf2ce31-587e-4935-96ae-5fa81d8d503f",
+					"id": "9d4dcfd4-0598-4fd9-b862-dae5cf5b3aa9",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -265,7 +364,7 @@
 			},
 			"response": [
 				{
-					"id": "c08d07eb-b4ba-4861-8449-2999e990f617",
+					"id": "e58eb256-d6b6-40e3-b762-f71890e55567",
 					"name": "PageModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page/welcome",
@@ -364,7 +463,7 @@
 			},
 			"response": [
 				{
-					"id": "9d6b31e3-6ea5-4d09-8b40-825b1eaa6577",
+					"id": "10074c12-0749-4432-b1c2-5dd1b3ed38d4",
 					"name": "API page OPTIONS",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/page",
@@ -479,7 +578,7 @@
 			},
 			"response": [
 				{
-					"id": "5f5d09cb-02c2-4bbe-ba85-445dce3706f5",
+					"id": "7faa60af-5942-4ccc-be8c-f2ca2c2b4e0a",
 					"name": "Form response.",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/message",
@@ -604,7 +703,126 @@
 			},
 			"response": [
 				{
-					"id": "04343356-7871-42e5-bd00-2f7549d566db",
+					"id": "28007f86-b51b-44d1-9fe9-0bfc9b306b78",
+					"name": "Message",
+					"originalRequest": {
+						"url": "http://{{server}}/api/pageManager/message",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"message\": \"from json\"\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, private",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Wed, 09 Aug 2017 05:24:57 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "server",
+							"key": "server",
+							"value": "nginx/1.10.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-debug-token",
+							"key": "x-debug-token",
+							"value": "2de056",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-debug-token-link",
+							"key": "x-debug-token-link",
+							"value": "http://4klift.vm.deasil.works/_profiler/2de056",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-powered-by",
+							"key": "x-powered-by",
+							"value": "PHP/5.6.31",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 661,
+					"body": "{\"ack_version\":4,\"ack_uuid\":\"3a18b48b-c3f0-445a-962f-5688b9f672bb\",\"date_time\":\"2017-08-09T05:24:57+0000\",\"server_code\":\"200\",\"success\":true,\"error_code\":null,\"error_class\":null,\"error_payload\":null,\"error_message\":null,\"api_level\":1,\"location\":\"pageManager\\/message\",\"location_params\":[{\"name\":\"message\",\"type\":null}],\"request_args\":[\"from json\"],\"payload_class\":\"\",\"payload\":\"from json\"}"
+				}
+			]
+		},
+		{
+			"name": "API POST message w/ JSON Pkg body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Test json\"] = jsonData.payload === \"from json\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{server}}/api/cms/data/manager/pageDataManager/message",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pkg_version\": 4,\n\t\"pkg_uuid\": \"c9fc490e-0b3a-4f08-8ae2-ad2156352c41\",\n\t\"client\": \"\",\n\t\"payload\": {\n\t\t\"message\": \"from json\"\n\t}\n}"
+				},
+				"description": "http://{{server}}/api/pageManager/message/hello"
+			},
+			"response": [
+				{
+					"id": "b57b3938-ebda-4b50-9421-7b59c5cf927d",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -749,7 +967,7 @@
 			},
 			"response": [
 				{
-					"id": "03af4ee6-0289-48b9-8b63-ed49c541940b",
+					"id": "7cc00028-9d29-49be-8701-e0faf433d6d7",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -892,7 +1110,7 @@
 			},
 			"response": [
 				{
-					"id": "c6f5f35d-e9d7-4b7b-8b09-5e38a40b3eb7",
+					"id": "64a5259b-5c8d-49db-8a22-ad8a998b4faa",
 					"name": "Message",
 					"originalRequest": {
 						"url": "http://{{server}}/api/pageManager/message",
@@ -1013,7 +1231,7 @@
 			},
 			"response": [
 				{
-					"id": "3cc350b8-f76c-4dab-a598-e171288db8ef",
+					"id": "ec40e191-efcb-4dcf-830f-bc87622b8163",
 					"name": "PageDataModel",
 					"originalRequest": {
 						"url": "http://{{server}}/api/cms/pageManager/page",

@@ -45,10 +45,6 @@ class Transformer
      */
     public function transformRows(\Cassandra\Rows $rows)
     {
-        // @todo add this to implementing class
-        //$resultContainer->setArguments($this->previousArguments);
-        //$resultContainer->setStatement((string) $this->getSb());
-
         $entries = [];
 
         // page through all results and transform as we go

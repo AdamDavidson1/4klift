@@ -165,12 +165,21 @@ class CEF
             return;
         }
 
-        $obj = $this->container->get($className);
+        $obj = $this->get($className);
 
         foreach ($types as $type) {
             if ($obj instanceof $type) {
                 return $obj;
             }
         }
+    }
+
+    /**
+     * @param $class
+     * @return mixed
+     */
+    public function get($class)
+    {
+        return $this->container->get($class);
     }
 }
