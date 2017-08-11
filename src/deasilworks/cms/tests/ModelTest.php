@@ -24,8 +24,8 @@
  */
 
 use deasilworks\CEF\CEF;
-use deasilworks\CFG\CFG;
 use deasilworks\CEF\CEFConfig;
+use deasilworks\CFG\CFG;
 use deasilworks\CMS\CEF\Data\Collection\PageCollection;
 use deasilworks\CMS\CEF\Data\Model\PageDataModel;
 

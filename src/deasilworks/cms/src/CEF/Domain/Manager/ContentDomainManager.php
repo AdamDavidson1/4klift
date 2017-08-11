@@ -50,6 +50,7 @@ class ContentDomainManager extends DomainEntityManager
 
         /** @var PageDataManager $pageMgr */
         $pageMgr = $this->getDataManager(PageDataManager::class);
+
         return $pageMgr->getPage($stub)->getTitle();
     }
 }

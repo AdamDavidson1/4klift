@@ -68,11 +68,11 @@ class CEF
      * if not return the provided default, otherwise null.
      *
      * @param string $key
-     * @param null $default
+     * @param null   $default
      *
      * @return mixed $value
      */
-    public function getCfgValue($key, $default=null)
+    public function getCfgValue($key, $default = null)
     {
         $value = $default;
 
@@ -176,6 +176,7 @@ class CEF
 
     /**
      * @param $class
+     *
      * @return mixed
      */
     public function get($class)
