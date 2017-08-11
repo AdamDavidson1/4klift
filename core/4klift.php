@@ -34,6 +34,10 @@ use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
+use Symfony\Component\Debug\ErrorHandler;
+use deasilworks\API\ServiceProvider\Silex\APIErrorServiceProvider;
+
+ErrorHandler::register();
 
 if (!ini_get('date.timezone')) {
     date_default_timezone_set('UTC');
@@ -55,8 +59,9 @@ $app->register(new CFGServiceProvider(), [
 ]);
 
 $app->register(new CEFServiceProvider());
-$app->register(new APIServiceProvider());
 $app->register(new CMSServiceProvider());
+$app->register(new APIServiceProvider());
+$app->register(new APIErrorServiceProvider());
 
 // Services
 //
@@ -73,5 +78,6 @@ if ($app['debug'] === true) {
     $app->register(new WebProfilerServiceProvider());
     $app->register(new MonologServiceProvider());
 }
+
 
 return $app;

@@ -88,7 +88,6 @@
             "cd ./core/; composer validate"
         ],
         "publish": [
-            "@test",
             "@checkpkg",
             "./util/publish.sh"
          ],

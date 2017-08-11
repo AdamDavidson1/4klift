@@ -45,6 +45,7 @@ class CMSServiceProvider extends ServiceProvider implements ServiceProviderInter
      */
     public function boot(Application $app)
     {
+        // routing
         $app->get('/', function () use ($app) {
 
             /** @var PageDataManager $pageMgr */
