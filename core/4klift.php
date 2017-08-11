@@ -23,6 +23,7 @@
  * SOFTWARE.
  */
 
+use deasilworks\API\ServiceProvider\Silex\APIErrorServiceProvider;
 use deasilworks\API\ServiceProvider\Silex\APIServiceProvider;
 use deasilworks\CEF\ServiceProvider\Silex\CEFServiceProvider;
 use deasilworks\CFG\ServiceProvider\Silex\CFGServiceProvider;
@@ -35,7 +36,6 @@ use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
 use Symfony\Component\Debug\ErrorHandler;
-use deasilworks\API\ServiceProvider\Silex\APIErrorServiceProvider;
 
 ErrorHandler::register();
 
@@ -78,6 +78,5 @@ if ($app['debug'] === true) {
     $app->register(new WebProfilerServiceProvider());
     $app->register(new MonologServiceProvider());
 }
-
 
 return $app;
