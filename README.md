@@ -61,7 +61,7 @@ Linux variants.
     
     mkdir my-project
     cd my-project
-    composer -n --no-install create-project deasilworks/4klift-se . 1.0.x-dev
+    composer -n --no-install --ignore-platform-reqs create-project deasilworks/4klift-se . 1.0.x-dev
     vagrant up
     vagrant ssh
 
