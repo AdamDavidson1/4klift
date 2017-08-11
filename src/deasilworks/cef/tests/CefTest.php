@@ -24,7 +24,6 @@
  */
 
 use deasilworks\CEF\CEF;
-use deasilworks\CFG\CFG;
 use deasilworks\CEF\CEFConfig;
 use deasilworks\CEF\EntityDataModel;
 use deasilworks\CEF\ResultContainer;
@@ -36,6 +35,7 @@ use deasilworks\CEF\test\Manager\LocalDataManager;
 use deasilworks\CEF\test\Manager\UserDataManager;
 use deasilworks\CEF\test\Model\UdtAddressDataModel;
 use deasilworks\CEF\test\Model\UserDataModel;
+use deasilworks\CFG\CFG;
 
 /**
  * Class cassandraTest.
