@@ -6,17 +6,16 @@
     <img src="https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Logo.png">
 </a></p>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/682ff1742473405d88d14aa949debdc0)](https://www.codacy.com/app/cjimti/4klift?utm_source=github.com&utm_medium=referral&utm_content=deasilworks/4klift&utm_campaign=badger)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/682ff1742473405d88d14aa949debdc0?)](https://www.codacy.com/app/cjimti/4klift?utm_source=github.com&utm_medium=referral&utm_content=deasilworks/4klift&utm_campaign=badger)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/682ff1742473405d88d14aa949debdc0)](https://www.codacy.com/app/cjimti/4klift?utm_source=github.com&utm_medium=referral&utm_content=deasilworks/4klift&utm_campaign=Badge_Coverage)
 [![Style CI](https://styleci.io/repos/96856089/shield?branch=master)](https://styleci.io/repos/96856089)
-[![Code Climate](http://img.shields.io/codeclimate/github/deasilworks/4klift.svg)](https://codeclimate.com/github/deasilworks/4klift)
+[![Code Climate](http://img.shields.io/codeclimate/github/deasilworks/4klift.svg?style=flat-square)](https://codeclimate.com/github/deasilworks/4klift)
 [![Build Status](https://travis-ci.org/deasilworks/4klift.svg?branch=dev)](https://travis-ci.org/deasilworks/4klift)
-[![Latest Stable Version](https://poser.pugx.org/deasilworks/4klift/v/stable)](https://packagist.org/packages/deasilworks/4klift)
-[![Latest Development Version](https://poser.pugx.org/deasilworks/4klift/v/unstable)](https://packagist.org/packages/deasilworks/4klift)
-[![Total Downloads](https://poser.pugx.org/deasilworks/4klift/downloads)](https://packagist.org/packages/deasilworks/4klift)
-[![License](https://poser.pugx.org/deasilworks/4klift/license)](https://packagist.org/packages/deasilworks/4klift)
+[![Latest](https://img.shields.io/packagist/v/deasilworks/4klift.svg?style=flat-square)](https://packagist.org/packages/deasilworks/4klift)
+[![Latest Unstable ](https://img.shields.io/packagist/vpre/deasilworks/4klift.svg?style=flat-square)](https://packagist.org/packages/deasilworks/4klift)
+[![Total Downloads](https://img.shields.io/packagist/dt/deasilworks/4klift.svg?style=flat-square)](https://packagist.org/packages/deasilworks/4klift)
+[![License](https://img.shields.io/github/license/deasilworks/4klift.svg?style=flat-square)](https://packagist.org/packages/deasilworks/4klift)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
 
 **4klift** is a set of PHP components for developing highly available, redundant and scalable web sites or services on top of Apache Cassandra.
 
