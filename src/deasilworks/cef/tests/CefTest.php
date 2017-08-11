@@ -24,6 +24,7 @@
  */
 
 use deasilworks\CEF\CEF;
+use deasilworks\CFG\CFG;
 use deasilworks\CEF\CEFConfig;
 use deasilworks\CEF\EntityDataModel;
 use deasilworks\CEF\ResultContainer;
@@ -67,7 +68,7 @@ class CefTest extends \PHPUnit_Framework_TestCase
     private function getConfig()
     {
         if (!$this->config) {
-            $this->config = new CEFConfig();
+            $this->config = new CEFConfig(new CFG());
         }
 
         return $this->config;

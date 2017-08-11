@@ -24,6 +24,7 @@
  */
 
 use deasilworks\CEF\CEF;
+use deasilworks\CFG\CFG;
 use deasilworks\CEF\CEFConfig;
 use deasilworks\CMS\CEF\Data\Collection\PageCollection;
 use deasilworks\CMS\CEF\Data\Model\PageDataModel;
@@ -55,7 +56,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\DateTime', $pageModel->getModified());
         $this->assertEquals('This is a test page.', $pageModel->getContent());
 
-        $cef = new CEF(new CEFConfig());
+        $cef = new CEF(new CEFConfig(new CFG()));
         $pageManager = $cef->getDataManager(\deasilworks\CMS\CEF\Data\Manager\PageDataManager::class);
 
         /** @var PageCollection $pageCollection */

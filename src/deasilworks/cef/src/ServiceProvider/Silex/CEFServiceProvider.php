@@ -28,7 +28,7 @@ namespace deasilworks\CEF\ServiceProvider\Silex;
 use deasilworks\CEF\CEF;
 use deasilworks\CEF\CEFConfig;
 use deasilworks\CEF\EntityDataModel;
-use deasilworks\CFG\Config;
+use deasilworks\CFG\CFG;
 use deasilworks\CFG\ServiceProvider\Silex\ServiceProvider;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -47,21 +47,21 @@ class CEFServiceProvider extends ServiceProvider implements ServiceProviderInter
     public function register(Container $container)
     {
         $container[$this->namespace.'.cef'] = function ($container) {
+            $cef = null;
             $cefConfigKey = $this->namespace.'.cef.config';
-
-            if (!isset($container[$cefConfigKey])) {
-                $container[$cefConfigKey] = new CEFConfig();
-            }
-
-            $cef = new CEF($container[$cefConfigKey]);
-
-            // first try to populate from cfg
             $cfgKey = $this->namespace.'.cfg';
 
             if (isset($container[$cfgKey])) {
-                /** @var Config $config */
-                $config = $container[$cfgKey];
-                $this->populateConfig($container[$cefConfigKey], 'cef', $config->getAll());
+                /** @var CFG $cfg */
+                $cfg = $container[$cfgKey];
+
+                if (!isset($container[$cefConfigKey])) {
+                    $container[$cefConfigKey] = new CEFConfig($cfg);
+                }
+
+                $cef = new CEF($container[$cefConfigKey]);
+
+                $this->populateConfig($container[$cefConfigKey], 'cef', $cfg->getAll());
             }
 
             // next try to populate from the container

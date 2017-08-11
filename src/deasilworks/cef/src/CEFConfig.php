@@ -27,6 +27,7 @@ namespace deasilworks\CEF;
 
 use Cassandra\Cluster;
 use Cassandra\RetryPolicy;
+use deasilworks\CFG\CFG;
 
 /**
  * Class CEFConfig.
@@ -64,14 +65,30 @@ class CEFConfig
     protected $cluster;
 
     /**
+     * @var CFG
+     */
+    protected $cfg;
+
+    /**
      * CEFConfig constructor.
      *
      * @SuppressWarnings(StaticAccess)
      * Because DI does not make sense here.
+     *
+     * @param CFG $cfg
      */
-    public function __construct()
+    public function __construct(CFG $cfg)
     {
         $this->clusterBuilder = \Cassandra::cluster();
+        $this->cfg = $cfg;
+    }
+
+    /**
+     * @return CFG
+     */
+    public function getCfg()
+    {
+        return $this->cfg;
     }
 
     /**

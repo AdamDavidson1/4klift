@@ -46,8 +46,10 @@ class ContentDomainManager extends DomainEntityManager
      */
     public function getWelcome()
     {
+        $stub = $this->getCfgValue('demo.pages.welcome', 'nope');
+
         /** @var PageDataManager $pageMgr */
         $pageMgr = $this->getDataManager(PageDataManager::class);
-        return $pageMgr->getPage('welcome')->getTitle();
+        return $pageMgr->getPage($stub)->getTitle();
     }
 }

@@ -64,6 +64,28 @@ class CEF
     }
 
     /**
+     * Get a value from the CFG Config if one exists,
+     * if not return the provided default, otherwise null.
+     *
+     * @param string $key
+     * @param null $default
+     *
+     * @return mixed $value
+     */
+    public function getCfgValue($key, $default=null)
+    {
+        $value = $default;
+
+        $cfg = $this->config->getCfg();
+
+        if ($cfg) {
+            $value = $cfg->get($key, $default);
+        }
+
+        return $value;
+    }
+
+    /**
      * @return CEFConfig
      */
     public function getConfig()

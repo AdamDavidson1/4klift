@@ -27,6 +27,7 @@ namespace deasilworks\CMS\Util\Command;
 
 use deasilworks\CEF\CEF;
 use deasilworks\CEF\CEFConfig;
+use deasilworks\CFG\CFG;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -68,7 +69,7 @@ abstract class CMSCommand extends Command
         $loader = new \Twig_Loader_Filesystem(__DIR__.'/../Template/');
         $this->twig = new \Twig_Environment($loader);
 
-        $cefConfig = new CEFConfig();
+        $cefConfig = new CEFConfig(new CFG());
         $this->cef = new CEF($cefConfig);
     }
 }

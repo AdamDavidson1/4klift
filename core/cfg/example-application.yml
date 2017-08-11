@@ -6,6 +6,10 @@
 # This configuration should be the same on
 # local, development and production environments.
 #
+demo:
+  pages:
+    welcome: 'test-page'
+
 deasilworks:
   api:
     routes:
@@ -13,9 +17,9 @@ deasilworks:
         class_path: 'deasilworks\CMS\CEF'
         aliases:
             content: 'Data\Manager\PageDataManager'
+            page: 'Domain\Manager\ContentDomainManager'
       v1:
         class_path: 'MyProject\CEF\Data\Manager'
-
 app:
   twig.path:
     - '%app_root%/../templates'
