@@ -60,6 +60,24 @@ CEF constructor.
 
 
 
+### getCfgValue
+
+    mixed deasilworks\CEF\CEF::getCfgValue(string $key, null $default)
+
+Get a value from the CFG Config if one exists,
+if not return the provided default, otherwise null.
+
+
+
+* Visibility: **public**
+
+
+#### Arguments
+* $key **string**
+* $default **null**
+
+
+
 ### getConfig
 
     \deasilworks\CEF\CEFConfig deasilworks\CEF\CEF::getConfig()
@@ -86,6 +104,22 @@ CEF constructor.
 
 #### Arguments
 * $config **[deasilworks\CEF\CEFConfig](deasilworks-CEF-CEFConfig.md)**
+
+
+
+### getManager
+
+    \deasilworks\CEF\EntityDataManager deasilworks\CEF\CEF::getManager(string $mgrClass)
+
+
+
+
+
+* Visibility: **public**
+
+
+#### Arguments
+* $mgrClass **string**
 
 
 
@@ -139,7 +173,7 @@ CEF constructor.
 
 ### classGetter
 
-    mixed deasilworks\CEF\CEF::classGetter($className, $type)
+    mixed deasilworks\CEF\CEF::classGetter(string $className, array $types)
 
 
 
@@ -149,8 +183,24 @@ CEF constructor.
 
 
 #### Arguments
-* $className **mixed**
-* $type **mixed**
+* $className **string**
+* $types **array**
+
+
+
+### get
+
+    mixed deasilworks\CEF\CEF::get($class)
+
+
+
+
+
+* Visibility: **public**
+
+
+#### Arguments
+* $class **mixed**
 
 
 

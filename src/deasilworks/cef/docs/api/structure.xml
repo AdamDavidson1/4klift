@@ -835,7 +835,288 @@ REQUIRED for hydration of entities with defined models.</long-description>
     </parse_markers>
     <source>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</source>
   </file>
-  <file path="Cassandra/Transformer.php" generated-path="Cassandra.Transformer.html" hash="6a0f3cc39ea26cc55e6edca85bfa8e78" package="Default">
+  <file path="DomainEntityManager.php" generated-path="DomainEntityManager.html" hash="b4588e60ed037ce045912877cfb5c410" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="true" namespace="deasilworks\CEF" line="33" package="Default">
+      <extends>\deasilworks\CEF\CEF</extends>
+      <name>DomainEntityManager</name>
+      <full_name>\deasilworks\CEF\DomainEntityManager</full_name>
+      <docblock line="33">
+        <description>Class DomainEntityManager.</description>
+        <long-description>Base class for domain entity managers.</long-description>
+        <tag name="package" line="33" description="Default"/>
+        <tag name="inherited_from" description="\deasilworks\CEF\CEF" refers="\deasilworks\CEF\CEF" link="/classes/deasilworks.CEF.CEF.html"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="deasilworks\CEF" line="44" package="Default">
+        <name>$config</name>
+        <full_name>\deasilworks\CEF\CEF::config</full_name>
+        <default></default>
+        <docblock line="44">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="44" description="" type="\deasilworks\CEF\CEFConfig" variable="">
+            <type>\deasilworks\CEF\CEFConfig</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="deasilworks\CEF" line="49" package="Default">
+        <name>$container</name>
+        <full_name>\deasilworks\CEF\CEF::container</full_name>
+        <default></default>
+        <docblock line="49">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="49" description="" type="\DI\Container" variable="">
+            <type>\DI\Container</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="56" package="Default">
+        <name>__construct</name>
+        <full_name>\deasilworks\CEF\CEF::__construct()</full_name>
+        <docblock line="56">
+          <description>CEF constructor.</description>
+          <long-description></long-description>
+          <tag name="param" line="56" description="" type="" variable="$config"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$config</name>
+          <default></default>
+          <type/>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="75" package="Default">
+        <name>getCfgValue</name>
+        <full_name>\deasilworks\CEF\CEF::getCfgValue()</full_name>
+        <docblock line="75">
+          <description>Get a value from the CFG Config if one exists,
+if not return the provided default, otherwise null.</description>
+          <long-description></long-description>
+          <tag name="param" line="75" description="" type="string" variable="$key">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="75" description="" type="null" variable="$default">
+            <type>null</type>
+          </tag>
+          <tag name="return" line="75" description="$value" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$key</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$default</name>
+          <default>null</default>
+          <type>null</type>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="91" package="Default">
+        <name>getConfig</name>
+        <full_name>\deasilworks\CEF\CEF::getConfig()</full_name>
+        <docblock line="91">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="91" description="" type="\deasilworks\CEF\CEFConfig">
+            <type>\deasilworks\CEF\CEFConfig</type>
+          </tag>
+        </docblock>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="101" package="Default">
+        <name>setConfig</name>
+        <full_name>\deasilworks\CEF\CEF::setConfig()</full_name>
+        <docblock line="101">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="101" description="" type="\deasilworks\CEF\CEFConfig" variable="$config">
+            <type>\deasilworks\CEF\CEFConfig</type>
+          </tag>
+          <tag name="return" line="101" description="" type="\deasilworks\CEF\CEF">
+            <type>\deasilworks\CEF\CEF</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$config</name>
+          <default></default>
+          <type>\deasilworks\CEF\CEFConfig</type>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="115" package="Default">
+        <name>getManager</name>
+        <full_name>\deasilworks\CEF\CEF::getManager()</full_name>
+        <docblock line="115">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$mgrClass">
+            <type>string</type>
+          </tag>
+          <tag name="throws" line="115" description="" type="\Exception">
+            <type>\Exception</type>
+          </tag>
+          <tag name="return" line="115" description="" type="\deasilworks\CEF\EntityDataManager">
+            <type>\deasilworks\CEF\EntityDataManager</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$mgrClass</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="127" package="Default">
+        <name>getDataManager</name>
+        <full_name>\deasilworks\CEF\CEF::getDataManager()</full_name>
+        <docblock line="127">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="127" description="" type="string" variable="$dataMgrClass">
+            <type>string</type>
+          </tag>
+          <tag name="throws" line="127" description="" type="\Exception">
+            <type>\Exception</type>
+          </tag>
+          <tag name="return" line="127" description="" type="\deasilworks\CEF\EntityDataManager">
+            <type>\deasilworks\CEF\EntityDataManager</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$dataMgrClass</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="139" package="Default">
+        <name>getDomainManager</name>
+        <full_name>\deasilworks\CEF\CEF::getDomainManager()</full_name>
+        <docblock line="139">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="139" description="" type="string" variable="$domainMgrClass">
+            <type>string</type>
+          </tag>
+          <tag name="throws" line="139" description="" type="\Exception">
+            <type>\Exception</type>
+          </tag>
+          <tag name="return" line="139" description="" type="\deasilworks\CEF\DomainEntityManager">
+            <type>\deasilworks\CEF\DomainEntityManager</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$domainMgrClass</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="151" package="Default">
+        <name>getDomainModel</name>
+        <full_name>\deasilworks\CEF\CEF::getDomainModel()</full_name>
+        <docblock line="151">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="151" description="" type="string" variable="$domainModelClass">
+            <type>string</type>
+          </tag>
+          <tag name="throws" line="151" description="" type="\Exception">
+            <type>\Exception</type>
+          </tag>
+          <tag name="return" line="151" description="" type="\deasilworks\CEF\DomainEntityManager">
+            <type>\deasilworks\CEF\DomainEntityManager</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$domainModelClass</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="deasilworks\CEF" line="162" package="Default">
+        <name>classGetter</name>
+        <full_name>\deasilworks\CEF\CEF::classGetter()</full_name>
+        <docblock line="162">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="162" description="" type="string" variable="$className">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="162" description="" type="array" variable="$types">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="162" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$className</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$types</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="181" package="Default">
+        <name>get</name>
+        <full_name>\deasilworks\CEF\CEF::get()</full_name>
+        <docblock line="181">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="181" description="" type="" variable="$class"/>
+          <tag name="return" line="181" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type/>
+        </argument>
+        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJx1VMGO0zAQvfcrRntaULQLXJAACbmJu7VIk8pJKStxcRO3MaRxZLuUFeLfmXGzrBYJqVI14zfvzRtP/OHj2I2z2e3LGbyElaghN40evMaQMqkdH5w5dAGumxfw5tXrt5Bp5U0PW+u++wTE0EzQtXZH472xAxgPnXZ69wAHp4ag2wT2Tmuwe2g65Q46gWBBDQ8wauexwO6CMoMZDqCgQUniQ3DokMnbfTgrpxHfgvLeNkYhJbS2OR31EFQgyb3ptYfr0Gm4qqaKqxdRp9WqJ0IzAB0/nsLZhM6eAjjtgzMN0SQIavpTS508HvfmaCYRKo/T8MSH1CePVqjhBI62NXv619HfeNr1xncJtIbYd6eASU/JON6E3NxaB173sTkkMWggmn7qMcJIaKThhmlcnjLnzh6f+zGxq/3JDSisY1lrcXxR95tuAmWoYm/73p7JY2OH1pA1/45qazxUO/tDR0+Xex9swJYvfdB1jE/XPB35TvU97PQ0O1TGSavnthz14AMug1E9jNZF0X/t3kyrVC85VOWi3jLJQVSwluVnkfEMrliF8VUCW1Evy00NiJCsqO+hXAAr7uGTKLIE+Je15FUFpSQ2sVrngmNaFGm+yURxB3MsLUpcdoErj7x1GTUnNsEr4ltxmS4xZHORi/o+Ia6FqAtiXpQSGKyZrEW6yZmE9Uauy4pjExkyF6JYSBTiK17UNyiMOeCfMYBqyfKc1IiObdCGpEYhLdf3Utwta1iWecYxOefYH5vn/KKG7tKciVUCGVuxOx6rSiSKJgl5aRO2S05ZUmX4S2tRFuQnLYtaYpigXVn/rd6KiifApKhoMgtZrqJTmi4WlZEHSwt+IaLJP78ghFC8qfhfTsg4y5GuouLJ6yOeLvl2NhvUUftR4f608UE503vyNeWL9/QaXR6fHj93yOwR3waOmxMeVmpQB+0e92SuPK5qRO1xxdqIBB2hcLxg/UVP4fY5hd9A8z9S0D+DHloP2MPs1+z37A+FxZbp</source>
+  </file>
+  <file path="DomainEntityModel.php" generated-path="DomainEntityModel.html" hash="57044ed2e357d07c98dbae140ee3d08a" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="true" namespace="deasilworks\CEF" line="33" package="Default">
+      <extends/>
+      <name>DomainEntityModel</name>
+      <full_name>\deasilworks\CEF\DomainEntityModel</full_name>
+      <docblock line="33">
+        <description>Class DomainEntityModel.</description>
+        <long-description>Provides a base for Classes modeling a domain.</long-description>
+        <tag name="package" line="33" description="Default"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJxtVMGO0zAQvfcrRnsCFLHABQmQkDdxtxZpEjkpZSUubuJuDGkc2S7VCvHvzDhZ0CKkSpXH896bN57Mh49TP61W1y9W8AK2ooHctHr0Go8USe304Mx9H+BZ+xzevHr9FjKtvBlgb913n4AY2yW10u5kvDd2BOOh104fHuDeqTHoLoGj0xrsEdpeuXudQLCgxgeYtPMIsIegzGjGe1DQoiTxYXLokcnbY7gopzG/A+W9bY1CSuhsez7pMahAkkczaA/PQq/hql4QV8+jTqfVQIRmBLp+vIWLCb09B3DaB2daokkwqR3OHVXyeD2Yk1lECB674YkPqc8erVDBCZxsZ470r6O/6XwYjO8T6AyxH84Bg56Csb0Jubm2DrweYnFIYtBANP23xphGQhM1Nyzt8hS59Pb01I+JVR3PbkRhHWGdxfZF3W+6DRQhxNEOg72Qx9aOnSFr/h1hG7xUB/tDR0/zu482YMlzHfQc099nXq58r4YBDnrpHSpjp9VTW45q8AGHwagBJuui6L92Xy6j1Gw41OW62TPJQdRQyfKzyHgGV6zG81UCe9Fsyl0DmCFZ0dxBuQZW3MEnUWQJ8C+V5HUNpSQ2sa1ywTEsijTfZaK4hRuEFiUOu8CRR96mjJoLm+A18W25TDd4ZDciF81dQlxr0RTEvC4lMKiYbES6y5mEaiersuZYRIbMhSjWEoX4lhfNSxTGGPDPeIB6w/Kc1IiO7dCGpEIhLas7KW43DWzKPOMYvOFYH7vJ+ayG7tKciW0CGduyWx5RJRJFk5Q5lwn7DacoqTL8pY0oC/KTlkUj8ZigXdn8Qe9FzRNgUtTUmbUst9EpdRdBZeRBaMFnIur80wfCFDrvav6HEzLOcqSrCbx4fcynR75erUZ10n5SOD9dXCgX2idfU75+T9toXj4Dfu6Q2RPuBo6TEx62ttPD45RUzv4wHU6XgoPyNNZuhmDoRInzPukiflZVOINO4ZfQ/p969XP1a/UbuayT1g==</source>
+  </file>
+  <file path="Cassandra/Transformer.php" generated-path="Cassandra.Transformer.html" hash="6ce6418d6399c3baf6fe3d06e5ce9d05" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -872,16 +1153,16 @@ a CEF EntityModel.</long-description>
           <type>\Cassandra\Rows</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="deasilworks\CEF\Cassandra" line="83" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="deasilworks\CEF\Cassandra" line="79" package="Default">
         <name>handleTimestamp</name>
         <full_name>\deasilworks\CEF\Cassandra\Transformer::handleTimestamp()</full_name>
-        <docblock line="83">
+        <docblock line="79">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="83" description="" type="\Cassandra\Timestamp" variable="$timestamp">
+          <tag name="param" line="79" description="" type="\Cassandra\Timestamp" variable="$timestamp">
             <type>\Cassandra\Timestamp</type>
           </tag>
-          <tag name="return" line="83" description="" type="mixed">
+          <tag name="return" line="79" description="" type="mixed">
             <type>mixed</type>
           </tag>
         </docblock>
@@ -891,14 +1172,14 @@ a CEF EntityModel.</long-description>
           <type>\Cassandra\Timestamp</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="deasilworks\CEF\Cassandra" line="93" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="deasilworks\CEF\Cassandra" line="89" package="Default">
         <name>transform</name>
         <full_name>\deasilworks\CEF\Cassandra\Transformer::transform()</full_name>
-        <docblock line="93">
+        <docblock line="89">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="" variable="$row"/>
-          <tag name="return" line="93" description="" type="mixed">
+          <tag name="param" line="89" description="" type="" variable="$row"/>
+          <tag name="return" line="89" description="" type="mixed">
             <type>mixed</type>
           </tag>
         </docblock>
@@ -911,10 +1192,10 @@ a CEF EntityModel.</long-description>
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="83" code="PPC:ERR-50008">No summary for method handleTimestamp()</error>
-      <error line="93" code="PPC:ERR-50008">No summary for method transform()</error>
+      <error line="79" code="PPC:ERR-50008">No summary for method handleTimestamp()</error>
+      <error line="89" code="PPC:ERR-50008">No summary for method transform()</error>
     </parse_markers>
-    <source>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</source>
+    <source>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</source>
   </file>
   <file path="Statement/Simple.php" generated-path="Statement.Simple.html" hash="020d5a18aa49c6f925dc5015b8c1a848" package="Default">
     <docblock line="0">
@@ -1805,7 +2086,7 @@ REQUIRED for hydration of entities with defined models.</long-description>
     </parse_markers>
     <source>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</source>
   </file>
-  <file path="CEFConfig.php" generated-path="CEFConfig.html" hash="5b8cdc39234856de06b9444de28a5d0a" package="Default">
+  <file path="CEFConfig.php" generated-path="CEFConfig.html" hash="53329bdba1f6dbe96914ae5e99f566c9" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -1813,117 +2094,149 @@ REQUIRED for hydration of entities with defined models.</long-description>
     </docblock>
     <namespace-alias name="Cluster">\Cassandra\Cluster</namespace-alias>
     <namespace-alias name="RetryPolicy">\Cassandra\RetryPolicy</namespace-alias>
-    <class final="false" abstract="false" namespace="deasilworks\CEF" line="34" package="Default">
+    <namespace-alias name="CFG">\deasilworks\CFG\CFG</namespace-alias>
+    <class final="false" abstract="false" namespace="deasilworks\CEF" line="35" package="Default">
       <extends/>
       <name>CEFConfig</name>
       <full_name>\deasilworks\CEF\CEFConfig</full_name>
-      <docblock line="34">
+      <docblock line="35">
         <description>Class CEFConfig.</description>
         <long-description></long-description>
-        <tag name="package" line="34" description="Default"/>
+        <tag name="package" line="35" description="Default"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="39" package="Default">
+      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="40" package="Default">
         <name>$username</name>
         <full_name>\deasilworks\CEF\CEFConfig::username</full_name>
         <default></default>
-        <docblock line="39">
+        <docblock line="40">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="39" description="" type="string" variable="">
+          <tag name="var" line="40" description="" type="string" variable="">
             <type>string</type>
           </tag>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="44" package="Default">
+      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="45" package="Default">
         <name>$password</name>
         <full_name>\deasilworks\CEF\CEFConfig::password</full_name>
         <default></default>
-        <docblock line="44">
+        <docblock line="45">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="44" description="" type="string" variable="">
+          <tag name="var" line="45" description="" type="string" variable="">
             <type>string</type>
           </tag>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="49" package="Default">
+      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="50" package="Default">
         <name>$keyspace</name>
         <full_name>\deasilworks\CEF\CEFConfig::keyspace</full_name>
         <default></default>
-        <docblock line="49">
+        <docblock line="50">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="49" description="" type="string" variable="">
+          <tag name="var" line="50" description="" type="string" variable="">
             <type>string</type>
           </tag>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="54" package="Default">
+      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="55" package="Default">
         <name>$contactPoints</name>
         <full_name>\deasilworks\CEF\CEFConfig::contactPoints</full_name>
         <default></default>
-        <docblock line="54">
+        <docblock line="55">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="54" description="" type="array" variable="">
+          <tag name="var" line="55" description="" type="array" variable="">
             <type>array</type>
           </tag>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="59" package="Default">
+      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="60" package="Default">
         <name>$clusterBuilder</name>
         <full_name>\deasilworks\CEF\CEFConfig::clusterBuilder</full_name>
         <default></default>
-        <docblock line="59">
+        <docblock line="60">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="59" description="" type="\Cassandra\Cluster\Builder" variable="">
+          <tag name="var" line="60" description="" type="\Cassandra\Cluster\Builder" variable="">
             <type>\Cassandra\Cluster\Builder</type>
           </tag>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="64" package="Default">
+      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="65" package="Default">
         <name>$cluster</name>
         <full_name>\deasilworks\CEF\CEFConfig::cluster</full_name>
         <default></default>
-        <docblock line="64">
+        <docblock line="65">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="64" description="" type="\Cassandra\Cluster" variable="">
+          <tag name="var" line="65" description="" type="\Cassandra\Cluster" variable="">
             <type>\Cassandra\Cluster</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="72" package="Default">
+      <property static="false" visibility="protected" namespace="deasilworks\CEF" line="70" package="Default">
+        <name>$cfg</name>
+        <full_name>\deasilworks\CEF\CEFConfig::cfg</full_name>
+        <default></default>
+        <docblock line="70">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="70" description="" type="\deasilworks\CFG\CFG" variable="">
+            <type>\deasilworks\CFG\CFG</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="80" package="Default">
         <name>__construct</name>
         <full_name>\deasilworks\CEF\CEFConfig::__construct()</full_name>
-        <docblock line="72">
+        <docblock line="80">
           <description>CEFConfig constructor.</description>
           <long-description></long-description>
-          <tag name="SuppressWarnings" line="72" description="(StaticAccess)&#10;Because DI does not make sense here."/>
+          <tag name="SuppressWarnings" line="80" description="(StaticAccess)&#10;Because DI does not make sense here."/>
+          <tag name="param" line="80" description="" type="\deasilworks\CFG\CFG" variable="$cfg">
+            <type>\deasilworks\CFG\CFG</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$cfg</name>
+          <default></default>
+          <type>\deasilworks\CFG\CFG</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="89" package="Default">
+        <name>getCfg</name>
+        <full_name>\deasilworks\CEF\CEFConfig::getCfg()</full_name>
+        <docblock line="89">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="89" description="" type="\deasilworks\CFG\CFG">
+            <type>\deasilworks\CFG\CFG</type>
+          </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="80" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="97" package="Default">
         <name>getKeyspace</name>
         <full_name>\deasilworks\CEF\CEFConfig::getKeyspace()</full_name>
-        <docblock line="80">
+        <docblock line="97">
           <description></description>
           <long-description></long-description>
-          <tag name="return" line="80" description="" type="string">
+          <tag name="return" line="97" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="90" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="107" package="Default">
         <name>setKeyspace</name>
         <full_name>\deasilworks\CEF\CEFConfig::setKeyspace()</full_name>
-        <docblock line="90">
+        <docblock line="107">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="90" description="" type="string" variable="$keyspace">
+          <tag name="param" line="107" description="" type="string" variable="$keyspace">
             <type>string</type>
           </tag>
-          <tag name="return" line="90" description="" type="\deasilworks\CEF\CEFConfig">
+          <tag name="return" line="107" description="" type="\deasilworks\CEF\CEFConfig">
             <type>\deasilworks\CEF\CEFConfig</type>
           </tag>
         </docblock>
@@ -1933,27 +2246,27 @@ REQUIRED for hydration of entities with defined models.</long-description>
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="100" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="117" package="Default">
         <name>getUsername</name>
         <full_name>\deasilworks\CEF\CEFConfig::getUsername()</full_name>
-        <docblock line="100">
+        <docblock line="117">
           <description></description>
           <long-description></long-description>
-          <tag name="return" line="100" description="" type="string">
+          <tag name="return" line="117" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="110" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="127" package="Default">
         <name>setUsername</name>
         <full_name>\deasilworks\CEF\CEFConfig::setUsername()</full_name>
-        <docblock line="110">
+        <docblock line="127">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="110" description="" type="string" variable="$username">
+          <tag name="param" line="127" description="" type="string" variable="$username">
             <type>string</type>
           </tag>
-          <tag name="return" line="110" description="" type="\deasilworks\CEF\CEFConfig">
+          <tag name="return" line="127" description="" type="\deasilworks\CEF\CEFConfig">
             <type>\deasilworks\CEF\CEFConfig</type>
           </tag>
         </docblock>
@@ -1963,27 +2276,27 @@ REQUIRED for hydration of entities with defined models.</long-description>
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="121" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="138" package="Default">
         <name>getPassword</name>
         <full_name>\deasilworks\CEF\CEFConfig::getPassword()</full_name>
-        <docblock line="121">
+        <docblock line="138">
           <description></description>
           <long-description></long-description>
-          <tag name="return" line="121" description="" type="string">
+          <tag name="return" line="138" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="131" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="148" package="Default">
         <name>setPassword</name>
         <full_name>\deasilworks\CEF\CEFConfig::setPassword()</full_name>
-        <docblock line="131">
+        <docblock line="148">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="131" description="" type="string" variable="$password">
+          <tag name="param" line="148" description="" type="string" variable="$password">
             <type>string</type>
           </tag>
-          <tag name="return" line="131" description="" type="\deasilworks\CEF\CEFConfig">
+          <tag name="return" line="148" description="" type="\deasilworks\CEF\CEFConfig">
             <type>\deasilworks\CEF\CEFConfig</type>
           </tag>
         </docblock>
@@ -1993,27 +2306,27 @@ REQUIRED for hydration of entities with defined models.</long-description>
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="142" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="159" package="Default">
         <name>getContactPoints</name>
         <full_name>\deasilworks\CEF\CEFConfig::getContactPoints()</full_name>
-        <docblock line="142">
+        <docblock line="159">
           <description></description>
           <long-description></long-description>
-          <tag name="return" line="142" description="" type="array">
+          <tag name="return" line="159" description="" type="array">
             <type>array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="158" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="175" package="Default">
         <name>setContactPoints</name>
         <full_name>\deasilworks\CEF\CEFConfig::setContactPoints()</full_name>
-        <docblock line="158">
+        <docblock line="175">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="158" description="" type="array" variable="$contactPoints">
+          <tag name="param" line="175" description="" type="array" variable="$contactPoints">
             <type>array</type>
           </tag>
-          <tag name="return" line="158" description="" type="\deasilworks\CEF\CEFConfig">
+          <tag name="return" line="175" description="" type="\deasilworks\CEF\CEFConfig">
             <type>\deasilworks\CEF\CEFConfig</type>
           </tag>
         </docblock>
@@ -2023,13 +2336,13 @@ REQUIRED for hydration of entities with defined models.</long-description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="169" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="186" package="Default">
         <name>getCluster</name>
         <full_name>\deasilworks\CEF\CEFConfig::getCluster()</full_name>
-        <docblock line="169">
+        <docblock line="186">
           <description></description>
           <long-description></long-description>
-          <tag name="return" line="169" description="" type="\Cassandra\Cluster">
+          <tag name="return" line="186" description="" type="\Cassandra\Cluster">
             <type>\Cassandra\Cluster</type>
           </tag>
         </docblock>
@@ -2037,23 +2350,25 @@ REQUIRED for hydration of entities with defined models.</long-description>
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="80" code="PPC:ERR-50008">No summary for method getKeyspace()</error>
-      <error line="90" code="PPC:ERR-50008">No summary for method setKeyspace()</error>
-      <error line="100" code="PPC:ERR-50008">No summary for method getUsername()</error>
-      <error line="110" code="PPC:ERR-50008">No summary for method setUsername()</error>
-      <error line="121" code="PPC:ERR-50008">No summary for method getPassword()</error>
-      <error line="131" code="PPC:ERR-50008">No summary for method setPassword()</error>
-      <error line="142" code="PPC:ERR-50008">No summary for method getContactPoints()</error>
-      <error line="158" code="PPC:ERR-50008">No summary for method setContactPoints()</error>
-      <error line="169" code="PPC:ERR-50008">No summary for method getCluster()</error>
-      <error line="39" code="PPC:ERR-50007">No summary for property $username</error>
-      <error line="44" code="PPC:ERR-50007">No summary for property $password</error>
-      <error line="49" code="PPC:ERR-50007">No summary for property $keyspace</error>
-      <error line="54" code="PPC:ERR-50007">No summary for property $contactPoints</error>
-      <error line="59" code="PPC:ERR-50007">No summary for property $clusterBuilder</error>
-      <error line="64" code="PPC:ERR-50007">No summary for property $cluster</error>
+      <error line="89" code="PPC:ERR-50008">No summary for method getCfg()</error>
+      <error line="97" code="PPC:ERR-50008">No summary for method getKeyspace()</error>
+      <error line="107" code="PPC:ERR-50008">No summary for method setKeyspace()</error>
+      <error line="117" code="PPC:ERR-50008">No summary for method getUsername()</error>
+      <error line="127" code="PPC:ERR-50008">No summary for method setUsername()</error>
+      <error line="138" code="PPC:ERR-50008">No summary for method getPassword()</error>
+      <error line="148" code="PPC:ERR-50008">No summary for method setPassword()</error>
+      <error line="159" code="PPC:ERR-50008">No summary for method getContactPoints()</error>
+      <error line="175" code="PPC:ERR-50008">No summary for method setContactPoints()</error>
+      <error line="186" code="PPC:ERR-50008">No summary for method getCluster()</error>
+      <error line="40" code="PPC:ERR-50007">No summary for property $username</error>
+      <error line="45" code="PPC:ERR-50007">No summary for property $password</error>
+      <error line="50" code="PPC:ERR-50007">No summary for property $keyspace</error>
+      <error line="55" code="PPC:ERR-50007">No summary for property $contactPoints</error>
+      <error line="60" code="PPC:ERR-50007">No summary for property $clusterBuilder</error>
+      <error line="65" code="PPC:ERR-50007">No summary for property $cluster</error>
+      <error line="70" code="PPC:ERR-50007">No summary for property $cfg</error>
     </parse_markers>
-    <source>eJy1V21v2kgQ/s6vmIuqBio3afulUnPXO8eYYNXYnG2ai5oKLWYBX4xt7ZoidMp/v5nFNsZA05c7Egk8O/PMzDOzs95ff88WWat1+aIFL2BgBWBHIU8kx0eSGGm2EdF8kUM77MCbV6/fQpczGcVwm4oHqYGVhIXqkItlJGWUJhBJWHDBJxuYC5bkfKrBTHAO6QzCBRNzrkGeAks2kHEh0SCd5CxKomQODEJ0SXionC8QSaazfM0ER/0pMCnTMGIICdM0XC15krOcXM6imEto5wsOZ35hcdZRfqacxQQYJUDL5Sqso3yRrnIQXOYiCglGQ6UwXk0pknI5jpZR4YTMFRuS8BB6JTEVCliDZTqNZvTNVX7ZahJHcqHBNCL0ySpHoSSholejbC5TAZLHKjgEiTABlfQuRqVGjjIiNy/okiRZL9Llfj6Rimq2Egk65spsmiJ9yu/fPMxJQhazNI7TNeUYpsk0otTkO7INcJFN0i9c5bSte5LmGPI2DipHtitzsSQXLI5hwgvu0DMyzfbTEhSDzLEZIhZDlgrltJnuRdFKQd8E3+0Ft7pnguXD0HM/Wl2zC2e6j89nGtxaQd8dBYAanu4Ed+D2QHfu4IPldDUw/xp6pu+D6xGaNRjaloliyzHsUddybuAaTR0Xm93ClkfcwFU+CzTL9AlvYHpGHx/1a8u2gjuNsHpW4BByz/VAh6HuBZYxsnUPhiNv6PomBtFFZMdyeh46MgemE1ygY5SB+REfwO/rtk3eCE4fYRoeBQqGO7zzrJt+AH3X7poovDYxPv3aNrfeMDvD1q2BBl19oN+YyspFIJUkaW7DhNu+SVLyquO/EViuQ/kYrhN4+Khhul5QWd9avqmB7lk+MdPz3IHKlNhFI1fhoKljboGI+f0CoQo9j3yzwoSuqdsI55NxkWupT0W+bLUStuQyY9g/UzVQ1jRP7g2zd9Vq4bYCA7c6Np1g90a8kjkXVw2xx3OxGaa4oTZXNMC28yrGdUAUI01m0XzrK9wXtv5pAX6UBX1ewB9fGDYobtNkXogu1Xcm0hz3DXb0M/QtKGR09f3GGfrH/KY/ZPzAN4qnE8ZMCLY5ZYv7O2dhPkyjJJcnAAp6769XUTzl4iTUVq3Q+jrWExiHxlVtaCIhHaswT8VFsVp58FdZhsNa3jJBZ4Vs+zSXQz0MUdgp1a55yKhTuhaOP5w9OKVgyR5wTtHgVQfTxX6Aairj4EzUGQDjcRVEe4u6bRj6PKMZ+PL9PhnwG9xXffnuXbHY7lwps8dDqgTPcUofrXsjljnPPxT1P4ilQClC2rXJCacZE2xZ+Nx1VZPjAnS3Wb4WnaxFVyGeoKxcRrKaLd1M5r/hbVTs2Cd4223sb+KtVP9Z3qroKsSvtxrSlqzi+Kq5XFoTrY0Z9f/QOixm2RO07kbeN9Faqv8srVV0FeKP0VpaE62N6f29tB4Z0IesGvVB/cTUqWKu1qMZtH8plepInRpIHaiug3Cfzl+/eXvxCv9en3/ecfF4POGG/RMVVuk3TqKfrfI+W/vYP1bvJiNHT87vrfzR0/BI7cvzohE5VbUZ/Tb8g7KK3bsQZcjXUHs7uu+m6wQvYnSrQeYkXkh4Em7K86kCidP5nE+V4REQG1cRoF331akRU3Bw9J0Cnk2KHwULlc9JdYIePVmvjmrvCenz8j1d1rp8xlZxXk+xfizjO6xv+YHpGHdj2zV0e/znyPVGg84JuFry7To3p/SD9IEnOl1jPLw2ElX4CsGbFNWKundGwfPnsJPvhmyz1HUetn4Nwadc3avkUWTtOO4+tY/7UYZ4fRvTcTKmRh2rPdz+VPrV4Fw5rm+R8891P41xdtgne21SvRgetEdz7+4yVz/qLXx6WJUvnVutx9a/6q/jsA==</source>
+    <source>eJy1V21v2kgQ/s6vmIuqBio3afulUnPXO8eYYNXYnG2ai5oKGbOAL8a2dk0ROuW/38z6BdtA05c7koh4duaZmWdmZ9e//p6u0k7n8kUHXsDI8MAMAxYLho8k0ZJ0x8PlKoNu0IM3r16/hT7zRRjBbcIfhAJGHBSqY8bXoRBhEkMoYMU4m+1gyf04Y3MFFpwxSBYQrHy+ZApkCfjxDlLGBRoks8wP4zBegg8BuiQ8VM5WiCSSRbb1OUP9OfhCJEHoIyTMk2CzZnHmZ+RyEUZMQDdbMThzC4uznvQzZ35EgGEMtFyuwjbMVskmA85ExsOAYBRUCqLNnCIpl6NwHRZOyFyyIQgPoTcCU6GAFVgn83BB30zml25mUShWCsxDQp9tMhQKEkp6FcrmMuEgWCSDQ5AQE5BJ72OUauQoJXKzgi5Bku0qWTfzCWVUiw2P0TGTZvME6ZN+/2ZBRhKyWCRRlGwpxyCJ5yGlJt6RrYeL/iz5wmROed3jJMOQ8zioHOm+zMWSWPlRBDNWcIeekWm/mRanGESGzRD6EaQJl07b6V4UreQNdXDtgXerOjoYLowd+6PR1/twprr4fKbAreEN7YkHqOGolncH9gBU6w4+GFZfAf2vsaO7LtgOoRmjsWnoKDYszZz0DesGrtHUsrHZDWx5xPVs6bNAM3SX8Ea6ow3xUb02TMO7UwhrYHgWIQ9sB1QYq45naBNTdWA8cca2q2MQfUS2DGvgoCN9pFveBTpGGegf8QHcoWqa5I3g1Amm4VCgoNnjO8e4GXowtM2+jsJrHeNTr00994bZaaZqjBToqyP1RpdWNgLJJEkzDxNuhzpJyauKv5pn2Bblo9mW5+Cjguk6XmV9a7i6AqpjuMTMwLFHMlNiF41siYOmlp4DEfPNAqEKPU9cvcKEvq6aCOeScZFrqU9Fvux0Yn/NROpj/8zlQNnSPLnX9MFVp4PbCjTc6th03L/Xoo3IGL9qiR2W8d04wQ21y5caOIMb+ruiyZYPsggNAeG1JF6EyzyIoCns/NMB/EgL+ryAP7742Lm4f+NlIbqU3ylPMtxQ2OrP0DOnXNDV9xun6B8Dnv+Q8QPbSQJPGPuc+7tTtrjxMz/IxkkYZ+IEQMH7/fUmjOaMn4TK1Qqtr2M9gXHKeHBz0nCxPDSqCkrzDTncBFnCL4rVCtndpCmOfnHrczp5RNelKR+oQYDCXql2zQKfmqtv4DDFSYYzD9b+A049GuPymDtATn3urylqGV8zdHkC4JCO5XkD02kVYrc0yH3nvUifZzR3X75v8gy/wX21F969Kxa7vasDs8USdXOiSPx4yDFnGR4ahzS3Yl2yTFssu+3wCuu9u6f8HOvqQ1cfiu5+wt9+E5xwmhcj97nfM+2SlRRUo+Br0YladBXiiaqVy1SD1oZtJ/Pf8DYp5tETvO3H1jfxVqr/LG9VdBXi17sdaYs3UXTQ1aU10dqawP8PreNiUj9B636gfxOtpfrP0lpFVyH+GK2lNdHaOpu+l9Yjx8+ReVI/hg6oPRFztR4uoPtLqVRH6tVA6kB1HYT7dP76zduLV/jz+vzznovH4wm37J+osEy/dc7+bJWbbDWxf6zebUaO3gu+t/JHz/ojtS+PrFbkVNV29Hn4B2Xl+ysgZci2ULsU3veTbYzvn/Qyh8wJfA9jcbCrH5ESJEqWSzaXhkdATFxFgG7dV69GTMHB0RsTPJsV/xQsVD5n1SF+9HC/OqrdENLn5Xt6R+2zhb+JsnqK9ZsBXt1dw/V0S7ubmrammtM/J7YzGfVOwNWS79a5OaXvJQ8sVuntzcG3ZaIKbzOsTVGtqI0zCp4/h718P2Tbpa7zkPvVOJsz+TopjiIrx3Gb1D42owzwrXVKx8mUGnUq93D3U+lXgXPpuL5Fzj/X/bTG2WGfNNqkuvYetEd77+4zl//UW/j0sCqv1LnWY+dfl4gg/w==</source>
   </file>
   <file path="StatementBuilder/Delete.php" generated-path="StatementBuilder.Delete.html" hash="318b59047bc26ea2b744e02917282c93" package="Default">
     <docblock line="0">
@@ -3714,7 +4029,7 @@ produce Statement Managers.</long-description>
     </parse_markers>
     <source>eJydV21vo0YQ/u5fMY0inX3ikrZfKiXNtcTGMaoNFpBLI0U6rWFttsUsx67jRlX+e2cW/ALEOanWSRG7M888z7zB/fpbkRa93uXHHnyEmRvBVMQ8Vxwf6WQoi5dSrFIN/XgAP//40y8w4kyJDB5k+beywM3j2nTOy7VQSsgchIKUl3zxAquS5ZonFixLzkEuIU5ZueIWaAksf4GClwod5EIzkYt8BQxiDEl4aKxTRFJyqbes5GifAFNKxoIhJCQy3qx5rpmmkEuRcQV9nXI4C2uPs4GJk3CWEaDIga53t7AVOpUbDSVXuhQxwVhoFGebhJjsrjOxFnUQcjfZUISH0BuFUoiwBWuZiCX95UZfsVlkQqUWJILQFxuNh4oOTXotUnMpS1A8M+QQRKAAI/rA0ZhRoIKSq+t0KTrZpnLd1CMMq+WmzDEwN26JxPSZuH/xWNMJeSxllsktaYxlngiSpq7IN8JLtpDP3Giq6p5LjZQrHlSO4lDm+kqlLMtgwevcYWTMNGvKKomD0tgMgmVQyNIEbcu9qFspmjgQ+uPowQ4ccEOYB/4Xd+SM4MwO8fnMggc3mvj3EaBFYHvRI/hjsL1H+MP1RhY4f84DJwzBDwjNnc2nroPHrjec3o9c7w5u0dXzsdldbHnEjXwTs0ZznZDwZk4wnOCjfetO3ejRIqyxG3mEPPYDsGFuB5E7vJ/aAczvg7kfOkhihMie640DDOTMHC+6wMB4Bs4XfIBwYk+nFI3g7HuUERBRGPrzx8C9m0Qw8acjBw9vHeRn306dKhqqG05td2bByJ7Zd47x8hHIiCTLiiY8TBw6pag2/htGru+RnqHvRQE+Wig3iPbeD27oWGAHbkiZGQf+zCil7KKTb3DQ1XMqIMp8s0BoQs/3obPHhJFjTxEuJOda686einzZ6+VszVXBsH8Ss1C2tE+ehs74utfDsWqfPoU4g5zm/SkU6yLj17S0qh2V4VYAB1tLv8xYzla83DXSLUOk2NwvsQe5sYF1ZaTICgJkga0oFhk3Ngac4tB8rDnugMTMW8lxjDmOhgGhpsaRIICilM8ioWfYc4SaByxZrGX5QgApzwpgcSwxAA4oNj7TVS7iIwEjplnt3Pu3B/gzKumH7UJsN5keypz2JeIb14v6fmf2+zPDeUO6+ao+ujR/kanGNYADeh7jCuBm5VXZu2kjX10ZaMxyi4MBx4Kg5VK08cUzJoDQ6a7r26gRLR8kuaEEtRXs8elVUvJvG1EiayrPiut9lndAWu78UGGywZbqFKKbo4KVbH0UqCbdFGT2Na7U3KQKvn7dc+53PAfGpaoZ/c5pXX76XF1igvdZocvXTm6G+4rAuGqaDmVsQVzu7Uq9yxjTdQDudyh226Bm3fAzd/1BXU/61Uxyvu1g9A3C4JTMO67NysfXJc+OX+f0ujU3B7xTCTiaFEL5XgKM0XvaT8huKEYJVeu3gsN5paQOb5Crk5vjEAa6JnLdsvz0WXHdGI19DtsJrxxO5bbu6WryO4X5fjLrtfNeOlW3L9pxTs5Bp9VaR2/IJdeTamujtxbde1NQd3OL5XHEDtlTFLr7/tToNiujdn5vFkanpdwqeHL+iXlBHE5Urr0Hv5eCtn2/xQNLUr1a693fTtF+BDoL+AC0Ozkeh87lTbU4mtH7jX1pQWcE/veyEkvo/9BlIXL6Ho05foO2BQ2OVNPPVMSQPhSlnb2LD/Suwk9i/C7YY9MHbvX/peY3zO4z5cPRMnjtnU6ZWRGtvX9i+t6Yojbarp1fe/8BGB1B6g==</source>
   </file>
-  <file path="ServiceProvider/Silex/CEFServiceProvider.php" generated-path="ServiceProvider.Silex.CEFServiceProvider.html" hash="99317a5e41d32f48368fae820938969b" package="Default">
+  <file path="ServiceProvider/Silex/CEFServiceProvider.php" generated-path="ServiceProvider.Silex.CEFServiceProvider.html" hash="66c95d4fc389b515d6dc78f8689cf2aa" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -3723,7 +4038,7 @@ produce Statement Managers.</long-description>
     <namespace-alias name="CEF">\deasilworks\CEF\CEF</namespace-alias>
     <namespace-alias name="CEFConfig">\deasilworks\CEF\CEFConfig</namespace-alias>
     <namespace-alias name="EntityDataModel">\deasilworks\CEF\EntityDataModel</namespace-alias>
-    <namespace-alias name="Config">\deasilworks\CFG\Config</namespace-alias>
+    <namespace-alias name="CFG">\deasilworks\CFG\CFG</namespace-alias>
     <namespace-alias name="ServiceProvider">\deasilworks\CFG\ServiceProvider\Silex\ServiceProvider</namespace-alias>
     <namespace-alias name="Container">\Pimple\Container</namespace-alias>
     <namespace-alias name="ServiceProviderInterface">\Pimple\ServiceProviderInterface</namespace-alias>
@@ -3759,7 +4074,7 @@ the application built on the Silex framework.</long-description>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
       <error line="47" code="PPC:ERR-50008">No summary for method register()</error>
     </parse_markers>
-    <source>eJytVm1v4kYQ/s6vmEYnBSIntP1Sqeml54AJ7oGNbHNp1JwqY69hW+O1dpdwtMp/78zavDkk7UlFicCzM8/MPPOy/unnclG2Wt2LFlzA2I1gxBNWKIaPJOmJciP5fKGhnXTg+2+/+wH6LFY8h3sh/1QWuEVSq06YXHKluCiAK1gwyWYbmMu40Cy1IJOMgcggWcRyzizQAuJiAyWTCg3ETMe84MUcYkjQJeGhsl4gkhKZXseSoX4KsVIi4TFCQiqS1ZIVOtbkMuM5U9DWCwZnYW1x1jF+UhbnBMgLoOPtKay5XoiVBsmUljwhGAuVknyVUiTb45wvee2EzA0bivAQeqUwFQrYgqVIeUbfzORXrmY5VwsLUk7os5VGoSKhodeibLpCgmK5CQ5BOCZgkt7HaNTIUUnk6pouRZL1QiyP8+EmqmwlC3TMjFkqkD7j9w+WaJKQRSbyXKwpx0QUKafU1I9kG+FhPBNPzORU1b0QGkOu4qBylPsy10dqEec5zFjNHXpGpuPjtCTFoDQ2A49zKIU0TpvpXtWtFA0dCP1BdG8HDrghTAL/k9t3+nBmh/h8ZsG9Gw39aQSoEdhe9AD+AGzvAT66Xt8C59dJ4IQh+AGhuePJyHVQ7Hq90bTvendwi6aej83uYssjbuQbnzWa64SEN3aC3hAf7Vt35EYPFmEN3Mgj5IEfgA0TO4jc3nRkBzCZBhM/dDCIPiJ7rjcI0JEzdrzoCh2jDJxP+ADh0B6NyBvB2VNMI6BAoedPHgL3bhjB0B/1HRTeOhiffTtyKm+YXW9ku2ML+vbYvnOMlY9AJknSrMKE+6FDUvJq418vcn2P8un5XhTgo4XpBtHO+t4NHQvswA2JmUHgj02mxC4a+QYHTT2nAiLmjwuEKvQ8DZ0dJvQde4RwIRnXuW71qcjdVquIl0yVMfZPahbKmvbJY88ZPIZMPmFfTaR44imTjyGO9pfrVguH7YUu/l+/dtATRcbnp48dbES96cc6HouU5SeUBnePrwLg2ckgm9LKdMKXZc4IjZZcQ9qwcHFbygxZuaadXK3gHJceYNAN1e2wBEgjzhKf5TTZEkpzTtONNrgwcaWqyhLn3+wtmvKyxE1UbbXZiuca6vVm8sBtjdWhZKtiJa+EAOyLZkWqoCk3udFyfnG0S7D1dwvwY5KkzwV8KGN0Czue4F2y/VmrdM23Wa0JLrrC7Gzc33PcsUy2T1l2jEnliz77k9/e0T67vNk14tX5VcKy88/wfo/dPkA6QKmQWFZ1yEe2QZvTcFeJUTnHeh4a8wza3+AaZbp9GNEh5OdO02Mz/iNtjKBga9j1fbtzfWT83HoR/d7kjSAagXe7eNVKhXeJ3JiLSZSrHO9jbBm8j5Js3vCSvcFOdpKWE6xkr/OB/QMfnmIJVciGH/que6VJHR29hxPg1y/Vq4i3CdasvkqUBefUPdbWzeXNnGk7z9udtwuBhBY4Rqf5pIlsDMH/EF3dzw3uJdP46mAaYx/w84HSv44O9bqW+HLB5O844lrIjZmmvSEGLIXGV5H2kevDcaNV06EXq7dm77jyuOZMO5+suWnz/zD1DTYajJhqmusiLuI57po60GZpt786X8Ub7md8LeJ/Mfm1fDXuMXjHjOAUX9tsKo3LGy1+wXfJl2viIIVK8Nz6B1KYr5Y=</source>
+    <source>eJylVm1v4kYQ/s6vmEaRApET2vtSqWnTc8AE98BGtrk0ak6VsdewrfFau0sIrfLfO7M2BByS9lSUCDw788wzr94ffy4XZavVPW/BOYzdCEY8YYVi+EiSnig3ks8XGtpJBz58+9330Gex4jncCfmnssAtklp1wuSSK8VFAVzBgkk228BcxoVmqQWZZAxEBskilnNmgRYQFxsomVRoIGY65gUv5hBDgi4JD5X1ApGUyPQ6lgz1U4iVEgmPERJSkayWrNCxJpcZz5mCtl4wOAlri5OO8ZOyOCdAXgAdb09hzfVCrDRIprTkCcFYqJTkq5SYbI9zvuS1EzI32VCEh9ArhaEQYQuWIuUZfTMTX7ma5VwtLEg5oc9WGoWKhCa9FkXTFRIUyw05BOEYgAn6haNRI0clJVfX6VIkWS/E8jAeblhlK1mgY2bMUoHpM37/YIkmCVlkIs/FmmJMRJFyCk39QLYRHsYz8chMTFXdC6GRcsWDylG+lLk+Uos4z2HG6tyhZ8x0fBiWJA5KYzPwOIdSSOO0Ge5l3UrR0IHQH0R3duCAG8Ik8D+7facPJ3aIzycW3LnR0J9GgBqB7UX34A/A9u7hk+v1LXB+nQROGIIfEJo7noxcB8Wu1xtN+653Czdo6vnY7C62POJGvvFZo7lOSHhjJ+gN8dG+cUdudG8R1sCNPEIe+AHYMLGDyO1NR3YAk2kw8UMHSfQR2XO9QYCOnLHjRZfoGGXgfMYHCIf2aETeCM6eYhgBEYWeP7kP3NthBEN/1HdQeOMgP/tm5FTeMLreyHbHFvTtsX3rGCsfgUyQpFnRhLuhQ1LyauNfL3J9j+Lp+V4U4KOF4QbRzvrODR0L7MANKTODwB+bSCm7aOQbHDT1nAqIMn9YIFSh52no7DCh79gjhAvJuI51q09F7rZaRbxkqoyxf1KzUNa0Tx56zuAhZPIR+2oixSNPmXwIcbSfrlotHLZXuvh/9dZBTxQZnx8/drAR9aYf63gsUpYfURrc0v/xg6MMm9LKdMKXZc4ekAttuIa0YeHiqpQZpuSKFnK1f3PceICMG6rbSQkwhzhIfJbTWEsozTmNNtrgtsR9qipLHH6ztGjEyxLXULXSZiuea6h3m4kDVzWWhoKtKpW8QQHYk2ZFqqApN7HRZn51tAuw9XcL8GOCpM85fCxjdAu7PMFpsv1Zq3TNt9mrCW65wixsXN5zXLBMto9ZdoxJ5Ys+Lye/ndIyu7jedeHl2WXCsrMv8NMLdnsPaQ+lQmIZqharHHuneVA13ie2QY3jfi4To3LWtM3escpI/UCfZ9DGVcx0ez+wCuRLp0m5Tjh8fIwlYBcbd9u0NmkQh9eYDf9bDt8cIbGXheNUmvU4sKDUsjXshrhNDDpXr0CeXxPaVqYyf4fUkWDqtJeiXOV4x9j5fgPCgjPqGctk7OJ6zrSd5+1Og2eDY7eL3J7wXSw35sVe+8Kpq9/njb7/39R2LdwIWDKNVwWTrxfCz3tK/zot1MVa4mWCyd9xqrWQGzNAL4ZIWAqNV4/2gev9CaPt0qGL1HvjZhK3613cbKbKR3vXVP8/DPqR8u9lxFRzHBfxHFdLTbJZ1u2vzlflDNcxXoH4X0x+ba4a7yw4ZUZwLFfbSCqNi2stfsF7Y/u9ECrBc+sf8nyigQ==</source>
   </file>
   <file path="EntityCollection.php" generated-path="EntityCollection.html" hash="56c3a077c11dbcf74631efc128c331cb" package="Default">
     <docblock line="0">
@@ -4750,7 +5065,7 @@ REQUIRED for hydration of entities with defined models.</long-description>
     </parse_markers>
     <source>eJytVm1v4kYQ/s6vmEYnAZGbtP1SKde0dWAJbo2NbHM06lWRsRfY1nhd73IU9e6/d2Zt3smL7oqQ0O7OPPPMMy/JDz8V86LRuL5swCUMnAhckfBccTzSTUcW61LM5hpaSRu+++bb76HLYyUyGMvyL2WBkye16ZCXC6GUkDkIBXNe8skaZmWca55aMC05BzmFZB6XM26BlhDnayh4qdBBTnQscpHPIIYEQxIeGus5Iik51au45GifQqyUTESMkJDKZLnguY41hZyKjCto6TmHi7D2uGibOCmPMwIUOdDz5hVWQs/lUkPJlS5FQjAWGiXZMiUmm+dMLEQdhNyNGorwEHqpMBUibMFCpmJKv9zkVywnmVBzC1JB6JOlxktFl0Zei7K5liUonhlyCCIwAZP0jqMxo0AFiatruRTdrOZycZiPMKymyzLHwNy4pRLlM3H/5ImmG/KYyiyTK8oxkXkqKDV1Q74RPsYT+YGbnKq651Ij5YoHlaPYlbl+UvM4y2DCa+0wMiodH6ZVEgelsRlEnEEhSxP0ON2rupWiPoPQ70VjO2DghDAM/HdOl3Xhwg7xfGHB2In6/igCtAhsL3oAvwe29wC/Ol7XAvbbMGBhCH5AaM5g6DoMrx2v4466jncPd+jq+djsDrY84ka+iVmjOSwkvAELOn082neO60QPFmH1nMgj5J4fgA1DO4iczsi1AxiOgqEfMiTRRWTP8XoBBmID5kVXGBjvgL3DA4R923UpGsHZI0wjIKLQ8YcPgXPfj6Dvu12Gl3cM+dl3LquiYXYd13YGFnTtgX3PjJePQCZJsqxowrjP6Jai2vjtRI7vUT4d34sCPFqYbhBtvcdOyCywAyckZXqBPzCZkrro5BscdPVYBUTKHxYITeg8CtkWE7rMdhEuJOc61409Ffm60cjjBVdFjP2TmoWyon3yvsN670OcNk6TfbcUWcrLt40GztlrzK4vq6WV4ZqAkGfY81W0ZO8G+D+a5ykejwAa/zYAPwaEPpcbh2hdUGuau2vzi3OjNITMRVEeo4chg1toVscm8jgP80uI8unnscjmCND4nUH9+UOMU4W7JZ8d4BWl1BgOx/ANBXslUFyW8fopnERmywWO6y38/sfn+K/or8ET3pHEQlASh6qY/ZngNsvNYobHRy0ru1bbGFTFok/JNe48zBbX09c/zrjeFrbVfmusPp1yrp3O6XcU+RDwKPab5O+MFN7ISh8xhdaODDVPqw23t7Tqpzc3+03z8SO8aLjtiPZe2L3QxwBXTWhe7S47Vek2SlRqHEBcIX0z9gd+vVIuyOkwq00hd3Zjumm1z5IzyLiNcEcgtPHdZ3FSQPT5f+pVKfFsm9BoPBmsiMt4Uceqpqh+OqZTTfazdFRNx8CctM+OjFHVkDrL+CVhzszfqS7bZjjp4uqhGjBkIhZFJlPealqA35plbXTcFF8dep92whF287L5fBfs279QIpP11uWLirTRZgP2RKl2q3Bj+JkFe10n1+N1zMXM0mm1zH9pu4IZq/YZfnvurxPYOHyRvFUiFdAT0m6XS70pnpX1U+M/8J2TNg==</source>
   </file>
-  <file path="CEF.php" generated-path="CEF.html" hash="7e62d77e45330d15037b40b00eca57b8" package="Default">
+  <file path="CEF.php" generated-path="CEF.html" hash="b4cf65a3e793eb0f2140c2284e34e69e" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -4806,27 +5121,55 @@ providing an EntityManager factory.</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="69" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="75" package="Default">
+        <name>getCfgValue</name>
+        <full_name>\deasilworks\CEF\CEF::getCfgValue()</full_name>
+        <docblock line="75">
+          <description>Get a value from the CFG Config if one exists,
+if not return the provided default, otherwise null.</description>
+          <long-description></long-description>
+          <tag name="param" line="75" description="" type="string" variable="$key">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="75" description="" type="null" variable="$default">
+            <type>null</type>
+          </tag>
+          <tag name="return" line="75" description="$value" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$key</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$default</name>
+          <default>null</default>
+          <type>null</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="91" package="Default">
         <name>getConfig</name>
         <full_name>\deasilworks\CEF\CEF::getConfig()</full_name>
-        <docblock line="69">
+        <docblock line="91">
           <description></description>
           <long-description></long-description>
-          <tag name="return" line="69" description="" type="\deasilworks\CEF\CEFConfig">
+          <tag name="return" line="91" description="" type="\deasilworks\CEF\CEFConfig">
             <type>\deasilworks\CEF\CEFConfig</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="79" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="101" package="Default">
         <name>setConfig</name>
         <full_name>\deasilworks\CEF\CEF::setConfig()</full_name>
-        <docblock line="79">
+        <docblock line="101">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="79" description="" type="\deasilworks\CEF\CEFConfig" variable="$config">
+          <tag name="param" line="101" description="" type="\deasilworks\CEF\CEFConfig" variable="$config">
             <type>\deasilworks\CEF\CEFConfig</type>
           </tag>
-          <tag name="return" line="79" description="" type="\deasilworks\CEF\CEF">
+          <tag name="return" line="101" description="" type="\deasilworks\CEF\CEF">
             <type>\deasilworks\CEF\CEF</type>
           </tag>
         </docblock>
@@ -4836,19 +5179,41 @@ providing an EntityManager factory.</long-description>
           <type>\deasilworks\CEF\CEFConfig</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="93" package="Default">
-        <name>getDataManager</name>
-        <full_name>\deasilworks\CEF\CEF::getDataManager()</full_name>
-        <docblock line="93">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="115" package="Default">
+        <name>getManager</name>
+        <full_name>\deasilworks\CEF\CEF::getManager()</full_name>
+        <docblock line="115">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$dataMgrClass">
+          <tag name="param" line="115" description="" type="string" variable="$mgrClass">
             <type>string</type>
           </tag>
-          <tag name="throws" line="93" description="" type="\Exception">
+          <tag name="throws" line="115" description="" type="\Exception">
             <type>\Exception</type>
           </tag>
-          <tag name="return" line="93" description="" type="\deasilworks\CEF\EntityDataManager">
+          <tag name="return" line="115" description="" type="\deasilworks\CEF\EntityDataManager">
+            <type>\deasilworks\CEF\EntityDataManager</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$mgrClass</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="127" package="Default">
+        <name>getDataManager</name>
+        <full_name>\deasilworks\CEF\CEF::getDataManager()</full_name>
+        <docblock line="127">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="127" description="" type="string" variable="$dataMgrClass">
+            <type>string</type>
+          </tag>
+          <tag name="throws" line="127" description="" type="\Exception">
+            <type>\Exception</type>
+          </tag>
+          <tag name="return" line="127" description="" type="\deasilworks\CEF\EntityDataManager">
             <type>\deasilworks\CEF\EntityDataManager</type>
           </tag>
         </docblock>
@@ -4858,19 +5223,19 @@ providing an EntityManager factory.</long-description>
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="105" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="139" package="Default">
         <name>getDomainManager</name>
         <full_name>\deasilworks\CEF\CEF::getDomainManager()</full_name>
-        <docblock line="105">
+        <docblock line="139">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="105" description="" type="string" variable="$domainMgrClass">
+          <tag name="param" line="139" description="" type="string" variable="$domainMgrClass">
             <type>string</type>
           </tag>
-          <tag name="throws" line="105" description="" type="\Exception">
+          <tag name="throws" line="139" description="" type="\Exception">
             <type>\Exception</type>
           </tag>
-          <tag name="return" line="105" description="" type="\deasilworks\CEF\DomainEntityManager">
+          <tag name="return" line="139" description="" type="\deasilworks\CEF\DomainEntityManager">
             <type>\deasilworks\CEF\DomainEntityManager</type>
           </tag>
         </docblock>
@@ -4880,19 +5245,19 @@ providing an EntityManager factory.</long-description>
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="117" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="151" package="Default">
         <name>getDomainModel</name>
         <full_name>\deasilworks\CEF\CEF::getDomainModel()</full_name>
-        <docblock line="117">
+        <docblock line="151">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="117" description="" type="string" variable="$domainModelClass">
+          <tag name="param" line="151" description="" type="string" variable="$domainModelClass">
             <type>string</type>
           </tag>
-          <tag name="throws" line="117" description="" type="\Exception">
+          <tag name="throws" line="151" description="" type="\Exception">
             <type>\Exception</type>
           </tag>
-          <tag name="return" line="117" description="" type="\deasilworks\CEF\DomainEntityManager">
+          <tag name="return" line="151" description="" type="\deasilworks\CEF\DomainEntityManager">
             <type>\deasilworks\CEF\DomainEntityManager</type>
           </tag>
         </docblock>
@@ -4902,26 +5267,46 @@ providing an EntityManager factory.</long-description>
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="deasilworks\CEF" line="131" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="deasilworks\CEF" line="162" package="Default">
         <name>classGetter</name>
         <full_name>\deasilworks\CEF\CEF::classGetter()</full_name>
-        <docblock line="131">
+        <docblock line="162">
           <description></description>
           <long-description></long-description>
-          <tag name="param" line="131" description="" type="" variable="$className"/>
-          <tag name="param" line="131" description="" type="" variable="$type"/>
-          <tag name="param" line="131" description="" type="" variable="$type"/>
-          <tag name="return" line="131" description="" type="mixed">
+          <tag name="param" line="162" description="" type="string" variable="$className">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="162" description="" type="array" variable="$types">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="162" description="" type="mixed">
             <type>mixed</type>
           </tag>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$className</name>
           <default></default>
-          <type/>
+          <type>string</type>
         </argument>
         <argument line="0" by_reference="false">
-          <name>$type</name>
+          <name>$types</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="181" package="Default">
+        <name>get</name>
+        <full_name>\deasilworks\CEF\CEF::get()</full_name>
+        <docblock line="181">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="181" description="" type="" variable="$class"/>
+          <tag name="return" line="181" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
           <default></default>
           <type/>
         </argument>
@@ -4929,16 +5314,18 @@ providing an EntityManager factory.</long-description>
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="69" code="PPC:ERR-50008">No summary for method getConfig()</error>
-      <error line="79" code="PPC:ERR-50008">No summary for method setConfig()</error>
-      <error line="93" code="PPC:ERR-50008">No summary for method getDataManager()</error>
-      <error line="105" code="PPC:ERR-50008">No summary for method getDomainManager()</error>
-      <error line="117" code="PPC:ERR-50008">No summary for method getDomainModel()</error>
-      <error line="131" code="PPC:ERR-50008">No summary for method classGetter()</error>
+      <error line="91" code="PPC:ERR-50008">No summary for method getConfig()</error>
+      <error line="101" code="PPC:ERR-50008">No summary for method setConfig()</error>
+      <error line="115" code="PPC:ERR-50008">No summary for method getManager()</error>
+      <error line="127" code="PPC:ERR-50008">No summary for method getDataManager()</error>
+      <error line="139" code="PPC:ERR-50008">No summary for method getDomainManager()</error>
+      <error line="151" code="PPC:ERR-50008">No summary for method getDomainModel()</error>
+      <error line="162" code="PPC:ERR-50008">No summary for method classGetter()</error>
+      <error line="181" code="PPC:ERR-50008">No summary for method get()</error>
       <error line="44" code="PPC:ERR-50007">No summary for property $config</error>
       <error line="49" code="PPC:ERR-50007">No summary for property $container</error>
     </parse_markers>
-    <source>eJzFVl1v6kYQfedXTKNIFyInaftSKWnTOmCCVbCRbW4aKdLVYi+wt8Zr7S4hqMp/78zaED5Co9z7UBQpeHbmzJkzs2N+/b2clY3G5VkDzmDgJ9AXKS80x0eytGW5UmI6M9BMW/Dzjz/9Ah3OtMjhXqq/tQN+kdauQ67mQmshCxAaZlzx8QqmihWGZw5MFOcgJ5DOmJpyB4wEVqyg5EpjgBwbJgpRTIFBiikJD53NDJG0nJglUxz9M2Bay1QwhIRMpos5LwwzlHIicq6haWYcTuI64qRl82Sc5QQoCqDj9SkshZnJhQHFtVEiJRgHndJ8kRGT9XEu5qJOQuFWDU14CL3QWAoRdmAuMzGh/9zWVy7GudAzBzJB6OOFQaMmo5XXoWoupQLNc0sOQQQWYIt+5WjdKFFJ4ppaLk2W5UzOd+sRltVkoQpMzG1YJlE+m/crTw1ZKGIi81wuqcZUFpmg0vQVxSZ4yMbyiduaqr4X0iDlige1o3xtc32kZyzPYcxr7TAzKs12y1LEQRscBsFyKKWySffLvahHKel5EIfd5N6NPPBjGEbhZ7/jdeDEjfH5xIF7P+mFowTQI3KD5AHCLrjBA/zpBx0HvL+GkRfHEEaE5g+Gfd9Dsx+0+6OOH9zBLYYGIQ67jyOPuEloc9ZovhcT3sCL2j18dG/9vp88OITV9ZOAkLthBC4M3Sjx26O+G8FwFA3D2EMSHUQO/KAbYSJv4AXJBSZGG3if8QHintvvUzaCc0dYRkREoR0OHyL/rpdAL+x3PDTeesjPve17VTasrt13/YEDHXfg3nk2KkQgWyR5VjThvueRlbK6+NdO/DCgetphkET46GC5UbKJvvdjzwE38mNSphuFA1spqYtBocXB0MCrgEj53QahCz2PYm+DCR3P7SNcTMF1rWt/avJlo1GwOdclw/nJ7EJZ0j55bHvd60YDrxV0/Me2LGgtcHW7EHnG1XV1IFO8UAXH4/lcFo9ugXNo76fe+h7xKV28FW4MrA0x3ejqSlkjV33JEK75Kc1xn3zhz2jUn1rXtAarrUd2QC7rgYyQKuKLcU63R8GcFWxaX6CJmC5UtR/wkpB3qeSTsDuEFeDhyJvVgAK4gglLjVSrSoN0nabxTwPwY7PT5wz+eGKKTtoWv7Ze2v+lEk+4AOG0yo2s34p93NbvaHx1fAiBmak0FHBBfC9q+yZDyRSbrxnsotsVh1uosAsVvnzZ4DQ39awjWzakKp4+p7Rhzm+qQ/htr0TrMa5GAQ8LvoT9CWliEw/BKhfCq6PPb+wX8j7qfn6j+RblqyvbLWdDvUr0cqi+4gZX8LHm7ckz5abyau5rUcPsSHI0Z9WPA3332/ZK7T9J6Q2pb+7TNvt3WNPrEa/KacYMG0yVvXv7xM1MyaWGR+855SVxPFJZddk6hFRduPfE33Jt7jB4px3kcseN2Q9zDinUk3N8YPZkkHOcv+8VomNRdnbPu1JUiTdi7PD4iBw7gc5bVL5NEpnx/H8ShVI3D3h8XJRN6PfIcmq9Anx/HlnLZlV+5KimPRfPPHvzTbERZKekDQungt1XQ0yg+cP2G3YrpNXactySrljk+esGf9naznL8lRbNwZLGHm3jbq0gm9/GiYJ+eaYcf21WTD+YfN1XxFq35qXxLxZl5kk=</source>
+    <source>eJzFV2Fv4kYQ/c6vmEaRjpycS9svlZJeWgdMsAo2Ms6lUVOdFrPA3tlea9eEQ1X+e2d2jWMgXO7aU4siBe/OvDfzZnbW/PxLsSharbPXLXgNQz+GgUh4rjk+0kpHFmsl5osS2skJ/Pj9Dz9BlzMtUriV6qN2wM+TynTEVSa0FjIHoWHBFZ+sYa5YXvKpAzPFOcgZJAum5tyBUgLL11BwpdFBTkomcpHPgUGClISHxuUCkbSclSumONpPgWktE8EQEqYyWWY8L1lJlDORcg3tcsHhaFx5HJ0YnilnKQGKHGh7swsrUS7ksgTFdalEQjAOGiXpckqRbLZTkYmKhNyNGprwEHqpMRUK2IFMTsWM/nOTX7GcpEIvHJgKQp8sS1zUtGjkdSibM6lA89QEhyACEzBJP8VozIioIHHLSi5NK6uFzLbzESaq2VLlSMyN21SifIb3A09KWiGPmUxTuaIcE5lPBaWmz8k3xk02kQ/c5GTrnssSQ7ZxUDmKpzJXW3rB0hQmvNIOmVFptp2Wohh0ic0gWAqFVIZ0N903VSvFfQ/GYS++dSMP/DGMovCd3/W6cOSO8fnIgVs/7oc3MaBF5AbxHYQ9cIM7+M0Pug54v48ibzyGMCI0fzga+B4u+0FncNP1g2u4QtcgxGb3seURNw4NZ4Xme2PCG3pRp4+P7pU/8OM7h7B6fhwQci+MwIWRG8V+52bgRjC6iUbh2MMguogc+EEvQiJv6AXxGyTGNfDe4QOM++5gQGwE595gGhEFCp1wdBf51/0Y+uGg6+HilYfxuVcDz7Jhdp2B6w8d6LpD99ozXiECmSTJ0oYJt32PVonVxb9O7IcB5dMJgzjCRwfTjeLa+9Yfew64kT8mZXpRODSZkrroFBocdA08C0TKbxcITej5ZuzVmND13AHCjcm5ynVjT0U+a7VylnFdMOyfqRkoK5on9x2vd9Fq4bGCrn/fkTmNBa6uliKdcnVhN2SCByrnuJ1lMr93c+xDcz5143vE53Tw1jgxMDfEdKPzc2UWuRpIhnDtV0mK8+Q9/4SL+tXJBY1BO/VoHTCWTUNGGCrii0lKp0dBxnI2rw7QTMyXys4HPCRkXSj5IMwMYTl42PLlekgOXMGMJaVUa6tBsqFp/dUC/Bh2+ryGXx+Yop2Owa9Wz8z/QokHHIBwbLkx6ud875v6HfS32/sQyEypoYBLivdNtV4zFEyxbBPBNroZcTiFcjNQ4f37Gqdd57PxPDEuNnn6HNOEOb20m/B2J0VjMbGtgJs5X8Fuh7SxiPtg1oTwKu/TS/OFrA+an15q3gj5/NxUy6lDt0SPe9Jd8xIvsQeWLrFVVDWjO71rqFIXM5A5B9t0zsYLV7Fz8SoqcXwbF9tEdM/xGVumpQMSl9VK4BHIl2l6oCZ02WDjHX/k650dcoLjCm3XuSLOxCdkPDbRf7asc152ZvN3ZNcmLqdGfks8e4W1erytrZrCJzNT62btTy8twVaFUKM2GZ80gLfBcdN47oTUaIrHJ7gqZet9qJobYQ4cxWdUMVbtXQE2ZM0kD3Laeu2dlgM1o/nxuaB0HdQ/PnXN6F+IetN/2VyZKbobdLlQcqXh3vuU8ILiO5CVHZtdVrJqdL4kfGXWrplfKAGZ4Fktmy4O/LHHWx/8rsxwMGyN82rvz4PDYEeUKcH+18I0TNtbEXyFQE23z4j05UIYLf+tFM9U5EUxLHEtx1YcXyPIliNK8i26w2LKKU//J1mIur0Xx9fLUrt+G2GMdYDvizv7TCm2pvm1LvieWs0b7dn3nzr/rQxqLqfC3c2ebqHvmi+ODZ+T3avJBvHs9XMsJx+erj1zaT3hNGYvvm5ylizw6jPh0Pus+bZLZW5HwhQ5/c5KOP62etawWUK0v9jafGxtfztYGxvsF6i932xVoi9ekZv3sIbLpmEeW38D7yDkSA==</source>
   </file>
   <file path="StatementComponent/Exp.php" generated-path="StatementComponent.Exp.html" hash="ac8304d5bf7aa113aa529a58a1421ca4" package="Default">
     <docblock line="0">
@@ -5176,214 +5563,6 @@ providing an EntityManager factory.</long-description>
       <error line="43" code="PPC:ERR-50007">No summary for property $json</error>
     </parse_markers>
     <source>eJytVG1v2zYQ/u5fcTAG2A40e9uXAeveFJuO2cmSIcnNAhQIaIm22cmiRtJNg6L/fXeUHCfuVmzAhCAGj3fPPc/x7n78pdk3vd7kqgdXsOQ5RKqQtZV4JMtUN49G7fYOhsUIvvvm2+9hJoVVFdxq84cNgNdF57qS5qCsVboGZWEvjdw8ws6I2skygK2REvQWir0wOxmA0yDqR2iksRigN06oWtU7EFBgSsJDZ7dHJKu37kEYif4lCGt1oQRCQqmL40HWTjhKuVWVtDB0ewn9rIvoj3yeUoqKAFUNdH26hQfl9vrowEjrjCoIJkCnojqWxOR0XamD6pJQuK+GJTyEPlqUQoQDOOhSbelXen3NcVMpuw+gVIS+OTo0WjL68gakZqINWFl5cgiiUIAXfebo3ShRQ8V1XbksWR72+vBSj/KstkdTY2Lpw0qN5fN538nCkYUitrqq9ANpLHRdKpJmf6DYHC/FRr+XXlP77rV2SLnlQc/RnJ+5u7J7UVWwkV3tMDNWWryUZYiDddgMSlTQaOOTXsodd62ULxhkyTy/DVMGPINVmrzhMzaDfpjhuR/ALc8XyToH9EjDOL+DZA5hfAe/8XgWAPt9lbIsgyQlNL5cRZyhmcfTaD3j8Q1cY2icYLNzbHnEzROfs0PjLCO8JUunCzyG1zzi+V1AWHOex4Q8T1IIYRWmOZ+uozCF1TpdJRlDEjNEjnk8TzERW7I4H2NitAF7gwfIFmEUUTaCC9coIyWiME1Wdym/WeSwSKIZQ+M1Q37hdcTabKhuGoV8GcAsXIY3zEclCORFkmdLE24XjKyUNcS/ac6TmPRMkzhP8Rig3DR/ir7lGQsgTHlGlZmnydIrpepiUOJxMDRmLRBV/uUDoQud1xl7woQZCyOEyyi403ryp0ee9Hq1OEjbCOyf0i+UB9onb6ds/jbDaZM02ddHVZXSvOr1cM7+jdvkql1aFa4J3ExWGvca56XNWFxYQX5wsi4tXAL1PvYAPw9G3xX8+l5gA+MY17vONPG/jdEO5wo7/iv32Ej4CQY8zhgW93WWxANk9N+B3iG1zwNzjTQpbPwyzi8UnPnary+4v3e69RuOvEMrhT4jHW4GJIpD/PXPO+meZA9Hr7zXp8/pdkF/x/gi80vAi9yTCRRYfNwhRnRguA8aWgNPPl44VhCv741sKuyMYX+Ao94f0P8zb3q74WjU1ciHFn9Wz2rPYxznwfgcMTf6MByN+/5VYNAf+1xjRH8GcqoPYv0/5Wh5fvEV2rf+h2SNMOJwqpZn3F1d0jm39Bcp2Y6Sh7rk9YwQVvJ5E16yPvH91PsLqVVqXw==</source>
-  </file>
-  <file path="DomainEntityManager.php" generated-path="DomainEntityManager.html" hash="c71eca1992964102bf6972ac1780b7e0" package="Default">
-    <docblock line="0">
-      <description></description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <class final="false" abstract="true" namespace="deasilworks\CEF" line="33" package="Default">
-      <extends>\deasilworks\CEF\CEF</extends>
-      <name>DomainEntityManager</name>
-      <full_name>\deasilworks\CEF\DomainEntityManager</full_name>
-      <docblock line="33">
-        <description>Class DomainEntityManager.</description>
-        <long-description>Base class for domain entity managers.</long-description>
-        <tag name="package" line="33" description="Default"/>
-        <tag name="inherited_from" description="\deasilworks\CEF\CEF" refers="\deasilworks\CEF\CEF" link="/classes/deasilworks.CEF.CEF.html"/>
-      </docblock>
-      <property static="false" visibility="private" namespace="deasilworks\CEF" line="44" package="Default">
-        <name>$config</name>
-        <full_name>\deasilworks\CEF\CEF::config</full_name>
-        <default></default>
-        <docblock line="44">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="44" description="" type="\deasilworks\CEF\CEFConfig" variable="">
-            <type>\deasilworks\CEF\CEFConfig</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="private" namespace="deasilworks\CEF" line="49" package="Default">
-        <name>$container</name>
-        <full_name>\deasilworks\CEF\CEF::container</full_name>
-        <default></default>
-        <docblock line="49">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="49" description="" type="\DI\Container" variable="">
-            <type>\DI\Container</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="56" package="Default">
-        <name>__construct</name>
-        <full_name>\deasilworks\CEF\CEF::__construct()</full_name>
-        <docblock line="56">
-          <description>CEF constructor.</description>
-          <long-description></long-description>
-          <tag name="param" line="56" description="" type="" variable="$config"/>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$config</name>
-          <default></default>
-          <type/>
-        </argument>
-        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="69" package="Default">
-        <name>getConfig</name>
-        <full_name>\deasilworks\CEF\CEF::getConfig()</full_name>
-        <docblock line="69">
-          <description></description>
-          <long-description></long-description>
-          <tag name="return" line="69" description="" type="\deasilworks\CEF\CEFConfig">
-            <type>\deasilworks\CEF\CEFConfig</type>
-          </tag>
-        </docblock>
-        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="79" package="Default">
-        <name>setConfig</name>
-        <full_name>\deasilworks\CEF\CEF::setConfig()</full_name>
-        <docblock line="79">
-          <description></description>
-          <long-description></long-description>
-          <tag name="param" line="79" description="" type="\deasilworks\CEF\CEFConfig" variable="$config">
-            <type>\deasilworks\CEF\CEFConfig</type>
-          </tag>
-          <tag name="return" line="79" description="" type="\deasilworks\CEF\CEF">
-            <type>\deasilworks\CEF\CEF</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$config</name>
-          <default></default>
-          <type>\deasilworks\CEF\CEFConfig</type>
-        </argument>
-        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="93" package="Default">
-        <name>getDataManager</name>
-        <full_name>\deasilworks\CEF\CEF::getDataManager()</full_name>
-        <docblock line="93">
-          <description></description>
-          <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$dataMgrClass">
-            <type>string</type>
-          </tag>
-          <tag name="throws" line="93" description="" type="\Exception">
-            <type>\Exception</type>
-          </tag>
-          <tag name="return" line="93" description="" type="\deasilworks\CEF\EntityDataManager">
-            <type>\deasilworks\CEF\EntityDataManager</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$dataMgrClass</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="105" package="Default">
-        <name>getDomainManager</name>
-        <full_name>\deasilworks\CEF\CEF::getDomainManager()</full_name>
-        <docblock line="105">
-          <description></description>
-          <long-description></long-description>
-          <tag name="param" line="105" description="" type="string" variable="$domainMgrClass">
-            <type>string</type>
-          </tag>
-          <tag name="throws" line="105" description="" type="\Exception">
-            <type>\Exception</type>
-          </tag>
-          <tag name="return" line="105" description="" type="\deasilworks\CEF\DomainEntityManager">
-            <type>\deasilworks\CEF\DomainEntityManager</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$domainMgrClass</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="deasilworks\CEF" line="117" package="Default">
-        <name>getDomainModel</name>
-        <full_name>\deasilworks\CEF\CEF::getDomainModel()</full_name>
-        <docblock line="117">
-          <description></description>
-          <long-description></long-description>
-          <tag name="param" line="117" description="" type="string" variable="$domainModelClass">
-            <type>string</type>
-          </tag>
-          <tag name="throws" line="117" description="" type="\Exception">
-            <type>\Exception</type>
-          </tag>
-          <tag name="return" line="117" description="" type="\deasilworks\CEF\DomainEntityManager">
-            <type>\deasilworks\CEF\DomainEntityManager</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$domainModelClass</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="deasilworks\CEF" line="131" package="Default">
-        <name>classGetter</name>
-        <full_name>\deasilworks\CEF\CEF::classGetter()</full_name>
-        <docblock line="131">
-          <description></description>
-          <long-description></long-description>
-          <tag name="param" line="131" description="" type="" variable="$className"/>
-          <tag name="param" line="131" description="" type="" variable="$type"/>
-          <tag name="param" line="131" description="" type="" variable="$type"/>
-          <tag name="return" line="131" description="" type="mixed">
-            <type>mixed</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$className</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$type</name>
-          <default></default>
-          <type/>
-        </argument>
-        <inherited_from>\deasilworks\CEF\CEF</inherited_from>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-    </parse_markers>
-    <source>eJx1VFGL2zgQfvevGPZpW8zu3b0cXA+KYisbUccOstN0oS+KrcS6OpaRlKZLuf/eGcXbZQuFQJjRN98332isf99P/ZQk928TeAtr0UBhWj16jSFlMjs9OXPsA9y2b+CvP/78G3KtvBlgZ90Xn4IY2xm60e5kvDd2BOOh107vn+Do1Bh0l8LBaQ32AG2v3FGnECyo8Qkm7TwW2H1QZjTjERS0KEl8CA49Mnl7CBflNOI7UN7b1iikhM6255MegwokeTCD9nAbeg039Vxx8ybqdFoNRGhGoOPnU7iY0NtzAKd9cKYlmhRB7XDuqJPn48GczCxC5XEanviQ+uzRCjWcwsl25kD/OvqbzvvB+D6FzhD7/hww6SkZx5uSm3vrwOshNockBg1E0y89RhgJTTTcMI/LU+bS29NrPyZ2dTi7EYV1LOssji/q/qfbQBmqONhhsBfy2NqxM2TN/0O1DR6qvf2qo6frvY82YMvXPug6ppdrno98r4YB9nqeHSrjpNVrW4568AGXwagBJuui6K927+ZValYc6mrZ7JjkIGrYyOqjyHkON6zG+CaFnWhW1bYBREhWNo9QLYGVj/BBlHkK/NNG8rqGShKbWG8KwTEtyqzY5qJ8gAWWlhUuu8CVR96mipozm+A18a25zFYYsoUoRPOYEtdSNCUxLysJDDZMNiLbFkzCZis3Vc2xiRyZS1EuJQrxNS+bOxTGHPCPGEC9YkVBakTHtmhDUqOQVZtHKR5WDayqIueYXHDsjy0KflVDd1nBxDqFnK3ZA49VFRJFk4S8tgm7FacsqTL8ZY2oSvKTVWUjMUzRrmx+Vu9EzVNgUtQ0maWs1tEpTReLqsiDpSW/EtHkX18QQije1vwnJ+ScFUhXU/Hs9RlPl3yfJKM6aT8p3J8uPigXek8+Z3z5jl6j6+Mz4OcOuT3h28Bxc8LTWo3qqN3zniyUx1WNqAOuWBeRoCMUTlesv+op3D6n8Btof0cK+lvQY+cBe0i+J0nyf/IDst6W/Q==</source>
-  </file>
-  <file path="DomainEntityModel.php" generated-path="DomainEntityModel.html" hash="13369d9f5a960416bde2122e2f2d6ea4" package="Default">
-    <docblock line="0">
-      <description></description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <class final="false" abstract="true" namespace="deasilworks\CEF" line="34" package="Default">
-      <extends/>
-      <name>DomainEntityModel</name>
-      <full_name>\deasilworks\CEF\DomainEntityModel</full_name>
-      <docblock line="34">
-        <description>Class DomainEntityModel.</description>
-        <long-description>Provides a base for Classes modeling a domain.</long-description>
-        <tag name="package" line="34" description="Default"/>
-      </docblock>
-    </class>
-    <parse_markers>
-      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-    </parse_markers>
-    <source>eJxtVMGO0zAQvecrRnsCFLHABQmQkDdxtxZpEjkpZSUubuJuDGkc2S7VCvHvzLhZ0CKkSpXH896bN57Mh4/zMCfJ9YsEXsBGtFCYTk9e45EimZ0fnLkfAjzrnsObV6/fQq6VNyPsrPvuUxBTt6TW2h2N98ZOYDwM2un9A9w7NQXdp3BwWoM9QDcod69TCBbU9ACzdh4Bdh+Umcx0Dwo6lCQ+TA4DMnl7CGflNOb3oLy3nVFICb3tTkc9BRVI8mBG7eFZGDRcNQvi6nnU6bUaidBMQNePt3A2YbCnAE774ExHNCkmdeOpp0oer0dzNIsIwWM3PPEh9cmjFSo4haPtzYH+dfQ3n/aj8UMKvSH2/Slg0FMwtjclN9fWgddjLA5JDBqIpv/WGNNIaKbmhqVdniLnwR6f+jGxqsPJTSisI6y32L6o+013gSKEONhxtGfy2NmpN2TNvyNsi5dqb3/o6Ony7pMNWPKlDnqO+e8zL1d+UOMIe730DpWx0+qpLUc1+IDDYNQIs3VR9F+7L5dRatccmmrV7pjkIBqoZfVZ5DyHK9bg+SqFnWjX1bYFzJCsbO+gWgEr7+CTKPMU+Jda8qaBShKb2NSF4BgWZVZsc1Hewg1CywqHXeDII29bRc2FTfCG+DZcZms8shtRiPYuJa6VaEtiXlUSGNRMtiLbFkxCvZV11XAsIkfmUpQriUJ8w8v2JQpjDPhnPECzZkVBakTHtmhDUqGQVfWdFLfrFtZVkXMM3nCsj90U/KKG7rKCiU0KOduwWx5RFRJFk5R5KRN2a05RUmX4y1pRleQnq8pW4jFFu7L9g96JhqfApGioMytZbaJT6i6CqsiD0JJfiKjzTx8IU+i8bfgfTsg5K5CuIfDi9TGfHvk6SSZ11H5WOD99XChn2idfM756T9vosnxG/Nwht0fcDRwnJzxsbK/Hxympnf1hepwuBXvlaazdBYKhIyVe9kkf8QvoOlE4hk7hx9D9nz35mSS/kt/tJJQ0</source>
   </file>
   <package name="Default" full_name="Default"/>
   <package name="global" full_name="global"/>

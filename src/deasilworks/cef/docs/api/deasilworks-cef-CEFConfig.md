@@ -83,15 +83,42 @@ Properties
 * Visibility: **protected**
 
 
+### $cfg
+
+    protected \deasilworks\CFG\CFG $cfg
+
+
+
+
+
+* Visibility: **protected**
+
+
 Methods
 -------
 
 
 ### __construct
 
-    mixed deasilworks\CEF\CEFConfig::__construct()
+    mixed deasilworks\CEF\CEFConfig::__construct(\deasilworks\CFG\CFG $cfg)
 
 CEFConfig constructor.
+
+
+
+* Visibility: **public**
+
+
+#### Arguments
+* $cfg **deasilworks\CFG\CFG**
+
+
+
+### getCfg
+
+    \deasilworks\CFG\CFG deasilworks\CEF\CEFConfig::getCfg()
+
+
 
 
 

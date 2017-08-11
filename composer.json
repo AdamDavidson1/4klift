@@ -78,7 +78,18 @@
         "doc": [
             "cd ./core; ./cli.php --ansi util-docgen"
         ],
+        "checkpkg": [
+            "composer validate",
+            "cd ./src/deasilworks/api/; composer validate",
+            "cd ./src/deasilworks/cef/; composer validate",
+            "cd ./src/deasilworks/cms/; composer validate",
+            "cd ./src/deasilworks/cfg/; composer validate",
+            "cd ./skeleton-se/; composer validate",
+            "cd ./core/; composer validate"
+        ],
         "publish": [
+            "@test",
+            "@checkpkg",
             "./util/publish.sh"
          ],
         "newman": [
