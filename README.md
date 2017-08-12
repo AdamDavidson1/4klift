@@ -58,12 +58,14 @@ Linux variants.
 ### Getting Started
   
 ##### Create Project
-    
-    mkdir my-project
-    cd my-project
-    composer -n --no-install --ignore-platform-reqs create-project deasilworks/4klift-se . 1.0.x-dev
-    vagrant up
-    vagrant ssh
+
+```
+    $ mkdir my-project
+    $ cd my-project
+    $ composer -n --no-install --ignore-platform-reqs create-project deasilworks/4klift-se . 1.0.x-dev
+    $ vagrant up
+    $ vagrant ssh
+````
 
 When running, browse to `http://localhost:8080`.
 Or, add the following line to your workstation's *hosts* file:
@@ -74,8 +76,10 @@ Or, add the following line to your workstation's *hosts* file:
 
 ##### Install the CMS and test the API
 
-    vagrant ssh
-    ./core/cli --ansi cms-install
+``` 
+    $ vagrant ssh
+    $ ./core/cli --ansi cms-install
+````
 
 Now that you have some sample data with the CMS you can run API tests with [postman][postman-link]:
 
