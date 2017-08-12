@@ -18,10 +18,10 @@ built up from new development and our own existing refactored libraries.**
   - [VirtualBox](https://www.virtualbox.org/ "VirtualBox")
   - [Vagrant](https://www.vagrantup.com/ "Vagrant")
   
-The 4klift-se (Silex Edition) project includes a configured virtual 
+**The 4klift-se (Silex Edition)** project includes a configured virtual 
 machine with everyting you need to develop a new project. 
 
->See the [VM.md][vm] documentation for a current list of applications 
+>See the [VM.md] documentation for a current list of applications 
 and services.  
 
 #### 1. Create Project
@@ -69,18 +69,28 @@ Once the virtual machine has completed provisioning you will see:
 
 When running, browse to `http://localhost:8080`.
 
-Or, add the following line (or replace with your own domain) to your workstation's *hosts* file:
+Or, add the following line (or replace with your own domain) to your 
+workstation's *hosts* file. 
+
+On macOS you can use the included [vi] editor with the command: `vi /etc/hosts`
 
     192.168.222.11 collector.vm.deasil.works
 
 ... and browse to `http://collector.vm.deasil.works`.
 
-#### 2. Create a [Keyspace][cas-keyspace] in Cassandra.
+#### 2. Create a [Keyspace] in Cassandra.
 
+From the command line, in the project directory use vagrant to ssh into
+the new virtual machine:
+
+```
+    $ vagrant ssh
+```
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
 
-[vm]: skeleton-se/VM.md "4klift Virtual Machine"
+[VM.md]: skeleton-se/VM.md "4klift Virtual Machine"
 [4klift]: https://github.com/deasilworks/4klift
-[cas-keyspace]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateKeyspace.html
+[vi]: https://en.wikipedia.org/wiki/Vi
+[Keyspace]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateKeyspace.html
