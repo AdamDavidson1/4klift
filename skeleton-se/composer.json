@@ -73,8 +73,7 @@
       "cp -n ../vendor/deasilworks/4klift-core/templates/4klift-setup.html.twig ./templates/4klift-setup.html.twig"
     ],
     "post-install-cmd": [
-      "@update-core",
-      "@link-examples"
+      "@update-core"
     ],
     "post-update-cmd": [
       "@update-core"
