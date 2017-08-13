@@ -154,9 +154,6 @@ PROMPT_COMMAND='PS1="${c_red}${ME}${c_gray}@${c_reset}${c_path}${HOSTNAME}${c_re
 ay[1]}.${ip_array[2]}.${undred}${ip_arr\
 ay[3]}${c_reset}) ${c_path}\w${c_reset}\n$ "'
 
-echo ""
-echo ""
-
 cd project
 cat MOTD.txt
 echo ""

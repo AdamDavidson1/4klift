@@ -1,8 +1,8 @@
 MOTD.txt:
-+-------------------------------------------------------------+
-| - Web access - http://localhost:8080                        |
-| - 4klift - https://github.com/deasilworks/4klift            |
-| - 4klift CLI - ./core/cli --ansi                            |
-| - Keep composer up-to-date, run `sudo composer self-update` |
-| - Access Cassandra: `cqlsh`                                 |
-+-------------------------------------------------------------+
++-------------------------------------------------------------------------+
+| - Web access ....... http://localhost:8080                              |
+| - 4klift Source .... https://github.com/deasilworks/4klift              |
+| - 4klift CLI ....... ./core/cli --ansi                                  |
+| - Update Composer .. sudo /usr/local/bin/composer/composer self-update` |
+| - Cassandra CLI .... cqlsh                                              |
++-------------------------------------------------------------------------+
