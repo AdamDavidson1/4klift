@@ -233,7 +233,7 @@ vagrant@4klift.vm.deasil.works (192.168.222.11) ~/project
 $ _
 ```
 
-## 5. Model the new table with the [**LogDataModel** PHP class][LogDataModel-Gist].
+## 5. Model the new table with the [LogDataModel] PHP class.
 
 Using your preferred IDE (or text editor), create a PHP class called **LogDataModel** in the new
 **LogDataModel.php** file. It should look like the following:
@@ -307,7 +307,7 @@ public function setDate(\DateTime $date)
 }
 ```
 
-## 6. Model a collection of **[LogDataModel]**s.
+## 6. Model a collection of [LogDataModel]s.
 
 Next we will create a very small class to model a collection. Since our `collector.log` table stores
 a collection of **[LogDataModel]**s we will abstract just as we did the model, by
