@@ -310,7 +310,7 @@ public function setDate(\DateTime $date)
 ## 6. Model a collection of [LogDataModel]s.
 
 Next we will create a very small class to model a collection. Since our `collector.log` table stores
-a collection of **[LogDataModel]**s we will abstract just as we did the model, by
+a collection of [LogDataModel]s we will abstract just as we did the model, by
  creating a **[LogDataCollection]**.
 
 Create a new directory called `Collection` under the `Data` directory and add the file
@@ -331,7 +331,7 @@ src/
                         └── LogDataModel.php
 ``` 
 
-Create a PHP class called **[LogdDataCollection]** in the new **[LogDataCollection].php** file. 
+Create a PHP class called [LogDataCollection] in the new [LogDataCollection].php file. 
 It should look like the following:
 
 ```php
