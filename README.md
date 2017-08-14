@@ -56,6 +56,9 @@ Linux variants.
   - [Vagrant](https://www.vagrantup.com/ "Vagrant")
 
 ### Getting Started
+
+We have a new Getting Started tutorial in-progress. Read more
+in the [./docs/README.md][getting-started].
   
 ##### Create Project
 
@@ -107,6 +110,7 @@ MIT
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
+[getting-started]: https://github.com/deasilworks/4klift/tree/master/docs "4klift Getting Started Tutorial"
 [vm]: skeleton-se/VM.md "4klift Virtual Machine"
 [api-url]: http://github.com/deasilworks/api    
 [api-thumb]: https://raw.githubusercontent.com/deasilworks/4klift/master/assets/4KLIFT_Component_API_thumb.png 
