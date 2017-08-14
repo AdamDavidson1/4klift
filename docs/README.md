@@ -272,7 +272,7 @@ Model is abstracting.
 The `@Exclude()` annotation is important in order to keep the `$tableName` property from being 
 serialized, since this is not part of the physical model.
 
-### Adding properties to the class:
+#### 5.1 Adding properties to the class:
 
 Each column in the Cassandra `collector.log` table needs to be represented by a [property] in the
 new **LogDataModel** class, along with a corresponding getter and setter. See the table below:
@@ -367,7 +367,7 @@ is inherited from the **ResultContainer**. You may wish to further customize thi
 specific functionality, like aggregation or math functions that opperate on the specific type
 of data models this collection holds. Customizing the **[LogDataCollection]** will be covered later.
 
-## 7. Manage log data.
+## 6. Manage log data.
 
 We have modeled our `collector.log` keys with the [LogDataModel] and have a [LogDataCollection] to contain
 them. We have abstraction similar to our underlying database, where [LogDataModel] is a row of data and 
@@ -429,7 +429,7 @@ The **PageDataManager** is coupled to the **LogDataCollection** through the prot
 property $collectionClass. Next, our **PageDataManager** needs to provide some simple CRUD methods in 
 order to interact with the newly created model and collection.
 
-## 8. Add a Create & Update Method (Setter)
+### 6.1 Add a Create & Update Method (Setter)
 
 Add a **setLog** method to the new **PageDataManager** like the following:
 
@@ -457,7 +457,7 @@ may contain sets or maps of data that get added or updated on a deeper level. Th
 methods specific to those unique concerns. In this is collector tutorial we don't have a need to update a row in 
 `collector.log` so a simple save of the model is all that is needed.
 
-## 9. Test.
+### 6.2 Test.
 
 We now have a way of setting Log data and enough code to conduct a useful unit test. We can ensure the proper
 operation of our new setter and add a valuable unit test to our testing suite.
@@ -626,7 +626,7 @@ cqlsh> select * from collector.log;
 cqlsh>
 ```
 
-## 10. Create Getters.
+### 6.3 Create Getters.
 
 We have designed our table to satisfy two specific queries:
  1. Select all entries by client and type on a specific day.
