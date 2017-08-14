@@ -3,7 +3,7 @@
 Getting Started
 ===============
 
-For this **getting started** tutorial we are going to write a siteratora collection and reporting web site and service with 4klift.
+For this **getting started** tutorial we are going to write a log collector and reporting web site and service with 4klift.
 
 The Apache Cassandra database is designed for very a high number
 of simultaneous read and write operations.
