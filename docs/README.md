@@ -3,7 +3,7 @@
 Getting Started
 ===============
 
-For this **getting started** tutorial we are going to write a log collector and reporting web site and service with 4klift.
+For this **getting started** tutorial we will write a log collector and report web site and service with 4klift.
 
 The Apache Cassandra database is designed for very a high number
 of simultaneous read and write operations.
@@ -17,18 +17,17 @@ built up from new development and our own existing refactored libraries.**
   - [VirtualBox](https://www.virtualbox.org/ "VirtualBox")
   - [Vagrant](https://www.vagrantup.com/ "Vagrant")
   
-**The 4klift-se (Silex Edition)** project includes a configured virtual 
+The **4klift-se (Silex Edition)** project includes a configured virtual 
 machine with everyting you need to develop a new project. 
 
->See the [VM.md] documentation for a current list of applications 
-and services.  
+>See the [VM.md] documentation for a current list of applications and services.  
 
-## 1. Create Project
+## 1. Create project.
 
 Open a terminal on your workstation and create a new directory 
 called `collector`. In this directory use `composer` to create
 a new **4klift-se** project. After 'composer' has downloaded the
-project skeleton use `vagrant` to boot and provision the virtual
+project skeleton, use `vagrant` to boot and provision the virtual
 machine.
 
 ```
@@ -40,8 +39,8 @@ $ vagrant ssh
 ````
 
 Once the virtual machine is booted it will use `composer` internally
-to download dependencies and configure and autoloader. We do this
-installation on the virtual machine to reduce the number on dependencies 
+to download dependencies and configure an autoloader. We perform this
+installation on the virtual machine to reduce the number of dependencies 
 on a developer's individual workstation. This ensures everyone on the team
 has a common environment that meets the minimum requirements.
 
@@ -79,7 +78,7 @@ workstation's *hosts* file.
 
 ... and browse to `http://collector.vm.deasil.works`.
 
-## 2. Login to the [virtual machine][VM.md]
+## 2. Login to the [virtual machine][VM.md].
 
 From the command line, in the project directory use vagrant to **ssh into
 the new virtual machine**:
@@ -128,7 +127,7 @@ virtual machine using [cqlsh].
 $ cqlsh
 ```
 
-`cqlsh` will provide a prompt.
+`cqlsh` will provide a prompt:
 
 ```
 vagrant@4klift.vm.deasil.works (192.168.222.11) ~/project
@@ -139,23 +138,23 @@ Use HELP for help.
 cqlsh> _
 ```
 
-Once connected to Cassandra, add the Keyspace `collector`:
+Now that you are connected to Cassandra, add the `collector` Keyspace:
 
 ```
 cqlsh> CREATE KEYSPACE collector WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
 cqlsh> _
 ```
 
-Use the new [Keyspace].
+Use the new [Keyspace]:
 
 ```
 cqlsh> USE collector;
 cqlsh:collector> _
 ```
 
-## 3. Create a [Table] in the new collector keyspace.
+## 3. Create a [table] in the new collector keyspace.
 
-Use a text editor to design a **log** table then cut-and-paste the new table create statement into [cqlsh]. Use
+Use a text editor to design a **log** table, then cut-and-paste the new table create statement into [cqlsh]. Use
 the following example if you are following along with this tutorial.
 
 ```
@@ -174,10 +173,10 @@ cqlsh:collector> CREATE TABLE log (
 cqlsh:collector>_
 ```
 
-#### 4. Model the new table.
+## 4. Model the new table.
 
 First you will need to create a directory for your PHP source code and update composer.json with a 
-new [psr-4] namspace.
+new [psr-4] namespace.
 
 Create the directory structure of the root of the collector project:
 
@@ -195,13 +194,13 @@ src/
 ```
 
 Since the project directory is mounted on the virtual machine, you can create this directory structure
-on the virtual machine, in your IDE or directly on your workstation.
+on the virtual machine, in your IDE, or directly on your workstation.
 
-4klift does not require that you use this structure or even [psr-4], however we highly recommend this
+**4klift** does not require that you use this structure or even [psr-4]. However, we highly recommend this
 or a similar level of organization. In this tutorial we will  be abstracting data and domain (business 
-logic) in two separate sets of classes and exposing most or our domain logic to a web facing API.
+logic) in two separate sets of classes and exposing most of our domain logic to a web-facing API.
  
-**Update your composer.json*** with the following:
+**Update your composer.json** with the following:
 
 ```
 "autoload": {
@@ -210,14 +209,14 @@ logic) in two separate sets of classes and exposing most or our domain logic to 
     }
 },
 ```
-To follow along with this tutorial, you are replacing the entire "autoload" key in the composer.json
+To follow along with this tutorial, you are replacing the entire "autoload" key in composer.json
 with the code above.
 
 You will need to run `composer install` again on the virtual machine in order to let the autoloader
 know about your new class path. You can exit `cqlsh` by typing `exit`, or simply open a new terminal 
 and run `vagrant ssh`.
 
-On the virtual machine run `composer install`, you should see the following output:
+On the virtual machine run `composer install`. You should see the following output:
 
 ```
 vagrant@4klift.vm.deasil.works (192.168.222.11) ~/project
@@ -268,7 +267,7 @@ class LogDataModel extends EntityDataModel
 
 With the new **LogDataModel** class you are extending the **[EntityDataModel]** class from
 [deasilworks\CEF] and overwriting the `$tableName` parameter to indicate the physical table this 
-Model is abstracting. 
+Model is abstracting.
 
 The `@Exclude()` annotation is important in order to keep the `$tableName` property from being 
 serialized, since this is not part of the physical model.
@@ -290,10 +289,10 @@ new **LogDataModel** class, along with a corresponding getter and setter. See th
 | context    | text        | $context   | string       | setContext(...)        | getContext()     |
 | payload    | text        | $payload   | string       | setPayload(...)        | getPayload()     |
 
-See an example [Gist of the **[LogDataModel]**.
+See an example Gist of the **[LogDataModel]**.
 
-It is **important** to note that setters requiring specific type other than basic scalar need to be type
-hinted. The setDate method requires a [DateTime] object and is properly type hinted in the example below:
+It is **important** to note that setters requiring a specific type other than basic scalar need to be type-hinted. 
+The `setDate` method requires a [DateTime] object and is properly type-hinted in the example below:
 
 ```php
 /**
@@ -307,11 +306,10 @@ public function setDate(\DateTime $date)
 }
 ```
 
-## 6. Model a collection of [LogDataModel]s.
+## 6. Model a collection of [LogDataModels][LogDataModel].
 
-Next we will create a very small class to model a collection. Since our `collector.log` table stores
-a collection of [LogDataModel]s we will abstract just as we did the model, by
- creating a **[LogDataCollection]**.
+Next we will create a very small class to model a collection. Since our `collector.log` table stores 
+a collection of [LogDataModels][LogDataModel] we will abstract just as we did the model, by creating a **[LogDataCollection]**.
 
 Create a new directory called `Collection` under the `Data` directory and add the file
 `LogDataCollection.php`. Your file structure should now look like this:
@@ -364,18 +362,18 @@ class LogDataCollection extends ResultContainer
 The **LogDataCollection** is coupled to the **LogDataModel** through the protected
 property $valueClass.
 
->This is all the work that is required for the new collection class. All the needed functionality
-is inherited from the **ResultContainer**. You may wish to further customize this class, to add
-specific functionality like aggregation or math functions that opperate on the specific type
+>This is all the work required for the new collection class. All the needed functionality
+is inherited from the **ResultContainer**. You may wish to further customize this class to add
+specific functionality, like aggregation or math functions that opperate on the specific type
 of data models this collection holds. Customizing the **[LogDataCollection]** will be covered later.
 
-## 7. Managing Log Data.
+## 7. Manage log data.
 
 We have modeled our `collector.log` keys with the [LogDataModel] and have a [LogDataCollection] to contain
-them. We have abstration similar to our underlying database, where [LogDataModel] is a row of data and 
+them. We have abstraction similar to our underlying database, where [LogDataModel] is a row of data and 
 [LogDataCollection] is the table itself.
 
-Our database support CRUD (Create, Read, Update, Delete) opperations which also need to be abstracted.
+Our database supports CRUD (Create, Read, Update, Delete) operations which also need to be abstracted.
 This will be done with a new **LogDataManager.php** class.
 
 Create a new directory called `Manager` under the `Data` directory and add the file `LogDataManager.php`. 
@@ -431,7 +429,7 @@ The **PageDataManager** is coupled to the **LogDataCollection** through the prot
 property $collectionClass. Next, our **PageDataManager** needs to provide some simple CRUD methods in 
 order to interact with the newly created model and collection.
 
-### Create & Update Method (Setter)
+## 8. Add a Create & Update Method (Setter)
 
 Add a **setLog** method to the new **PageDataManager** like the following:
 
@@ -453,16 +451,16 @@ public function setLog(LogDataModel $logDataModel)
 }
 ```
 
->While there are more sophisticated was to set our data, this is the basic method. For large models, or models where
+>While there are more sophisticated ways to set our data, this is the basic method. For large models, or models where
 we only need to update a single column, it is more efficient to update the column directly. In Cassandra, some columns
-may contain sets or maps up data that get added to updated on a deeper level. These will be handled by additional 
+may contain sets or maps of data that get added or updated on a deeper level. These will be handled by additional 
 methods specific to those unique concerns. In this is collector tutorial we don't have a need to update a row in 
 `collector.log` so a simple save of the model is all that is needed.
 
-### Test
+## 9. Test.
 
 We now have a way of setting Log data and enough code to conduct a useful unit test. We can ensure the proper
-operation our new setter and add a valuable unit test to our testing suite.
+operation of our new setter and add a valuable unit test to our testing suite.
 
 Add the file `LogDataTest.php` to the `tests` directory in the `Collector` library. The structure should
 resemble the following:
@@ -498,7 +496,7 @@ class LogDataTest extends \PHPUnit_Framework_TestCase
 }
 ```
 
-Add a property to store and instance of **CEF** and a **setUp()** method to create an instance
+Add a property to store an instance of **CEF** and a **setUp()** method to create an instance
 of CEF for subsequent tests.
 
 ```php
@@ -525,10 +523,10 @@ protected function setUp()
 ```
 
 > Note the **setKeyspace** and **setContactPoints** settings. These can be set per instance of CEF or 
-configured in one of the configuration yamls. 
+configured in one of the configuration yml files. 
 
-Next, add a **testSetLogData()** method. This will hold out first test. We can't test much but will know
-if any exceptions occur. If the test run's without failing we should have a new `collector.log` record in
+Next, add a **testSetLogData()** method. This will hold our first test. We can't test much but will know
+if any exceptions occur. If the test runs without failing we should have a new `collector.log` record in
 our local Cassandra node.
 
 ```php
@@ -628,21 +626,21 @@ cqlsh> select * from collector.log;
 cqlsh>
 ```
 
-### Create Getters
+## 10. Create Getters.
 
 We have designed our table to satisfy two specific queries:
  1. Select all entries by client and type on a specific day.
  2. Select entries by client and type within a time range on a specific day.
 
-These two requirements can by handled by one method. We will start with the first, let's take a look
+These two requirements can by handled by one method. We will start by taking a look
 at the `PRIMARY KEY` portion of our table. In the `cqlsh` terminal issue the command `DESC collector.log` and
 note the following line:
 
 `PRIMARY KEY ((client, type, day), date)`
 
->Cassandra tables are [designed to satisfy data retrial requirements][cas-modeling], in other words, they are not 
-designed to [normalize] data. The goal is not a consideration of physical storage efficiencies but instead focusing 
-purely on read and write performance. Because of this each table is organized to meet the needs or one or more queries 
+>Cassandra tables are [designed to satisfy data retrial requirements][cas-modeling]. In other words, they are not 
+designed to [normalize] data. The goal is not a consideration of physical storage efficiencies but instead focuses 
+purely on read and write performance. Because of this each table is organized to meet the needs of one or more queries 
 against it. 
 
 The [Partition Key][cas-keys] for our `collector.log` table, requires `client`, `type` and `day`, so this means our new
@@ -653,24 +651,24 @@ can be used to further filter the entry.
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
-[psr-4]: http://www.php-fig.org/psr/psr-4/
+[psr-4]: http://www.php-fig.org/psr/psr-4/ "PSR-4: Autoloader"
 [VM.md]: https://github.com/deasilworks/4klift/blob/master/skeleton-se/VM.md "4klift Virtual Machine"
-[4klift]: https://github.com/deasilworks/4klift
-[vi]: https://en.wikipedia.org/wiki/Vi
-[Keyspace]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateKeyspace.html
-[cqlsh]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlsh.html
-[deasilworks\CEF]: https://github.com/deasilworks/cef
-[table]: https://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateTable.html
-[EntityDataModel]: https://github.com/deasilworks/4klift/blob/master/src/deasilworks/cef/docs/api/deasilworks-CEF-EntityDataModel.md
-[property]: http://php.net/manual/en/language.oop5.properties.php
-[DateTime]: http://php.net/manual/en/class.datetime.php
-[timestamp]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/timestamp_type_r.html
-[type]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cql_data_types_c.html
-[PHP-Type]: http://php.net/manual/en/language.types.php
-[uuid]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/timeuuid_functions_r.html
-[LogDataModel]: https://github.com/deasilworks/collector/blob/master/src/deasilworks/collector/src/CEF/Data/Model/LogDataModel.php
-[LogDataCollection]: https://github.com/deasilworks/collector/blob/master/src/deasilworks/collector/src/CEF/Data/Collection/LogDataCollection.php
-[normalize]: https://en.wikipedia.org/wiki/Database_normalization
-[cas-modeling]: https://www.datastax.com/dev/blog/basic-rules-of-cassandra-data-modeling
-[cas-keys]: https://www.datastax.com/dev/blog/the-most-important-thing-to-know-in-cassandra-data-modeling-the-primary-key
-[cas-clustering]: https://stackoverflow.com/questions/24949676/difference-between-partition-key-composite-key-and-clustering-key-in-cassandra
+[4klift]: https://github.com/deasilworks/4klift "4klift Documentation"
+[vi]: https://en.wikipedia.org/wiki/Vi "VI Documentation"
+[Keyspace]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateKeyspace.html "Keyspace Documentation"
+[cqlsh]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlsh.html "cqlsh Documentation"
+[deasilworks\CEF]: https://github.com/deasilworks/cef "CEF 4klift Component"
+[table]: https://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateTable.html "CQL Table Documentation"
+[EntityDataModel]: https://github.com/deasilworks/4klift/blob/master/src/deasilworks/cef/docs/api/deasilworks-CEF-EntityDataModel.md "CEF Entity Data Model"
+[property]: http://php.net/manual/en/language.oop5.properties.php "PHP Documentation: Properties"
+[DateTime]: http://php.net/manual/en/class.datetime.php "PHP Documentation: DateTime"
+[timestamp]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/timestamp_type_r.html "Timestamp Documentation"
+[type]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cql_data_types_c.html "Data Types Documentation"
+[PHP-Type]: http://php.net/manual/en/language.types.php "PHP Documentation: PHP-Type"
+[uuid]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/timeuuid_functions_r.html "UUID Documentation"
+[LogDataModel]: https://github.com/deasilworks/collector/blob/master/src/deasilworks/collector/src/CEF/Data/Model/LogDataModel.php "4klift Documentation: LogDataModel"
+[LogDataCollection]: https://github.com/deasilworks/collector/blob/master/src/deasilworks/collector/src/CEF/Data/Collection/LogDataCollection.php "4klift Documentation: LogDataCollection"
+[normalize]: https://en.wikipedia.org/wiki/Database_normalization "Normalization Documentation"
+[cas-modeling]: https://www.datastax.com/dev/blog/basic-rules-of-cassandra-data-modeling "Cassandra Documentation: Data Modeling"
+[cas-keys]: https://www.datastax.com/dev/blog/the-most-important-thing-to-know-in-cassandra-data-modeling-the-primary-key "Cassandra Documentation: Keys"
+[cas-clustering]: https://stackoverflow.com/questions/24949676/difference-between-partition-key-composite-key-and-clustering-key-in-cassandra "Cassandra Documentation: Clustering"
