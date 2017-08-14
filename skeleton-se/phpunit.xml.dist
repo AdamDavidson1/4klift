@@ -15,7 +15,8 @@
 
     <testsuites>
         <testsuite name="Test Suite">
-            <directory>./src/*/src/tests/</directory>
+            <directory>./src/*/tests/</directory>
+            <directory>./src/*/*/tests/</directory>
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
@@ -29,6 +30,7 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src/*/src/</directory>
+            <directory suffix=".php">src/*/*/src/</directory>
         </whitelist>
     </filter>
 </phpunit>

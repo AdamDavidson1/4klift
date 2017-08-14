@@ -404,10 +404,10 @@ It should look like the following:
 ```php
 <?php
 
-namespace deasilworks\CMS\CEF\Data\Manager;
+namespace deasilworks\Collector\CEF\Data\Manager;
 
 use deasilworks\CEF\EntityDataManager;
-use deasilworks\CMS\CEF\Data\Collection\LogDataCollection;
+use deasilworks\Collector\CEF\Data\Collection\LogDataCollection;
 
 /**
  * Class PageDataManager.
@@ -428,9 +428,10 @@ class PageDataManager extends EntityDataManager
 ```
 
 The **PageDataManager** is coupled to the **LogDataCollection** through the protected
-property $collectionClass. Next, our **PageDataManager** need to provide some simple CRUD methods.
+property $collectionClass. Next, our **PageDataManager** needs to provide some simple CRUD methods in 
+order to interact with the newly created model and collection.
 
-### Create & Update Method
+### Create & Update Method (Setter)
 
 Add a **setLog** method to the new **PageDataManager** like the following:
 
@@ -452,12 +453,208 @@ public function setLog(LogDataModel $logDataModel)
 }
 ```
 
+>While there are more sophisticated was to set our data, this is the basic method. For large models, or models where
+we only need to update a single column, it is more efficient to update the column directly. In Cassandra, some columns
+may contain sets or maps up data that get added to updated on a deeper level. These will be handled by additional 
+methods specific to those unique concerns. In this is collector tutorial we don't have a need to update a row in 
+`collector.log` so a simple save of the model is all that is needed.
+
+### Test
+
+We now have a way of setting Log data and enough code to conduct a useful unit test. We can ensure the proper
+operation our new setter and add a valuable unit test to our testing suite.
+
+Add the file `LogDataTest.php` to the `tests` directory in the `Collector` library. The structure should
+resemble the following:
+
+```
+src/
+└── deasilworks/
+    └── collector/
+        └── tests/
+            └── LogDataTest.php
+``` 
+
+Create a PHP class called **LogDataTest** in the new **LogDataTest.php** file. 
+It should look like the following:
+
+```php
+<?php
+
+use deasilworks\CEF\CEF;
+use deasilworks\CEF\CEFConfig;
+use deasilworks\CFG\CFG;
+use deasilworks\Collector\CEF\Data\Manager\LogDataManager;
+use deasilworks\Collector\CEF\Data\Model\LogDataModel;
+
+/**
+ * Class ModelTest.
+ *
+ * @SuppressWarnings(PHPMD)
+ * We do bad things here and we like it.
+ */
+class LogDataTest extends \PHPUnit_Framework_TestCase
+{
+}
+```
+
+Add a property to store and instance of **CEF** and a **setUp()** method to create an instance
+of CEF for subsequent tests.
+
+```php
+/**
+ * @var CEF
+ */
+protected $cef;
+
+/**
+ * Set up
+ */
+protected function setUp()
+{
+    if (!$this->cef) {
+        $cfg = new CFG;
+        $cefConfig = new CEFConfig($cfg);
+        $cefConfig
+            ->setKeyspace('collector')
+            ->setContactPoints(['127.0.0.1']);
+
+        $this->cef = new CEF($cefConfig);
+    }
+}
+```
+
+> Note the **setKeyspace** and **setContactPoints** settings. These can be set per instance of CEF or 
+configured in one of the configuration yamls. 
+
+Next, add a **testSetLogData()** method. This will hold out first test. We can't test much but will know
+if any exceptions occur. If the test run's without failing we should have a new `collector.log` record in
+our local Cassandra node.
+
+```php
+/**
+ * Set Log Data Test
+ */
+public function testSetLogData()
+{
+    /** @var LogDataManager $logDataMgr */
+    $logDataMgr = $this->cef->getDataManager(LogDataManager::class);
+
+    $logDataModel = new LogDataModel();
+    $logDataModel
+        ->setClient('0.0.0.0')
+        ->setType('TEST_EVENT')
+        ->setDay( (int)date('Ymd'))
+        ->setDate(new \DateTime())
+        ->setLogUuid(\deasilworks\API\UUID::getV4())
+        ->setEventUuid(\deasilworks\API\UUID::getV4())
+        ->setLevel('INFO')
+        ->setPayload('{user} tested method {method} in class {class}.')
+        ->setContext(json_encode([
+            '{user}' => 'phpunit',
+            '{method}' => 'setLog',
+            '{class}' => 'logData'
+        ]));
+
+    $this->assertEquals('INFO', $logDataModel->getLevel());
+
+    $logDataMgr->setLog($logDataModel);
+
+}
+```
+
+Run `phpunit` from the `project` directory on the virtual machine. 
+
+```
+vagrant@4klift.vm.deasil.works (192.168.222.11) ~/project
+$ phpunit
+```
+
+If an error occurs you will have an exception message and stack trace to help you find your bug.
+Expect the following output:
+
+```
+PHPUnit 5.7.21 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 4.58 seconds, Memory: 5.75MB
+
+OK (2 tests, 2 assertions)
+
+Generating code coverage report in Clover XML format ... done
+
+Generating code coverage report in HTML format ... done
+vagrant@4klift.vm.deasil.works (192.168.222.11) ~/project
+$ _
+```
+
+Use `cqlsh` to check Cassandra for the new record. 
+
+```
+vagrant@4klift.vm.deasil.works (192.168.222.11) ~/project
+$ cqlsh
+```
+
+Turn expand on to make tables easier to read by pivoting the keys as the first column and values as the second:
+
+```
+Connected to Test Cluster at 127.0.0.1:9042.
+[cqlsh 5.0.1 | Cassandra 3.9.0 | CQL spec 3.4.2 | Native protocol v4]
+Use HELP for help.
+cqlsh> expand on;
+Now Expanded output is enabled
+cqlsh>
+```
+
+Select all data from the the `collector.log` table:
+
+```
+cqlsh> select * from collector.log;
+
+@ Row 1
+------------+--------------------------------------------------------------
+ client     | 0.0.0.0
+ type       | TEST_EVENT
+ day        | 20170814
+ date       | 2017-08-14 06:57:24.000000+0000
+ context    | {"{user}":"phpunit","{method}":"setLog","{class}":"logData"}
+ event_uuid | 5097aa48-4c16-4ca5-8c3b-10b616cd380d
+ level      | INFO
+ log_uuid   | c882b862-893c-4ed7-ae56-c6d59000c76e
+ payload    | {user} tested method {method} in class {class}.
+
+(1 rows)
+cqlsh>
+```
+
+### Create Getters
+
+We have designed our table to satisfy two specific queries:
+ 1. Select all entries by client and type on a specific day.
+ 2. Select entries by client and type within a time range on a specific day.
+
+These two requirements can by handled by one method. We will start with the first, let's take a look
+at the `PRIMARY KEY` portion of our table. In the `cqlsh` terminal issue the command `DESC collector.log` and
+note the following line:
+
+`PRIMARY KEY ((client, type, day), date)`
+
+>Cassandra tables are [designed to satisfy data retrial requirements][cas-modeling], in other words, they are not 
+designed to [normalize] data. The goal is not a consideration of physical storage efficiencies but instead focusing 
+purely on read and write performance. Because of this each table is organized to meet the needs or one or more queries 
+against it. 
+
+The [Partition Key][cas-keys] for our `collector.log` table, requires `client`, `type` and `day`, so this means our new
+method will require these. The `date` portion of the Primary Key is considered a [Clustering Key][cas-clustering] and 
+can be used to further filter the entry. 
+ 
 
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
 [psr-4]: http://www.php-fig.org/psr/psr-4/
-[VM.md]: skeleton-se/VM.md "4klift Virtual Machine"
+[VM.md]: https://github.com/deasilworks/4klift/blob/master/skeleton-se/VM.md "4klift Virtual Machine"
 [4klift]: https://github.com/deasilworks/4klift
 [vi]: https://en.wikipedia.org/wiki/Vi
 [Keyspace]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateKeyspace.html
@@ -473,3 +670,7 @@ public function setLog(LogDataModel $logDataModel)
 [uuid]: http://docs.datastax.com/en/cql/3.3/cql/cql_reference/timeuuid_functions_r.html
 [LogDataModel]: https://github.com/deasilworks/collector/blob/master/src/deasilworks/collector/src/CEF/Data/Model/LogDataModel.php
 [LogDataCollection]: https://github.com/deasilworks/collector/blob/master/src/deasilworks/collector/src/CEF/Data/Collection/LogDataCollection.php
+[normalize]: https://en.wikipedia.org/wiki/Database_normalization
+[cas-modeling]: https://www.datastax.com/dev/blog/basic-rules-of-cassandra-data-modeling
+[cas-keys]: https://www.datastax.com/dev/blog/the-most-important-thing-to-know-in-cassandra-data-modeling-the-primary-key
+[cas-clustering]: https://stackoverflow.com/questions/24949676/difference-between-partition-key-composite-key-and-clustering-key-in-cassandra
