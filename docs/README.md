@@ -423,12 +423,12 @@ use deasilworks\CEF\EntityDataManager;
 use deasilworks\Collector\CEF\Data\Collection\LogDataCollection;
 
 /**
- * Class PageDataManager.
+ * Class LogDataManager.
  * 
  * Responsible for providing CRUD operations
  * on LogDataModels and providing LogDataCollections.
  */
-class PageDataManager extends EntityDataManager
+class LogDataManager extends EntityDataManager
 {
     /**
      * Overwritten to customize Collection Class.
