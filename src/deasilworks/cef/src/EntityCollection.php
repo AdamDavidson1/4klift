@@ -42,7 +42,7 @@ class EntityCollection extends CEFData implements \Iterator
     protected $valueClass = EntityDataModel::class;
 
     /**
-     * @Exclude()
+     * @JMS\Exclude()
      *
      * @var bool
      */

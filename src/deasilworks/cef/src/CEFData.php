@@ -173,26 +173,26 @@ abstract class CEFData
             return true;
         }
 
+        // check to see if the setter has a defined type
+        // of model we can instantiate and hydrate.
+        $reflection = new ReflectionClass($context);
+        $param = $reflection->getMethod($setter)->getParameters();
+
+        // CEF setters can only take one parameter so we
+        // only need look at the first one.
+        $paramClass = $param[0]->getClass();
+
+        if (!$paramClass && is_object($value)) {
+            // no class defined but is an object so
+            // cast to it an array and assign it so the
+            $context->$setter((array) $value);
+
+            return true;
+        }
+
         if (is_array($value) || is_object($value)) {
 
-            // check to see if the setter has a defined type
-            // of model we can instantiate and hydrate.
-            $reflection = new ReflectionClass($context);
-            $param = $reflection->getMethod($setter)->getParameters();
-
-            // CEF setters can only take one parameter so we
-            // only need look at the first one.
-            $class = $param[0]->getClass();
-
-            if (!$class && is_object($value)) {
-                // no class defined but is an object so
-                // cast to it an array and assign it so the
-                $context->$setter((array) $value);
-
-                return true;
-            }
-
-            $class = $class->name;
+            $class = $paramClass->name;
             $obj = new $class();
 
             // if NOT type of EntityCollection then
@@ -208,6 +208,10 @@ abstract class CEFData
             $context->$setter($this->hydrateEntityCollection($obj, $value));
 
             return true;
+        }
+
+        if ( $paramClass && $paramClass->name === 'DateTime') {
+            $value = new \DateTime($value);
         }
 
         // fallback
