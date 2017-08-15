@@ -183,7 +183,7 @@ cqlsh:collector> CREATE TABLE log (
              ...     level text,
              ...     context text,
              ...     payload text,
-             ...     PRIMARY KEY ((client, type, day), date)
+             ...     PRIMARY KEY ((client, type, day), date, log_uuid)
              ... );
 cqlsh:collector>_
 ```
@@ -663,7 +663,7 @@ method will require these. The `date` portion of the Primary Key is considered a
 can be used to further filter the entry. 
 
 **Coming soon...**
- 
+
 ### 7.4 Test getters.
 
 **Coming soon...**
