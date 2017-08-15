@@ -20,9 +20,9 @@ built up from new development and our own existing refactored libraries.**
 The **4klift-se (Silex Edition)** project includes a configured virtual 
 machine with everyting you need to develop a new project. 
 
->See the [VM.md] documentation for a current list of applications and services.  
+>See the [VM.md] documentation for a current list of applications and services.
 
-## 1. Create project.
+## 1. Create the project.
 
 Open a terminal on your workstation and create a new directory 
 called `collector`. In this directory use `composer` to create
@@ -152,7 +152,7 @@ cqlsh> USE collector;
 cqlsh:collector> _
 ```
 
-## 3. Create a [table] in the new collector keyspace.
+## 3. Create a [table] in Cassandra.
 
 Use a text editor to design a **log** table, then cut-and-paste the new table create statement into [cqlsh]. Use
 the following example if you are following along with this tutorial.
@@ -173,7 +173,7 @@ cqlsh:collector> CREATE TABLE log (
 cqlsh:collector>_
 ```
 
-## 4. Model the new table.
+## 4. Model the table.
 
 First you will need to create a directory for your PHP source code and update composer.json with a 
 new [psr-4] namespace.
@@ -232,10 +232,10 @@ vagrant@4klift.vm.deasil.works (192.168.222.11) ~/project
 $ _
 ```
 
-## 5. Model the new table with the [LogDataModel] PHP class.
+### 5.1. Create a DataModel.
 
-Using your preferred IDE (or text editor), create a PHP class called **LogDataModel** in the new
-**LogDataModel.php** file. It should look like the following:
+Using your preferred IDE (or text editor), create a PHP class called **[LogDataModel]** in the new
+**[LogDataModel.php]** file. It should look like the following:
 
 ```php
 <?php
@@ -367,7 +367,7 @@ is inherited from the **ResultContainer**. You may wish to further customize thi
 specific functionality, like aggregation or math functions that opperate on the specific type
 of data models this collection holds. Customizing the **[LogDataCollection]** will be covered later.
 
-## 6. Manage log data.
+## 7. Manage the model.
 
 We have modeled our `collector.log` keys with the [LogDataModel] and have a [LogDataCollection] to contain
 them. We have abstraction similar to our underlying database, where [LogDataModel] is a row of data and 
@@ -429,7 +429,7 @@ The **PageDataManager** is coupled to the **LogDataCollection** through the prot
 property $collectionClass. Next, our **PageDataManager** needs to provide some simple CRUD methods in 
 order to interact with the newly created model and collection.
 
-### 6.1 Add a Create & Update Method (Setter)
+### 7.1 Create a setter.
 
 Add a **setLog** method to the new **PageDataManager** like the following:
 
@@ -457,7 +457,7 @@ may contain sets or maps of data that get added or updated on a deeper level. Th
 methods specific to those unique concerns. In this is collector tutorial we don't have a need to update a row in 
 `collector.log` so a simple save of the model is all that is needed.
 
-### 6.2 Test.
+### 7.2 Test the setter.
 
 We now have a way of setting Log data and enough code to conduct a useful unit test. We can ensure the proper
 operation of our new setter and add a valuable unit test to our testing suite.
@@ -626,7 +626,7 @@ cqlsh> select * from collector.log;
 cqlsh>
 ```
 
-### 6.3 Create Getters.
+### 7.3 Create getters.
 
 We have designed our table to satisfy two specific queries:
  1. Select all entries by client and type on a specific day.
@@ -647,7 +647,9 @@ The [Partition Key][cas-keys] for our `collector.log` table, requires `client`, 
 method will require these. The `date` portion of the Primary Key is considered a [Clustering Key][cas-clustering] and 
 can be used to further filter the entry. 
  
+### 7.4 Test getters.
 
+Coming soon...
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
