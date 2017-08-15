@@ -22,6 +22,21 @@ machine with everyting you need to develop a new project.
 
 >See the [VM.md] documentation for a current list of applications and services.
 
+## Tutorial Outline  
+
+1. [Create the project.](#1-create-the-project)
+2. [Login to the virtual machine.](#2-login-to-the-virtual-machine)
+3. [Create a Keyspace in Cassandra.](#3-create-a-keyspace-in-cassandra)
+4. [Create a table in Cassandra.](#3-create-a-table-in-cassandra)
+5. [Model the table.](#4-model-the-table)
+    1. [Create a DataModel](#51-create-a-datamodel)
+6. [Model a collection.](#6-model-a-collection-of-logdatamodels)
+7. [Manage the model.](#7-manage-the-model)
+    1. [Create setter.](#71-create-a-setter)
+    2. [Test setter.](#72-test-the-setter)
+    3. [Create getter.](#73-create-getters)
+    4. [Test getter.](#74-test-getters)
+
 ## 1. Create the project.
 
 Open a terminal on your workstation and create a new directory 
@@ -646,10 +661,12 @@ against it.
 The [Partition Key][cas-keys] for our `collector.log` table, requires `client`, `type` and `day`, so this means our new
 method will require these. The `date` portion of the Primary Key is considered a [Clustering Key][cas-clustering] and 
 can be used to further filter the entry. 
+
+**Coming soon...**
  
 ### 7.4 Test getters.
 
-Coming soon...
+**Coming soon...**
 
 ##### This open-source project is brought to you by [Deasil Works, Inc.](http://deasil.works/) Copyright &copy; 2017 Deasil Works, Inc.
 
