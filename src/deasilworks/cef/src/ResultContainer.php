@@ -42,20 +42,22 @@ class ResultContainer extends EntityCollection
     protected $valueClass = EntityDataModel::class;
 
     /**
-     * @JMS\Exclude
+     * @JMS\Exclude()
      *
      * @var string
      */
     private $statement;
 
     /**
-     * @JMS\Exclude
+     * @JMS\Exclude()
      *
      * @var array
      */
     private $arguments;
 
     /**
+     * @JMS\Exclude()
+     *
      * @var EntityDataManager
      */
     protected $entityManager;

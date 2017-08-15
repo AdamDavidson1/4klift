@@ -59,6 +59,8 @@ class EntityCollection extends CEFData implements \Iterator
     private $count;
 
     /**
+     * @JMS\Exclude()
+     *
      * @var int
      */
     private $position = 0;
