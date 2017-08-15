@@ -651,7 +651,7 @@ These two requirements can by handled by one method. We will start by taking a l
 at the `PRIMARY KEY` portion of our table. In the `cqlsh` terminal issue the command `DESC collector.log` and
 note the following line:
 
-`PRIMARY KEY ((client, type, day), date)`
+`PRIMARY KEY ((client, type, day), date, log_uuid)`
 
 >Cassandra tables are [designed to satisfy data retrial requirements][cas-modeling]. In other words, they are not 
 designed to [normalize] data. The goal is not a consideration of physical storage efficiencies but instead focuses 
