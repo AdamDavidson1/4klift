@@ -71,9 +71,20 @@ class CEFServiceProvider extends ServiceProvider implements ServiceProviderInter
         };
 
         $container[$this->namespace.'.cef.controller_factory'] = $container->protect(
-            function ($class) use ($container) {
+            function ($class, $routeConfig) use ($container) {
                 /** @var CEF $cef */
                 $cef = $container[$this->namespace.'.cef'];
+
+                if (is_array($routeConfig)) {
+                    $cefConfig = $cef->getConfig();
+
+                    foreach ($routeConfig as $key => $value) {
+                        $cfgSetter = 'set' . ucfirst($key);
+                        if (method_exists($cefConfig, $cfgSetter)) {
+                            $cefConfig->$cfgSetter($value);
+                        }
+                    }
+                }
 
                 return $cef->getManager($class);
             }
