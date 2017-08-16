@@ -191,7 +191,6 @@ abstract class CEFData
         }
 
         if (is_array($value) || is_object($value)) {
-
             $class = $paramClass->name;
             $obj = new $class();
 
@@ -210,7 +209,7 @@ abstract class CEFData
             return true;
         }
 
-        if ( $paramClass && $paramClass->name === 'DateTime') {
+        if ($paramClass && $paramClass->name === 'DateTime') {
             $value = new \DateTime($value);
         }
 
