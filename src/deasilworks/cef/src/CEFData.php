@@ -123,10 +123,10 @@ abstract class CEFData
                     }
                 );
 
-                // DateTime Handler "Y-m-d H:i:s"
+                // DateTime Handler ISO 8601 date "yyyy-mm-dd'T'HH:mm:ssZ"
                 $registry->registerHandler('serialization', 'DateTime', 'json',
                     function ($visitor, \DateTime $obj, array $type, Context $context) {
-                        return date('Y-m-d H:i:s', $obj->getTimestamp());
+                        return $obj->format('c');
                     }
                 );
             });
