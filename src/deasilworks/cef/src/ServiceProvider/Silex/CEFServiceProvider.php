@@ -79,7 +79,7 @@ class CEFServiceProvider extends ServiceProvider implements ServiceProviderInter
                     $cefConfig = $cef->getConfig();
 
                     foreach ($routeConfig as $key => $value) {
-                        $cfgSetter = 'set' . ucfirst($key);
+                        $cfgSetter = 'set'.ucfirst($key);
                         if (method_exists($cefConfig, $cfgSetter)) {
                             $cefConfig->$cfgSetter($value);
                         }
