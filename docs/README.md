@@ -578,6 +578,8 @@ public function testSetLogData()
 
 Run `phpunit` from the `project` directory on the virtual machine. 
 
+> Running `phpunit` multiple times (if successful) will add additional log entries in `collector.log`.
+
 ```
 vagrant@4klift.vm.deasil.works (192.168.222.11) ~/project
 $ phpunit
@@ -589,11 +591,11 @@ Expect the following output:
 ```
 PHPUnit 5.7.21 by Sebastian Bergmann and contributors.
 
-..                                                                  2 / 2 (100%)
+.                                                                  1 / 1 (100%)
 
 Time: 4.58 seconds, Memory: 5.75MB
 
-OK (2 tests, 2 assertions)
+OK (1 tests, 1 assertion)
 
 Generating code coverage report in Clover XML format ... done
 
@@ -661,6 +663,65 @@ against it.
 The [Partition Key][cas-keys] for our `collector.log` table, requires `client`, `type` and `day`, so this means our new
 method will require these. The `date` portion of the Primary Key is considered a [Clustering Key][cas-clustering] and 
 can be used to further filter the entry. 
+
+Create a new method called **getLogEntriesByDay** in the **LogDataManager** the new method will 
+return a **LogDataCollection**. Below is an example:
+
+```php
+    /**
+     * Get Log Entries By Day
+     *
+     * @param string $client
+     * @param string $type
+     * @param int    $day
+     *
+     * @return LogDataCollection
+     */
+    public function getLogEntriesByDay($client, $type, $day)
+    {
+
+    }
+```
+
+Before we can return a **LogDataCollection** we need get one from the CEF **StatementManager**. We get a 
+**StatementManager** by calling `$this->getStatementManager` and padding the class name of the type of 
+StatementManager we would like, for most queries a SimpleStatementManager will do. 
+
+Add the following use statement to **LogDataManager.php**:
+
+```php
+use deasilworks\CEF\Statement\Simple;
+```
+
+Add the following the new **getLogEntriesByDay** method created above.
+
+```php
+// get a Simple Statement Manager
+$stmtMgr = $this->getStatementManager(Simple::class);
+```
+
+The **SimpleStatementManager** takes a CQL statement and set of arguments can serve as token replacements in 
+the CQL statement. **SimpleStatementManager** executes the CQL statement in Cassandra and returns a ResultContainer
+populated with DataModels. In this case it will return a **LogDataCollection** (which is a type of ResultContainer)
+populated with **LogDataModel**s as defined earlier in this tutorial.
+
+CQL statements can be written manually or use a **StatementBuilder**. The **SimpleStatementManager** provides a 
+factory method to produce a number of **StatementBuilder**s, including common action such as Select, Update and Delete.
+ 
+Add the following use statement to **LogDataManager.php**:
+
+```php
+use deasilworks\CEF\StatementBuilder\Select;
+```
+ 
+Add the following the new **getLogEntriesByDay** method.
+
+```php
+// get a Select Statement Builder
+/** @var Select $stmtBuilder */
+$stmtBuilder = $stmtMgr->getStatementBuilder(Select::class);
+```
+
 
 **Coming soon...**
 
